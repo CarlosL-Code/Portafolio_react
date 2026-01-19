@@ -9,9 +9,9 @@ const Hero = () => {
             <span>Hola!</span>Soy Carlos Lozano
           </h3>
           <p className="subtitulo">
-            Desarrollador Web y Backend <br />
+            Desarrollador de Software en formación <br />
             Estudiante de Ingeniería en Informática <br />
-            Transformando ideas en soluciones digitales funcionales.
+            Con enfoque en backend y creación de soluciones web funcionales.
           </p>
           <div className="botones">
             <a href="#trabajos" className="boton transparente">

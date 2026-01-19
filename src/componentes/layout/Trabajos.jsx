@@ -10,8 +10,7 @@ const Trabajos = () => {
   const [estadoModal, setEstadoModal] = useState(false);
   const [trabajoSelecionado, setTrabajoSelecionado] = useState(trabajos[0]);
 
-  // 🔁 Se vuelve a ejecutar cuando cambian los trabajos filtrados
-  useScrollAnimation([trabajosFiltrados]);
+
 
   const handleChange = (e) => {
     const categoria = e.target.id;
@@ -46,7 +45,7 @@ const Trabajos = () => {
         <div className="encabezado anim-scroll">
           <h3 className="titulo">Mis trabajos</h3>
           <p className="subtitulo">
-            El éxito no es un destino, es un viaje, disfrútalo.
+            Cada proyecto representa una solución real desarrollada para una necesidad concreta.
           </p>
         </div>
 
@@ -101,7 +100,7 @@ const Trabajos = () => {
         <div className="grid">
           {trabajosFiltrados.map((trabajo, index) => (
             <div
-              className="trabajo anim-scroll"
+              className="trabajo "
               key={trabajo.id}
               style={{ transitionDelay: `${index * 35}ms` }}
 

@@ -1,0 +1,73 @@
+.como-trabajo {
+  padding: 60px 20px;
+}
+
+.como-trabajo .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+  margin-top: 40px;
+}
+
+.como-trabajo .card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark .como-trabajo .card {
+  background: var(--shade-9);
+}
+
+.como-trabajo .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.como-trabajo .icono {
+  font-size: 36px;
+  color: var(--primario);
+  margin-bottom: 16px;
+}
+
+.como-trabajo h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--shade-8);
+}
+
+.dark .como-trabajo h4 {
+  color: var(--shade-2);
+}
+
+.como-trabajo p {
+  font-size: 15px;
+  line-height: 28px;
+  color: var(--shade-6);
+}
+
+.dark .como-trabajo p {
+  color: var(--shade-4);
+}
+
+.como-trabajo .frase-final {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--shade-6);
+  font-style: italic;
+}
+
+.dark .como-trabajo .frase-final {
+  color: var(--shade-4);
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+  .como-trabajo .grid {
+    grid-template-columns: 1fr;
+  }
+}

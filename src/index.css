@@ -80,7 +80,9 @@ a {
 .clientes,
 .trabajos,
 .contacto,
-.footer {
+.footer,
+.habilidades,
+.como-trabajo {
     display: flex;
     flex-direction: column;
     gap: 40px;
