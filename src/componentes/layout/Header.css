@@ -1,51 +1,85 @@
-.header{
+.header {
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 20px;
     align-items: center;
     padding: 40px 0;
 
-    .logo{
+    .logo {
         display: flex;
         flex-direction: column;
         gap: 5px;
 
-        .titulo{
+        .titulo {
             font-size: 34px;
             font-family: "Merriweather", serif;
             color: var(--shade-);
 
-            .dark &{
+            .dark & {
                 color: var(--shade-1);
             }
         }
 
-        .subtitulo{
+        .subtitulo {
             font-size: 16px;
-            color: var(--primario); 
+            color: var(--primario);
             font-weight: 500;
 
-            .dark &{
+            .dark & {
                 color: var(--primario);
             }
         }
     }
 
-    .navbar{
+    .navbar {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
         gap: 40px;
+        justify-content: center;
     }
+
+    .navbar a {
+        position: relative;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--shade-8);
+        padding: 6px 0;
+        transition: color 0.3s ease;
+    }
+
+    .dark .navbar a {
+        color: var(--shade-3);
+    }
+
+    /* Línea animada */
+    .navbar a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0;
+        height: 2px;
+        background-color: var(--primario);
+        transition: width 0.35s ease;
+    }
+
+    .navbar a:hover {
+        color: var(--primario);
+    }
+
+    .navbar a:hover::after {
+        width: 100%;
+    }
+
 
     @media screen and (max-width: 768px) {
         & {
-            .logo{
+            .logo {
                 grid-column: span 3;
                 text-align: center;
             }
-            .navbar{
+
+            .navbar {
                 grid-column: span 2;
                 justify-content: flex-start;
                 gap: 15px;
@@ -53,15 +87,32 @@
         }
     }
 
-    @media screen  and (max-width: 576px) {
 
-        &{
+    @media screen and (max-width: 576px) {
+
+        & {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        
+
+        .navbar {
+            width: 100%;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .navbar a {
+            font-size: 15px;
+            padding: 10px 6px;
+        }
+
+        /* Línea siempre visible en mobile al tocar */
+        .navbar a:active::after {
+            width: 100%;
+        }
     }
+
 
 
 }
