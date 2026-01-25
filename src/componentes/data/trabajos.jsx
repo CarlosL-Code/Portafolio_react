@@ -91,36 +91,37 @@ const trabajos = [
     },
   },
 
-  {
-    id: 4,
-    categoria: "desarrollo-web",
-    thumb: {
-      url: "./assets/trabajos/trabajo-4.png",
-      alt: "Sitio Web Informativo para Taller Mecánico",
-    },
-    info: {
-      nombre: "Sitio web informativo — Taller mecánico en Temuco",
-      categoria: "WordPress · Diseño Web · Contacto Directo · Hosting",
-      github: "https://github.com/tuusuario/monitoreo-orquideas",
-      contenido: (
-        <>
-          <p>
-            Sitio web informativo desarrollado en WordPress para un taller
-            mecánico en Temuco, Chile. El proyecto estuvo enfocado en mejorar la
-            presencia digital del negocio y facilitar el contacto con clientes
-            mediante integración con WhatsApp, Google Maps y formularios de
-            contacto.
-          </p>
-
-          <ul>
-            <li>Diseño responsivo</li>
-            <li>Presentación clara de servicios</li>
-            <li>Contacto directo con clientes</li>
-          </ul>
-        </>
-      ),
-    },
+ {
+  id: 4,
+  categoria: "desarrollo-web",
+  thumb: {
+    url: "./assets/trabajos/trabajo-4.png",
+    alt: "Sitio Web Informativo para Carserv",
   },
+  info: {
+    nombre: "Sitio web informativo — Carserv",
+    categoria: "WordPress · Diseño Web · Contacto Directo · Hosting",
+    github: "https://carserv.cl",
+    contenido: (
+      <>
+        <p>
+          Sitio web informativo desarrollado en WordPress para el taller mecánico
+          Carserv en Temuco, Chile. El proyecto estuvo enfocado en mejorar la
+          presencia digital del negocio y facilitar el contacto con clientes
+          mediante integración con WhatsApp, Google Maps y formularios de
+          contacto.
+        </p>
+
+        <ul>
+          <li>Diseño responsivo</li>
+          <li>Presentación clara de servicios</li>
+          <li>Contacto directo con clientes</li>
+        </ul>
+      </>
+    ),
+  },
+}
+
 ];
 
 export default trabajos;
