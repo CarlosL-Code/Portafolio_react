@@ -102,26 +102,23 @@
         }
     }
 }
-
-/* ============================= */
-/* ANIMACIONES SCROLL */
-/* ============================= */
-
-.anim-scroll{
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+.anim-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.anim-left{
-    transform: translateX(-40px);
+.anim-left {
+  transform: translateX(-120px);
 }
 
-.anim-right{
-    transform: translateX(40px);
+.anim-right {
+  transform: translateX(120px);
 }
 
-.anim-scroll.visible{
-    opacity: 1;
-    transform: translate(0, 0);
+.anim-scroll.visible {
+  opacity: 1;
+  transform: translateX(0);
 }

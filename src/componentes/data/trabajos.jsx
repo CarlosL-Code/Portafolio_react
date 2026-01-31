@@ -8,22 +8,20 @@ const trabajos = [
     },
     info: {
       nombre: "Aplicación móvil Android con control por voz",
-      categoria: "Java · Android · IA · Voz a Texto · IoT",
+      categoria: "Java · Android · IA · IoT",
       github: "https://github.com/CarlosL-Code/App-Mobile-No-Touch",
       contenido: (
         <>
           <p>
-            Aplicación móvil desarrollada para Android, enfocada en
-            accesibilidad y automatización mediante comandos de voz. Permite el
-            encendido y apagado de funciones a través de reconocimiento de voz,
-            integrándose con dispositivos IoT para mejorar la interacción sin
-            contacto y la experiencia del usuario.
+            Proyecto académico enfocado en accesibilidad y automatización.
+            Se desarrolló una aplicación Android capaz de ejecutar acciones
+            mediante comandos de voz, como encender o apagar dispositivos.
           </p>
 
           <ul>
-            <li>Encendido y apagado por comandos de voz</li>
-            <li>Reconocimiento de voz con IA</li>
-            <li>Integración con dispositivos IoT</li>
+            <li>Aplicación desarrollada en Android Studio con Java</li>
+            <li>Reconocimiento de voz con procesamiento de palabras clave</li>
+            <li>Integración con microcontroladores e IoT</li>
           </ul>
         </>
       ),
@@ -38,23 +36,20 @@ const trabajos = [
       alt: "Sistema de Monitoreo IoT para Orquídeas",
     },
     info: {
-      nombre: "Sistema de monitoreo IoT para cultivo de orquídeas",
-      categoria: "Java · Spring Boot · REST API · MySQL · ESP32 · MQTT · Azure",
+      nombre: "Sistema IoT para monitoreo de orquídeas",
+      categoria: "Spring Boot · REST API · MQTT · ESP32",
       github: "https://github.com/CarlosL-Code/monitoreo-backend",
       contenido: (
         <>
           <p>
-            Sistema IoT orientado al monitoreo de variables ambientales críticas
-            para el cultivo de orquídeas. Permite la supervisión en tiempo real
-            de condiciones como temperatura y humedad, facilitando la toma de
-            decisiones para el cuidado óptimo de las plantas.
+            Sistema de monitoreo ambiental para cultivos, orientado al control
+            de temperatura y humedad en tiempo real mediante sensores IoT.
           </p>
 
           <ul>
-            <li>Sensores conectados a ESP32</li>
-            <li>Backend REST con Spring Boot</li>
-            <li>Comunicación MQTT</li>
-            <li>Despliegue en Azure</li>
+            <li>Backend REST desarrollado con Spring Boot</li>
+            <li>Comunicación MQTT con ESP32</li>
+            <li>Visualización de datos en tiempo real</li>
           </ul>
         </>
       ),
@@ -66,62 +61,85 @@ const trabajos = [
     categoria: "desarrollo-web",
     thumb: {
       url: "./assets/trabajos/trabajo-3.png",
-      alt: "https://paveleads.com/",
+      alt: "PAVELEADS Agency",
     },
     info: {
-      nombre: "Sitio web corporativo y soporte técnico — PAVELE Agency",
-      categoria: "WordPress · Soporte Web · DNS · SSL · Hosting",
-      github: "https://github.com/tuusuario/monitoreo-orquideas",
+      nombre: "Soporte y estabilización web — PAVELEADS Agency",
+      categoria: "WordPress · DNS · SSL · Hosting",
+      github: "https://paveleads.com/",
       contenido: (
         <>
           <p>
-            Desarrollo y publicación de un sitio web corporativo en WordPress
-            para PAVELE Agency. El proyecto incluyó la implementación del sitio,
-            configuración técnica, dominio y ajustes de DNS, además de soporte
-            técnico continuo para garantizar su correcto funcionamiento.
+            Trabajo de soporte técnico y estabilización de sitio web corporativo
+            en producción para una empresa con operación internacional.
           </p>
 
           <ul>
-            <li>Corrección de problemas DNS</li>
-            <li>Configuración de hosting</li>
-            <li>Soporte y ajustes en WordPress</li>
+            <li>Corrección de errores DNS y certificados SSL</li>
+            <li>Optimización de hosting y redirecciones</li>
+            <li>Soporte técnico continuo</li>
           </ul>
         </>
       ),
     },
   },
 
- {
-  id: 4,
+  {
+    id: 4,
+    categoria: "desarrollo-web",
+    thumb: {
+      url: "./assets/trabajos/trabajo-4.png",
+      alt: "Sitio Web Carserv",
+    },
+    info: {
+      nombre: "Sitio web informativo — Carserv",
+      categoria: "WordPress · Diseño Web · Contacto Directo",
+      github: "https://carserv.cl",
+      contenido: (
+        <>
+          <p>
+            Desarrollo de sitio web informativo para taller mecánico en Temuco,
+            enfocado en mejorar la presencia digital y el contacto con clientes.
+          </p>
+
+          <ul>
+            <li>Diseño web responsivo y claro</li>
+            <li>Integración con WhatsApp y Google Maps</li>
+            <li>Corrección de problemas técnicos y SSL</li>
+          </ul>
+        </>
+      ),
+    },
+  },
+  {
+  id: 5,
   categoria: "desarrollo-web",
   thumb: {
-    url: "./assets/trabajos/trabajo-4.png",
-    alt: "Sitio Web Informativo para Carserv",
+    url: "./assets/trabajos/trabajo-5.png",
+    alt: "Landing Page Pizzería — Proyecto Conceptual",
   },
   info: {
-    nombre: "Sitio web informativo — Carserv",
-    categoria: "WordPress · Diseño Web · Contacto Directo · Hosting",
-    github: "https://carserv.cl",
+    nombre: "Landing page comercial para pizzería (demo)",
+    categoria: "HTML · Tailwind CSS · UX/UI · Responsive Design",
+    github: "https://pizzeria-landing-demo-qmmq.vercel.app/index.html",
     contenido: (
       <>
         <p>
-          Sitio web informativo desarrollado en WordPress para el taller mecánico
-          Carserv en Temuco, Chile. El proyecto estuvo enfocado en mejorar la
-          presencia digital del negocio y facilitar el contacto con clientes
-          mediante integración con WhatsApp, Google Maps y formularios de
-          contacto.
+          Proyecto conceptual de landing page desarrollado como demostración
+          comercial para negocios gastronómicos, enfocado en conversión,
+          experiencia de usuario y diseño responsive.
         </p>
 
         <ul>
-          <li>Diseño responsivo</li>
-          <li>Presentación clara de servicios</li>
-          <li>Contacto directo con clientes</li>
+          <li>Diseño moderno orientado a negocios locales</li>
+          <li>Maquetación semántica con HTML y Tailwind CSS</li>
+          <li>Optimización para dispositivos móviles</li>
+          <li>Estructura preparada para SEO y escalabilidad</li>
         </ul>
       </>
     ),
   },
-}
-
+},
 ];
 
 export default trabajos;

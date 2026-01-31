@@ -1,121 +1,227 @@
 .trabajos {
-
-    .filtros {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 40px;
-
-        label {
-            display: flex;
-        }
-
-        .opcion {
-            padding: 10px 20px;
-            border-radius: 100px;
-            cursor: pointer;
-            border: 1px solid var(--shade-6);
-
-            .dark & {
-                color: var(--shade-4);
-                border: 1px solid var(--shade-7);
-            }
-        }
-
-        input[type="radio"] {
-            display: none;
-
-            &:checked + .opcion {
-                background: var(--primario);
-                color: #fff;
-                border: 1px solid transparent;
-            }
-        }
-    }
-
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 40px 20px;
-
-        @media screen and (max-width: 768px) {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        @media screen and (max-width: 576px) {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px 20px;
-        }
-    }
-
-    .trabajo {
-        transition: transform 0.3s ease;
-
-        &:hover {
-            transform: translateY(-6px);
-        }
-
-        .thumb {
-            display: block;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 10px;
-
-            img {
-                width: 100%;
-                transform: scale(1.1);
-                transition: 0.5s ease;
-            }
-        }
-
-        &:hover img {
-            transform: scale(1);
-        }
-
-        .info {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-
-            .nombre {
-                font-weight: 600;
-                font-size: 16px;
-            }
-
-            .categoria {
-                font-size: 14px;
-                color: var(--shade-6);
-            }
-
-            .btn-ir {
-                background: none;
-                border: none;
-                cursor: pointer;
-
-                svg {
-                    width: 26px;
-                    color: var(--primario);
-                }
-            }
-        }
-    }
+  padding: 120px 0;
 }
 
 /* ============================= */
-/* ANIMACIONES SCROLL */
+/* ENCABEZADO */
+/* ============================= */
+
+.trabajos .encabezado {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.trabajos .titulo {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.trabajos .subtitulo {
+  max-width: 520px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: var(--shade-5);
+  line-height: 1.6;
+}
+
+/* ============================= */
+/* FILTROS */
+/* ============================= */
+
+.trabajos .filtros {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+.trabajos .filtros label {
+  display: flex;
+}
+
+.trabajos .filtros input[type="radio"] {
+  display: none;
+}
+
+.trabajos .filtros .opcion {
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid var(--shade-6);
+  transition: all 0.25s ease;
+}
+
+.dark .trabajos .filtros .opcion {
+  color: var(--shade-4);
+  border-color: var(--shade-7);
+}
+
+.trabajos .filtros input[type="radio"]:checked + .opcion {
+  background: var(--primario);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* ============================= */
+/* GRID */
+/* ============================= */
+
+.trabajos .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px 24px;
+}
+
+@media (max-width: 1024px) {
+  .trabajos .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .trabajos .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================= */
+/* CARD */
+/* ============================= */
+
+.trabajo {
+  background: var(--shade-1);
+  border-radius: 16px;
+  padding: 14px;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.dark .trabajo {
+  background: var(--shade-9);
+}
+
+.trabajo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================= */
+/* THUMB */
+/* ============================= */
+
+.trabajo .thumb {
+  position: relative;
+  display: block;
+  height: 180px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.trabajo .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  transition: transform 0.6s ease;
+}
+
+.trabajo:hover .thumb img {
+  transform: scale(1);
+}
+
+/* Overlay elegante */
+
+.trabajo .thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 45%,
+    rgba(0, 0, 0, 0.45)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.trabajo:hover .thumb::after {
+  opacity: 1;
+}
+
+/* ============================= */
+/* INFO */
+/* ============================= */
+
+.trabajo .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.trabajo .textos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trabajo .nombre {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  color: inherit;
+}
+
+.trabajo .categoria {
+  font-size: 13px;
+  color: var(--shade-5);
+}
+
+/* ============================= */
+/* BOTÓN */
+/* ============================= */
+
+.trabajo .btn-ir {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.trabajo .btn-ir svg {
+  width: 22px;
+  color: var(--primario);
+  opacity: 0.6;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.trabajo:hover .btn-ir svg {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+/* ============================= */
+/* ANIMACIÓN SCROLL */
 /* ============================= */
 
 .anim-scroll {
-    opacity: 0;
-    transform: translateY(12px) scale(0.985);
-    transition:
-        opacity 1.2s ease-out,
-        transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: opacity, transform;
+  opacity: 0;
+  transform: translateY(12px) scale(0.985);
+  transition:
+    opacity 1.2s ease-out,
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
 
 .anim-scroll.visible {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }

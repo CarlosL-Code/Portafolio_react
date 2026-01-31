@@ -1,6 +1,6 @@
 .clientes {
 
-    .encabezado{
+    .encabezado {
         text-align: center;
         margin-bottom: 40px;
     }
@@ -14,8 +14,11 @@
         .logo {
             border-radius: 20px;
             max-width: 180px;
-            background: #fff;
             width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            background: #fff;
 
             @media screen and (max-width: 768px) {
                 max-width: 130px;

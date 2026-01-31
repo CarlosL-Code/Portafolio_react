@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const useScrollAnimation = (deps = []) => {
+const useScrollAnimation = () => {
   useEffect(() => {
     const elementos = document.querySelectorAll(".anim-scroll");
 
@@ -14,13 +14,15 @@ const useScrollAnimation = (deps = []) => {
           }
         });
       },
-      { threshold: 0.2 }
+      {
+        threshold: 0.2,
+      }
     );
 
     elementos.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  }, deps);
+  }, []);
 };
 
 export default useScrollAnimation;
