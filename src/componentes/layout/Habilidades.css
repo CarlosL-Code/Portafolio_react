@@ -1,76 +1,91 @@
 /* ===========================
    SECCIÓN HABILIDADES
 =========================== */
+
 .habilidades {
   width: 100%;
   padding: 50px 0 60px;
 
-  /* PARA SCROLL DESDE NAVBAR */
-  --header-height: 80px; /* Ajusta según tu navbar */
+  /* Scroll desde navbar */
+  --header-height: 80px;
   scroll-margin-top: calc(var(--header-height) + 20px);
 }
 
+/* Encabezado */
 .habilidades .encabezado {
   text-align: center;
-  margin-bottom: 60px; 
+  margin-bottom: 50px;
 }
 
-/* Grid de tarjetas */
+/* Grid */
 .habilidades-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
+  gap: 28px;
   width: 100%;
+
+  contain: layout paint;
 }
 
-/* Tarjeta individual */
+/* ===========================
+   TARJETA
+=========================== */
+
 .habilidad-card {
   background: var(--shade-2);
   border-radius: 20px;
   padding: 32px;
   cursor: default;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 
-  /* Eliminamos efecto hover que desordena */
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 
-  /* Animación inicial */
+  /* Animación optimizada */
   opacity: 0;
-  transform: translateY(60px) scale(0.98);
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.25s ease;
+
+  will-change: transform, opacity;
 }
 
-/* Modo oscuro */
+/* Visible */
+.habilidad-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover */
+.habilidad-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.10);
+}
+
+/* Delays MUY suaves */
+.habilidad-card:nth-child(1) {
+  transition-delay: 0.02s;
+}
+
+.habilidad-card:nth-child(2) {
+  transition-delay: 0.05s;
+}
+
+.habilidad-card:nth-child(3) {
+  transition-delay: 0.08s;
+}
+
+/* Dark mode */
 .dark .habilidad-card {
   background: #1e1e1e;
 }
 
-/* Hover elegante pero sin crecer */
-.habilidad-card:hover {
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-  transform: translateY(-4px) scale(1); /* no cambia el tamaño, solo sube un poco */
-}
+/* ===========================
+   TITULOS
+=========================== */
 
-/* Animación de scroll */
-.habilidad-card.anim-scroll {
-  transition:
-    opacity 0.6s ease-out,
-    transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-/* Tarjeta visible al hacer scroll */
-.habilidad-card.anim-scroll.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* Delays escalonados */
-.habilidad-card.anim-scroll:nth-child(1) { transition-delay: 0.1s; }
-.habilidad-card.anim-scroll:nth-child(2) { transition-delay: 0.2s; }
-.habilidad-card.anim-scroll:nth-child(3) { transition-delay: 0.3s; }
-.habilidad-card.anim-scroll:nth-child(4) { transition-delay: 0.4s; }
-.habilidad-card.anim-scroll:nth-child(5) { transition-delay: 0.5s; }
-
-/* Título de tarjeta */
 .habilidad-card h3 {
   font-size: 18px;
   font-weight: 600;
@@ -82,7 +97,10 @@
   color: var(--shade-2);
 }
 
-/* Lista de habilidades dentro de tarjeta */
+/* ===========================
+   LISTA
+=========================== */
+
 .habilidad-lista {
   display: flex;
   flex-direction: column;
@@ -93,6 +111,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+
   font-size: 15px;
   color: var(--shade-7);
 }
@@ -101,28 +120,55 @@
   color: var(--shade-4);
 }
 
-/* Icono de habilidad */
+/* ===========================
+   ICONOS
+=========================== */
+
 .habilidad-icono {
   width: 28px;
   height: 28px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: 8px;
+
   background: rgba(216, 58, 58, 0.12);
+
   color: var(--primario);
   font-size: 14px;
+
+  flex-shrink: 0;
 }
 
 /* ===========================
    RESPONSIVE
 =========================== */
+
 @media screen and (max-width: 768px) {
+
+  .habilidades {
+    padding: 40px 0 50px;
+  }
+
+  .habilidades .encabezado {
+    margin-bottom: 35px;
+  }
+
   .habilidades-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .habilidad-card {
-    transform: translateY(40px) scale(0.98); /* menos desplazamiento en móvil */
+    padding: 24px;
+
+    /* Menos movimiento en móvil */
+    transform: translateY(15px);
+  }
+
+  .habilidad-item {
+    font-size: 14px;
   }
 }
