@@ -1,17 +1,14 @@
 import "./Modal.css";
 
 const Modal = ({ closeModal, trabajo }) => {
+  if (!trabajo) return null;
+
   return (
     <div className="overlay" onClick={closeModal}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
 
-        {/* Botón cerrar */}
-        <button className="btn-cerrar" onClick={closeModal}>
-          ✕
-        </button>
-
         <div className="modal-grid">
-          {/* Imagen */}
+
           <div className="modal-image">
             <img
               src={trabajo.thumb.url}
@@ -19,11 +16,19 @@ const Modal = ({ closeModal, trabajo }) => {
             />
           </div>
 
-          {/* Contenido */}
           <div className="modal-content">
 
             <div className="modal-header">
               <span className="categoria">{trabajo.info.categoria}</span>
+
+              <button
+                className="btn-cerrar"
+                onClick={closeModal}
+                aria-label="Cerrar modal"
+              >
+                ✕
+              </button>
+
               <h3 className="titulo">{trabajo.info.nombre}</h3>
             </div>
 
@@ -37,7 +42,7 @@ const Modal = ({ closeModal, trabajo }) => {
                   href={trabajo.info.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="boton"
+                  className="btn-modal"
                 >
                   Ver proyecto
                 </a>

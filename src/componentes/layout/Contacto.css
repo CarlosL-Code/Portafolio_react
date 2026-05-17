@@ -1,85 +1,140 @@
-.contacto{
-    .formulario{
-        width: 70%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
+/* ===========================
+   SECCIÓN CONTACTO
+=========================== */
+.contacto {
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-        .grupo-formulario{
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
+.contacto .encabezado {
+  text-align: center;
+  margin-bottom: 60px;
+}
 
-            &.mensaje{
-                grid-column: span 2;
-            }
+.contacto .formulario {
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
 
-            &.error{
-                grid-column: span 2;
-                background: var(--primario);
-                color: #fff;
-                padding: 16px;
-                border-radius: 5px;
-                font-weight: 500;
-            }
+.contacto .grupo-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 
-            &.enviar{
-                grid-column: span 2;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
+.contacto .grupo-formulario label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--shade-8);
+}
 
-            label{
-                font-size: 14px;
-                font-weight: 500;
-            }
+.dark .contacto .grupo-formulario label {
+  color: var(--shade-2);
+}
 
-            input, textarea{
-                width: 100%;
-                padding: 15px;
-                border-radius: 5px;
-                border: none;
-                font-size: 16px;
-                font-family: 'Inter', sans-serif;
-            }
+/* Inputs y textarea */
+.contacto input,
+.contacto textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--shade-3);
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  background: var(--shade-1);
+  color: var(--shade-9);
+  transition: all 0.3s ease;
+}
 
-            input:hover, textarea:hover, input:focus, textarea:focus{
-                outline: 2px solid var(--primario);
-            }
+.dark .contacto input,
+.dark .contacto textarea {
+  background: var(--shade-10);
+  color: var(--shade-1);
+  border: 1px solid var(--shade-7);
+}
 
-            textarea {
-                resize: vertical;
-                min-height: 80px;
-                max-height: 200px;
-            }
+.contacto input:focus,
+.contacto textarea:focus,
+.contacto input:hover,
+.contacto textarea:hover {
+  outline: none;
+  border: 1px solid var(--primario);
+  box-shadow: 0 4px 12px rgba(216, 58, 58, 0.25);
+}
 
-            .dark & input, .dark & textarea {
-                background: var(--shade-10);
-                color: var(--shade-1);
-            }
-        }
+/* Texto largo (mensaje) ocupa toda la fila */
+.contacto .grupo-formulario.mensaje {
+  grid-column: span 2;
+}
 
-        @media screen and (max-width: 768px) {
-            &{
-                width: 100%;
-            }
-        }
+.contacto textarea {
+  resize: vertical;
+  min-height: 120px;
+  max-height: 300px;
+}
 
-         @media screen and (max-width: 576px) {
-            &{
+/* Mensaje de error */
+.contacto .grupo-formulario.error {
+  grid-column: span 2;
+  background: var(--primario);
+  color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
-                grid-template-columns: 1fr;
+/* Botón enviar */
+.contacto .grupo-formulario.enviar {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-                .grupo-formulario{
-                    &.mensaje,
-                    &.error, 
-                    &.enviar{
-                        grid-column: span 1;
-                    }
-                }
-            
-            }
-        }
-    }
+.contacto .grupo-formulario.enviar .boton {
+  padding: 16px 32px;
+  font-size: 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  background: var(--primario);
+  color: #fff;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.contacto .grupo-formulario.enviar .boton:hover {
+  background: var(--primario-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(216, 58, 58, 0.35);
+}
+
+.contacto .grupo-formulario.enviar .icono {
+  display: flex;
+  align-items: center;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media screen and (max-width: 768px) {
+  .contacto .formulario {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .contacto .grupo-formulario.mensaje,
+  .contacto .grupo-formulario.error,
+  .contacto .grupo-formulario.enviar {
+    grid-column: span 1;
+  }
 }

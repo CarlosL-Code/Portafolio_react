@@ -14,7 +14,8 @@ import {
 } from "react-icons/fa";
 
 import { SiMysql, SiPython, SiWordpress } from "react-icons/si";
-import { VscCode } from "react-icons/vsc";
+import { MdSmartToy } from "react-icons/md"; // Icono de robot/IA
+
 
 const Habilidades = () => {
   useScrollAnimation();
@@ -100,8 +101,8 @@ const Habilidades = () => {
                 WordPress
               </li>
               <li className="habilidad-item">
-                <span className="habilidad-icono"><VscCode /></span>
-                VS Code
+                <span className="habilidad-icono"><MdSmartToy /></span>
+                IA
               </li>
               <li className="habilidad-item">
                 <span className="habilidad-icono"><FaDocker /></span>

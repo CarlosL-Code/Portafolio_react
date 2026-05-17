@@ -4,115 +4,134 @@
     gap: 20px;
     align-items: center;
     padding: 40px 0;
+    overflow-x: hidden;
+}
 
-    .logo {
+/* =========================
+   LOGO
+========================= */
+.header .logo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header .logo .titulo {
+    font-size: 34px;
+    font-family: "Merriweather", serif;
+    color: var(--shade-9);
+}
+
+.dark .header .logo .titulo {
+    color: var(--shade-1);
+}
+
+.header .logo .subtitulo {
+    font-size: 16px;
+    color: var(--primario);
+    font-weight: 500;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.header .navbar {
+    display: flex;
+    gap: 36px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* 🔑 evita desbordes */
+}
+
+/* =========================
+   LINKS
+========================= */
+.header .navbar a {
+    position: relative;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--shade-8);
+    padding: 6px 0;
+    white-space: nowrap; /* evita saltos feos */
+    transition: color 0.3s ease;
+}
+
+.dark .header .navbar a {
+    color: var(--shade-4);
+}
+
+/* Línea animada */
+.header .navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: var(--primario);
+    transition: width 0.35s ease;
+}
+
+.header .navbar a:hover {
+    color: var(--primario);
+}
+
+.header .navbar a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   TABLET (≤768px)
+========================= */
+@media (max-width: 768px) {
+
+    .header {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 30px 0;
+    }
+
+    .header .logo {
+        text-align: center;
+    }
+
+    .header .navbar {
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+/* =========================
+   MOBILE (≤576px)
+========================= */
+@media (max-width: 576px) {
+
+    .header {
         display: flex;
         flex-direction: column;
-        gap: 5px;
-
-        .titulo {
-            font-size: 34px;
-            font-family: "Merriweather", serif;
-            color: var(--shade-);
-
-            .dark & {
-                color: var(--shade-1);
-            }
-        }
-
-        .subtitulo {
-            font-size: 16px;
-            color: var(--primario);
-            font-weight: 500;
-
-            .dark & {
-                color: var(--primario);
-            }
-        }
+        align-items: center;
+        padding: 25px 0;
     }
 
-    .navbar {
-        display: flex;
-        gap: 40px;
+    .header .logo .titulo {
+        font-size: 28px;
+    }
+
+    .header .navbar {
+        width: 100%;
         justify-content: center;
+        gap: 16px;
+        padding: 0 12px; /* 🔑 evita corte lateral */
     }
 
-    .navbar a {
-        position: relative;
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: 500;
-        color: var(--shade-8);
-        padding: 6px 0;
-        transition: color 0.3s ease;
+    .header .navbar a {
+        font-size: 15px;
+        padding: 10px 6px;
     }
 
-    .dark .navbar a {
-        color: var(--shade-3);
-    }
-
-    /* Línea animada */
-    .navbar a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -6px;
-        width: 0;
-        height: 2px;
-        background-color: var(--primario);
-        transition: width 0.35s ease;
-    }
-
-    .navbar a:hover {
-        color: var(--primario);
-    }
-
-    .navbar a:hover::after {
+    /* Línea visible al tocar */
+    .header .navbar a:active::after {
         width: 100%;
     }
-
-
-    @media screen and (max-width: 768px) {
-        & {
-            .logo {
-                grid-column: span 3;
-                text-align: center;
-            }
-
-            .navbar {
-                grid-column: span 2;
-                justify-content: flex-start;
-                gap: 15px;
-            }
-        }
-    }
-
-
-    @media screen and (max-width: 576px) {
-
-        & {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .navbar {
-            width: 100%;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .navbar a {
-            font-size: 15px;
-            padding: 10px 6px;
-        }
-
-        /* Línea siempre visible en mobile al tocar */
-        .navbar a:active::after {
-            width: 100%;
-        }
-    }
-
-
-
 }

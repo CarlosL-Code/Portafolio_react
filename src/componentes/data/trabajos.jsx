@@ -27,6 +27,34 @@ const trabajos = [
       ),
     },
   },
+  {
+    id: 6,
+    categoria: "desarrollo-web",
+    thumb: {
+      url: "./assets/trabajos/trabajo-6.png",
+      alt: "Sistema de pedidos con QR y WhatsApp para restaurante chino",
+    },
+    info: {
+      nombre: "Sistema de pedidos que incluye WhatsApp para restaurante chino",
+      categoria: "Next.js · React · TypeScript · Tailwind CSS · Framer Motion",
+      github: "https://pagina-para-restaurante.netlify.app/",
+      contenido: (
+        <>
+         <p>
+          Plataforma web profesional desarrollada con Next.js para restaurantes
+          de comida china, orientada a pedidos en mesa mediante código QR y envío
+          automático del pedido vía WhatsApp.
+        </p>
+        <p>
+          El sistema permite que el cliente escanee un código QR desde su mesa,
+          acceda al menú digital, seleccione múltiples platos, controle
+          cantidades y envíe el pedido completo directamente al WhatsApp del
+          restaurante.
+        </p>
+        </>
+      ),
+    },
+  },
 
   {
     id: 2,

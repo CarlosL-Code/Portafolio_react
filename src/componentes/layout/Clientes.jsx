@@ -27,7 +27,7 @@ const Clientes = () => {
         <img
           src="./assets/logos/carserv.png"
           alt="Logo de Carserv"
-          className="logo blak"
+          className="logo"
         />
       </div>
 

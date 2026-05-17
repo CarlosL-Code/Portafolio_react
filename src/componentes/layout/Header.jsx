@@ -9,8 +9,9 @@ const Header = () => {
           <p className="subtitulo">Desarrollador de Software en formación</p>
         </div>
         <nav className="navbar">
-          <a href="#trabajos">Trabajos</a>
           <a href="#acerca-de">Acerca de</a>
+          <a href="#habilidades">Habilidades</a>
+          <a href="#trabajos">Trabajos</a>
           <a href="#contacto">Contacto</a>
           <a
           href="/carlos-lozano-silva-cv.pdf"

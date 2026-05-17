@@ -1,4 +1,6 @@
-/* OVERLAY */
+/* =========================
+   OVERLAY
+========================= */
 .overlay {
   position: fixed;
   inset: 0;
@@ -6,107 +8,188 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 16px;
   z-index: 9999;
+  backdrop-filter: blur(4px);
 }
 
-/* MODAL */
+/* =========================
+   MODAL
+========================= */
 .modal {
-  background: #111;
-  width: 90%;
+  background: var(--shade-1);
+  color: var(--shade-9);
+  width: 100%;
   max-width: 900px;
-  max-height: 85vh;
+  max-height: 90svh;
   border-radius: 18px;
-  position: relative;
-  overflow: hidden;
-
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--shade-3);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  animation: modalOpen 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* BOTÓN CERRAR */
+/* Dark mode */
+body.dark .modal {
+  background: var(--shade-9);
+  color: var(--dark-text);
+  border-color: var(--shade-8);
+}
+
+/* =========================
+   BOTÓN CERRAR
+========================= */
 .btn-cerrar {
   position: absolute;
   top: 14px;
   right: 14px;
-  background: rgba(255, 255, 255, 0.08);
-  border: none;
-  color: #fff;
-  font-size: 1.1rem;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
+  border: none;
   cursor: pointer;
+  background: var(--shade-2);
+  color: var(--shade-9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 10;
 }
 
-/* GRID */
+body.dark .btn-cerrar {
+  background: var(--shade-8);
+  color: var(--dark-text);
+}
+
+/* =========================
+   GRID
+========================= */
 .modal-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  display: flex;
   height: 100%;
 }
 
-/* IMAGEN */
+/* Imagen */
+.modal-image {
+  flex: 0 0 40%;
+  background: var(--shade-2);
+}
+
 .modal-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* CONTENIDO */
+/* =========================
+   CONTENIDO
+========================= */
 .modal-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  height: 100%;
   padding: 2rem;
-  color: #fff;
+  min-height: 0; /* 🔑 CLAVE */
 }
 
-/* HEADER */
+/* Header */
 .modal-header {
+  flex-shrink: 0;
   margin-bottom: 1rem;
 }
 
 .categoria {
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  color: #aaa;
+  font-size: 0.75rem;
   text-transform: uppercase;
+  color: var(--primario);
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .titulo {
-  font-size: 1.4rem;
-  margin-top: 0.3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  font-family: "Merriweather", serif;
 }
 
-/* BODY (SCROLL REAL) */
+/* =========================
+   BODY (SCROLL REAL)
+========================= */
 .modal-body {
   flex: 1;
   overflow-y: auto;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #ddd;
+  font-size: 1rem;
+  line-height: 1.65;
   padding-right: 0.5rem;
 }
 
-/* FOOTER (BOTÓN FIJO Y VISIBLE) */
+/* =========================
+   FOOTER FIJO
+========================= */
 .modal-footer {
-  margin-top: 1.5rem;
+  flex-shrink: 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--shade-3);
+  background: inherit;
 }
 
 
-
-.boton:hover {
-  background: #ff6a2a;
+body.dark .modal-footer {
+  border-color: var(--shade-8);
 }
 
-/* RESPONSIVE */
+.btn-modal {
+  width: 100%;
+  margin-top: 0.5rem;   /* separa del borde */
+  background: var(--primario);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 14px 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================
+   ANIMACIÓN
+========================= */
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 768px) {
+
   .modal-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    
   }
 
   .modal-image {
     display: none;
   }
+
+  .modal-content {
+    padding: 1.25rem;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .titulo {
+    font-size: 1.3rem;
+  }
+  
 }

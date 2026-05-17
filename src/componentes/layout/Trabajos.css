@@ -1,5 +1,5 @@
 .trabajos {
-  padding: 120px 0;
+  padding: 150px 0;
 }
 
 /* ============================= */
@@ -8,7 +8,7 @@
 
 .trabajos .encabezado {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .trabajos .titulo {
@@ -22,7 +22,7 @@
   margin: 0 auto;
   font-size: 16px;
   color: var(--shade-5);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* ============================= */
@@ -75,15 +75,26 @@
   gap: 32px 24px;
 }
 
-@media (max-width: 1024px) {
+/* Desktop medio */
+@media (max-width: 1200px) {
   .trabajos .grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 900px) {
   .trabajos .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 28px 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .trabajos .grid {
+    grid-template-columns: 1fr; /* UNA sola columna */
+    gap: 22px;
   }
 }
 
@@ -94,7 +105,7 @@
 .trabajo {
   background: var(--shade-1);
   border-radius: 16px;
-  padding: 14px;
+  padding: 16px;
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease;
@@ -116,10 +127,16 @@
 .trabajo .thumb {
   position: relative;
   display: block;
-  height: 180px;
+  height: 190px;
   border-radius: 14px;
   overflow: hidden;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 576px) {
+  .trabajo .thumb {
+    height: 200px;
+  }
 }
 
 .trabajo .thumb img {
@@ -161,21 +178,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
 }
 
 .trabajo .textos {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .trabajo .nombre {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.4;
   text-decoration: none;
   color: inherit;
+}
+
+@media (max-width: 576px) {
+  .trabajo .nombre {
+    font-size: 17px;
+  }
 }
 
 .trabajo .categoria {
@@ -191,13 +214,13 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px;
+  padding: 8px;
 }
 
 .trabajo .btn-ir svg {
   width: 22px;
   color: var(--primario);
-  opacity: 0.6;
+  opacity: 0.65;
   transition:
     opacity 0.25s ease,
     transform 0.25s ease;
@@ -205,7 +228,7 @@
 
 .trabajo:hover .btn-ir svg {
   opacity: 1;
-  transform: translateX(2px);
+  transform: translateX(3px);
 }
 
 /* ============================= */
