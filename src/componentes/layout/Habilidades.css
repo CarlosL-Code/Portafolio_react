@@ -6,47 +6,57 @@
   width: 100%;
   padding: 50px 0 60px;
 
-  /* Scroll desde navbar */
   --header-height: 80px;
   scroll-margin-top: calc(var(--header-height) + 20px);
 }
 
-/* Encabezado */
+/* ===========================
+   ENCABEZADO
+=========================== */
+
 .habilidades .encabezado {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
-/* Grid */
+/* ===========================
+   GRID
+=========================== */
+
 .habilidades-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
+  gap: 24px;
+
   width: 100%;
 
   contain: layout paint;
 }
 
 /* ===========================
-   TARJETA
+   CARD
 =========================== */
 
 .habilidad-card {
   background: var(--shade-2);
+
   border-radius: 20px;
-  padding: 32px;
+
+  padding: 30px;
+
   cursor: default;
 
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 
-  /* Animación optimizada */
+  /* Animación MUY ligera */
   opacity: 0;
-  transform: translateY(20px);
+
+  transform: translateY(10px);
 
   transition:
-    opacity 0.35s ease,
-    transform 0.35s ease,
-    box-shadow 0.25s ease;
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.2s ease;
 
   will-change: transform, opacity;
 }
@@ -54,6 +64,7 @@
 /* Visible */
 .habilidad-card.visible {
   opacity: 1;
+
   transform: translateY(0);
 }
 
@@ -61,20 +72,7 @@
 .habilidad-card:hover {
   transform: translateY(-2px);
 
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.10);
-}
-
-/* Delays MUY suaves */
-.habilidad-card:nth-child(1) {
-  transition-delay: 0.02s;
-}
-
-.habilidad-card:nth-child(2) {
-  transition-delay: 0.05s;
-}
-
-.habilidad-card:nth-child(3) {
-  transition-delay: 0.08s;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
 }
 
 /* Dark mode */
@@ -83,13 +81,15 @@
 }
 
 /* ===========================
-   TITULOS
+   TITULO CARD
 =========================== */
 
 .habilidad-card h3 {
   font-size: 18px;
   font-weight: 600;
+
   margin-bottom: 20px;
+
   color: var(--shade-9);
 }
 
@@ -104,15 +104,18 @@
 .habilidad-lista {
   display: flex;
   flex-direction: column;
+
   gap: 14px;
 }
 
 .habilidad-item {
   display: flex;
   align-items: center;
+
   gap: 12px;
 
   font-size: 15px;
+
   color: var(--shade-7);
 }
 
@@ -137,6 +140,7 @@
   background: rgba(216, 58, 58, 0.12);
 
   color: var(--primario);
+
   font-size: 14px;
 
   flex-shrink: 0;
@@ -153,19 +157,19 @@
   }
 
   .habilidades .encabezado {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
   }
 
   .habilidades-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+
+    gap: 18px;
   }
 
   .habilidad-card {
     padding: 24px;
 
-    /* Menos movimiento en móvil */
-    transform: translateY(15px);
+    transform: translateY(8px);
   }
 
   .habilidad-item {

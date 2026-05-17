@@ -4,7 +4,7 @@ const useScrollAnimation = () => {
 
   useEffect(() => {
 
-    const elements = document.querySelectorAll(".anim-scroll");
+    const elementos = document.querySelectorAll(".anim-scroll");
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -12,9 +12,9 @@ const useScrollAnimation = () => {
         entries.forEach((entry) => {
 
           if (entry.isIntersecting) {
+
             entry.target.classList.add("visible");
 
-            // Deja de observar para mejorar rendimiento
             observer.unobserve(entry.target);
           }
 
@@ -22,12 +22,12 @@ const useScrollAnimation = () => {
 
       },
       {
-        threshold: 0.08,
-        rootMargin: "0px 0px -40px 0px",
+        threshold: 0.01,
+        rootMargin: "100px 0px",
       }
     );
 
-    elements.forEach((el) => observer.observe(el));
+    elementos.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
 

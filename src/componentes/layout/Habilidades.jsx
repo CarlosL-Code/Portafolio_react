@@ -20,27 +20,33 @@ const Habilidades = () => {
   useScrollAnimation();
 
   return (
-    <section
-      className="habilidades anim-scroll anim-fade"
-      id="habilidades"
-    >
+    <section className="habilidades" id="habilidades">
+
       <div className="contenedor">
 
-        <div className="encabezado anim-scroll anim-fade">
-          <h2 className="titulo">Habilidades Técnicas</h2>
+        {/* Encabezado SIN animación */}
+        <div className="encabezado">
+
+          <h2 className="titulo">
+            Habilidades Técnicas
+          </h2>
 
           <p className="subtitulo">
             Tecnologías y herramientas con las que trabajo actualmente
           </p>
+
         </div>
 
+        {/* Grid */}
         <div className="habilidades-grid">
 
           {/* Frontend */}
           <div className="habilidad-card anim-scroll">
+
             <h3>Frontend</h3>
 
             <ul className="habilidad-lista">
+
               <li className="habilidad-item">
                 <span className="habilidad-icono">
                   <FaHtml5 />
@@ -75,14 +81,18 @@ const Habilidades = () => {
                 </span>
                 Vite
               </li>
+
             </ul>
+
           </div>
 
           {/* Backend */}
           <div className="habilidad-card anim-scroll">
+
             <h3>Backend</h3>
 
             <ul className="habilidad-lista">
+
               <li className="habilidad-item">
                 <span className="habilidad-icono">
                   <FaPhp />
@@ -117,14 +127,18 @@ const Habilidades = () => {
                 </span>
                 MySQL
               </li>
+
             </ul>
+
           </div>
 
           {/* Herramientas */}
           <div className="habilidad-card anim-scroll">
+
             <h3>Herramientas</h3>
 
             <ul className="habilidad-lista">
+
               <li className="habilidad-item">
                 <span className="habilidad-icono">
                   <FaGitAlt />
@@ -159,11 +173,15 @@ const Habilidades = () => {
                 </span>
                 Azure
               </li>
+
             </ul>
+
           </div>
 
         </div>
+
       </div>
+
     </section>
   );
 };
