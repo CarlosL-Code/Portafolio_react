@@ -97,10 +97,4 @@
             }
         }
     }
-
-    @media screen and (max-width: 576px) {
-        &{
-            /* Eliminamos la sobreescritura del margin-top para que respete los 130px y el header flotante no lo tape */
-        }
-    }
 }
