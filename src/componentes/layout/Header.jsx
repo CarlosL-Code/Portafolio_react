@@ -25,11 +25,16 @@ const Header = () => {
           
           {/* Botón Hamburguesa solo visible en móvil */}
           <button className="menu-toggle" onClick={toggleMenu} aria-label="Abrir menú">
-            {isMenuOpen ? <FaTimes /> : <FaBars />}
+            <FaBars />
           </button>
         </div>
 
         <nav className={`navbar ${isMenuOpen ? 'open' : ''}`}>
+          {/* Botón de cerrar dentro del menú lateral en móvil */}
+          <button className="close-menu" onClick={closeMenu} aria-label="Cerrar menú">
+            <FaTimes />
+          </button>
+
           <a href="#acerca-de" onClick={closeMenu}>Acerca de</a>
           <a href="#habilidades" onClick={closeMenu}>Habilidades</a>
           <a href="#trabajos" onClick={closeMenu}>Trabajos</a>

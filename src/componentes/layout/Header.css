@@ -78,6 +78,10 @@
     color: var(--shade-1);
 }
 
+.close-menu {
+    display: none; /* Oculto en escritorio, se activa en móvil */
+}
+
 /* =========================
    NAVBAR
 ========================= */
@@ -175,23 +179,53 @@
         display: block; /* Visible en móvil */
     }
 
+    /* Botón cerrar dentro del menú lateral */
+    .close-menu {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 28px;
+        color: var(--shade-9);
+        cursor: pointer;
+        align-self: flex-end;
+        margin-bottom: 20px;
+    }
+
+    .dark .close-menu {
+        color: var(--shade-1);
+    }
+
     .header .navbar {
+        /* CAJA LATERAL (SIDEBAR) SÓLIDA */
+        position: fixed;
+        top: 0;
+        right: -100%; /* Oculto fuera de la pantalla por defecto */
+        width: 260px;
+        height: 100vh;
+        background-color: #ffffff;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+        z-index: 2000; /* Asegurar que flote sobre todo */
         flex-direction: column;
-        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 30px 20px;
         gap: 20px;
-        padding-top: 20px;
+        transition: right 0.4s ease; /* Deslizamiento lateral */
         
-        /* Oculto por defecto usando max-height y opacidad para animar */
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+        /* Limpiamos las animaciones anteriores */
+        max-height: none;
+        opacity: 1;
+        overflow-y: auto;
+    }
+
+    .dark .header .navbar {
+        background-color: #0D0D0D; /* Fondo negro sólido en modo oscuro */
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.6);
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .header .navbar.open {
-        max-height: 400px; /* Suficiente para el contenido */
-        opacity: 1;
-        padding-bottom: 10px;
+        right: 0; /* Aparece deslizándose */
     }
 
     .header .navbar a {
