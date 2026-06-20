@@ -7,6 +7,7 @@ import Clientes from "./componentes/layout/Clientes";
 import Contacto from "./componentes/layout/Contacto";
 import Footer from "./componentes/layout/Footer";
 import ComoTrabajo from "./componentes/layout/ComoTrabajo";
+import CallToAction from "./componentes/layout/CallToAction";
 
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -22,6 +23,7 @@ function App() {
         <Habilidades />
         <Clientes />
         <Trabajos />
+        <CallToAction />
         <Contacto />
         <Footer />
       </div>
