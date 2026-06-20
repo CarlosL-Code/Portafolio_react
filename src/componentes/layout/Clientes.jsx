@@ -7,10 +7,10 @@ const Clientes = () => {
 
   // Puedes cambiar el '#' por la URL real del sitio web de tu cliente
   const clientes = [
-    { src: "/assets/logos/paveleads.jpg", alt: "Logo de Paveleads", href: "#" },
-    { src: "/assets/logos/carserv.JPG", alt: "Logo de Carserv", href: "#" },
-    { src: "/assets/logos/hmc_motors.jpg", alt: "Logo de HMC Motors", href: "#" },
-    { src: "/assets/logos/primeros_resultados.jpg", alt: "Logo de Primeros Resultados", href: "#" }
+    { src: "/assets/logos/paveleads.png", alt: "Logo de Paveleads", href: "#" },
+    { src: "/assets/logos/carserv.png", alt: "Logo de Carserv", href: "#" },
+    { src: "/assets/logos/hmc_motors.png", alt: "Logo de HMC Motors", href: "#" },
+    { src: "/assets/logos/primeros_resultados.png", alt: "Logo de Primeros Resultados", href: "#" }
   ];
 
   // Triplicamos la lista internamente para asegurar que la pista exceda el ancho de la pantalla 
