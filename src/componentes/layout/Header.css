@@ -13,7 +13,7 @@
     width: 95%;
     max-width: 1200px;
     z-index: 1000;
-    background-color: rgba(242, 242, 242, 0.75); /* --shade-1 transparente */
+    background-color: rgba(242, 242, 242, 0.45); /* Reducida la opacidad para que el cristal sea más transparente */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 20px;
@@ -25,7 +25,7 @@
 
 /* Modo oscuro para el Header flotante */
 .dark .header {
-    background-color: rgba(13, 13, 13, 0.75); /* --dark-bg transparente */
+    background-color: rgba(13, 13, 13, 0.45); /* Reducida la opacidad en modo oscuro también */
     border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
