@@ -31,7 +31,7 @@
         display: flex;
         overflow: hidden;
         user-select: none;
-        gap: 2rem;
+        gap: 3rem; /* Aumentado para mayor separación */
         
         /* Efecto de difuminado a los lados (Fade) */
         mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
@@ -56,7 +56,7 @@
         align-items: center;
         justify-content: space-around;
         min-width: 100%;
-        gap: 2rem;
+        gap: 3rem; /* Aumentado para mayor separación */
         animation: marqueeScroll 40s linear infinite;
     }
 
@@ -78,8 +78,8 @@
     }
 
     .brand-item__media {
-        width: 180px;  /* Tamaño más profesional, no tan gigantes */
-        height: 90px;
+        width: 210px;  /* Aumentado ligeramente a petición del usuario */
+        height: 105px; /* Proporcional al ancho */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -148,7 +148,7 @@
 /* Keyframes movidos fuera del bloque anidado para evitar error de minificador en producción */
 @keyframes marqueeScroll {
     from { transform: translateX(0); }
-    to { transform: translateX(calc(-100% - 2rem)); } /* -100% ancho del track - gap del wrapper */
+    to { transform: translateX(calc(-100% - 3rem)); } /* -100% ancho del track - gap del wrapper */
 }
 
 @keyframes marqueeScrollMobile {
