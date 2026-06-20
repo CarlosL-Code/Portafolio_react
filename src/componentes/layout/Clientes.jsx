@@ -13,8 +13,9 @@ const Clientes = () => {
     { src: "/assets/logos/primeros_resultados.jpg", alt: "Logo de Primeros Resultados", href: "#" }
   ];
 
-  // Duplicamos la lista internamente para que haya suficientes logos y no queden espacios gigantes en pantallas grandes
-  const logosPorTrack = [...clientes, ...clientes];
+  // Triplicamos la lista internamente para asegurar que la pista exceda el ancho de la pantalla 
+  // y así evitar que flexbox los separe demasiado (space-around) en monitores grandes.
+  const logosPorTrack = [...clientes, ...clientes, ...clientes];
 
   return (
     <section className="clientes" id="clientes">

@@ -29,7 +29,7 @@
         display: flex;
         overflow: hidden;
         user-select: none;
-        gap: 3rem;
+        gap: 2rem; /* Reducido para que estén más juntos */
         
         /* Efecto de difuminado a los lados */
         mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
@@ -54,9 +54,9 @@
         align-items: center;
         justify-content: space-around;
         min-width: 100%;
-        gap: 3rem;
-        /* Aumentamos el tiempo ya que ahora hay el doble de logos por track */
-        animation: marqueeScroll 30s linear infinite;
+        gap: 2rem; /* Reducido para que estén más juntos */
+        /* Aumentamos el tiempo ya que ahora hay el triple de logos por track */
+        animation: marqueeScroll 40s linear infinite;
     }
 
     .logos-wrapper:hover .logos-track {
@@ -74,7 +74,14 @@
         justify-content: center;
         text-decoration: none;
         transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        /* Eliminado mix-blend-mode: multiply; porque oculta los logos en modo oscuro */
+        
+        /* Esto elimina el fondo blanco de los JPGs en modo claro (multiplica blanco con el fondo gris claro) */
+        mix-blend-mode: multiply; 
+    }
+
+    /* En modo oscuro, el multiply oscurecería el logo entero, así que lo regresamos a la normalidad */
+    body.dark .brand-item {
+        mix-blend-mode: normal;
     }
 
     .brand-item__media {
@@ -87,6 +94,11 @@
         
         /* Filtro blanco y negro */
         filter: grayscale(100%) opacity(0.8);
+    }
+
+    body.dark .brand-item__media {
+        /* En modo oscuro aumentamos ligeramente el brillo para compensar */
+        filter: grayscale(100%) opacity(0.9) brightness(1.2);
     }
 
     .brand-item:hover .brand-item__media {
@@ -112,12 +124,12 @@
         }
 
         .logos-wrapper {
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .logos-track {
-            gap: 2rem;
-            animation: marqueeScrollMobile 20s linear infinite;
+            gap: 1.5rem;
+            animation: marqueeScrollMobile 25s linear infinite;
         }
 
         .brand-item__media {
@@ -130,10 +142,10 @@
 /* Keyframes movidos fuera del bloque anidado para evitar error de minificador en producción */
 @keyframes marqueeScroll {
     from { transform: translateX(0); }
-    to { transform: translateX(calc(-100% - 3rem)); } /* -100% ancho del track - gap del wrapper */
+    to { transform: translateX(calc(-100% - 2rem)); } /* -100% ancho del track - gap del wrapper */
 }
 
 @keyframes marqueeScrollMobile {
     from { transform: translateX(0); }
-    to { transform: translateX(calc(-100% - 2rem)); } 
+    to { transform: translateX(calc(-100% - 1.5rem)); } 
 }
