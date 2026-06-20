@@ -84,18 +84,25 @@
         justify-content: center;
         transition: filter 0.4s ease, transform 0.4s ease, opacity 0.4s ease;
         
-        /* Filtro blanco y negro */
+        /* Filtro blanco y negro en modo claro (los hace oscuros/grises) */
         filter: grayscale(100%) opacity(0.8);
     }
 
     body.dark .brand-item__media {
-        /* En modo oscuro aumentamos ligeramente el brillo para compensar */
-        filter: grayscale(100%) opacity(0.9) brightness(1.2);
+        /* En modo oscuro, convertimos los logos a blanco sólido para que resalten perfecto */
+        filter: brightness(0) invert(1) opacity(0.8);
     }
 
     .brand-item:hover .brand-item__media {
+        /* Al hacer hover en modo claro: recupera color original */
         filter: grayscale(0%) opacity(1);
         transform: scale(1.1);
+    }
+
+    body.dark .brand-item:hover .brand-item__media {
+        /* Al hacer hover en modo oscuro: recupera color original y le damos un leve resplandor 
+           blanco por detrás, para que las letras oscuras sigan siendo legibles sobre el fondo negro */
+        filter: grayscale(0%) opacity(1) drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
     }
 
     .brand-item img {
