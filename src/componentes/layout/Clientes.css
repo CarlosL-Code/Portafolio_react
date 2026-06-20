@@ -63,11 +63,6 @@
         animation-play-state: paused;
     }
 
-    @keyframes marqueeScroll {
-        from { transform: translateX(0); }
-        to { transform: translateX(calc(-100% - 3rem)); } /* -100% ancho del track - gap del wrapper */
-    }
-
     /* ===========================
        LOGO ITEM (CAJA ESTRICTA)
     =========================== */
@@ -79,19 +74,19 @@
         justify-content: center;
         text-decoration: none;
         transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        mix-blend-mode: multiply; /* Elimina fondo blanco en JPEGs */
+        /* Eliminado mix-blend-mode: multiply; porque oculta los logos en modo oscuro */
     }
 
     .brand-item__media {
-        width: 180px;  /* Ancho estricto (aumentado para buena calidad) */
-        height: 90px; /* Alto estricto */
+        width: 240px;  /* Aumentado para que los logos no se vean pequeños */
+        height: 120px; /* Aumentado para mantener buenas proporciones */
         display: flex;
         align-items: center;
         justify-content: center;
         transition: filter 0.4s ease, transform 0.4s ease, opacity 0.4s ease;
         
         /* Filtro blanco y negro */
-        filter: grayscale(100%) opacity(0.6);
+        filter: grayscale(100%) opacity(0.8);
     }
 
     .brand-item:hover .brand-item__media {
@@ -122,17 +117,23 @@
 
         .logos-track {
             gap: 2rem;
-            animation: marqueeScroll 20s linear infinite;
-        }
-
-        @keyframes marqueeScroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(calc(-100% - 2rem)); } 
+            animation: marqueeScrollMobile 20s linear infinite;
         }
 
         .brand-item__media {
-            width: 130px;
-            height: 65px;
+            width: 160px;
+            height: 80px;
         }
     }
+}
+
+/* Keyframes movidos fuera del bloque anidado para evitar error de minificador en producción */
+@keyframes marqueeScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - 3rem)); } /* -100% ancho del track - gap del wrapper */
+}
+
+@keyframes marqueeScrollMobile {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - 2rem)); } 
 }

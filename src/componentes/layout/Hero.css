@@ -1,5 +1,5 @@
 .hero{
-    background-image: url('./assets/header2.png');
+    background-image: url('/assets/header2.png');
     background-size: cover;
     border-radius: 20px;
     overflow: hidden;

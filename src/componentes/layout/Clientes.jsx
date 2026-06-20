@@ -7,10 +7,10 @@ const Clientes = () => {
 
   // Puedes cambiar el '#' por la URL real del sitio web de tu cliente
   const clientes = [
-    { src: "./assets/logos/paveleads.jpeg", alt: "Logo de Paveleads", href: "#" },
-    { src: "./assets/logos/carserv.png", alt: "Logo de Carserv", href: "#" },
-    { src: "./assets/logos/concesionaria.png", alt: "Logo de Concesionaria", href: "#" },
-    { src: "./assets/logos/primeros_resultados.png", alt: "Logo de Primeros Resultados", href: "#" }
+    { src: "/assets/logos/paveleads.jpeg", alt: "Logo de Paveleads", href: "#" },
+    { src: "/assets/logos/carserv.png", alt: "Logo de Carserv", href: "#" },
+    { src: "/assets/logos/concesionaria.png", alt: "Logo de Concesionaria", href: "#" },
+    { src: "/assets/logos/primeros_resultados.png", alt: "Logo de Primeros Resultados", href: "#" }
   ];
 
   // Duplicamos la lista internamente para que haya suficientes logos y no queden espacios gigantes en pantallas grandes

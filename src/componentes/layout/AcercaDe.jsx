@@ -14,8 +14,8 @@ const AcercaDe = () => {
         {/* Columna imágenes */}
         <div className="col-1 anim-scroll anim-left">
           <div className="fotos">
-            <img src="./assets/acerca-de-1.jpg" className="foto" alt="" />
-            <img src="./assets/acerca-de-2.png" className="foto" alt="" />
+            <img src="/assets/acerca-de-1.jpg" className="foto" alt="" />
+            <img src="/assets/acerca-de-2.png" className="foto" alt="" />
           </div>
         </div>
 
