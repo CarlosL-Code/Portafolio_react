@@ -6,8 +6,12 @@
     padding: 15px 30px; /* Padding reducido para modo sticky */
     
     /* Sticky Glassmorphism (Menú flotante difuminado) */
-    position: sticky;
+    position: fixed; /* Cambiado a fixed para forzar que funcione en cualquier navegador */
     top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 1200px;
     z-index: 1000;
     background-color: rgba(242, 242, 242, 0.75); /* --shade-1 transparente */
     backdrop-filter: blur(12px);
@@ -127,10 +131,28 @@
 @media (max-width: 576px) {
 
     .header {
+        position: relative; /* En celular ocupa mucho espacio, mejor dejarlo relativo */
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 25px 0;
+        margin-bottom: 0;
+        border-radius: 0;
+        border: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .dark .header {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
     }
 
     .header .logo .titulo {
