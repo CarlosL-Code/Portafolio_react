@@ -36,7 +36,7 @@ const Clientes = () => {
           {logosPorTrack.map((cliente, index) => (
             <a key={`track1-${index}`} href={cliente.href} target="_blank" rel="noopener noreferrer" className="brand-item">
               <div className="brand-item__media">
-                <img src={cliente.src} alt={cliente.alt} />
+                <img src={cliente.src} alt={cliente.alt} loading="lazy" decoding="async" />
               </div>
             </a>
           ))}
@@ -46,7 +46,7 @@ const Clientes = () => {
           {logosPorTrack.map((cliente, index) => (
             <a key={`track2-${index}`} href={cliente.href} target="_blank" rel="noopener noreferrer" className="brand-item">
               <div className="brand-item__media">
-                <img src={cliente.src} alt={cliente.alt} />
+                <img src={cliente.src} alt={cliente.alt} loading="lazy" decoding="async" />
               </div>
             </a>
           ))}

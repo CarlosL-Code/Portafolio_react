@@ -13,6 +13,8 @@ const Modal = ({ closeModal, trabajo }) => {
             <img
               src={trabajo.thumb.url}
               alt={trabajo.thumb.alt}
+              loading="lazy"
+              decoding="async"
             />
           </div>
 

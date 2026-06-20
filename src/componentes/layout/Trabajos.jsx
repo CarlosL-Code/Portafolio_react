@@ -112,6 +112,7 @@ const Trabajos = () => {
               >
                 <img
                   loading="lazy"
+                  decoding="async"
                   src={trabajo.thumb.url}
                   alt={trabajo.thumb.alt}
                 />
