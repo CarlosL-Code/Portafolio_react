@@ -89,26 +89,10 @@
         filter: grayscale(100%) opacity(0.5);
     }
 
-    .dark .brand-item__media {
-        /* En modo oscuro, le ponemos un fondo blanco redondeado para que el logo se vea perfecto */
-        background-color: #ffffff;
-        border-radius: 12px;
-        padding: 10px;
-        /* El logo sigue mostrándose gris por defecto, y color al hacer hover */
-        filter: grayscale(100%) opacity(0.8);
-    }
-
     .brand-item:hover .brand-item__media {
         /* Al hacer hover: recupera 100% su color original */
         filter: grayscale(0%) opacity(1);
         transform: scale(1.1);
-    }
-
-    .dark .brand-item:hover .brand-item__media {
-        /* En modo oscuro, al hacer hover mantenemos el fondo blanco y su color */
-        filter: grayscale(0%) opacity(1);
-        background-color: #ffffff;
-        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
     }
 
     .brand-item img {
@@ -142,6 +126,23 @@
             height: 80px;
         }
     }
+}
+
+/* ===========================
+   DARK MODE
+=========================== */
+/* Colocamos esto fuera de .clientes para que compile correctamente como body.dark .brand-item__media */
+.dark .clientes .brand-item__media {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 10px;
+    filter: grayscale(100%) opacity(0.8);
+}
+
+.dark .clientes .brand-item:hover .brand-item__media {
+    filter: grayscale(0%) opacity(1);
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
 /* Keyframes movidos fuera del bloque anidado para evitar error de minificador en producción */
