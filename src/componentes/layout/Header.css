@@ -1,33 +1,39 @@
 .header {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 20px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 15px 30px; /* Padding reducido para modo sticky */
+    padding: 15px 30px;
     
-    /* Sticky Glassmorphism (Menú flotante difuminado) */
-    position: fixed; /* Cambiado a fixed para forzar que funcione en cualquier navegador */
+    /* Sticky Glassmorphism */
+    position: fixed; 
     top: 15px;
     left: 50%;
     transform: translateX(-50%);
     width: 95%;
     max-width: 1200px;
     z-index: 1000;
-    background-color: rgba(242, 242, 242, 0.45); /* Reducida la opacidad para que el cristal sea más transparente */
+    background-color: rgba(242, 242, 242, 0.45);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.6);
     
-    margin-bottom: 20px; /* Separación del resto del contenido */
+    margin-bottom: 20px;
 }
 
 /* Modo oscuro para el Header flotante */
 .dark .header {
-    background-color: rgba(13, 13, 13, 0.45); /* Reducida la opacidad en modo oscuro también */
+    background-color: rgba(13, 13, 13, 0.45);
     border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
 }
 
 /* =========================
@@ -56,6 +62,23 @@
 }
 
 /* =========================
+   MENU TOGGLE (HAMBURGUESA)
+========================= */
+.menu-toggle {
+    display: none; /* Oculto en escritorio */
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--shade-9);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.dark .menu-toggle {
+    color: var(--shade-1);
+}
+
+/* =========================
    NAVBAR
 ========================= */
 .header .navbar {
@@ -63,7 +86,7 @@
     gap: 36px;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* 🔑 evita desbordes */
+    flex-wrap: wrap; 
 }
 
 /* =========================
@@ -76,7 +99,7 @@
     font-weight: 500;
     color: var(--shade-8);
     padding: 6px 0;
-    white-space: nowrap; /* evita saltos feos */
+    white-space: nowrap; 
     transition: color 0.3s ease;
 }
 
@@ -104,23 +127,22 @@
     width: 100%;
 }
 
+.dark-mode-container {
+    display: flex;
+    align-items: center;
+}
+
 /* =========================
    TABLET (≤768px)
 ========================= */
 @media (max-width: 768px) {
-
     .header {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        padding: 30px 0;
+        padding: 20px;
     }
-
-    .header .logo {
-        text-align: center;
+    .header .logo .titulo {
+        font-size: 28px;
     }
-
     .header .navbar {
-        justify-content: center;
         gap: 20px;
     }
 }
@@ -129,49 +151,67 @@
    MOBILE (≤576px)
 ========================= */
 @media (max-width: 576px) {
-
     .header {
-        position: relative; /* En celular ocupa mucho espacio, mejor dejarlo relativo */
-        top: 0;
-        left: 0;
-        transform: none;
-        width: 100%;
-        display: flex;
+        /* Se mantiene fixed y difuminado, pero se adapta al ancho y permite expansión vertical */
         flex-direction: column;
-        align-items: center;
-        padding: 25px 0;
-        margin-bottom: 0;
-        border-radius: 0;
-        border: none;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-        background-color: transparent;
-        box-shadow: none;
+        align-items: stretch;
+        padding: 15px 20px;
+        border-radius: 16px;
     }
 
-    .dark .header {
-        background-color: transparent;
-        border: none;
-        box-shadow: none;
+    .header-top {
+        width: 100%;
     }
 
     .header .logo .titulo {
-        font-size: 28px;
+        font-size: 24px;
+    }
+
+    .header .logo .subtitulo {
+        font-size: 14px;
+    }
+
+    .menu-toggle {
+        display: block; /* Visible en móvil */
     }
 
     .header .navbar {
+        flex-direction: column;
         width: 100%;
-        justify-content: center;
-        gap: 16px;
-        padding: 0 12px; /* 🔑 evita corte lateral */
+        gap: 20px;
+        padding-top: 20px;
+        
+        /* Oculto por defecto usando max-height y opacidad para animar */
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+    }
+
+    .header .navbar.open {
+        max-height: 400px; /* Suficiente para el contenido */
+        opacity: 1;
+        padding-bottom: 10px;
     }
 
     .header .navbar a {
-        font-size: 15px;
-        padding: 10px 6px;
+        font-size: 18px;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
     }
 
-    /* Línea visible al tocar */
+    .dark-mode-container {
+        justify-content: center;
+        width: 100%;
+        padding-top: 10px;
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .dark .dark-mode-container {
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
     .header .navbar a:active::after {
         width: 100%;
     }

@@ -100,7 +100,7 @@
 
     @media screen and (max-width: 576px) {
         &{
-            margin-top: 20px; /* En móvil el menú no es flotante, no necesitamos el gran espacio superior */
+            /* Eliminamos la sobreescritura del margin-top para que respete los 130px y el header flotante no lo tape */
         }
     }
 }
