@@ -74,14 +74,6 @@
         justify-content: center;
         text-decoration: none;
         transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        
-        /* Esto elimina el fondo blanco de los JPGs en modo claro (multiplica blanco con el fondo gris claro) */
-        mix-blend-mode: multiply; 
-    }
-
-    /* En modo oscuro, el multiply oscurecería el logo entero, así que lo regresamos a la normalidad */
-    body.dark .brand-item {
-        mix-blend-mode: normal;
     }
 
     .brand-item__media {
