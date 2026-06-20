@@ -28,7 +28,7 @@ function App() {
 
       {/* Botón flotante WhatsApp */}
       <a
-        href="https://wa.me/56941041481"
+        href="https://wa.me/56937540250"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-flotante"

@@ -10,65 +10,100 @@
         padding: 30px 20px;
         text-align: center;
         margin-bottom: 20px;
-    }
-
-    /* ===========================
-       LOGOS
-    =========================== */
-
-    .logos {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        gap: 24px;
-
-        width: 100%;
-    }
-
-    /* ===========================
-       LOGO
-    =========================== */
-
-    .logo {
-
-        width: 150px;
-        height: 150px;
-
-        object-fit: contain;
-
-        border-radius: 20px;
-
-        background: #fff;
-
-        padding: 18px;
-
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-
-        /* Animación ligera */
+        /* Animación scroll inicial */
         opacity: 0;
-
-        transform: translateY(8px);
-
-        transition:
-            opacity 0.2s ease,
-            transform 0.2s ease,
-            box-shadow 0.2s ease;
-
-        will-change: transform, opacity;
+        transform: translateY(15px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
-    /* Visible */
-    .logo.visible {
+    .encabezado.visible {
         opacity: 1;
         transform: translateY(0);
     }
 
-    /* Hover */
-    .logo:hover {
-        transform: translateY(-3px);
+    /* ===========================
+       CARRUSEL LOGOS (MARQUEE PREMIUM)
+    =========================== */
 
-        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
+    .logos-wrapper {
+        display: flex;
+        overflow: hidden;
+        user-select: none;
+        gap: 3rem;
+        
+        /* Efecto de difuminado a los lados */
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        
+        padding: 30px 0;
+
+        /* Animación scroll inicial */
+        opacity: 0;
+        transform: translateY(15px);
+        transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+    }
+
+    .logos-wrapper.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .logos-track {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        min-width: 100%;
+        gap: 3rem;
+        /* Aumentamos el tiempo ya que ahora hay el doble de logos por track */
+        animation: marqueeScroll 30s linear infinite;
+    }
+
+    .logos-wrapper:hover .logos-track {
+        animation-play-state: paused;
+    }
+
+    @keyframes marqueeScroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(calc(-100% - 3rem)); } /* -100% ancho del track - gap del wrapper */
+    }
+
+    /* ===========================
+       LOGO ITEM (CAJA ESTRICTA)
+    =========================== */
+
+    .brand-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        mix-blend-mode: multiply; /* Elimina fondo blanco en JPEGs */
+    }
+
+    .brand-item__media {
+        width: 180px;  /* Ancho estricto (aumentado para buena calidad) */
+        height: 90px; /* Alto estricto */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: filter 0.4s ease, transform 0.4s ease, opacity 0.4s ease;
+        
+        /* Filtro blanco y negro */
+        filter: grayscale(100%) opacity(0.6);
+    }
+
+    .brand-item:hover .brand-item__media {
+        filter: grayscale(0%) opacity(1);
+        transform: scale(1.1);
+    }
+
+    .brand-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Ajusta la imagen dentro de la caja sin deformarla */
+        pointer-events: none;
     }
 
     /* ===========================
@@ -81,15 +116,23 @@
             padding: 20px 10px;
         }
 
-        .logos {
-            gap: 16px;
+        .logos-wrapper {
+            gap: 2rem;
         }
 
-        .logo {
-            width: 120px;
-            height: 120px;
+        .logos-track {
+            gap: 2rem;
+            animation: marqueeScroll 20s linear infinite;
+        }
 
-            padding: 14px;
+        @keyframes marqueeScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(-100% - 2rem)); } 
+        }
+
+        .brand-item__media {
+            width: 130px;
+            height: 65px;
         }
     }
 }
