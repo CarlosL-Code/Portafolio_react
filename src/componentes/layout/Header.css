@@ -3,8 +3,27 @@
     grid-template-columns: auto 1fr auto;
     gap: 20px;
     align-items: center;
-    padding: 40px 0;
-    overflow-x: hidden;
+    padding: 15px 30px; /* Padding reducido para modo sticky */
+    
+    /* Sticky Glassmorphism (Menú flotante difuminado) */
+    position: sticky;
+    top: 15px;
+    z-index: 1000;
+    background-color: rgba(242, 242, 242, 0.75); /* --shade-1 transparente */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    
+    margin-bottom: 20px; /* Separación del resto del contenido */
+}
+
+/* Modo oscuro para el Header flotante */
+.dark .header {
+    background-color: rgba(13, 13, 13, 0.75); /* --dark-bg transparente */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* =========================
