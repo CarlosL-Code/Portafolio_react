@@ -205,6 +205,15 @@ a {
     transform: translateY(0) !important;
 }
 
+/* DESACTIVAR ANIMACIONES EN MOBILE POR SEGURIDAD DE VISIBILIDAD */
+@media (max-width: 768px) {
+    .anim-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
 /* =========================================
    WHATSAPP FLOTANTE
 ========================================= */
