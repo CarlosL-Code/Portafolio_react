@@ -1,12 +1,14 @@
 import Header from "./componentes/layout/Header";
 import Hero from "./componentes/layout/Hero";
 import AcercaDe from "./componentes/layout/AcercaDe";
-import Habilidades from "./componentes/layout/Habilidades";
+import ExperienciaProfesional from "./componentes/layout/ExperienciaProfesional";
 import Trabajos from "./componentes/layout/Trabajos";
-import Clientes from "./componentes/layout/Clientes";
+import Habilidades from "./componentes/layout/Habilidades";
+import Logros from "./componentes/layout/Logros";
 import Contacto from "./componentes/layout/Contacto";
 import Footer from "./componentes/layout/Footer";
 import ComoTrabajo from "./componentes/layout/ComoTrabajo";
+import Clientes from "./componentes/layout/Clientes";
 import CallToAction from "./componentes/layout/CallToAction";
 
 import { FaWhatsapp } from "react-icons/fa";
@@ -19,11 +21,11 @@ function App() {
         <Header />
         <Hero />
         <AcercaDe />
-        <ComoTrabajo />
-        <Habilidades />
-        <Clientes />
+        <ExperienciaProfesional />
         <Trabajos />
-        <CallToAction />
+        <Habilidades />
+        <Logros />
+        <ComoTrabajo />
         <Contacto />
         <Footer />
       </div>

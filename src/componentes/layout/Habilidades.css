@@ -1,178 +1,163 @@
-/* ===========================
-   SECCIÓN HABILIDADES
-=========================== */
-
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
 .habilidades {
-  width: 100%;
-  padding: 50px 0 60px;
-
-  --header-height: 80px;
-  scroll-margin-top: calc(var(--header-height) + 20px);
+  padding: 100px 0;
+  background: var(--shade-1);
+  position: relative;
+  overflow: hidden;
 }
 
-/* ===========================
-   ENCABEZADO
-=========================== */
-
-.habilidades .encabezado {
-  text-align: center;
-  margin-bottom: 40px;
+body.dark .habilidades {
+  background: radial-gradient(circle at top right, rgba(216, 58, 58, 0.03), var(--dark-bg) 60%);
 }
 
-/* ===========================
-   GRID
-=========================== */
+.habilidades .contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
 
-.habilidades-grid {
+/* =========================
+   GRID MINIMALISTA
+========================= */
+.habilidades-minimal-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
-
-  width: 100%;
-
-  contain: layout paint;
+  margin-top: 50px;
 }
 
-/* ===========================
-   CARD
-=========================== */
-
-.habilidad-card {
-  background: var(--shade-2);
-
-  border-radius: 20px;
-
-  padding: 30px;
-
-  cursor: default;
-
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-
-  /* Animación MUY ligera */
-  opacity: 0;
-
-  transform: translateY(10px);
-
-  transition:
-    opacity 0.22s ease,
-    transform 0.22s ease,
-    box-shadow 0.2s ease;
-
-  will-change: transform, opacity;
+/* =========================
+   CARDS DE CATEGORÍAS
+========================= */
+.habilidad-minimal-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
 }
 
-/* Visible */
-.habilidad-card.visible {
-  opacity: 1;
-
-  transform: translateY(0);
+body.dark .habilidad-minimal-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Hover */
-.habilidad-card:hover {
-  transform: translateY(-2px);
-
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
+.habilidad-minimal-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(216, 58, 58, 0.3);
+  box-shadow: 0 15px 40px rgba(216, 58, 58, 0.08);
 }
 
-/* Dark mode */
-.dark .habilidad-card {
-  background: #1e1e1e;
+body.dark .habilidad-minimal-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(216, 58, 58, 0.4);
+  box-shadow: 0 20px 50px rgba(216, 58, 58, 0.15);
 }
 
-/* ===========================
-   TITULO CARD
-=========================== */
-
-.habilidad-card h3 {
-  font-size: 18px;
-  font-weight: 600;
-
-  margin-bottom: 20px;
-
-  color: var(--shade-9);
-}
-
-.dark .habilidad-card h3 {
-  color: var(--shade-2);
-}
-
-/* ===========================
-   LISTA
-=========================== */
-
-.habilidad-lista {
-  display: flex;
-  flex-direction: column;
-
-  gap: 14px;
-}
-
-.habilidad-item {
+/* Header de Categoría */
+.cat-header {
   display: flex;
   align-items: center;
-
-  gap: 12px;
-
-  font-size: 15px;
-
-  color: var(--shade-7);
+  gap: 14px;
+  margin-bottom: 24px;
 }
 
-.dark .habilidad-item {
-  color: var(--shade-4);
-}
-
-/* ===========================
-   ICONOS
-=========================== */
-
-.habilidad-icono {
-  width: 28px;
-  height: 28px;
-
+.cat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(216,58,58,0.1), rgba(216,58,58,0.05));
+  color: var(--primario);
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border-radius: 8px;
-
-  background: rgba(216, 58, 58, 0.12);
-
-  color: var(--primario);
-
-  font-size: 14px;
-
-  flex-shrink: 0;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
 }
 
-/* ===========================
-   RESPONSIVE
-=========================== */
+body.dark .cat-icon {
+  background: linear-gradient(135deg, rgba(216,58,58,0.15), transparent);
+}
 
-@media screen and (max-width: 768px) {
+.habilidad-minimal-card:hover .cat-icon {
+  background: linear-gradient(135deg, var(--primario), #ff6b6b);
+  color: #fff;
+  transform: scale(1.05) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(216, 58, 58, 0.3);
+}
 
+.cat-header h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--shade-9);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+body.dark .cat-header h3 {
+  color: #fff;
+}
+
+/* =========================
+   TAGS (HABILIDADES)
+========================= */
+.cat-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cat-tag {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--shade-7);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+body.dark .cat-tag {
+  background: rgba(255, 255, 255, 0.03);
+  color: #a1a1aa;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cat-tag:hover {
+  background: var(--shade-1);
+  color: var(--shade-9);
+  border-color: var(--shade-3);
+  transform: translateY(-2px);
+}
+
+body.dark .cat-tag:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
   .habilidades {
-    padding: 40px 0 50px;
+    padding: 80px 0;
   }
-
-  .habilidades .encabezado {
-    margin-bottom: 30px;
-  }
-
-  .habilidades-grid {
+  
+  .habilidades-minimal-grid {
     grid-template-columns: 1fr;
-
-    gap: 18px;
+    gap: 16px;
   }
 
-  .habilidad-card {
+  .habilidad-minimal-card {
     padding: 24px;
-
-    transform: translateY(8px);
-  }
-
-  .habilidad-item {
-    font-size: 14px;
   }
 }

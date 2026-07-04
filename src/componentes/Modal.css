@@ -20,7 +20,7 @@
   background: var(--shade-1);
   color: var(--shade-9);
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px; /* Ampliado para que no sea puro texto */
   max-height: 90svh;
   border-radius: 18px;
   display: flex;
@@ -72,16 +72,50 @@ body.dark .btn-cerrar {
   height: 100%;
 }
 
-/* Imagen */
+/* Contenedor de Medios (Imagen o Video) */
 .modal-image {
-  flex: 0 0 40%;
-  background: var(--shade-2);
+  flex: 0 0 45%;
+  background: linear-gradient(135deg, #111, #1a1a1a); /* Fondo estilo showcase (cine) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  border-right: 1px solid var(--shade-3);
 }
 
-.modal-image img {
+body.dark .modal-image {
+  border-right: 1px solid var(--shade-8);
+}
+
+/* Efecto de luz dinámica de fondo */
+.modal-image::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Imagen o Video */
+.media-content {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.media-content:hover {
+  transform: scale(1.02);
 }
 
 /* =========================
@@ -143,15 +177,26 @@ body.dark .modal-footer {
 }
 
 .btn-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   margin-top: 0.5rem;   /* separa del borde */
   background: var(--primario);
-  color: #fff;
+  color: #ffffff !important; /* Fuerza color blanco sobre el rojo */
   border: none;
   border-radius: 100px;
   padding: 14px 20px;
   font-weight: 600;
   cursor: pointer;
+  text-decoration: none !important; /* Evita el subrayado global de los enlaces */
+  transition: all 0.3s ease;
+}
+
+.btn-modal:hover {
+  background: var(--primario-hover);
+  text-decoration: none !important;
+  box-shadow: 0 4px 15px rgba(216, 58, 58, 0.4);
 }
 
 /* =========================

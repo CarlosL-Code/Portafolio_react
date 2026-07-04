@@ -71,22 +71,23 @@
 
 .trabajos .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 30px; /* Un poco más de espacio para respirar */
 }
 
-/* Desktop medio */
-@media (max-width: 1200px) {
+/* Tablet grande / Laptop pequeña */
+@media (max-width: 1024px) {
   .trabajos .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
   }
 }
 
 /* Tablet */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .trabajos .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px 20px;
+    gap: 24px 16px;
   }
 }
 
@@ -247,4 +248,45 @@
 .anim-scroll.visible {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+/* ============================= */
+/* BOTÓN VER MÁS */
+/* ============================= */
+
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.btn-load-more {
+  background: transparent;
+  color: var(--shade-9);
+  border: 2px solid var(--shade-9);
+  border-radius: 100px;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+body.dark .btn-load-more {
+  color: var(--dark-text);
+  border-color: var(--shade-7);
+}
+
+.btn-load-more:hover {
+  background: var(--shade-9);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .btn-load-more:hover {
+  background: var(--dark-text);
+  color: var(--dark-bg);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
 }

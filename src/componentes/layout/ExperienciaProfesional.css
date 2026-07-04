@@ -1,0 +1,285 @@
+.experiencia-profesional {
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ENCABEZADO */
+.experiencia-profesional .encabezado {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.experiencia-profesional .titulo {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.experiencia-profesional .subtitulo {
+  max-width: 520px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: var(--shade-5);
+  line-height: 1.7;
+}
+
+/* CONTENIDO */
+.experiencia-contenido {
+  width: 100%;
+  max-width: 800px;
+}
+
+.experiencia-tarjeta {
+  background: var(--shade-1);
+  border-radius: 16px;
+  padding: 40px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.dark .experiencia-tarjeta {
+  background: var(--shade-9);
+}
+
+.experiencia-tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.dark .experiencia-tarjeta:hover {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* HEADER TARJETA */
+.experiencia-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.experiencia-cargo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--shade-9);
+}
+
+.dark .experiencia-cargo {
+  color: var(--dark-title);
+}
+
+.experiencia-periodo {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primario);
+  background: rgba(216, 58, 58, 0.1);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.experiencia-empresa {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.experiencia-empresa h4 {
+  font-size: 18px;
+  color: var(--shade-6);
+  font-weight: 500;
+}
+
+.dark .experiencia-empresa h4 {
+  color: var(--dark-subtitle);
+}
+
+.experiencia-tipo {
+  font-size: 12px;
+  color: var(--shade-5);
+  border: 1px solid var(--shade-3);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.dark .experiencia-tipo {
+  border-color: var(--shade-7);
+}
+
+/* DESCRIPCIÓN */
+.experiencia-descripcion p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--shade-6);
+  margin-bottom: 16px;
+}
+
+.dark .experiencia-descripcion p {
+  color: var(--dark-text);
+}
+
+/* LISTA */
+.experiencia-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 24px;
+  padding-bottom: 24px;
+}
+
+.experiencia-lista li {
+  font-size: 15px;
+  color: var(--shade-6);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.5;
+}
+
+.dark .experiencia-lista li {
+  color: var(--dark-text);
+}
+
+.experiencia-lista li strong {
+  color: var(--shade-8);
+}
+
+.dark .experiencia-lista li strong {
+  color: var(--dark-title);
+}
+
+.experiencia-lista li::before {
+  content: "✓";
+  color: var(--primario);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* TAGS */
+.experiencia-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--shade-2);
+}
+
+.dark .experiencia-tags {
+  border-top-color: var(--shade-8);
+}
+
+.experiencia-tags .tag {
+  background: var(--shade-2);
+  color: var(--shade-7);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.dark .experiencia-tags .tag {
+  background: var(--shade-8);
+  color: var(--shade-3);
+}
+
+.experiencia-tags .tag:hover {
+  background: var(--primario);
+  color: #fff;
+}
+
+.dark .experiencia-tags .tag:hover {
+  background: var(--primario);
+  color: #fff;
+}
+
+/* ANIMACIONES */
+.anim-scroll {
+  opacity: 0;
+  transform: translateY(12px) scale(0.985);
+  transition:
+    opacity 1.2s ease-out,
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.anim-scroll.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* =========================================
+   EFECTO CROSSFADE (CARRUSEL)
+========================================= */
+.experiencia-tarjeta.fading-out {
+  opacity: 0 !important;
+  transform: translateY(15px) !important;
+  transition: opacity 0.5s ease, transform 0.5s ease !important;
+}
+
+.experiencia-tarjeta.fading-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.5s ease, transform 0.5s ease !important;
+}
+
+/* =========================================
+   PUNTOS DE NAVEGACIÓN (DOTS)
+========================================= */
+.experiencia-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.experiencia-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--shade-4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dark .experiencia-dots .dot {
+  background: var(--shade-7);
+}
+
+.experiencia-dots .dot:hover {
+  background: var(--shade-5);
+}
+
+.dark .experiencia-dots .dot:hover {
+  background: var(--shade-6);
+}
+
+.experiencia-dots .dot.active {
+  background: var(--primario);
+  width: 36px;
+  border-radius: 100px;
+}
+
+.dark .experiencia-dots .dot.active {
+  background: var(--primario);
+}
+
+@media (max-width: 768px) {
+  .experiencia-tarjeta {
+    padding: 30px 20px;
+  }
+  
+  .experiencia-header {
+    flex-direction: column;
+  }
+  
+  .experiencia-lista {
+    grid-template-columns: 1fr;
+  }
+}

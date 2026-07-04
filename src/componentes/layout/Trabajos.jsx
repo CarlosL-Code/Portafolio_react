@@ -9,12 +9,14 @@ const Trabajos = () => {
   const [trabajosFiltrados, setTrabajosFiltrados] = useState(trabajos);
   const [estadoModal, setEstadoModal] = useState(false);
   const [trabajoSelecionado, setTrabajoSelecionado] = useState(trabajos[0]);
-
-
+  
+  // Estado para la carga progresiva
+  const [visibleCount, setVisibleCount] = useState(6);
 
   const handleChange = (e) => {
     const categoria = e.target.id;
     setCategoriaSeleccionada(categoria);
+    setVisibleCount(6); // Resetear a 6 al cambiar de filtro
 
     if (categoria === "todos") {
       setTrabajosFiltrados(trabajos);
@@ -24,6 +26,10 @@ const Trabajos = () => {
       );
       setTrabajosFiltrados(nuevosTrabajos);
     }
+  };
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 6);
   };
 
   const openModal = (e, id) => {
@@ -37,6 +43,9 @@ const Trabajos = () => {
   const closeModal = () => {
     setEstadoModal(false);
   };
+
+  // Obtener solo los trabajos visibles según el contador
+  const trabajosVisibles = trabajosFiltrados.slice(0, visibleCount);
 
   return (
     <>
@@ -98,12 +107,11 @@ const Trabajos = () => {
 
         {/* Grid */}
         <div className="grid">
-          {trabajosFiltrados.map((trabajo, index) => (
+          {trabajosVisibles.map((trabajo, index) => (
             <div
               className="trabajo "
               key={trabajo.id}
-              style={{ transitionDelay: `${index * 35}ms` }}
-
+              style={{ transitionDelay: `${(index % 6) * 35}ms` }}
             >
               <a
                 href="#"
@@ -146,6 +154,15 @@ const Trabajos = () => {
             </div>
           ))}
         </div>
+
+        {/* Botón Ver Más */}
+        {visibleCount < trabajosFiltrados.length && (
+          <div className="load-more-container anim-scroll visible">
+            <button className="btn-load-more" onClick={handleLoadMore}>
+              Ver más proyectos
+            </button>
+          </div>
+        )}
       </section>
 
       {estadoModal && (

@@ -24,21 +24,16 @@ const AcercaDe = () => {
           <h4 className="pre-titulo">Acerca de mi</h4>
 
           <h3 className="titulo">
-            La razon por la que deberias contratarme.
+            Transformando ideas en arquitecturas escalables y rentables.
           </h3>
 
           <p className="resumen">
-            Soy estudiante de Ingeniería en Informática con experiencia
-            académica y práctica en desarrollo de software y desarrollo web.
-            Actualmente me dedico al desarrollo de páginas web estáticas e
-            informativas para pequeños negocios, participando en proyectos
-            reales. <br /><br />
-            He trabajado en el desarrollo y publicación de una página
-            web para un taller mecánico en Temuco, Chile, realizando tanto la
-            implementación del sitio como tareas técnicas de despliegue y
-            configuración de dominio y DNS. Además, he prestado soporte
-            técnico a una empresa en México, enfocado principalmente en
-            configuración de DNS y ajustes técnicos de servidor.
+            Soy estudiante de Ingeniería en Informática y Software Engineer apasionado por resolver problemas complejos mediante la tecnología. 
+            Aunque sigo mi formación académica, en el mundo real ya me especializo en diseñar arquitecturas robustas, automatizar flujos de trabajo empresariales y crear experiencias digitales de alto impacto. 
+            <br /><br />
+            Mi trayectoria temprana incluye asumir la transformación digital end-to-end para empresas (desarrollo de e-commerce, integraciones de IA y automatización de sistemas ERP) 
+            y gestionar el despliegue técnico de infraestructuras a nivel internacional. Mi enfoque no es solo escribir código limpio, 
+            sino alinear cada decisión técnica con los objetivos comerciales para garantizar soluciones mantenibles, seguras y orientadas al ROI.
           </p>
 
           <a href="#contacto" className="boton">

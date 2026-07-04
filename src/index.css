@@ -11,26 +11,26 @@
 :root {
 
     /* Tonos claros y oscuros */
-    --shade-1: #F2F2F2;
-    --shade-2: #D9D9D9;
-    --shade-3: #BFBFBF;
-    --shade-4: #A6A6A6;
-    --shade-5: #8C8C8C;
-    --shade-6: #737373;
-    --shade-7: #595959;
-    --shade-8: #404040;
-    --shade-9: #0D0D0D;
-    --shade-10: #000000;
+    --shade-1: #FAFAFA; /* Un gris casi blanco muy limpio */
+    --shade-2: #F4F4F5;
+    --shade-3: #E4E4E7;
+    --shade-4: #D4D4D8;
+    --shade-5: #A1A1AA;
+    --shade-6: #71717A;
+    --shade-7: #52525B;
+    --shade-8: #3F3F46;
+    --shade-9: #1E293B; /* Azul corporativo oscuro (Slate 800) */
+    --shade-10: #0B1121; /* Fondo principal azul profundo moderno (Slate 950) */
 
     /* Colores primarios */
     --primario: #D83A3A;
     --primario-hover: #bf3030;
 
     /* Modo oscuro */
-    --dark-bg: #0D0D0D;
-    --dark-text: #E5E5E5;
-    --dark-subtitle: #CCCCCC;
-    --dark-title: #FFFFFF;
+    --dark-bg: var(--shade-10);
+    --dark-text: #E4E4E7;
+    --dark-subtitle: #A1A1AA;
+    --dark-title: #FAFAFA;
 
     --dark-button-shadow: rgba(216, 58, 58, 0.6);
 }
@@ -39,16 +39,33 @@
 body {
     font-family: "Inter", sans-serif;
 
-    background: var(--shade-1);
+    /* Fondo base */
+    background-color: var(--shade-1);
+    
+    /* Grid Pattern + Mesh Gradient Premium */
+    background-image: 
+        radial-gradient(circle at 0% 0%, rgba(216, 58, 58, 0.08) 0px, transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(216, 58, 58, 0.08) 0px, transparent 40%),
+        url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 39.5h40M39.5 0v40' stroke='rgba(0,0,0,0.04)' stroke-width='1'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-position: center center;
+
     color: var(--shade-9);
 
     transition:
-        background 0.3s ease,
+        background-color 0.3s ease,
         color 0.3s ease;
 }
 
 body.dark {
-    background: var(--dark-bg);
+    background-color: var(--dark-bg);
+    
+    /* Mesh Gradient para modo oscuro (Opacidad aumentada) */
+    background-image: 
+        radial-gradient(at 15% 0%, rgba(216, 58, 58, 0.08) 0px, transparent 50%),
+        radial-gradient(at 85% 100%, rgba(216, 58, 58, 0.06) 0px, transparent 50%);
+    background-attachment: fixed;
+
     color: var(--dark-text);
 }
 
@@ -127,35 +144,31 @@ a {
 .contacto,
 .footer,
 .habilidades,
-.como-trabajo {
-
+.como-trabajo,
+.logros,
+.acerca-de,
+.experiencia-profesional {
     display: flex;
     flex-direction: column;
-
     align-items: center;
-    gap: 40px;
-
-    margin-top: 20px;
-
-    padding: 60px 20px;
+    gap: 50px;
+    padding: 100px 20px;
+    position: relative;
 
     .encabezado {
-
         display: flex;
         flex-direction: column;
-
         align-items: center;
-        gap: 14px;
+        gap: 16px;
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
 
         .titulo {
-
-            font-family: "Merriweather", serif;
-
-            color: var(--shade-8);
-
-            font-size: 22px;
-            font-weight: 700;
-
+            font-family: "Inter", sans-serif;
+            color: var(--shade-9);
+            font-size: 2.2rem;
+            font-weight: 800;
             transition: color 0.3s ease;
 
             body.dark & {
@@ -164,11 +177,9 @@ a {
         }
 
         .subtitulo {
-
-            font-size: 16px;
-
+            font-size: 1.1rem;
+            line-height: 1.6;
             color: var(--shade-6);
-
             transition: color 0.3s ease;
 
             body.dark & {
@@ -176,6 +187,22 @@ a {
             }
         }
     }
+}
+
+/* =========================================
+   ANIMACIONES GLOBALES AL HACER SCROLL
+========================================= */
+.anim-scroll {
+    opacity: 0 !important;
+    transform: translateY(40px) !important;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    will-change: opacity, transform;
+}
+
+.anim-scroll.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 /* =========================================
@@ -200,7 +227,7 @@ a {
     align-items: center;
     justify-content: center;
 
-    color: #fff;
+    color: #ffffff !important;
 
     font-size: 30px;
 

@@ -167,7 +167,126 @@ const trabajos = [
       </>
     ),
   },
-},
+  },
+  {
+    id: 7,
+    categoria: "desarrollo-web",
+    thumb: {
+      url: "./assets/trabajos/trabajo-1.png",
+      alt: "E-commerce Confites San Julián",
+    },
+    info: {
+      nombre: "E-commerce Confites San Julián",
+      categoria: "E-commerce · Shopify · SEO",
+      github: null,
+      contenido: (
+        <>
+          <p>
+            <strong>Problema:</strong> La empresa necesitaba modernizar completamente su presencia digital
+            mediante una tienda online profesional para escalar sus ventas.
+          </p>
+          <p>
+            <strong>Solución:</strong> Diseñé y desarrollé un e-commerce completo utilizando Shopify,
+            creando funcionalidades personalizadas sin recurrir a temas premium
+            costosos.
+          </p>
+          <p><strong>Mi participación:</strong></p>
+          <ul>
+            <li>Personalización profunda de Shopify mediante Liquid.</li>
+            <li>Programación de componentes visuales propios (HTML, CSS, JS).</li>
+            <li>Implementación de estrategias SEO técnico.</li>
+          </ul>
+        </>
+      ),
+    },
+  },
+  {
+    id: 8,
+    categoria: "desarrollo-software",
+    thumb: {
+      url: "./assets/trabajos/trabajo-2.png",
+      alt: "Automatización Kame ERP",
+    },
+    info: {
+      nombre: "Automatización de impresión de facturas Kame ERP",
+      categoria: "Automatización · Flujos de trabajo",
+      github: null,
+      contenido: (
+        <>
+          <p>
+            <strong>Problema:</strong> El proceso de recepción e impresión de facturas enviadas desde
+            el sistema Kame ERP debía realizarse de manera manual, consumiendo
+            tiempo.
+          </p>
+          <p>
+            <strong>Solución:</strong> Desarrollé una automatización inteligente capaz de identificar
+            únicamente los correos provenientes del ERP y enviar las facturas automáticamente a impresión.
+          </p>
+          <p><strong>Resultado:</strong> Reducción del 100% de las tareas manuales de impresión.</p>
+        </>
+      ),
+    },
+  },
+  {
+    id: 9,
+    categoria: "desarrollo-web", /* Contenido visual */
+    thumb: {
+      url: "./assets/trabajos/trabajo-3.png",
+      alt: "Contenido Audiovisual San Julián",
+    },
+    info: {
+      nombre: "Contenido Audiovisual para Confites San Julián",
+      categoria: "Marketing Digital · IA · Audiovisual",
+      github: null,
+      contenido: (
+        <>
+          <p>
+            <strong>Problema:</strong> La empresa presentaba deficiencias en su imagen corporativa en
+            redes sociales y necesitaba contenido dinámico y atractivo.
+          </p>
+          <p>
+            <strong>Solución:</strong> Implementación de una estrategia de creación continua de contenido
+            audiovisual moderno, apalancándose en Inteligencia Artificial.
+          </p>
+          <p><strong>Mi participación:</strong></p>
+          <ul>
+            <li>Dirección y toma de fotografía de productos.</li>
+            <li>Edición profesional de imágenes y video.</li>
+          </ul>
+        </>
+      ),
+    },
+  },
+  {
+    id: 10,
+    categoria: "desarrollo-software", /* Redes / Infraestructura */
+    thumb: {
+      url: "./assets/trabajos/trabajo-4.png",
+      alt: "Infraestructura Cámaras Dahua",
+    },
+    info: {
+      nombre: "Configuración de infraestructura de cámaras Dahua",
+      categoria: "Redes · Soporte IT · Infraestructura",
+      github: null,
+      contenido: (
+        <>
+          <p>
+            <strong>Problema:</strong> La empresa requería visualizar y gestionar sus cámaras de 
+            seguridad IP (Dahua) de forma remota y segura.
+          </p>
+          <p>
+            <strong>Solución:</strong> Configuración de red avanzada para permitir el ruteo seguro
+            de la señal de las cámaras IP entre ambas infraestructuras.
+          </p>
+          <p><strong>Mi participación:</strong></p>
+          <ul>
+            <li>Investigación de topología de red existente.</li>
+            <li>Configuración de dispositivos (routers/NVR).</li>
+          </ul>
+        </>
+      ),
+    },
+  }
 ];
 
 export default trabajos;

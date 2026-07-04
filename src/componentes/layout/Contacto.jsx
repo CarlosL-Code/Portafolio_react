@@ -54,9 +54,9 @@ const Contacto = () => {
     <>
       <section className="contacto" id="contacto">
         <div className="encabezado">
-          <h3 className="titulo">Hagamos tu idea realidad</h3>
+          <h3 className="titulo">Conversemos sobre tu próximo desafío</h3>
           <p className="subtitulo">
-            Escríbeme y construyamos el negocio de tus sueños.
+            Si buscas un perfil técnico sólido para escalar tu producto o potenciar a tu equipo, envíame un mensaje.
           </p>
         </div>
 

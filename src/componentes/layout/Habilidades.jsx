@@ -1,187 +1,79 @@
 import "./Habilidades.css";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
+import { FaCode, FaServer, FaShoppingCart, FaVideo, FaRobot, FaTools, FaNetworkWired } from "react-icons/fa";
 
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaPhp,
-  FaJava,
-  FaGitAlt,
-  FaDocker,
-  FaCode,
-} from "react-icons/fa";
-
-import { SiMysql, SiPython, SiWordpress } from "react-icons/si";
-import { MdSmartToy } from "react-icons/md";
+const categoriasTecnologias = [
+  {
+    id: "web",
+    titulo: "Desarrollo Web",
+    icono: <FaCode />,
+    habilidades: ["HTML5", "CSS3", "JavaScript", "React", "Next.js", "Tailwind CSS"]
+  },
+  {
+    id: "backend",
+    titulo: "Backend & Auto.",
+    icono: <FaServer />,
+    habilidades: ["Python", "Java", "PHP", "Spring Boot", "REST API", "Make/Zapier"]
+  },
+  {
+    id: "ecommerce",
+    titulo: "E-commerce",
+    icono: <FaShoppingCart />,
+    habilidades: ["Shopify", "Liquid", "SEO Técnico", "Google Analytics", "Search Console"]
+  },
+  {
+    id: "contenido-ia",
+    titulo: "Contenido & IA",
+    icono: <FaRobot />,
+    habilidades: ["Prompt Engineering", "CapCut / Canva", "Generación Audiovisual", "Instagram SEO"]
+  },
+  {
+    id: "redes",
+    titulo: "Redes & Soporte",
+    icono: <FaNetworkWired />,
+    habilidades: ["Topologías de Red", "Cámaras IP", "Soporte Técnico", "DNS / SSL"]
+  },
+  {
+    id: "herramientas",
+    titulo: "Herramientas",
+    icono: <FaTools />,
+    habilidades: ["Git & GitHub", "WordPress", "Docker", "Figma"]
+  }
+];
 
 const Habilidades = () => {
   useScrollAnimation();
 
   return (
-    <section className="habilidades" id="habilidades">
-
+    <section className="habilidades" id="tecnologias">
       <div className="contenedor">
-
-        {/* Encabezado SIN animación */}
-        <div className="encabezado">
-
-          <h2 className="titulo">
-            Habilidades Técnicas
-          </h2>
-
+        {/* Encabezado */}
+        <div className="encabezado anim-scroll">
+          <h2 className="titulo">Tecnologías y Enfoques</h2>
           <p className="subtitulo">
-            Tecnologías y herramientas con las que trabajo actualmente
+            Las herramientas y áreas de conocimiento que respaldan mis proyectos.
           </p>
-
         </div>
 
-        {/* Grid */}
-        <div className="habilidades-grid">
-
-          {/* Frontend */}
-          <div className="habilidad-card anim-scroll">
-
-            <h3>Frontend</h3>
-
-            <ul className="habilidad-lista">
-
-              <li className="habilidad-item">
-                <span className="habilidad-icono">
-                  <FaHtml5 />
-                </span>
-                HTML5
-              </li>
-
-              <li className="habilidad-item">
-                <span className="habilidad-icono">
-                  <FaCss3Alt />
-                </span>
-                CSS3
-              </li>
-
-              <li className="habilidad-item">
-                <span className="habilidad-icono">
-                  <FaJs />
-                </span>
-                JavaScript
-              </li>
-
-              <li className="habilidad-item">
-                <span className="habilidad-icono">
-                  <FaReact />
-                </span>
-                React
-              </li>
-
-              <li className="habilidad-item">
-                <span className="habilidad-icono">
-                  <FaCode />
-                </span>
-                Vite
-              </li>
-
-            </ul>
-
-          </div>
-
-          {/* Backend */}
-          <div className="habilidad-card anim-scroll">
-
-            <h3>Backend</h3>
-
-            <ul className="habilidad-lista">
-
-              <li className="habilidad-item">
-                <span className="habilidad-icono">
-                  <FaPhp />
-                </span>
-                PHP
-              </li>
-
-              <li className="habilidad-item">
-                <span className="habilidad-icono">
-                  <FaCode />
-                </span>
-                .NET
-              </li>
-
-              <li className="habilidad-item">
-                <span className="habilidad-icono">
-                  <FaJava />
-                </span>
-                Java
-              </li>
-
-              <li className="habilidad-item">
-                <span className="habilidad-icono">
-                  <SiPython />
-                </span>
-                Python
-              </li>
-
-              <li className="habilidad-item">
-                <span className="habilidad-icono">
-                  <SiMysql />
-                </span>
-                MySQL
-              </li>
-
-            </ul>
-
-          </div>
-
-          {/* Herramientas */}
-          <div className="habilidad-card anim-scroll">
-
-            <h3>Herramientas</h3>
-
-            <ul className="habilidad-lista">
-
-              <li className="habilidad-item">
-                <span className="habilidad-icono">
-                  <FaGitAlt />
-                </span>
-                Git / GitHub
-              </li>
-
-              <li className="habilidad-item">
-                <span className="habilidad-icono">
-                  <SiWordpress />
-                </span>
-                WordPress
-              </li>
-
-              <li className="habilidad-item">
-                <span className="habilidad-icono">
-                  <MdSmartToy />
-                </span>
-                IA
-              </li>
-
-              <li className="habilidad-item">
-                <span className="habilidad-icono">
-                  <FaDocker />
-                </span>
-                Docker
-              </li>
-
-              <li className="habilidad-item">
-                <span className="habilidad-icono">
-                  <FaCode />
-                </span>
-                Azure
-              </li>
-
-            </ul>
-
-          </div>
-
+        {/* Grid Minimalista */}
+        <div className="habilidades-minimal-grid">
+          {categoriasTecnologias.map((cat) => (
+            <div key={cat.id} className="habilidad-minimal-card anim-scroll">
+              <div className="cat-header">
+                <span className="cat-icon">{cat.icono}</span>
+                <h3>{cat.titulo}</h3>
+              </div>
+              <div className="cat-tags">
+                {cat.habilidades.map((hab, index) => (
+                  <span key={index} className="cat-tag">
+                    {hab}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
-
       </div>
-
     </section>
   );
 };

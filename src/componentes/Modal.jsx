@@ -1,6 +1,14 @@
+import { useEffect } from "react";
 import "./Modal.css";
 
 const Modal = ({ closeModal, trabajo }) => {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
   if (!trabajo) return null;
 
   return (
@@ -10,13 +18,25 @@ const Modal = ({ closeModal, trabajo }) => {
         <div className="modal-grid">
 
           <div className="modal-image">
+          {trabajo.thumb.video ? (
+            <video
+              src={trabajo.thumb.video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="media-content"
+            />
+          ) : (
             <img
               src={trabajo.thumb.url}
               alt={trabajo.thumb.alt}
               loading="lazy"
               decoding="async"
+              className="media-content"
             />
-          </div>
+          )}
+        </div>
 
           <div className="modal-content">
 
