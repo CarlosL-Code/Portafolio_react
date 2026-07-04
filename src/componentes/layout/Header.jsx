@@ -52,6 +52,12 @@ const Header = () => {
           </button>
         </div>
 
+        {/* OVELAY OSCURO PARA MÓVIL */}
+        <div 
+          className={`mobile-overlay ${isMenuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+        ></div>
+
         <nav className={`navbar ${isMenuOpen ? 'open' : ''}`}>
           {/* Botón de cerrar dentro del menú lateral en móvil */}
           <button className="close-menu" onClick={closeMenu} aria-label="Cerrar menú">

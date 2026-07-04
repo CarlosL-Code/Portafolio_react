@@ -1,10 +1,10 @@
+import { useState } from "react";
 import "./AcercaDe.css";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
 
 const AcercaDe = () => {
-
   useScrollAnimation();
-
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <section className="acerca-de" id="acerca-de">
@@ -26,14 +26,25 @@ const AcercaDe = () => {
             Transformando ideas en arquitecturas escalables y rentables.
           </h3>
 
-          <p className="resumen">
-            Soy estudiante de Ingeniería en Informática y Software Engineer apasionado por resolver problemas complejos mediante la tecnología. 
-            Aunque sigo mi formación académica, en el mundo real ya me especializo en diseñar arquitecturas robustas, automatizar flujos de trabajo empresariales y crear experiencias digitales de alto impacto. 
-            <br /><br />
-            Mi trayectoria temprana incluye asumir la transformación digital end-to-end para empresas (desarrollo de e-commerce, integraciones de IA y automatización de sistemas ERP) 
-            y gestionar el despliegue técnico de infraestructuras a nivel internacional. Mi enfoque no es solo escribir código limpio, 
-            sino alinear cada decisión técnica con los objetivos comerciales para garantizar soluciones mantenibles, seguras y orientadas al ROI.
-          </p>
+          <div className={`resumen-container ${isExpanded ? "expanded" : ""}`}>
+            <p className="resumen">
+              Soy estudiante de Ingeniería en Informática y Software Engineer apasionado por resolver problemas complejos mediante la tecnología. 
+              Aunque sigo mi formación académica, en el mundo real ya me especializo en diseñar arquitecturas robustas, automatizar flujos de trabajo empresariales y crear experiencias digitales de alto impacto. 
+            </p>
+            <p className="resumen extra-text">
+              <br />
+              Mi trayectoria temprana incluye asumir la transformación digital end-to-end para empresas (desarrollo de e-commerce, integraciones de IA y automatización de sistemas ERP) 
+              y gestionar el despliegue técnico de infraestructuras a nivel internacional. Mi enfoque no es solo escribir código limpio, 
+              sino alinear cada decisión técnica con los objetivos comerciales para garantizar soluciones mantenibles, seguras y orientadas al ROI.
+            </p>
+          </div>
+          
+          <button 
+            className="btn-leer-mas" 
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            {isExpanded ? "Leer menos" : "Leer más..."}
+          </button>
 
           <a href="#contacto" className="boton">
             Mandame un mensaje

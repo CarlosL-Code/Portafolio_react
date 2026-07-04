@@ -152,12 +152,27 @@ body.dark .cat-tag:hover {
     padding: 80px 0;
   }
   
+  /* Convertir Grid en Carrusel Horizontal en Móvil */
   .habilidades-minimal-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 16px;
+    padding-bottom: 20px; /* Espacio para scroll */
+    margin-right: -20px; /* Permitir que las tarjetas se salgan del padding */
+    padding-right: 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .habilidades-minimal-grid::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
   }
 
   .habilidad-minimal-card {
     padding: 24px;
+    scroll-snap-align: center;
+    flex: 0 0 85%;
+    max-width: 85%;
   }
 }

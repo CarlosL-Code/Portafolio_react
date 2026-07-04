@@ -225,32 +225,51 @@
         color: var(--shade-1);
     }
 
+    /* OVERLAY OSCURO */
+    .mobile-overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        z-index: 1500;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    }
+
+    .mobile-overlay.open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
     .header .navbar {
-        /* CAJA LATERAL (SIDEBAR) SÓLIDA */
+        /* CAJA LATERAL (SIDEBAR) GLASSMORPHISM */
         position: fixed;
         top: 0;
-        right: -100%; /* Oculto fuera de la pantalla por defecto */
-        width: 260px;
+        right: -100%;
+        width: 280px;
         height: 100vh;
-        background-color: #ffffff;
-        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
-        z-index: 2000; /* Asegurar que flote sobre todo */
+        background-color: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+        z-index: 2000;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding: 30px 20px;
-        gap: 20px;
-        transition: right 0.4s ease; /* Deslizamiento lateral */
+        padding: 40px 20px;
+        gap: 24px;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         
-        /* Limpiamos las animaciones anteriores */
         max-height: none;
         opacity: 1;
         overflow-y: auto;
     }
 
     .dark .header .navbar {
-        background-color: #0D0D0D; /* Fondo negro sólido en modo oscuro */
-        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.6);
+        background-color: rgba(15, 23, 42, 0.85);
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
         border-left: 1px solid rgba(255, 255, 255, 0.05);
     }
 
@@ -259,11 +278,25 @@
     }
 
     .header .navbar a {
-        font-size: 18px;
-        padding: 10px 0;
+        font-size: 22px;
+        font-weight: 600;
+        padding: 12px 0;
         width: 100%;
         text-align: center;
+        opacity: 0;
+        transform: translateX(30px);
+        transition: all 0.3s ease;
     }
+
+    .header .navbar.open a {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .header .navbar.open a:nth-child(2) { transition-delay: 0.1s; }
+    .header .navbar.open a:nth-child(3) { transition-delay: 0.15s; }
+    .header .navbar.open a:nth-child(4) { transition-delay: 0.2s; }
+    .header .navbar.open a:nth-child(5) { transition-delay: 0.25s; }
 
     .dark-mode-container {
         justify-content: center;
