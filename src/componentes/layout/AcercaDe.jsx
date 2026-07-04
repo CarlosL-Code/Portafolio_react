@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import "./AcercaDe.css";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
 
