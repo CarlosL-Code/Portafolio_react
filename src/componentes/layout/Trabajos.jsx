@@ -5,6 +5,7 @@ import Modal from "../Modal";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
 
 const Trabajos = () => {
+  useScrollAnimation();
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
   const [trabajosFiltrados, setTrabajosFiltrados] = useState(trabajos);
   const [estadoModal, setEstadoModal] = useState(false);
