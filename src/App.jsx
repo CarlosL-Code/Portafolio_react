@@ -12,8 +12,10 @@ import Clientes from "./componentes/layout/Clientes";
 import CallToAction from "./componentes/layout/CallToAction";
 
 import { FaWhatsapp } from "react-icons/fa";
+import useScrollAnimation from "./hooks/useScrollAnimation";
 
 function App() {
+  useScrollAnimation();
 
   return (
     <>
