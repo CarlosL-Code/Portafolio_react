@@ -134,13 +134,14 @@
 .dark .clientes .brand-item__media {
     background-color: transparent;
     padding: 0;
-    /* Convierte logos oscuros en blancos puros y con una opacidad elegante */
-    filter: brightness(0) invert(1) opacity(0.5);
+    /* Invertimos para que lo negro sea blanco y quitamos el color para el estado inactivo */
+    filter: grayscale(100%) invert(1) opacity(0.6);
 }
 
 .dark .clientes .brand-item:hover .brand-item__media {
-    /* Al hacer hover, brillan en blanco puro al 100% */
-    filter: brightness(0) invert(1) opacity(1);
+    /* Magia CSS: Mantenemos invertido (texto negro sigue siendo blanco y fondos negros son blancos), 
+       pero rotamos el matiz 180° para recuperar colores originales como el naranja del logo central */
+    filter: invert(1) hue-rotate(180deg) brightness(1.1) opacity(1);
     background-color: transparent;
     box-shadow: none;
 }
