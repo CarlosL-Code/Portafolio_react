@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
     
     /* Estado inicial: Píldora grande flotante (Top of page) */
     padding: 16px 36px;
@@ -106,7 +107,7 @@
 ========================= */
 .header .navbar {
     display: flex;
-    gap: 40px; /* Separar más los textos (antes 32px) */
+    gap: clamp(15px, 2.5vw, 35px); /* Fluido: se achica si no hay espacio */
     justify-content: center;
     align-items: center;
 }
@@ -117,7 +118,7 @@
 .header .navbar a {
     position: relative;
     text-decoration: none;
-    font-size: 1.05rem; /* Más grande (antes 0.95rem) */
+    font-size: clamp(0.9rem, 1.2vw, 1.05rem); /* Ajuste fluido del texto */
     font-weight: 500;
     color: var(--shade-7);
     white-space: nowrap; 
