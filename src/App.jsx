@@ -22,12 +22,14 @@ function App() {
       <div className="contenedor">
         <Header />
         <Hero />
+        <Clientes />
         <AcercaDe />
         <ExperienciaProfesional />
         <Trabajos />
         <Habilidades />
         <Logros />
         <ComoTrabajo />
+        <CallToAction />
         <Contacto />
         <Footer />
       </div>
