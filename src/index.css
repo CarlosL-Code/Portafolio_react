@@ -193,24 +193,24 @@ a {
    ANIMACIONES GLOBALES AL HACER SCROLL
 ========================================= */
 .anim-scroll {
-    opacity: 0 !important;
-    transform: translateY(40px) !important;
+    opacity: 0;
+    transform: translateY(40px);
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
 }
 
 .anim-scroll.visible {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* DESACTIVAR ANIMACIONES EN MOBILE POR SEGURIDAD DE VISIBILIDAD */
 @media (max-width: 768px) {
     .anim-scroll {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }
 

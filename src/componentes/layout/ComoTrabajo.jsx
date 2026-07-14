@@ -1,9 +1,9 @@
 import "./ComoTrabajo.css";
-import useScrollAnimation from "../../hooks/useScrollAnimation";
+
 import { FaSearch, FaCode, FaRocket } from "react-icons/fa";
 
 const ComoTrabajo = () => {
-  useScrollAnimation();
+  
 
   return (
     <section className="como-trabajo" id="como-trabajo">

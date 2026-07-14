@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./AcercaDe.css";
-import useScrollAnimation from "../../hooks/useScrollAnimation";
+
 
 const AcercaDe = () => {
-  useScrollAnimation();
+  
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (

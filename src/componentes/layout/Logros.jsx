@@ -1,5 +1,5 @@
 import "./Logros.css";
-import useScrollAnimation from "../../hooks/useScrollAnimation";
+
 import { FaRocket, FaHandshake, FaChartLine, FaShieldAlt } from "react-icons/fa";
 
 const logrosData = [
@@ -30,7 +30,7 @@ const logrosData = [
 ];
 
 const Logros = () => {
-  useScrollAnimation();
+  
 
   return (
     <section className="logros" id="logros">

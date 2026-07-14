@@ -1,5 +1,5 @@
 import "./Habilidades.css";
-import useScrollAnimation from "../../hooks/useScrollAnimation";
+
 import { FaCode, FaServer, FaShoppingCart, FaVideo, FaRobot, FaTools, FaNetworkWired } from "react-icons/fa";
 
 const categoriasTecnologias = [
@@ -42,7 +42,7 @@ const categoriasTecnologias = [
 ];
 
 const Habilidades = () => {
-  useScrollAnimation();
+  
 
   return (
     <section className="habilidades" id="tecnologias">

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import useScrollAnimation from "../../hooks/useScrollAnimation";
+
 import "./ExperienciaProfesional.css";
 
 const experiencias = [
@@ -49,7 +49,7 @@ const experiencias = [
 ];
 
 const ExperienciaProfesional = () => {
-  useScrollAnimation();
+  
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
   const [isPaused, setIsPaused] = useState(false);

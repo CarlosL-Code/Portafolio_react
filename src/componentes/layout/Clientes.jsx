@@ -1,9 +1,9 @@
 import "./Clientes.css";
-import useScrollAnimation from "../../hooks/useScrollAnimation";
+
 
 const Clientes = () => {
 
-  useScrollAnimation();
+  
 
   // Puedes cambiar el '#' por la URL real del sitio web de tu cliente
   const clientes = [
