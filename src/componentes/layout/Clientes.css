@@ -131,18 +131,18 @@
 /* ===========================
    DARK MODE
 =========================== */
-/* Colocamos esto fuera de .clientes para que compile correctamente como body.dark .brand-item__media */
 .dark .clientes .brand-item__media {
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 10px;
-    filter: grayscale(100%) opacity(0.8);
+    background-color: transparent;
+    padding: 0;
+    /* Convierte logos oscuros en blancos puros y con una opacidad elegante */
+    filter: brightness(0) invert(1) opacity(0.5);
 }
 
 .dark .clientes .brand-item:hover .brand-item__media {
-    filter: grayscale(0%) opacity(1);
-    background-color: #ffffff;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    /* Al hacer hover, brillan en blanco puro al 100% */
+    filter: brightness(0) invert(1) opacity(1);
+    background-color: transparent;
+    box-shadow: none;
 }
 
 /* Keyframes movidos fuera del bloque anidado para evitar error de minificador en producción */
