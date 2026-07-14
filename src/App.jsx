@@ -22,9 +22,9 @@ function App() {
       <div className="contenedor">
         <Header />
         <Hero />
-        <Clientes />
         <AcercaDe />
         <ExperienciaProfesional />
+        <Clientes />
         <Trabajos />
         <Habilidades />
         <Logros />
