@@ -134,14 +134,15 @@
 .dark .clientes .brand-item__media {
     background-color: transparent;
     padding: 0;
-    /* Invertimos para que lo negro sea blanco y quitamos el color para el estado inactivo */
+    /* Inactivo: siluetas blancas tenues para que combinen perfecto */
     filter: grayscale(100%) invert(1) opacity(0.6);
 }
 
 .dark .clientes .brand-item:hover .brand-item__media {
-    /* Magia CSS: Mantenemos invertido (texto negro sigue siendo blanco y fondos negros son blancos), 
-       pero rotamos el matiz 180° para recuperar colores originales como el naranja del logo central */
-    filter: invert(1) hue-rotate(180deg) brightness(1.1) opacity(1);
+    /* Hover: COLOR 100% ORIGINAL (sin invert, sin grises). 
+       Se agrega un resplandor blanco (drop-shadow) que abraza la forma 
+       del logo para que las letras negras no desaparezcan en el fondo oscuro. */
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
     background-color: transparent;
     box-shadow: none;
 }
