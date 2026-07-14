@@ -140,10 +140,10 @@
 
 .dark .clientes .brand-item:hover .brand-item__media {
     /* Hover: COLOR 100% ORIGINAL (sin invert, sin grises). 
-       Se agrega un resplandor blanco (drop-shadow) que abraza la forma 
-       del logo para que las letras negras no desaparezcan en el fondo oscuro. */
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
-    background-color: transparent;
+       Se agrega un efecto de 'Foco de Luz' (radial-gradient) para que 
+       el texto negro resalte elegantemente sin usar un rectángulo duro. */
+    filter: none;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 15%, rgba(255, 255, 255, 0) 75%);
     box-shadow: none;
 }
 
