@@ -178,7 +178,7 @@ const trabajos = [
     info: {
       nombre: "E-commerce Confites San Julián",
       categoria: "E-commerce · Shopify · SEO",
-      github: null,
+      github: "https://confitesanjulian.cl",
       contenido: (
         <>
           <p>
@@ -228,60 +228,54 @@ const trabajos = [
     },
   },
   {
-    id: 9,
-    categoria: "desarrollo-web", /* Contenido visual */
+    id: 11,
+    categoria: "desarrollo-software",
     thumb: {
       url: "./assets/trabajos/trabajo-3.png",
-      alt: "Contenido Audiovisual San Julián",
+      alt: "Sistema CMMS",
     },
     info: {
-      nombre: "Contenido Audiovisual para Confites San Julián",
-      categoria: "Marketing Digital · IA · Audiovisual",
+      nombre: "Sistema de Gestión de Mantenimiento (CMMS)",
+      categoria: "Software · Mantenimiento · Gestión",
       github: null,
       contenido: (
         <>
           <p>
-            <strong>Problema:</strong> La empresa presentaba deficiencias en su imagen corporativa en
-            redes sociales y necesitaba contenido dinámico y atractivo.
+            Desarrollo integral de un sistema de gestión de mantenimiento computarizado (CMMS).
+            Diseñado para optimizar la planificación, ejecución y seguimiento de tareas de 
+            mantenimiento preventivo y correctivo.
           </p>
-          <p>
-            <strong>Solución:</strong> Implementación de una estrategia de creación continua de contenido
-            audiovisual moderno, apalancándose en Inteligencia Artificial.
-          </p>
-          <p><strong>Mi participación:</strong></p>
           <ul>
-            <li>Dirección y toma de fotografía de productos.</li>
-            <li>Edición profesional de imágenes y video.</li>
+            <li>Control y seguimiento de órdenes de trabajo.</li>
+            <li>Gestión de activos y equipos.</li>
+            <li>Mejora en la eficiencia operativa.</li>
           </ul>
         </>
       ),
     },
   },
   {
-    id: 10,
-    categoria: "desarrollo-software", /* Redes / Infraestructura */
+    id: 12,
+    categoria: "desarrollo-software",
     thumb: {
       url: "./assets/trabajos/trabajo-4.png",
-      alt: "Infraestructura Cámaras Dahua",
+      alt: "Gestor de Inventario de Existencias",
     },
     info: {
-      nombre: "Configuración de infraestructura de cámaras Dahua",
-      categoria: "Redes · Soporte IT · Infraestructura",
+      nombre: "Gestor de Inventario de Existencias",
+      categoria: "Software · Inventario · Producción",
       github: null,
       contenido: (
         <>
           <p>
-            <strong>Problema:</strong> La empresa requería visualizar y gestionar sus cámaras de 
-            seguridad IP (Dahua) de forma remota y segura.
+            Desarrollo en curso de un sistema avanzado de gestión de inventario para control
+            de materia prima en bodegas.
           </p>
-          <p>
-            <strong>Solución:</strong> Configuración de red avanzada para permitir el ruteo seguro
-            de la señal de las cámaras IP entre ambas infraestructuras.
-          </p>
-          <p><strong>Mi participación:</strong></p>
+          <p><strong>Características Principales:</strong></p>
           <ul>
-            <li>Investigación de topología de red existente.</li>
-            <li>Configuración de dispositivos (routers/NVR).</li>
+            <li>Descuento automático de inventario basado en recetas establecidas y producción diaria.</li>
+            <li>Cálculo preciso de existencias restantes en bodega.</li>
+            <li>Sistema de alertas automatizadas para niveles bajos de materia prima.</li>
           </ul>
         </>
       ),
