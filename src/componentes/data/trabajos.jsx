@@ -204,7 +204,7 @@ const trabajos = [
     id: 8,
     categoria: "desarrollo-software",
     thumb: {
-      url: "./assets/trabajos/trabajo-2.png",
+      url: "./assets/trabajos/automatizacion.png",
       alt: "Automatización Kame ERP",
     },
     info: {
@@ -231,7 +231,7 @@ const trabajos = [
     id: 11,
     categoria: "desarrollo-software",
     thumb: {
-      url: "./assets/trabajos/trabajo-3.png",
+      url: "./assets/trabajos/cmms.png",
       alt: "Sistema CMMS",
     },
     info: {
