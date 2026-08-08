@@ -49,18 +49,6 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="video-container">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="video"
-            preload="metadata"
-          >
-            <source src="/assets/background.mp4" type="video/mp4" />
-          </video>
-        </div>
       </section>
     </>
   );

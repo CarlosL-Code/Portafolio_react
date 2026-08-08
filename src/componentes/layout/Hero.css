@@ -1,7 +1,9 @@
 .hero{
+    /* Esta imagen se usará de fondo. Si la imagen original no carga, caerá a negro. */
+    background-color: #050505;
     background-image: url('/assets/header2.png');
     background-size: cover;
-    border-radius: 20px;
+    background-position: center;
     overflow: hidden;
     color: #fff;
     position: relative;
@@ -20,25 +22,31 @@
     &::after{
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to right, rgba(6,35,52,1), rgba(29,65,125,0.1));
+        inset: 0;
+        /* Superposición oscura + Mesh Gradient Verde Esmeralda/Oscuro + Malla sutil */
+        background-image: 
+            /* Malla (Grid) sutil */
+            linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+            /* Degradado principal oscuro (más oscuro a la izquierda para el texto) */
+            linear-gradient(to right, rgba(8, 12, 20, 0.95) 0%, rgba(8, 12, 20, 0.6) 100%),
+            /* Glow radial esmeralda */
+            radial-gradient(circle at 10% 50%, rgba(16, 185, 129, 0.25) 0%, transparent 50%),
+            /* Glow radial primario (rojo) abajo */
+            radial-gradient(circle at 70% 80%, rgba(216, 58, 58, 0.15) 0%, transparent 40%);
+        background-size: 
+            40px 40px, /* Tamaño de la grilla */
+            40px 40px,
+            100% 100%,
+            100% 100%,
+            100% 100%;
+        background-position: 
+            center center,
+            center center,
+            0 0,
+            0 0,
+            0 0;
         z-index: 1;
-    }
-
-    .video-container{
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        .video{
-            width: 100%;
-            height: 100%;
-            object-fit:cover ;
-        }
     }
 
     .titulo{
