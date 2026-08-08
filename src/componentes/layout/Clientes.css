@@ -134,9 +134,8 @@
 .dark .clientes .brand-item__media {
     background-color: transparent;
     padding: 0;
-    /* Inactivo: color original en escala de grises (sin invertir colores). 
-       Se agrega un brillo muy leve para que los logos negros no se pierdan. */
-    filter: grayscale(100%) opacity(0.7) drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+    /* Inactivo: Convertimos los logos a blanco con opacidad para que resalten uniformemente en el fondo oscuro */
+    filter: brightness(0) invert(1) opacity(0.5);
 }
 
 .dark .clientes .brand-item:hover .brand-item__media {
