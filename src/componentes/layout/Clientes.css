@@ -139,8 +139,8 @@
 }
 
 .dark .clientes .brand-item__media.needs-glow img {
-    /* Agrega un sutil halo de luz blanca alrededor del texto negro para que sea legible sin alterar sus colores */
-    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+    /* El usuario prefiere el look invertido para Primeros Resultados y Paveleads */
+    filter: invert(1) opacity(0.8);
 }
 
 .dark .clientes .brand-item:hover .brand-item__media {
