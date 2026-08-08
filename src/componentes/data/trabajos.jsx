@@ -11,21 +11,8 @@ const trabajos = [
       categoria: "Java · Android · IA · IoT",
       descripcion_corta: "Aplicación Android orientada a accesibilidad capaz de ejecutar acciones mediante comandos de voz e integración con IoT.",
       tags: ["JAVA", "ANDROID", "IA", "IOT"],
-      github: "https://github.com/CarlosL-Code/App-Mobile-No-Touch",
-      contenido: (
-        <>
-          <p>
-            Proyecto académico enfocado en accesibilidad y automatización.
-            Se desarrolló una aplicación Android capaz de ejecutar acciones
-            mediante comandos de voz, como encender o apagar dispositivos.
-          </p>
-          <ul>
-            <li>Aplicación desarrollada en Android Studio con Java</li>
-            <li>Reconocimiento de voz con procesamiento de palabras clave</li>
-            <li>Integración con microcontroladores e IoT</li>
-          </ul>
-        </>
-      ),
+      link: "https://github.com/CarlosL-Code/App-Mobile-No-Touch",
+      contenido: null,
     },
   },
   {
@@ -40,22 +27,8 @@ const trabajos = [
       categoria: "Next.js · React · TypeScript · Tailwind CSS",
       descripcion_corta: "Plataforma web orientada a pedidos en mesa mediante código QR y envío automático vía WhatsApp.",
       tags: ["NEXT.JS", "REACT", "TAILWIND"],
-      github: "https://pagina-para-restaurante.netlify.app/",
-      contenido: (
-        <>
-         <p>
-          Plataforma web profesional desarrollada con Next.js para restaurantes
-          de comida china, orientada a pedidos en mesa mediante código QR y envío
-          automático del pedido vía WhatsApp.
-        </p>
-        <p>
-          El sistema permite que el cliente escanee un código QR desde su mesa,
-          acceda al menú digital, seleccione múltiples platos, controle
-          cantidades y envíe el pedido completo directamente al WhatsApp del
-          restaurante.
-        </p>
-        </>
-      ),
+      link: "https://pagina-para-restaurante.netlify.app/",
+      contenido: null,
     },
   },
   {
@@ -70,20 +43,8 @@ const trabajos = [
       categoria: "Spring Boot · REST API · MQTT · ESP32",
       descripcion_corta: "Sistema de monitoreo ambiental orientado al control de temperatura y humedad en tiempo real con sensores IoT.",
       tags: ["SPRING BOOT", "MQTT", "ESP32"],
-      github: "https://github.com/CarlosL-Code/monitoreo-backend",
-      contenido: (
-        <>
-          <p>
-            Sistema de monitoreo ambiental para cultivos, orientado al control
-            de temperatura y humedad en tiempo real mediante sensores IoT.
-          </p>
-          <ul>
-            <li>Backend REST desarrollado con Spring Boot</li>
-            <li>Comunicación MQTT con ESP32</li>
-            <li>Visualización de datos en tiempo real</li>
-          </ul>
-        </>
-      ),
+      link: "https://github.com/CarlosL-Code/monitoreo-backend",
+      contenido: null,
     },
   },
   {
@@ -98,20 +59,8 @@ const trabajos = [
       categoria: "WordPress · DNS · SSL · Hosting",
       descripcion_corta: "Soporte técnico y estabilización de sitio corporativo en producción para la agencia internacional PAVELEADS.",
       tags: ["WORDPRESS", "DNS", "SSL"],
-      github: "https://paveleads.com/",
-      contenido: (
-        <>
-          <p>
-            Trabajo de soporte técnico y estabilización de sitio web corporativo
-            en producción para una empresa con operación internacional.
-          </p>
-          <ul>
-            <li>Corrección de errores DNS y certificados SSL</li>
-            <li>Optimización de hosting y redirecciones</li>
-            <li>Soporte técnico continuo</li>
-          </ul>
-        </>
-      ),
+      link: "https://paveleads.com/",
+      contenido: null,
     },
   },
   {
@@ -126,20 +75,8 @@ const trabajos = [
       categoria: "WordPress · Diseño Web",
       descripcion_corta: "Sitio web para taller mecánico en Temuco, enfocado en mejorar la presencia digital y el contacto con clientes.",
       tags: ["WORDPRESS", "DISEÑO WEB"],
-      github: "https://carserv.cl",
-      contenido: (
-        <>
-          <p>
-            Desarrollo de sitio web informativo para taller mecánico en Temuco,
-            enfocado en mejorar la presencia digital y el contacto con clientes.
-          </p>
-          <ul>
-            <li>Diseño web responsivo y claro</li>
-            <li>Integración con WhatsApp y Google Maps</li>
-            <li>Corrección de problemas técnicos y SSL</li>
-          </ul>
-        </>
-      ),
+      link: "https://carserv.cl",
+      contenido: null,
     },
   },
   {
@@ -154,22 +91,8 @@ const trabajos = [
       categoria: "HTML · Tailwind CSS · UX/UI",
       descripcion_corta: "Proyecto conceptual de demostración comercial para negocios gastronómicos, optimizado para conversiones móviles.",
       tags: ["HTML", "TAILWIND", "UX/UI"],
-      github: "https://pizzeria-landing-demo-qmmq.vercel.app/index.html",
-      contenido: (
-        <>
-          <p>
-            Proyecto conceptual de landing page desarrollado como demostración
-            comercial para negocios gastronómicos, enfocado en conversión,
-            experiencia de usuario y diseño responsive.
-          </p>
-          <ul>
-            <li>Diseño moderno orientado a negocios locales</li>
-            <li>Maquetación semántica con HTML y Tailwind CSS</li>
-            <li>Optimización para dispositivos móviles</li>
-            <li>Estructura preparada para SEO y escalabilidad</li>
-          </ul>
-        </>
-      ),
+      link: "https://pizzeria-landing-demo-qmmq.vercel.app/index.html",
+      contenido: null,
     },
   },
   {
@@ -184,25 +107,8 @@ const trabajos = [
       categoria: "E-commerce · Shopify · SEO",
       descripcion_corta: "Desarrollo de tienda online completa utilizando Shopify, con funcionalidades personalizadas y estrategias de SEO.",
       tags: ["E-COMMERCE", "SHOPIFY", "SEO"],
-      github: "https://confitesanjulian.cl",
-      contenido: (
-        <>
-          <p>
-            <strong>Problema:</strong> La empresa necesitaba modernizar completamente su presencia digital
-            mediante una tienda online profesional para escalar sus ventas.
-          </p>
-          <p>
-            <strong>Solución:</strong> Diseñé y desarrollé un e-commerce completo utilizando Shopify,
-            creando funcionalidades personalizadas sin recurrir a temas premium costosos.
-          </p>
-          <p><strong>Mi participación:</strong></p>
-          <ul>
-            <li>Personalización profunda de Shopify mediante Liquid.</li>
-            <li>Programación de componentes visuales propios (HTML, CSS, JS).</li>
-            <li>Implementación de estrategias SEO técnico.</li>
-          </ul>
-        </>
-      ),
+      link: "https://confitesanjulian.cl",
+      contenido: null,
     },
   },
   {
@@ -217,20 +123,8 @@ const trabajos = [
       categoria: "Automatización · Flujos de trabajo",
       descripcion_corta: "Automatización inteligente para procesar e imprimir facturas automáticamente directamente desde correos del ERP.",
       tags: ["AUTOMATIZACIÓN", "WORKFLOWS"],
-      github: null,
-      contenido: (
-        <>
-          <p>
-            <strong>Problema:</strong> El proceso de recepción e impresión de facturas enviadas desde
-            el sistema Kame ERP debía realizarse de manera manual, consumiendo tiempo.
-          </p>
-          <p>
-            <strong>Solución:</strong> Desarrollé una automatización inteligente capaz de identificar
-            únicamente los correos provenientes del ERP y enviar las facturas automáticamente a impresión.
-          </p>
-          <p><strong>Resultado:</strong> Reducción del 100% de las tareas manuales de impresión.</p>
-        </>
-      ),
+      link: "https://github.com/CarlosL-Code", /* Placeholder GitHub */
+      contenido: null,
     },
   },
   {
@@ -245,28 +139,15 @@ const trabajos = [
       categoria: "Software · Mantenimiento · Gestión",
       descripcion_corta: "Sistema de gestión de mantenimiento computarizado para optimizar la planificación de órdenes de trabajo.",
       tags: ["SOFTWARE", "MANTENIMIENTO"],
-      github: null,
-      contenido: (
-        <>
-          <p>
-            Desarrollo integral de un sistema de gestión de mantenimiento computarizado (CMMS).
-            Diseñado para optimizar la planificación, ejecución y seguimiento de tareas de 
-            mantenimiento preventivo y correctivo.
-          </p>
-          <ul>
-            <li>Control y seguimiento de órdenes de trabajo.</li>
-            <li>Gestión de activos y equipos.</li>
-            <li>Mejora en la eficiencia operativa.</li>
-          </ul>
-        </>
-      ),
+      link: "https://youtube.com", /* Placeholder Video */
+      contenido: null,
     },
   },
   {
     id: 12,
     categoria: "desarrollo-software",
     thumb: {
-      url: "./assets/trabajos/trabajo-4.png",
+      url: "./assets/trabajos/trabajo-2.png", /* Imagen cambiada */
       alt: "Gestor de Inventario de Existencias",
     },
     info: {
@@ -274,21 +155,8 @@ const trabajos = [
       categoria: "Software · Inventario · Producción",
       descripcion_corta: "Sistema avanzado de gestión de inventario para el control de materia prima, recetas y alertas automatizadas.",
       tags: ["SOFTWARE", "INVENTARIO"],
-      github: null,
-      contenido: (
-        <>
-          <p>
-            Desarrollo en curso de un sistema avanzado de gestión de inventario para control
-            de materia prima en bodegas.
-          </p>
-          <p><strong>Características Principales:</strong></p>
-          <ul>
-            <li>Descuento automático de inventario basado en recetas establecidas y producción diaria.</li>
-            <li>Cálculo preciso de existencias restantes en bodega.</li>
-            <li>Sistema de alertas automatizadas para niveles bajos de materia prima.</li>
-          </ul>
-        </>
-      ),
+      link: "https://youtube.com", /* Placeholder Video */
+      contenido: null,
     },
   }
 ];

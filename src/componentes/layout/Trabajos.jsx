@@ -1,13 +1,10 @@
 import "./Trabajos.css";
 import { useState } from "react";
 import trabajos from "../data/trabajos";
-import Modal from "../Modal";
 
 const Trabajos = () => {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
   const [trabajosFiltrados, setTrabajosFiltrados] = useState(trabajos);
-  const [estadoModal, setEstadoModal] = useState(false);
-  const [trabajoSelecionado, setTrabajoSelecionado] = useState(trabajos[0]);
   
   const [visibleCount, setVisibleCount] = useState(6);
 
@@ -30,16 +27,11 @@ const Trabajos = () => {
     setVisibleCount((prev) => prev + 6);
   };
 
-  const openModal = (e, id) => {
+  const openProjectLink = (e, link) => {
     e.preventDefault();
-    setEstadoModal(true);
-
-    const trabajo = trabajos.find((trabajo) => trabajo.id === id);
-    setTrabajoSelecionado(trabajo);
-  };
-
-  const closeModal = () => {
-    setEstadoModal(false);
+    if (link) {
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
   };
 
   const trabajosVisibles = trabajosFiltrados.slice(0, visibleCount);
@@ -83,7 +75,7 @@ const Trabajos = () => {
               key={trabajo.id}
               style={{ transitionDelay: `${(index % 6) * 50}ms` }}
             >
-              <div className="imagen-proyecto" onClick={(e) => openModal(e, trabajo.id)}>
+              <div className="imagen-proyecto" onClick={(e) => openProjectLink(e, trabajo.info.link)}>
                 <img loading="lazy" decoding="async" src={trabajo.thumb.url} alt={trabajo.thumb.alt} />
               </div>
 
@@ -97,7 +89,7 @@ const Trabajos = () => {
                   ))}
                 </div>
 
-                <button className="btn-proyecto" onClick={(e) => openModal(e, trabajo.id)}>
+                <button className="btn-proyecto" onClick={(e) => openProjectLink(e, trabajo.info.link)}>
                   Ver Proyecto &rarr;
                 </button>
               </div>
@@ -114,10 +106,6 @@ const Trabajos = () => {
           </div>
         )}
       </section>
-
-      {estadoModal && (
-        <Modal closeModal={closeModal} trabajo={trabajoSelecionado} />
-      )}
     </>
   );
 };
