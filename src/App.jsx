@@ -34,9 +34,11 @@ function App() {
   return (
     <>
       <div className="mouse-glow"></div>
+      
+      <Hero />
+      
       <main className="contenedor">
         <Header currency={currency} setCurrency={setCurrency} />
-        <Hero />
         <AcercaDe />
         <ExperienciaProfesional />
         <Clientes />
