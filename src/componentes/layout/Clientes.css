@@ -85,13 +85,13 @@
         justify-content: center;
         transition: filter 0.4s ease, transform 0.4s ease, opacity 0.4s ease;
         
-        /* Logos bien grises y tenues como en tu imagen de referencia */
-        filter: grayscale(100%) opacity(0.5);
+        /* Logos sin filtros agresivos a petición del usuario */
+        filter: none;
     }
 
     .brand-item:hover .brand-item__media {
-        /* Al hacer hover: recupera 100% su color original */
-        filter: grayscale(0%) opacity(1);
+        /* Al hacer hover: solo escala */
+        filter: none;
         transform: scale(1.1);
     }
 
@@ -134,22 +134,14 @@
 .dark .clientes .brand-item__media {
     background-color: transparent;
     padding: 0;
-    /* Inactivo general: escala de grises sutil para mantener el aspecto profesional oscuro */
-    filter: grayscale(100%) opacity(0.6) drop-shadow(0 0 3px rgba(255, 255, 255, 0.15));
+    filter: none;
     background: transparent;
 }
 
-.dark .clientes .brand-item__media.invert-dark {
-    /* Específico para logos extremadamente oscuros (Paveleads, Primeros Resultados) */
-    /* Los invierte a blanco sutil en estado inactivo para que sean visibles */
-    filter: invert(1) opacity(0.6);
-}
-
-.dark .clientes .brand-item:hover .brand-item__media,
-.dark .clientes .brand-item:hover .brand-item__media.invert-dark {
-    /* Hover general: recupera su color original (quita el grayscale/invert) e ilumina el fondo */
+.dark .clientes .brand-item:hover .brand-item__media {
+    /* Sin nubes blancas, solo escala (el scale se hereda del hover base) */
     filter: none;
-    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 15%, rgba(255, 255, 255, 0) 75%);
+    background: transparent;
     box-shadow: none;
 }
 
