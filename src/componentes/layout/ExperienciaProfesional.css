@@ -216,6 +216,10 @@
 /* =========================================
    EFECTO CROSSFADE (CARRUSEL)
 ========================================= */
+.experiencia-slider {
+  display: grid;
+}
+
 .experiencia-tarjeta.fading-out {
   opacity: 0 !important;
   transform: translateY(15px) !important;

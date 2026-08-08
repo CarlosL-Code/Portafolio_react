@@ -83,46 +83,60 @@ const ExperienciaProfesional = () => {
       </div>
 
       <div className="experiencia-contenido">
-        <div 
-          className={`experiencia-tarjeta anim-scroll ${isFading ? 'fading-out' : 'fading-in'}`}
-          onMouseEnter={() => {
-            if (window.matchMedia('(hover: hover)').matches) {
-              setIsPaused(true);
-            }
-          }}
-          onMouseLeave={() => {
-            if (window.matchMedia('(hover: hover)').matches) {
-              setIsPaused(false);
-            }
-          }}
-        >
-          <div className="experiencia-header">
-            <h3 className="experiencia-cargo">{exp.cargo}</h3>
-            <span className="experiencia-periodo">{exp.periodo}</span>
-          </div>
-          
-          <div className="experiencia-empresa">
-            <h4>{exp.empresa}</h4>
-            <span className="experiencia-tipo">{exp.tipo}</span>
-          </div>
+        <div className="experiencia-slider">
+          {experiencias.map((exp, index) => (
+            <div 
+              key={exp.id}
+              className={`experiencia-tarjeta anim-scroll ${
+                index === currentIndex 
+                  ? (isFading ? 'fading-out' : 'fading-in') 
+                  : 'fading-out'
+              }`}
+              style={{
+                gridArea: "1 / 1",
+                pointerEvents: index === currentIndex ? "auto" : "none",
+                zIndex: index === currentIndex ? 2 : 1
+              }}
+              onMouseEnter={() => {
+                if (window.matchMedia('(hover: hover)').matches) {
+                  setIsPaused(true);
+                }
+              }}
+              onMouseLeave={() => {
+                if (window.matchMedia('(hover: hover)').matches) {
+                  setIsPaused(false);
+                }
+              }}
+            >
+              <div className="experiencia-header">
+                <h3 className="experiencia-cargo">{exp.cargo}</h3>
+                <span className="experiencia-periodo">{exp.periodo}</span>
+              </div>
+              
+              <div className="experiencia-empresa">
+                <h4>{exp.empresa}</h4>
+                <span className="experiencia-tipo">{exp.tipo}</span>
+              </div>
 
-          <div className="experiencia-descripcion">
-            <p>{exp.descripcion}</p>
-            
-            <ul className="experiencia-lista">
-              {exp.logros.map((logro, index) => (
-                <li key={index}>
-                  <span><strong>{logro.titulo}:</strong> {logro.texto}</span>
-                </li>
-              ))}
-            </ul>
+              <div className="experiencia-descripcion">
+                <p>{exp.descripcion}</p>
+                
+                <ul className="experiencia-lista">
+                  {exp.logros.map((logro, logroIndex) => (
+                    <li key={logroIndex}>
+                      <span><strong>{logro.titulo}:</strong> {logro.texto}</span>
+                    </li>
+                  ))}
+                </ul>
 
-            <div className="experiencia-tags">
-              {exp.tags.map((tag, index) => (
-                <span key={index} className="tag">{tag}</span>
-              ))}
+                <div className="experiencia-tags">
+                  {exp.tags.map((tag, tagIndex) => (
+                    <span key={tagIndex} className="tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
         
         {/* Indicadores del carrusel */}
