@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import './Header.css';
 import DarkModeSwitch from '../DarkModeSwitch';
 
-const Header = () => {
+const Header = ({ currency, setCurrency }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -67,7 +67,16 @@ const Header = () => {
           <a href="#acerca-de" onClick={closeMenu} aria-label="Ir a sección Acerca de mí">Acerca de mí</a>
           <a href="#experiencia" onClick={closeMenu} aria-label="Ir a sección Experiencia">Experiencia</a>
           <a href="#trabajos" onClick={closeMenu} aria-label="Ir a sección Proyectos">Proyectos</a>
-          <a href="#planes" onClick={closeMenu} aria-label="Ir a sección Planes y Precios">Planes</a>
+          
+          <div className="nav-item-dropdown">
+            <span className="nav-link-dropdown">Servicios <FaChevronDown className="dropdown-icon" /></span>
+            <div className="dropdown-menu">
+              <a href="#planes" onClick={closeMenu}>Desarrollo Web</a>
+              <a href="#planes" onClick={closeMenu}>Sitio Web Mensual</a>
+              <a href="#planes" onClick={closeMenu}>Sistemas a Medida</a>
+            </div>
+          </div>
+          
           <a href="#contacto" onClick={closeMenu} aria-label="Ir a sección Contacto">Contacto</a>
           
           <a
@@ -78,9 +87,24 @@ const Header = () => {
           >
             Descargar CV
           </a>
-          {/* DarkModeSwitch dentro del menú en móvil para que quede alineado */}
-          <div className="dark-mode-container">
-            <DarkModeSwitch />
+          {/* Acciones extra en el nav */}
+          <div className="header-actions-container">
+            <select 
+              className="currency-switcher" 
+              value={currency} 
+              onChange={(e) => {
+                if(setCurrency) setCurrency(e.target.value);
+                closeMenu();
+              }}
+              aria-label="Seleccionar Moneda"
+            >
+              <option value="CLP">CLP</option>
+              <option value="USD">USD</option>
+              <option value="ARS">ARS</option>
+            </select>
+            <div className="dark-mode-container">
+              <DarkModeSwitch />
+            </div>
           </div>
         </nav>
       </header>

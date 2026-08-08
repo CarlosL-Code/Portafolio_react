@@ -321,3 +321,37 @@ body.dark .whatsapp-flotante {
         height: 26px;
     }
 }
+
+/* =========================================
+   EFECTO LINTERNA (MOUSE GLOW)
+========================================= */
+.mouse-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  background: radial-gradient(
+    600px circle at var(--x, -1000px) var(--y, -1000px),
+    rgba(0, 0, 0, 0.03),
+    transparent 40%
+  );
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+body.dark .mouse-glow {
+  background: radial-gradient(
+    600px circle at var(--x, -1000px) var(--y, -1000px),
+    rgba(255, 255, 255, 0.05),
+    transparent 40%
+  );
+}
+
+@media (max-width: 768px) {
+  .mouse-glow {
+    display: none !important;
+  }
+}

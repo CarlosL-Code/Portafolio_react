@@ -1,7 +1,18 @@
 import "./Planes.css";
 
-const Planes = () => {
+const Planes = ({ currency = 'CLP' }) => {
   const whatsappNumber = "56937540250";
+
+  const precios = {
+    web: { CLP: "120.000", USD: "135", ARS: "150.000" },
+    mensual: { CLP: "30.000", USD: "35", ARS: "40.000" },
+    sistemas: { CLP: "300.000", USD: "340", ARS: "400.000" },
+    mantencion: { CLP: "25.000", USD: "28", ARS: "33.000" }
+  };
+
+  const getMonedaSuffix = () => {
+    return currency === "USD" ? "USD" : currency;
+  };
 
   const generarLinkWhatsApp = (mensaje) => {
     return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensaje)}`;
@@ -25,8 +36,8 @@ const Planes = () => {
           </div>
           <div className="plan-precio">
             <span className="desde">Desde</span>
-            <span className="monto">$180.000</span>
-            <span className="moneda">CLP</span>
+            <span className="monto">${precios.web[currency]}</span>
+            <span className="moneda">{getMonedaSuffix()}</span>
           </div>
           <p className="plan-descripcion">
             Para empresas, profesionales o emprendimientos que quieren adquirir su página web mediante un pago único.
@@ -56,7 +67,7 @@ const Planes = () => {
           </div>
           <a
             href={generarLinkWhatsApp(
-              "Hola Carlos, vi tu portafolio y me interesa cotizar el plan de desarrollo web desde $180.000. Me gustaría contarte sobre mi proyecto."
+              `Hola Carlos, vi tu portafolio y me interesa cotizar el plan de desarrollo web desde $${precios.web[currency]} ${currency}. Me gustaría contarte sobre mi proyecto.`
             )}
             target="_blank"
             rel="noopener noreferrer"
@@ -74,8 +85,8 @@ const Planes = () => {
           </div>
           <div className="plan-precio">
             <span className="desde">Desde</span>
-            <span className="monto">$30.000</span>
-            <span className="moneda">CLP / mes</span>
+            <span className="monto">${precios.mensual[currency]}</span>
+            <span className="moneda">{getMonedaSuffix()} / mes</span>
           </div>
           <p className="plan-descripcion">
             Alternativa para quienes quieren tener una página web profesional sin realizar un pago inicial alto.
@@ -96,7 +107,7 @@ const Planes = () => {
           </div>
           <a
             href={generarLinkWhatsApp(
-              "Hola Carlos, vi tu portafolio y me interesa conocer más sobre el plan web mensual desde $30.000. ¿Podemos conversar?"
+              `Hola Carlos, vi tu portafolio y me interesa conocer más sobre el plan web mensual desde $${precios.mensual[currency]} ${currency}. ¿Podemos conversar?`
             )}
             target="_blank"
             rel="noopener noreferrer"
@@ -113,8 +124,8 @@ const Planes = () => {
           </div>
           <div className="plan-precio">
             <span className="desde">Desde</span>
-            <span className="monto">$300.000</span>
-            <span className="moneda">CLP</span>
+            <span className="monto">${precios.sistemas[currency]}</span>
+            <span className="moneda">{getMonedaSuffix()}</span>
           </div>
           <p className="plan-descripcion">
             Desarrollo de sistemas y plataformas para digitalizar procesos y mejorar la gestión de tu empresa.
@@ -141,7 +152,7 @@ const Planes = () => {
           </div>
           <div className="plan-secundario">
             <h4>Mantención de sistemas</h4>
-            <p className="precio-secundario">Desde $25.000 CLP / mes</p>
+            <p className="precio-secundario">Desde ${precios.mantencion[currency]} {getMonedaSuffix()} / mes</p>
             <p className="texto-secundario">Soporte, correcciones y pequeñas mejoras. Nuevos desarrollos se cotizan aparte.</p>
           </div>
           <a

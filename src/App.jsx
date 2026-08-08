@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Header from "./componentes/layout/Header";
 import Hero from "./componentes/layout/Hero";
 import AcercaDe from "./componentes/layout/AcercaDe";
@@ -18,17 +19,29 @@ import useScrollAnimation from "./hooks/useScrollAnimation";
 
 function App() {
   useScrollAnimation();
+  const [currency, setCurrency] = useState("CLP");
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      document.documentElement.style.setProperty('--x', `${e.clientX}px`);
+      document.documentElement.style.setProperty('--y', `${e.clientY}px`);
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   return (
     <>
+      <div className="mouse-glow"></div>
       <main className="contenedor">
-        <Header />
+        <Header currency={currency} setCurrency={setCurrency} />
         <Hero />
         <AcercaDe />
         <ExperienciaProfesional />
         <Clientes />
         <Trabajos />
-        <Planes />
+        <Planes currency={currency} />
         <FAQ />
         <CallToAction />
         <Contacto />
