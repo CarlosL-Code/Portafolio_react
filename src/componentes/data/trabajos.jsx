@@ -9,6 +9,8 @@ const trabajos = [
     info: {
       nombre: "Aplicación móvil Android con control por voz",
       categoria: "Java · Android · IA · IoT",
+      descripcion_corta: "Aplicación Android orientada a accesibilidad capaz de ejecutar acciones mediante comandos de voz e integración con IoT.",
+      tags: ["JAVA", "ANDROID", "IA", "IOT"],
       github: "https://github.com/CarlosL-Code/App-Mobile-No-Touch",
       contenido: (
         <>
@@ -17,7 +19,6 @@ const trabajos = [
             Se desarrolló una aplicación Android capaz de ejecutar acciones
             mediante comandos de voz, como encender o apagar dispositivos.
           </p>
-
           <ul>
             <li>Aplicación desarrollada en Android Studio con Java</li>
             <li>Reconocimiento de voz con procesamiento de palabras clave</li>
@@ -35,8 +36,10 @@ const trabajos = [
       alt: "Sistema de pedidos con QR y WhatsApp para restaurante chino",
     },
     info: {
-      nombre: "Sistema de pedidos que incluye WhatsApp para restaurante chino",
-      categoria: "Next.js · React · TypeScript · Tailwind CSS · Framer Motion",
+      nombre: "Sistema de pedidos para restaurante",
+      categoria: "Next.js · React · TypeScript · Tailwind CSS",
+      descripcion_corta: "Plataforma web orientada a pedidos en mesa mediante código QR y envío automático vía WhatsApp.",
+      tags: ["NEXT.JS", "REACT", "TAILWIND"],
       github: "https://pagina-para-restaurante.netlify.app/",
       contenido: (
         <>
@@ -55,7 +58,6 @@ const trabajos = [
       ),
     },
   },
-
   {
     id: 2,
     categoria: "desarrollo-software",
@@ -66,6 +68,8 @@ const trabajos = [
     info: {
       nombre: "Sistema IoT para monitoreo de orquídeas",
       categoria: "Spring Boot · REST API · MQTT · ESP32",
+      descripcion_corta: "Sistema de monitoreo ambiental orientado al control de temperatura y humedad en tiempo real con sensores IoT.",
+      tags: ["SPRING BOOT", "MQTT", "ESP32"],
       github: "https://github.com/CarlosL-Code/monitoreo-backend",
       contenido: (
         <>
@@ -73,7 +77,6 @@ const trabajos = [
             Sistema de monitoreo ambiental para cultivos, orientado al control
             de temperatura y humedad en tiempo real mediante sensores IoT.
           </p>
-
           <ul>
             <li>Backend REST desarrollado con Spring Boot</li>
             <li>Comunicación MQTT con ESP32</li>
@@ -83,7 +86,6 @@ const trabajos = [
       ),
     },
   },
-
   {
     id: 3,
     categoria: "desarrollo-web",
@@ -92,8 +94,10 @@ const trabajos = [
       alt: "PAVELEADS Agency",
     },
     info: {
-      nombre: "Soporte y estabilización web — PAVELEADS Agency",
+      nombre: "Soporte y estabilización web",
       categoria: "WordPress · DNS · SSL · Hosting",
+      descripcion_corta: "Soporte técnico y estabilización de sitio corporativo en producción para la agencia internacional PAVELEADS.",
+      tags: ["WORDPRESS", "DNS", "SSL"],
       github: "https://paveleads.com/",
       contenido: (
         <>
@@ -101,7 +105,6 @@ const trabajos = [
             Trabajo de soporte técnico y estabilización de sitio web corporativo
             en producción para una empresa con operación internacional.
           </p>
-
           <ul>
             <li>Corrección de errores DNS y certificados SSL</li>
             <li>Optimización de hosting y redirecciones</li>
@@ -111,7 +114,6 @@ const trabajos = [
       ),
     },
   },
-
   {
     id: 4,
     categoria: "desarrollo-web",
@@ -120,8 +122,10 @@ const trabajos = [
       alt: "Sitio Web Carserv",
     },
     info: {
-      nombre: "Sitio web informativo — Carserv",
-      categoria: "WordPress · Diseño Web · Contacto Directo",
+      nombre: "Sitio web informativo Carserv",
+      categoria: "WordPress · Diseño Web",
+      descripcion_corta: "Sitio web para taller mecánico en Temuco, enfocado en mejorar la presencia digital y el contacto con clientes.",
+      tags: ["WORDPRESS", "DISEÑO WEB"],
       github: "https://carserv.cl",
       contenido: (
         <>
@@ -129,7 +133,6 @@ const trabajos = [
             Desarrollo de sitio web informativo para taller mecánico en Temuco,
             enfocado en mejorar la presencia digital y el contacto con clientes.
           </p>
-
           <ul>
             <li>Diseño web responsivo y claro</li>
             <li>Integración con WhatsApp y Google Maps</li>
@@ -140,33 +143,34 @@ const trabajos = [
     },
   },
   {
-  id: 5,
-  categoria: "desarrollo-web",
-  thumb: {
-    url: "./assets/trabajos/trabajo-5.png",
-    alt: "Landing Page Pizzería — Proyecto Conceptual",
-  },
-  info: {
-    nombre: "Landing page comercial para pizzería (demo)",
-    categoria: "HTML · Tailwind CSS · UX/UI · Responsive Design",
-    github: "https://pizzeria-landing-demo-qmmq.vercel.app/index.html",
-    contenido: (
-      <>
-        <p>
-          Proyecto conceptual de landing page desarrollado como demostración
-          comercial para negocios gastronómicos, enfocado en conversión,
-          experiencia de usuario y diseño responsive.
-        </p>
-
-        <ul>
-          <li>Diseño moderno orientado a negocios locales</li>
-          <li>Maquetación semántica con HTML y Tailwind CSS</li>
-          <li>Optimización para dispositivos móviles</li>
-          <li>Estructura preparada para SEO y escalabilidad</li>
-        </ul>
-      </>
-    ),
-  },
+    id: 5,
+    categoria: "desarrollo-web",
+    thumb: {
+      url: "./assets/trabajos/trabajo-5.png",
+      alt: "Landing Page Pizzería — Proyecto Conceptual",
+    },
+    info: {
+      nombre: "Landing page comercial para pizzería",
+      categoria: "HTML · Tailwind CSS · UX/UI",
+      descripcion_corta: "Proyecto conceptual de demostración comercial para negocios gastronómicos, optimizado para conversiones móviles.",
+      tags: ["HTML", "TAILWIND", "UX/UI"],
+      github: "https://pizzeria-landing-demo-qmmq.vercel.app/index.html",
+      contenido: (
+        <>
+          <p>
+            Proyecto conceptual de landing page desarrollado como demostración
+            comercial para negocios gastronómicos, enfocado en conversión,
+            experiencia de usuario y diseño responsive.
+          </p>
+          <ul>
+            <li>Diseño moderno orientado a negocios locales</li>
+            <li>Maquetación semántica con HTML y Tailwind CSS</li>
+            <li>Optimización para dispositivos móviles</li>
+            <li>Estructura preparada para SEO y escalabilidad</li>
+          </ul>
+        </>
+      ),
+    },
   },
   {
     id: 7,
@@ -178,6 +182,8 @@ const trabajos = [
     info: {
       nombre: "E-commerce Confites San Julián",
       categoria: "E-commerce · Shopify · SEO",
+      descripcion_corta: "Desarrollo de tienda online completa utilizando Shopify, con funcionalidades personalizadas y estrategias de SEO.",
+      tags: ["E-COMMERCE", "SHOPIFY", "SEO"],
       github: "https://confitesanjulian.cl",
       contenido: (
         <>
@@ -187,8 +193,7 @@ const trabajos = [
           </p>
           <p>
             <strong>Solución:</strong> Diseñé y desarrollé un e-commerce completo utilizando Shopify,
-            creando funcionalidades personalizadas sin recurrir a temas premium
-            costosos.
+            creando funcionalidades personalizadas sin recurrir a temas premium costosos.
           </p>
           <p><strong>Mi participación:</strong></p>
           <ul>
@@ -208,15 +213,16 @@ const trabajos = [
       alt: "Automatización Kame ERP",
     },
     info: {
-      nombre: "Automatización de impresión de facturas Kame ERP",
+      nombre: "Automatización facturas Kame ERP",
       categoria: "Automatización · Flujos de trabajo",
+      descripcion_corta: "Automatización inteligente para procesar e imprimir facturas automáticamente directamente desde correos del ERP.",
+      tags: ["AUTOMATIZACIÓN", "WORKFLOWS"],
       github: null,
       contenido: (
         <>
           <p>
             <strong>Problema:</strong> El proceso de recepción e impresión de facturas enviadas desde
-            el sistema Kame ERP debía realizarse de manera manual, consumiendo
-            tiempo.
+            el sistema Kame ERP debía realizarse de manera manual, consumiendo tiempo.
           </p>
           <p>
             <strong>Solución:</strong> Desarrollé una automatización inteligente capaz de identificar
@@ -235,8 +241,10 @@ const trabajos = [
       alt: "Sistema CMMS",
     },
     info: {
-      nombre: "Sistema de Gestión de Mantenimiento (CMMS)",
+      nombre: "Sistema de Gestión (CMMS)",
       categoria: "Software · Mantenimiento · Gestión",
+      descripcion_corta: "Sistema de gestión de mantenimiento computarizado para optimizar la planificación de órdenes de trabajo.",
+      tags: ["SOFTWARE", "MANTENIMIENTO"],
       github: null,
       contenido: (
         <>
@@ -264,6 +272,8 @@ const trabajos = [
     info: {
       nombre: "Gestor de Inventario de Existencias",
       categoria: "Software · Inventario · Producción",
+      descripcion_corta: "Sistema avanzado de gestión de inventario para el control de materia prima, recetas y alertas automatizadas.",
+      tags: ["SOFTWARE", "INVENTARIO"],
       github: null,
       contenido: (
         <>

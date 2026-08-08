@@ -3,21 +3,18 @@ import { useState } from "react";
 import trabajos from "../data/trabajos";
 import Modal from "../Modal";
 
-
 const Trabajos = () => {
-  
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
   const [trabajosFiltrados, setTrabajosFiltrados] = useState(trabajos);
   const [estadoModal, setEstadoModal] = useState(false);
   const [trabajoSelecionado, setTrabajoSelecionado] = useState(trabajos[0]);
   
-  // Estado para la carga progresiva
   const [visibleCount, setVisibleCount] = useState(6);
 
   const handleChange = (e) => {
     const categoria = e.target.id;
     setCategoriaSeleccionada(categoria);
-    setVisibleCount(6); // Resetear a 6 al cambiar de filtro
+    setVisibleCount(6); 
 
     if (categoria === "todos") {
       setTrabajosFiltrados(trabajos);
@@ -45,122 +42,74 @@ const Trabajos = () => {
     setEstadoModal(false);
   };
 
-  // Obtener solo los trabajos visibles según el contador
   const trabajosVisibles = trabajosFiltrados.slice(0, visibleCount);
 
   return (
     <>
       <section className="trabajos" id="trabajos">
-        {/* Encabezado */}
+        {/* Encabezado Premium */}
         <div className="encabezado anim-scroll">
-          <h3 className="titulo">Mis trabajos</h3>
-          <p className="subtitulo">
-            Cada proyecto representa una solución real desarrollada para una necesidad concreta.
+          <h2 className="titulo-premium">Proyectos Destacados</h2>
+          <p className="subtitulo-premium">
+            Cada proyecto representa una solución arquitectónica para necesidades concretas de negocio. Explorar estos casos de estudio revela el enfoque estratégico detrás del código.
           </p>
         </div>
 
-        {/* Filtros */}
-        <div className="filtros anim-scroll">
-          <label htmlFor="todos">
-            <input
-              type="radio"
-              name="categoria"
-              id="todos"
-              onChange={handleChange}
-              checked={categoriaSeleccionada === "todos"}
-            />
-            <span className="opcion">Todos</span>
+        {/* Filtros tipo "Pill" */}
+        <div className="filtros-premium anim-scroll">
+          <label htmlFor="todos" className={categoriaSeleccionada === "todos" ? "activo" : ""}>
+            <input type="radio" name="categoria" id="todos" onChange={handleChange} checked={categoriaSeleccionada === "todos"} />
+            Todos
           </label>
-
-          <label htmlFor="desarrollo-software">
-            <input
-              type="radio"
-              name="categoria"
-              id="desarrollo-software"
-              onChange={handleChange}
-              checked={categoriaSeleccionada === "desarrollo-software"}
-            />
-            <span className="opcion">Desarrollo de Software</span>
+          <label htmlFor="desarrollo-software" className={categoriaSeleccionada === "desarrollo-software" ? "activo" : ""}>
+            <input type="radio" name="categoria" id="desarrollo-software" onChange={handleChange} checked={categoriaSeleccionada === "desarrollo-software"} />
+            Software
           </label>
-
-          <label htmlFor="desarrollo-web">
-            <input
-              type="radio"
-              name="categoria"
-              id="desarrollo-web"
-              onChange={handleChange}
-              checked={categoriaSeleccionada === "desarrollo-web"}
-            />
-            <span className="opcion">Desarrollo Web</span>
+          <label htmlFor="desarrollo-web" className={categoriaSeleccionada === "desarrollo-web" ? "activo" : ""}>
+            <input type="radio" name="categoria" id="desarrollo-web" onChange={handleChange} checked={categoriaSeleccionada === "desarrollo-web"} />
+            Web Apps
           </label>
-
-          <label htmlFor="desarrollo-mobile">
-            <input
-              type="radio"
-              name="categoria"
-              id="desarrollo-mobile"
-              onChange={handleChange}
-              checked={categoriaSeleccionada === "desarrollo-mobile"}
-            />
-            <span className="opcion">Apps Móviles</span>
+          <label htmlFor="desarrollo-mobile" className={categoriaSeleccionada === "desarrollo-mobile" ? "activo" : ""}>
+            <input type="radio" name="categoria" id="desarrollo-mobile" onChange={handleChange} checked={categoriaSeleccionada === "desarrollo-mobile"} />
+            Mobile Apps
           </label>
         </div>
 
-        {/* Grid */}
-        <div className="grid">
+        {/* Grid Premium */}
+        <div className="grid-premium">
           {trabajosVisibles.map((trabajo, index) => (
             <div
-              className="trabajo "
+              className="tarjeta-proyecto anim-scroll visible"
               key={trabajo.id}
-              style={{ transitionDelay: `${(index % 6) * 35}ms` }}
+              style={{ transitionDelay: `${(index % 6) * 50}ms` }}
             >
-              <a
-                href="#"
-                className="thumb"
-                onClick={(e) => openModal(e, trabajo.id)}
-              >
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src={trabajo.thumb.url}
-                  alt={trabajo.thumb.alt}
-                />
-              </a>
+              <div className="imagen-proyecto" onClick={(e) => openModal(e, trabajo.id)}>
+                <img loading="lazy" decoding="async" src={trabajo.thumb.url} alt={trabajo.thumb.alt} />
+              </div>
 
-              <div className="info">
-                <div className="textos">
-                  <a
-                    href="#"
-                    className="nombre"
-                    onClick={(e) => openModal(e, trabajo.id)}
-                  >
-                    {trabajo.info.nombre}
-                  </a>
-                  <p className="categoria">{trabajo.info.categoria}</p>
+              <div className="info-proyecto">
+                <h3 className="titulo-proyecto">{trabajo.info.nombre}</h3>
+                <p className="desc-proyecto">{trabajo.info.descripcion_corta}</p>
+                
+                <div className="tags-proyecto">
+                  {trabajo.info.tags && trabajo.info.tags.map((tag, i) => (
+                    <span key={i} className="tag-pildora">{tag}</span>
+                  ))}
                 </div>
 
-                <button
-                  className="btn-ir"
-                  onClick={(e) => openModal(e, trabajo.id)}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M0 8a8 8 0 1 0 16 0A8 8 0 0 0 0 8m5.904 2.803a.5.5 0 1 1-.707-.707L9.293 6H6.525a.5.5 0 1 1 0-1H10.5a.5.5 0 0 1 .5.5v3.975a.5.5 0 0 1-1 0V6.707z" />
-                  </svg>
+                <button className="btn-proyecto" onClick={(e) => openModal(e, trabajo.id)}>
+                  Ver Proyecto &rarr;
                 </button>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Botón Ver Más */}
+        {/* Botón Cargar Más */}
         {visibleCount < trabajosFiltrados.length && (
           <div className="load-more-container anim-scroll visible">
             <button className="btn-load-more" onClick={handleLoadMore}>
-              Ver más proyectos
+              Cargar más proyectos
             </button>
           </div>
         )}
