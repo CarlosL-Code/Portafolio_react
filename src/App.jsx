@@ -14,7 +14,7 @@ import Clientes from "./componentes/layout/Clientes";
 import CallToAction from "./componentes/layout/CallToAction";
 import Planes from "./componentes/layout/Planes";
 
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaFileDownload } from "react-icons/fa";
 import useScrollAnimation from "./hooks/useScrollAnimation";
 
 function App() {
@@ -47,6 +47,17 @@ function App() {
         <Contacto />
         <Footer />
       </main>
+
+      {/* Botón flotante CV */}
+      <a
+        href="/carlos-lozano-silva-cv.pdf"
+        className="cv-flotante"
+        download
+        aria-label="Descargar CV"
+        title="Descargar CV"
+      >
+        <FaFileDownload />
+      </a>
 
       {/* Botón flotante WhatsApp */}
       <a

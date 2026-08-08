@@ -60,10 +60,12 @@ body {
 body.dark {
     background-color: var(--dark-bg);
     
-    /* Mesh Gradient para modo oscuro (Opacidad aumentada y vibrante) */
+    /* Mesh Gradient para modo oscuro (Rojo primario + Verde esmeralda sutil) */
     background-image: 
         radial-gradient(at 15% 0%, rgba(216, 58, 58, 0.12) 0px, transparent 55%),
-        radial-gradient(at 85% 100%, rgba(216, 58, 58, 0.1) 0px, transparent 55%);
+        radial-gradient(at 85% 100%, rgba(216, 58, 58, 0.1) 0px, transparent 55%),
+        radial-gradient(at 80% 30%, rgba(16, 185, 129, 0.08) 0px, transparent 40%),
+        radial-gradient(at 20% 80%, rgba(16, 185, 129, 0.06) 0px, transparent 40%);
     background-attachment: fixed;
 
     color: var(--dark-text);
@@ -206,76 +208,87 @@ body.dark .boton {
 }
 
 /* =========================================
-   WHATSAPP FLOTANTE
+   WHATSAPP & CV FLOTANTES
 ========================================= */
 
-.whatsapp-flotante {
-
+.whatsapp-flotante,
+.cv-flotante {
     position: fixed;
-
     right: 22px;
-    bottom: 22px;
-
-    width: 58px;
-    height: 58px;
-
-    border-radius: 50%;
-
-    background: #25D366;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: #ffffff !important;
-
-    font-size: 30px;
-
+    border-radius: 50%;
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
-
     z-index: 999;
-
     cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
-
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Hover */
+.whatsapp-flotante {
+    bottom: 22px;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    font-size: 30px;
+}
+
+.cv-flotante {
+    bottom: 95px; /* Arribita del whatsapp */
+    width: 50px;
+    height: 50px;
+    background: var(--shade-9);
+    font-size: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .cv-flotante {
+    background: var(--shade-8);
+}
+
+/* Hovers */
 .whatsapp-flotante:hover {
-
     background: #1ebe5d;
-
     transform: translateY(-3px) scale(1.04);
-
     box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
-
     text-decoration: none;
 }
 
-/* Ícono */
-.whatsapp-flotante svg {
+.cv-flotante:hover {
+    background: var(--primario);
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 14px 34px rgba(216, 58, 58, 0.3);
+    text-decoration: none;
+}
 
+/* Íconos */
+.whatsapp-flotante svg {
     width: 30px;
     height: 30px;
+    transition: transform 0.2s ease;
+}
 
+.cv-flotante svg {
+    width: 22px;
+    height: 22px;
     transition: transform 0.2s ease;
 }
 
 /* Micro interacción */
-.whatsapp-flotante:hover svg {
+.whatsapp-flotante:hover svg,
+.cv-flotante:hover svg {
     transform: translateY(-1px);
 }
 
-/* Dark mode */
+/* Dark mode sombras */
 body.dark .whatsapp-flotante {
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.28);
+}
 
-    box-shadow:
-        0 12px 30px rgba(37, 211, 102, 0.28);
+body.dark .cv-flotante {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 /* =========================================
@@ -288,9 +301,14 @@ body.dark .whatsapp-flotante {
 
         width: 54px;
         height: 54px;
-
         right: 18px;
         bottom: 18px;
+    }
+    .cv-flotante {
+        width: 48px;
+        height: 48px;
+        right: 18px;
+        bottom: 85px;
     }
 
     .whatsapp-flotante svg {
@@ -310,9 +328,14 @@ body.dark .whatsapp-flotante {
 
         width: 50px;
         height: 50px;
-
         right: 14px;
         bottom: 14px;
+    }
+    .cv-flotante {
+        width: 44px;
+        height: 44px;
+        right: 14px;
+        bottom: 75px;
     }
 
     .whatsapp-flotante svg {
