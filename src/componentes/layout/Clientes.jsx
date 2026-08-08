@@ -11,8 +11,8 @@ const Clientes = () => {
     { src: "/assets/logos/carserv.png", alt: "Logo de Carserv", href: "https://carserv.cl", invertDark: false },
     { src: "/assets/logos/hmc_motors.png", alt: "Logo de HMC Motors", href: "https://hmcautomotora.cl", invertDark: true },
     { src: "/assets/logos/primeros_resultados.png", alt: "Logo de Primeros Resultados", href: "#", invertDark: true },
-    { src: "/assets/logos/logo-SanJulian.png", alt: "Logo de San Julián", href: "https://confitessanjulian.cl", invertDark: true },
-    { src: "/assets/logos/logo-elixir.png", alt: "Logo de Elixir Gym", href: "https://web-gym-elixir.vercel.app/", invertDark: true }
+    { src: "/assets/logos/logo-SanJulian.png", alt: "Logo de San Julián", href: "https://confitessanjulian.cl", invertDark: true, customStyle: { transform: 'scale(0.6)' } },
+    { src: "/assets/logos/logo-elixir.png", alt: "Logo de Elixir Gym", href: "https://web-gym-elixir.vercel.app/", invertDark: true, customStyle: { transform: 'scale(0.8)' } }
   ];
 
   // Triplicamos la lista internamente para asegurar que la pista exceda el ancho de la pantalla 
@@ -38,7 +38,7 @@ const Clientes = () => {
           {logosPorTrack.map((cliente, index) => (
             <a key={`track1-${index}`} href={cliente.href} target="_blank" rel="noopener noreferrer" className="brand-item">
               <div className={`brand-item__media ${cliente.invertDark ? 'invert-dark' : ''}`}>
-                <img src={cliente.src} alt={cliente.alt} loading="lazy" decoding="async" />
+                <img src={cliente.src} alt={cliente.alt} style={cliente.customStyle ? cliente.customStyle : {}} loading="lazy" decoding="async" />
               </div>
             </a>
           ))}
@@ -48,7 +48,7 @@ const Clientes = () => {
           {logosPorTrack.map((cliente, index) => (
             <a key={`track2-${index}`} href={cliente.href} target="_blank" rel="noopener noreferrer" className="brand-item">
               <div className={`brand-item__media ${cliente.invertDark ? 'invert-dark' : ''}`}>
-                <img src={cliente.src} alt={cliente.alt} loading="lazy" decoding="async" />
+                <img src={cliente.src} alt={cliente.alt} style={cliente.customStyle ? cliente.customStyle : {}} loading="lazy" decoding="async" />
               </div>
             </a>
           ))}

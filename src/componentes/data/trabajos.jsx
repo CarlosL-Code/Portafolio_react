@@ -11,7 +11,7 @@ const trabajos = [
       categoria: "Software · Mantenimiento · Gestión",
       descripcion_corta: "Sistema de gestión de mantenimiento computarizado para optimizar la planificación de órdenes de trabajo.",
       tags: ["SOFTWARE", "MANTENIMIENTO"],
-      link: "https://youtube.com", /* Placeholder Video */
+      link: "https://youtu.be/MaIk5ZEa8oQ", /* Link de CMMS */
       contenido: null,
     },
   },
@@ -27,7 +27,7 @@ const trabajos = [
       categoria: "Software · Inventario · Producción",
       descripcion_corta: "Sistema avanzado de gestión de inventario para el control de materia prima, recetas y alertas automatizadas.",
       tags: ["SOFTWARE", "INVENTARIO"],
-      link: "https://youtube.com", /* Placeholder Video */
+      link: "https://youtu.be/auZgoE2BTnk", /* Link de Inventario */
       contenido: null,
     },
   },

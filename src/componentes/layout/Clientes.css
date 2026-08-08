@@ -150,11 +150,6 @@
     box-shadow: none;
 }
 
-.dark .clientes .brand-item:hover .brand-item__media.invert-dark {
-    /* Hover para logos negros: mantenemos blanco pero subimos opacidad al 100% y agregamos un glow */
-    filter: brightness(0) invert(1) opacity(1) drop-shadow(0 0 8px rgba(255,255,255,0.3));
-    background: transparent;
-}
 
 /* Keyframes movidos fuera del bloque anidado para evitar error de minificador en producción */
 @keyframes marqueeScroll {
