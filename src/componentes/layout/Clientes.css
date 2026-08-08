@@ -138,6 +138,11 @@
     background: transparent;
 }
 
+.dark .clientes .brand-item__media.needs-glow img {
+    /* Agrega un sutil halo de luz blanca alrededor del texto negro para que sea legible sin alterar sus colores */
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+}
+
 .dark .clientes .brand-item:hover .brand-item__media {
     /* Sin nubes blancas, solo escala (el scale se hereda del hover base) */
     filter: none;
