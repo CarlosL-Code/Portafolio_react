@@ -3,11 +3,12 @@ import Hero from "./componentes/layout/Hero";
 import AcercaDe from "./componentes/layout/AcercaDe";
 import ExperienciaProfesional from "./componentes/layout/ExperienciaProfesional";
 import Trabajos from "./componentes/layout/Trabajos";
-import Habilidades from "./componentes/layout/Habilidades";
-import Logros from "./componentes/layout/Logros";
+import Habilidades from "./componentes/layout/Habilidades"; // kept for future use if needed
+import Logros from "./componentes/layout/Logros"; // kept for future use if needed
 import Contacto from "./componentes/layout/Contacto";
 import Footer from "./componentes/layout/Footer";
-import ComoTrabajo from "./componentes/layout/ComoTrabajo";
+import ComoTrabajo from "./componentes/layout/ComoTrabajo"; // kept for future use if needed
+import FAQ from "./componentes/layout/FAQ";
 import Clientes from "./componentes/layout/Clientes";
 import CallToAction from "./componentes/layout/CallToAction";
 import Planes from "./componentes/layout/Planes";
@@ -28,9 +29,7 @@ function App() {
         <Clientes />
         <Trabajos />
         <Planes />
-        <Habilidades />
-        <Logros />
-        <ComoTrabajo />
+        <FAQ />
         <CallToAction />
         <Contacto />
         <Footer />
