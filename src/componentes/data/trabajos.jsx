@@ -51,7 +51,7 @@ const trabajos = [
     id: 13,
     categoria: "desarrollo-web",
     thumb: {
-      url: "./assets/trabajos/hmc-motors.png", /* Imagen pendiente de subir */
+      url: "./assets/trabajos/hmcmotors.png", /* Imagen pendiente de subir */
       alt: "Sitio Web HMC Motors",
     },
     info: {
@@ -67,7 +67,7 @@ const trabajos = [
     id: 14,
     categoria: "desarrollo-web",
     thumb: {
-      url: "./assets/trabajos/elixir-gym.png", /* Imagen pendiente de subir */
+      url: "./assets/trabajos/gimnasio-elixir.png", /* Imagen pendiente de subir */
       alt: "Sitio Web Elixir Gym",
     },
     info: {
