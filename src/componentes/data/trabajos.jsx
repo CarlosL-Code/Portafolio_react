@@ -107,7 +107,7 @@ const trabajos = [
       categoria: "E-commerce · Shopify · SEO",
       descripcion_corta: "Desarrollo de tienda online completa utilizando Shopify, con funcionalidades personalizadas y estrategias de SEO.",
       tags: ["E-COMMERCE", "SHOPIFY", "SEO"],
-      link: "https://confitesanjulian.cl",
+      link: "https://confitessanjulian.cl",
       contenido: null,
     },
   },
@@ -147,7 +147,7 @@ const trabajos = [
     id: 12,
     categoria: "desarrollo-software",
     thumb: {
-      url: "./assets/trabajos/trabajo-2.png", /* Imagen cambiada */
+      url: "./assets/trabajos/inventario.png", /* Imagen cambiada */
       alt: "Gestor de Inventario de Existencias",
     },
     info: {
