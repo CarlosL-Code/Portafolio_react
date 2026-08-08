@@ -75,7 +75,7 @@ const trabajos = [
       categoria: "Web · Creación de Contenido",
       descripcion_corta: "Sitio web para gimnasio con muestra de instalaciones y planes. Incluye servicio integral de creación de contenido audiovisual.",
       tags: ["DESARROLLO WEB", "CONTENIDO AUDIOVISUAL"],
-      link: "#", /* Placeholder para la URL de Elixir Gym */
+      link: "https://web-gym-elixir.vercel.app/", /* URL de Elixir Gym actualizada */
       contenido: null,
     },
   },
