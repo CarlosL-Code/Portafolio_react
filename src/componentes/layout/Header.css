@@ -108,7 +108,7 @@
 .header .navbar {
     display: flex;
     flex: 1; /* Ocupa el resto del espacio */
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 }
 
