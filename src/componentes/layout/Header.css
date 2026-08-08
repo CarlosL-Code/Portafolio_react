@@ -107,16 +107,28 @@
 ========================= */
 .header .navbar {
     display: flex;
-    gap: clamp(10px, 1.2vw, 20px); /* Más compacto para que quepa todo bien */
-    justify-content: center;
+    flex: 1; /* Ocupa el resto del espacio */
+    justify-content: space-between;
     align-items: center;
 }
 
-.header .navbar > a,
+.nav-links {
+    display: flex;
+    gap: clamp(15px, 2vw, 30px);
+    align-items: center;
+    /* Absolute center for perfect symmetry on desktop */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header .nav-links > a,
 .nav-link-dropdown {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--shade-8);
+    font-size: 13px; /* Más pequeño para verse premium */
+    font-weight: 600;
+    color: var(--shade-7);
+    text-transform: uppercase;
+    letter-spacing: 1.5px; /* Más espacio entre letras = Elegancia */
     transition: color 0.3s ease;
     cursor: pointer;
     display: flex;
@@ -124,12 +136,12 @@
     white-space: nowrap;
 }
 
-  body.dark .navbar > a,
+  body.dark .nav-links > a,
   body.dark .nav-link-dropdown {
-    color: var(--dark-text);
+    color: var(--dark-subtitle);
   }
 
-  .navbar > a:hover,
+  .nav-links > a:hover,
   .nav-link-dropdown:hover {
     color: var(--primario);
     text-decoration: none;
@@ -241,29 +253,33 @@
 }
 
 /* Botón de CV especial en el Header */
-.header .navbar .btn-cv {
+.header .btn-cv {
     background: var(--shade-9);
     color: #fff;
-    padding: 8px 18px; /* Botón un poco más compacto */
+    padding: 8px 20px;
     border-radius: 100px;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: all 0.3s ease;
     white-space: nowrap;
+    border: none;
 }
 
-.dark .header .navbar .btn-cv {
+.dark .header .btn-cv {
     background: var(--primario);
     color: #fff;
 }
 
-.header .navbar .btn-cv:hover {
+.header .btn-cv:hover {
     background: var(--primario);
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(216, 58, 58, 0.4);
+    color: #fff;
 }
 
-.dark .header .navbar .btn-cv:hover {
+.dark .header .btn-cv:hover {
     background: #ff4747;
 }
 
@@ -383,9 +399,19 @@
         right: 0; /* Aparece deslizándose */
     }
 
-    .header .navbar a {
-        font-size: 22px;
-        font-weight: 600;
+    .nav-links {
+        position: static;
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .header .nav-links a {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 1px;
         padding: 12px 0;
         width: 100%;
         text-align: center;
@@ -394,15 +420,15 @@
         transition: all 0.3s ease;
     }
 
-    .header .navbar.open a {
+    .header .navbar.open .nav-links a {
         opacity: 1;
         transform: translateX(0);
     }
 
-    .header .navbar.open a:nth-child(2) { transition-delay: 0.1s; }
-    .header .navbar.open a:nth-child(3) { transition-delay: 0.15s; }
+    .header .navbar.open .nav-links a:nth-child(2) { transition-delay: 0.1s; }
+    .header .navbar.open .nav-links a:nth-child(3) { transition-delay: 0.15s; }
     .header .navbar.open .nav-item-dropdown { transition-delay: 0.2s; }
-    .header .navbar.open a:nth-child(5) { transition-delay: 0.25s; }
+    .header .navbar.open .nav-links a:nth-child(5) { transition-delay: 0.25s; }
 
     .nav-item-dropdown {
         width: 100%;
@@ -418,8 +444,9 @@
     }
 
     .nav-link-dropdown {
-        font-size: 22px;
-        font-weight: 600;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 1px;
         padding: 12px 0;
         display: block;
     }
