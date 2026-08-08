@@ -134,9 +134,9 @@
 .dark .clientes .brand-item__media {
     background-color: transparent;
     padding: 0;
-    /* Inactivo general: escala de grises con leve brillo blanco de fondo para que los logos negros sean legibles */
-    filter: grayscale(100%) opacity(0.8);
-    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.4) 15%, rgba(255, 255, 255, 0) 70%);
+    /* Inactivo general: escala de grises sutil para mantener el aspecto profesional oscuro */
+    filter: grayscale(100%) opacity(0.6) drop-shadow(0 0 3px rgba(255, 255, 255, 0.15));
+    background: transparent;
 }
 
 .dark .clientes .brand-item:hover .brand-item__media {
