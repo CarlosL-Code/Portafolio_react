@@ -134,17 +134,13 @@
 .dark .clientes .brand-item__media {
     background-color: transparent;
     padding: 0;
-    /* Inactivo general (Carserv): escala de grises con leve brillo */
-    filter: grayscale(100%) opacity(0.7) drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
-}
-
-.dark .clientes .brand-item__media.invert-dark {
-    /* Logos negros (San Julian, Elixir, HMC): convertimos a blanco con opacidad */
-    filter: brightness(0) invert(1) opacity(0.6);
+    /* Inactivo general: escala de grises con leve brillo blanco de fondo para que los logos negros sean legibles */
+    filter: grayscale(100%) opacity(0.8);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.4) 15%, rgba(255, 255, 255, 0) 70%);
 }
 
 .dark .clientes .brand-item:hover .brand-item__media {
-    /* Hover general (Carserv): recupera su color original */
+    /* Hover general: recupera su color original (quita el grayscale) e ilumina más fuerte el fondo */
     filter: none;
     background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 15%, rgba(255, 255, 255, 0) 75%);
     box-shadow: none;
