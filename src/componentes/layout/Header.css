@@ -14,13 +14,13 @@
     max-width: 1100px; /* Más grande para que "respire" */
     z-index: 1000;
     
-    /* Glassmorphism */
-    background-color: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    /* Glassmorphism Refinado */
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 100px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.8);
     
     /* Transición suave para expandirse/contraerse */
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -107,21 +107,22 @@
 ========================= */
 .header .navbar {
     display: flex;
-    gap: clamp(15px, 2.5vw, 35px); /* Fluido: se achica si no hay espacio */
+    gap: clamp(12px, 2vw, 25px); /* Reducido para hacer espacio a 'Planes' */
     justify-content: center;
     align-items: center;
 }
 
 /* =========================
-   LINKS
+   LINKS (Con Animación Premium)
 ========================= */
 .header .navbar a {
     position: relative;
     text-decoration: none;
-    font-size: clamp(0.9rem, 1.2vw, 1.05rem); /* Ajuste fluido del texto */
-    font-weight: 500;
+    font-size: clamp(0.85rem, 1.1vw, 0.95rem); /* Ligeramente más pequeño */
+    font-weight: 600;
     color: var(--shade-7);
     white-space: nowrap; 
+    padding: 6px 0;
     transition: color 0.3s ease;
 }
 
@@ -130,11 +131,34 @@
 }
 
 .header .navbar a:hover {
-    color: var(--shade-9);
+    color: var(--shade-10);
 }
 
 .dark .header .navbar a:hover {
     color: #fff;
+}
+
+/* Efecto de subrayado animado desde el centro */
+.header .navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--primario);
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 2px;
+}
+
+.header .navbar a:hover::after {
+    width: 100%;
+}
+
+/* El botón de CV no necesita el subrayado */
+.header .navbar .btn-cv::after {
+    display: none;
 }
 
 /* Botón de CV especial en el Header */
