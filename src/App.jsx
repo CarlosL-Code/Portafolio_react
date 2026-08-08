@@ -10,6 +10,7 @@ import Footer from "./componentes/layout/Footer";
 import ComoTrabajo from "./componentes/layout/ComoTrabajo";
 import Clientes from "./componentes/layout/Clientes";
 import CallToAction from "./componentes/layout/CallToAction";
+import Planes from "./componentes/layout/Planes";
 
 import { FaWhatsapp } from "react-icons/fa";
 import useScrollAnimation from "./hooks/useScrollAnimation";
@@ -19,20 +20,21 @@ function App() {
 
   return (
     <>
-      <div className="contenedor">
+      <main className="contenedor">
         <Header />
         <Hero />
         <AcercaDe />
         <ExperienciaProfesional />
         <Clientes />
         <Trabajos />
+        <Planes />
         <Habilidades />
         <Logros />
         <ComoTrabajo />
         <CallToAction />
         <Contacto />
         <Footer />
-      </div>
+      </main>
 
       {/* Botón flotante WhatsApp */}
       <a

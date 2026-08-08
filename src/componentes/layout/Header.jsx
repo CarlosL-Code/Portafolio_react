@@ -67,6 +67,7 @@ const Header = () => {
           <a href="#acerca-de" onClick={closeMenu}>Acerca de mí</a>
           <a href="#experiencia" onClick={closeMenu}>Experiencia</a>
           <a href="#trabajos" onClick={closeMenu}>Proyectos</a>
+          <a href="#planes" onClick={closeMenu}>Planes</a>
           <a href="#contacto" onClick={closeMenu}>Contacto</a>
           
           <a

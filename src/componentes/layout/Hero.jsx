@@ -5,13 +5,11 @@ const Hero = () => {
     <>
       <section className="hero">
         <div className="contenido">
-          <h3 className="titulo">
-            <span>Hola!</span>Soy Carlos Lozano
-          </h3>
+          <h1 className="titulo">
+            <span>Desarrollo web</span>y software a medida
+          </h1>
           <p className="subtitulo">
-            Software Engineer & Consultor Técnico <br />
-            (Estudiante de Ing. en Informática construyendo soluciones empresariales) <br />
-            Especializado en arquitecturas escalables, automatización de procesos y desarrollo de experiencias digitales.
+            Desarrollo páginas web, sistemas empresariales y soluciones digitales personalizadas para ayudar a empresas y profesionales a mejorar su presencia y sus procesos.
           </p>
           <div className="botones">
             <a href="#trabajos" className="boton transparente">
@@ -32,7 +30,7 @@ const Hero = () => {
             </a>
 
             <a href="#contacto" className="boton">
-              Mandame un mensaje
+              Hablemos de tu proyecto
               <div className="icono">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

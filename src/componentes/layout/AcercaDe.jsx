@@ -47,7 +47,7 @@ const AcercaDe = () => {
           </button>
 
           <a href="#contacto" className="boton">
-            Mandame un mensaje
+            Hablemos de tu proyecto
             <span className="icono">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
