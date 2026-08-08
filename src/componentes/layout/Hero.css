@@ -1,7 +1,7 @@
 .hero{
     /* Esta imagen se usará de fondo. Si la imagen original no carga, caerá a negro. */
     background-color: #050505;
-    background-image: url('/assets/header2.png');
+    background-image: url('/assets/header2.jpg');
     background-size: cover;
     background-position: center;
     overflow: hidden;
