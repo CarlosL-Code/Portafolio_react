@@ -20,7 +20,13 @@ import useScrollAnimation from "./hooks/useScrollAnimation";
 function App() {
   useScrollAnimation();
   const [currency, setCurrency] = useState("CLP");
-  const [showWsChat, setShowWsChat] = useState(true);
+  const [showWsChat, setShowWsChat] = useState(false);
+  const [wsMessage, setWsMessage] = useState("");
+
+  const wsNumber = "56937540250";
+  const wsUrl = wsMessage.trim() 
+    ? `https://wa.me/${wsNumber}?text=${encodeURIComponent(wsMessage)}` 
+    : `https://wa.me/${wsNumber}`;
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -63,30 +69,43 @@ function App() {
           </div>
           <div className="ws-chat-body">
             <p>¡Hola! 👋 ¿En qué te puedo ayudar hoy con tu proyecto?</p>
+            <div className="ws-input-container">
+              <input 
+                type="text" 
+                placeholder="Escribe tu mensaje aquí..." 
+                value={wsMessage}
+                onChange={(e) => setWsMessage(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    window.open(wsUrl, '_blank');
+                    setShowWsChat(false);
+                  }
+                }}
+              />
+            </div>
           </div>
           <a
-            href="https://wa.me/56937540250"
+            href={wsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="ws-chat-btn"
             onClick={() => setShowWsChat(false)}
           >
-            Abrir chat
+            Abrir chat en WhatsApp
           </a>
         </div>
       )}
 
-      {/* Botón flotante WhatsApp */}
-      <a
-        href="https://wa.me/56937540250"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="whatsapp-flotante"
-        aria-label="WhatsApp"
-        onClick={() => setShowWsChat(false)}
-      >
-        <FaWhatsapp />
-      </a>
+      {/* Botón flotante WhatsApp (Oculto si el chat está abierto) */}
+      {!showWsChat && (
+        <button
+          className="whatsapp-flotante"
+          aria-label="Abrir chat de WhatsApp"
+          onClick={() => setShowWsChat(true)}
+        >
+          <FaWhatsapp />
+        </button>
+      )}
     </>
   );
 }

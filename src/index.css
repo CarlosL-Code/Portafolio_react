@@ -284,11 +284,43 @@ body.dark .ws-chat-body {
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     display: inline-block;
     line-height: 1.5;
+    margin-bottom: 15px;
 }
 
 body.dark .ws-chat-body p {
     background: #202C33; /* WhatsApp Dark bubble */
     color: #E9EDEF;
+}
+
+.ws-input-container {
+    display: flex;
+    background: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+body.dark .ws-input-container {
+    background: #2A3942;
+}
+
+.ws-input-container input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 8px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--shade-9);
+}
+
+body.dark .ws-input-container input {
+    color: var(--dark-text);
+}
+
+.ws-input-container input::placeholder {
+    color: var(--shade-5);
 }
 
 .ws-chat-btn {
@@ -306,6 +338,7 @@ body.dark .ws-chat-body p {
 .ws-chat-btn:hover {
     background: #1ebe5d;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .whatsapp-flotante {
@@ -326,6 +359,7 @@ body.dark .ws-chat-body p {
     height: 58px;
     background: #25D366;
     font-size: 30px;
+    border: none;
 }
 
 /* Hovers */
