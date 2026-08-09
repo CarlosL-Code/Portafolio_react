@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from "./componentes/layout/Header";
 import Footer from "./componentes/layout/Footer";
 import Inicio from "./pages/Inicio";
@@ -35,7 +35,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <>
       <div className="mouse-glow"></div>
       
       <Header currency={currency} setCurrency={setCurrency} />
@@ -103,7 +103,7 @@ function App() {
           <FaWhatsapp />
         </button>
       )}
-    </Router>
+    </>
   );
 }
 
