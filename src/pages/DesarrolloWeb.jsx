@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaLaptopCode, FaMobileAlt, FaSearchDollar, FaRocket, FaCheckCircle, FaWhatsapp, FaChevronRight } from 'react-icons/fa';
 import Planes from '../componentes/layout/Planes';
+import MockWindow from '../componentes/ui/MockWindow';
 
 const DesarrolloWeb = ({ currency }) => {
   const wsMessage = "Hola Carlos, encontré tu página de desarrollo web y me gustaría cotizar un sitio para mi negocio. ¿Podemos conversar?";
@@ -37,7 +38,7 @@ const DesarrolloWeb = ({ currency }) => {
               </p>
             </div>
             <div>
-              <img src="/hero_digital_presence.jpg" alt="Presencia Digital y Desarrollo Web" style={{ width: '100%', borderRadius: '24px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.05)' }} />
+              <MockWindow />
             </div>
           </article>
 
@@ -83,10 +84,7 @@ const DesarrolloWeb = ({ currency }) => {
 
           {/* Proceso */}
           <article className="anim-scroll" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '50px', alignItems: 'center' }}>
-            <div>
-              <img src="/process_illustration.jpg" alt="Proceso de Desarrollo" style={{ width: '100%', borderRadius: '24px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.05)' }} />
-            </div>
-            <div>
+            <div style={{ padding: '0 20px' }}>
               <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'left' }}>Nuestro Proceso de Trabajo</h2>
               <div className="timeline-container">
                 {[
@@ -105,6 +103,17 @@ const DesarrolloWeb = ({ currency }) => {
                   </div>
                 ))}
               </div>
+            </div>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+               <div className="seo-highlight-box" style={{ background: 'var(--shade-1)' }}>
+                  <h3 style={{color: 'var(--primario)'}}>Transparencia total</h3>
+                  <p className="seo-text-block">Sin costos ocultos ni sorpresas. Cada fase está documentada y validada por ti antes de avanzar a la siguiente.</p>
+               </div>
+               <div className="seo-highlight-box">
+                  <h3 style={{color: '#fff'}}>Soporte Continuo</h3>
+                  <p className="seo-text-block" style={{ color: 'var(--shade-6)' }}>Una vez publicado, ofrezco planes de mantenimiento para que tu web nunca quede obsoleta.</p>
+               </div>
             </div>
           </article>
 

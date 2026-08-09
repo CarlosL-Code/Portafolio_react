@@ -1,368 +1,262 @@
 /* =========================================
-   ESTILOS CORPORATIVOS PREMIUM (ESTILO WEBMAKER)
+   SEO PAGES GLOBAL STYLES (Refinado)
+   Estilos compartidos para las páginas de servicios y landing pages.
 ========================================= */
 
 .seo-header {
-  margin-bottom: 60px;
   text-align: center;
+  margin-bottom: 60px;
 }
 
 .seo-title {
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--shade-9);
-  line-height: 1.2;
-  margin-bottom: 20px;
-  background: linear-gradient(135deg, var(--shade-9) 0%, var(--shade-7) 100%);
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+  /* Degradado Naranja/Fuego al estilo WebMaker */
+  background: linear-gradient(90deg, var(--primario) 0%, #ff8c42 50%, #ffa500 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  letter-spacing: -1px;
 }
 
 body.dark .seo-title {
-  background: linear-gradient(135deg, #ffffff 0%, var(--shade-4) 100%);
+  /* En modo oscuro brilla un poco más claro */
+  background: linear-gradient(90deg, #ff6b6b 0%, var(--primario) 50%, #ff8c42 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .seo-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: var(--shade-6);
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
-body.dark .seo-subtitle {
-  color: var(--dark-subtitle);
+.seo-text-block {
+  font-size: 1.05rem;
+  color: var(--shade-7);
+  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
+
 /* =========================================
-   GLOWING CARDS (GLASSMORPHISM + NEON BORDERS)
+   GLOWING CARDS (Tarjetas de Servicios Refinadas)
 ========================================= */
 
 .glowing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
 }
 
 .glowing-card {
-  position: relative;
-  background: var(--shade-1);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  padding: 35px;
-  border-radius: 20px;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1;
-}
-
-body.dark .glowing-card {
-  background: rgba(20, 25, 35, 0.7); /* Fondo muy oscuro, casi negro */
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Efecto de borde brillante (Glow) al hacer hover */
-.glowing-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    130deg,
-    transparent 0%,
-    transparent 40%,
-    rgba(216, 58, 58, 0.1) 50%,
-    transparent 60%,
-    transparent 100%
-  );
-  transition: opacity 0.4s ease;
-  opacity: 0;
-  z-index: -1;
-  pointer-events: none;
-}
-
-body.dark .glowing-card::before {
-  background: linear-gradient(
-    130deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0) 30%,
-    rgba(216, 58, 58, 0.3) 50%, /* Brillo primario (rojo) */
-    rgba(255, 255, 255, 0) 70%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  border-radius: 16px;
+  padding: 30px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
 }
 
 .glowing-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-  border-color: rgba(216, 58, 58, 0.3);
+  border-color: rgba(255, 82, 82, 0.4);
+  box-shadow: 0 10px 30px rgba(255, 82, 82, 0.1);
+  background: rgba(255, 255, 255, 0.04);
 }
 
-body.dark .glowing-card:hover {
-  border-color: rgba(216, 58, 58, 0.6);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(216, 58, 58, 0.1) inset;
+.glowing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primario), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
 }
 
 .glowing-card:hover::before {
-  opacity: 1;
-  animation: shine 2s infinite;
-}
-
-@keyframes shine {
-  0% { transform: translateX(-100%) translateY(-100%); }
-  100% { transform: translateX(100%) translateY(100%); }
+  transform: scaleX(1);
 }
 
 .glowing-icon {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--primario);
   margin-bottom: 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: rgba(216, 58, 58, 0.08);
-  border-radius: 14px;
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s;
 }
 
 .glowing-card:hover .glowing-icon {
-  transform: scale(1.1);
-  background: rgba(216, 58, 58, 0.15);
-  box-shadow: 0 0 15px rgba(216, 58, 58, 0.3);
+  transform: scale(1.1) translateY(-2px);
+  color: #ff8c42; /* Cambio sutil a naranja */
 }
 
 .glowing-title {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 12px;
   color: var(--shade-9);
 }
 
-body.dark .glowing-title {
-  color: var(--dark-title);
-}
-
 .glowing-desc {
-  color: var(--shade-6);
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  color: var(--shade-7);
+  line-height: 1.5;
 }
 
-body.dark .glowing-desc {
-  color: var(--dark-text);
-}
 
 /* =========================================
-   BENTO GRID PARA BENEFICIOS Y FEATURES
+   BENTO GRID (Beneficios y Características)
 ========================================= */
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-}
-
-/* El último elemento ocupa todo el ancho si hay número impar */
-.bento-grid > div:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
+  margin-top: 20px;
 }
 
 .bento-item {
   display: flex;
   align-items: flex-start;
   gap: 15px;
-  background: var(--shade-2);
-  padding: 24px;
-  border-radius: 16px;
-  transition: transform 0.3s ease, background 0.3s ease;
-  border: 1px solid transparent;
-}
-
-body.dark .bento-item {
-  background: rgba(30, 41, 59, 0.4);
-  border: 1px solid rgba(255,255,255,0.03);
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 20px;
+  border-radius: 12px;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .bento-item:hover {
-  transform: translateY(-3px);
-  background: var(--shade-1);
-  border-color: rgba(216, 58, 58, 0.2);
-}
-
-body.dark .bento-item:hover {
-  background: rgba(40, 50, 70, 0.6);
-  border-color: rgba(216, 58, 58, 0.4);
+  background: rgba(255, 255, 255, 0.03);
+  transform: translateX(5px);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .bento-icon {
   color: var(--primario);
-  font-size: 1.6rem;
-  margin-top: 2px;
+  font-size: 1.3rem;
+  margin-top: 3px;
   flex-shrink: 0;
 }
 
 .bento-text {
-  font-size: 1.1rem;
-  color: var(--shade-7);
-  font-weight: 500;
-}
-
-body.dark .bento-text {
-  color: var(--dark-text);
+  font-size: 0.95rem;
+  color: var(--shade-8);
+  line-height: 1.5;
 }
 
 /* =========================================
-   BLOQUES DE TEXTO
-========================================= */
-.seo-text-block {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  color: var(--shade-7);
-  margin-bottom: 20px;
-}
-
-body.dark .seo-text-block {
-  color: var(--dark-text);
-}
-
-/* =========================================
-   FAQ ACCORDION GRID
-========================================= */
-.faq-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-}
-
-.faq-card {
-  background: var(--shade-2);
-  border-left: 4px solid var(--primario);
-  padding: 25px;
-  border-radius: 0 16px 16px 0;
-  transition: transform 0.3s ease;
-}
-
-body.dark .faq-card {
-  background: rgba(30, 41, 59, 0.4);
-}
-
-.faq-card:hover {
-  transform: translateX(10px);
-}
-
-.faq-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--shade-9);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-body.dark .faq-title {
-  color: var(--dark-title);
-}
-
-.faq-answer {
-  color: var(--shade-6);
-  line-height: 1.7;
-}
-
-body.dark .faq-answer {
-  color: var(--dark-text);
-}
-
-/* =========================================
-   PROCESO DE TRABAJO (TIMELINE)
+   TIMELINE (Proceso de Trabajo)
 ========================================= */
 .timeline-container {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.timeline-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 24px;
-  width: 2px;
-  background: rgba(216, 58, 58, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  padding-left: 20px;
+  margin-left: 10px;
 }
 
 .timeline-item {
   position: relative;
-  padding-left: 70px;
-  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  transition: border-color 0.3s;
 }
 
-.timeline-item:last-child {
-  margin-bottom: 0;
+.timeline-item:hover {
+  border-color: rgba(255, 82, 82, 0.3);
 }
 
 .timeline-dot {
   position: absolute;
-  left: 12px;
-  top: 0;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
+  left: -27px; /* 20px padding + 7px center */
+  top: 25px;
+  width: 12px;
+  height: 12px;
   background: var(--primario);
-  border: 4px solid var(--shade-1);
-  box-shadow: 0 0 0 4px rgba(216, 58, 58, 0.1);
-  z-index: 2;
-}
-
-body.dark .timeline-dot {
-  border-color: var(--dark-bg);
-  box-shadow: 0 0 0 4px rgba(216, 58, 58, 0.2);
-}
-
-.timeline-content {
-  background: var(--shade-2);
-  padding: 25px;
-  border-radius: 16px;
-  border: 1px solid transparent;
-  transition: all 0.3s ease;
-}
-
-body.dark .timeline-content {
-  background: rgba(30, 41, 59, 0.4);
-  border: 1px solid rgba(255,255,255,0.03);
-}
-
-.timeline-content:hover {
-  border-color: rgba(216, 58, 58, 0.3);
-  transform: translateX(5px);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(216, 58, 58, 0.8);
 }
 
 .timeline-title {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--shade-9);
+  margin-bottom: 5px;
+}
+
+.timeline-desc {
+  font-size: 0.9rem;
+  color: var(--shade-6);
+  margin: 0;
+}
+
+/* =========================================
+   PREGUNTAS FRECUENTES (FAQ)
+========================================= */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-card {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px 25px;
+  transition: background 0.3s;
+}
+
+.faq-card:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.faq-title {
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--shade-9);
   margin-bottom: 10px;
 }
 
-body.dark .timeline-title {
-  color: var(--dark-title);
-}
-
-.timeline-desc {
+.faq-answer {
+  font-size: 0.95rem;
   color: var(--shade-7);
   line-height: 1.6;
 }
 
-body.dark .timeline-desc {
-  color: var(--dark-text);
+/* =========================================
+   HIGHLIGHT BOX (Modalidad y Precio)
+========================================= */
+.seo-highlight-box {
+  background: linear-gradient(135deg, rgba(216, 58, 58, 0.05) 0%, rgba(0, 0, 0, 0.2) 100%);
+  border: 1px solid rgba(216, 58, 58, 0.2);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.seo-highlight-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--primario);
 }

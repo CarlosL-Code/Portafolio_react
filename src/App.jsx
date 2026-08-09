@@ -50,9 +50,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      <div className="contenedor">
-        <Footer />
-      </div>
+      <Footer />
 
       {/* Chat de WhatsApp (Flotante) */}
       {showWsChat && (

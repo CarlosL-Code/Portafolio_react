@@ -11,18 +11,8 @@ const ContactoPage = () => {
         <link rel="canonical" href="https://carloslozanodev.com/contacto" />
       </Helmet>
 
-      <div style={{ paddingTop: '80px', paddingBottom: '40px' }}>
-        <div className="contenedor seo-header anim-scroll" style={{ paddingTop: '50px', marginBottom: '0' }}>
-          <h1 className="seo-title">Hablemos de tu proyecto</h1>
-          <p className="seo-subtitle">
-            Agenda una reunión, solicita una cotización o cuéntame qué necesitas. Estoy aquí para ayudarte a escalar tu negocio.
-          </p>
-        </div>
-        
-        {/* Renderizamos Contacto sin envoltura de padding excesiva */}
-        <div style={{ marginTop: '-40px' }}>
-          <Contacto />
-        </div>
+      <div style={{ paddingTop: '100px', paddingBottom: '40px' }}>
+        <Contacto />
       </div>
     </>
   );
