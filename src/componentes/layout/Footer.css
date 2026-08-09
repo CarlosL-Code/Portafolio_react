@@ -1,8 +1,8 @@
 .footer-premium {
   background-color: #0b0c10; /* Color súper oscuro / casi negro */
   color: #c5c6c7;
-  padding: 80px 20px 20px;
-  margin-top: 60px;
+  padding: 50px 20px 20px;
+  margin-top: 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   font-family: 'Inter', sans-serif;
 }
@@ -16,8 +16,8 @@ body:not(.dark) .footer-premium {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 40px;
-  padding-bottom: 60px;
+  gap: 20px;
+  padding-bottom: 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 

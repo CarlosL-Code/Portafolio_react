@@ -53,8 +53,8 @@ const Contacto = () => {
   return (
     <>
       <section className="contacto" id="contacto">
-        <div className="encabezado">
-          <h3 className="titulo">Conversemos sobre tu próximo desafío</h3>
+        <div className="encabezado" style={{ marginBottom: '20px' }}>
+          <h3 className="seo-title" style={{ fontSize: '2.5rem' }}>Conversemos sobre tu próximo desafío</h3>
           <p className="subtitulo">
             Si buscas un perfil técnico sólido para escalar tu producto o potenciar a tu equipo, envíame un mensaje.
           </p>

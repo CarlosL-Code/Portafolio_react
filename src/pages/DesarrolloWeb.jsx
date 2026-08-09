@@ -16,7 +16,7 @@ const DesarrolloWeb = ({ currency }) => {
         <link rel="canonical" href="https://carloslozanodev.com/desarrollo-web" />
       </Helmet>
 
-      <section className="contenedor" style={{ paddingTop: '150px', paddingBottom: '50px' }}>
+      <section className="contenedor" style={{ paddingTop: '110px', paddingBottom: '50px' }}>
         <div className="seo-header anim-scroll">
           <h1 className="seo-title">Desarrollo de páginas web para empresas</h1>
           <p className="seo-subtitle">
@@ -61,22 +61,21 @@ const DesarrolloWeb = ({ currency }) => {
             </div>
           </article>
 
-          {/* Qué incluye (Bento Grid) */}
+          {/* Qué incluye (Bento Grid Dinámico) */}
           <article className="anim-scroll">
             <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center' }}>¿Qué incluye tu página web?</h2>
             <div className="bento-grid">
               {[
-                'Diseño Responsive (Adaptable a celulares)',
-                'Botón flotante de WhatsApp',
-                'Formulario de contacto funcional',
-                'SEO On-page básico (Estructura y Meta)',
-                'Enlaces a redes sociales',
-                'Optimización de velocidad',
-                'Despliegue y publicación web'
+                { text: 'Diseño Responsive (Adaptable a celulares)', icon: <FaMobileAlt style={{color: '#42a5f5'}}/> },
+                { text: 'Botón flotante de WhatsApp', icon: <FaWhatsapp style={{color: '#25D366'}}/> },
+                { text: 'Formulario de contacto funcional', icon: <FaCheckCircle style={{color: '#ab47bc'}}/> },
+                { text: 'SEO On-page básico (Estructura y Meta)', icon: <FaSearchDollar style={{color: '#ffa726'}}/> },
+                { text: 'Enlaces a redes sociales', icon: <FaRocket style={{color: '#ef5350'}}/> },
+                { text: 'Optimización de velocidad', icon: <FaLaptopCode style={{color: '#26a69a'}}/> }
               ].map((item, index) => (
                 <div key={index} className="bento-item">
-                  <FaCheckCircle className="bento-icon" /> 
-                  <span className="bento-text">{item}</span>
+                  <div className="bento-icon">{item.icon}</div>
+                  <span className="bento-text">{item.text}</span>
                 </div>
               ))}
             </div>

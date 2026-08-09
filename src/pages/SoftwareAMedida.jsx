@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { FaCode, FaServer, FaCogs, FaShieldAlt, FaWhatsapp } from 'react-icons/fa';
+import { FaCode, FaServer, FaCogs, FaCheckCircle, FaWhatsapp, FaShieldAlt, FaRocket, FaDatabase, FaMobileAlt, FaChartLine } from 'react-icons/fa';
+import MockDashboard from '../componentes/ui/MockDashboard';
 
 const SoftwareAMedida = () => {
   const wsMessage = "Hola Carlos, necesito desarrollar un software a medida para mi empresa. ¿Podemos agendar una reunión?";
@@ -10,29 +11,37 @@ const SoftwareAMedida = () => {
     <>
       <Helmet>
         <title>Software a Medida | Carlos Lozano</title>
-        <meta name="description" content="Desarrollo de software personalizado, automatización de procesos y plataformas escalables para tu negocio." />
+        <meta name="description" content="Desarrollo de software a medida para automatizar y optimizar los procesos de tu empresa." />
         <link rel="canonical" href="https://carloslozanodev.com/software-a-medida" />
       </Helmet>
 
-      <section className="contenedor" style={{ paddingTop: '150px', paddingBottom: '50px' }}>
+      <section className="contenedor" style={{ paddingTop: '110px', paddingBottom: '50px' }}>
         <div className="seo-header anim-scroll">
-          <h1 className="seo-title">Software a Medida</h1>
+          <h1 className="seo-title">Desarrollo de Software a Medida</h1>
           <p className="seo-subtitle">
-            Sistemas diseñados exclusivamente para resolver los problemas únicos de tu empresa, automatizar tareas y escalar sin límites técnicos.
+            Automatizamos tus procesos más complejos con herramientas digitales creadas exclusivamente para las reglas de tu negocio.
           </p>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '100px' }}>
           
-          {/* Introducción */}
-          <article className="anim-scroll">
-            <h2 className="titulo" style={{ marginBottom: '20px' }}>No te adaptes al software, que el software se adapte a ti</h2>
-            <p className="seo-text-block">
-              Cuando los sistemas genéricos o planillas de Excel ya no son suficientes para manejar la operación de tu negocio, es momento de dar el salto al desarrollo a medida. Construyo aplicaciones web (SaaS), intranets y sistemas internos robustos usando las tecnologías más modernas del mercado (React, Node.js, Bases de datos SQL/NoSQL).
-            </p>
+          {/* Introducción + Imagen Hero */}
+          <article className="anim-scroll" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '50px', alignItems: 'center' }}>
+            <div>
+              <h2 className="titulo" style={{ marginBottom: '20px', textAlign: 'left' }}>Tecnología que se adapta a ti</h2>
+              <p className="seo-text-block">
+                No adaptes tu empresa a un software empaquetado. Nosotros desarrollamos plataformas que se moldean exactamente a cómo funciona tu equipo.
+              </p>
+              <p className="seo-text-block">
+                Desde sistemas de inventario, CRMs personalizados, hasta plataformas de gestión de recursos humanos. Si tu negocio lo necesita, lo podemos construir con las tecnologías más modernas y seguras.
+              </p>
+            </div>
+            <div>
+              <MockDashboard />
+            </div>
           </article>
 
-          {/* Soluciones */}
+          {/* Qué podemos construir */}
           <article className="anim-scroll">
             <h2 className="titulo" style={{ marginBottom: '30px', textAlign: 'center' }}>¿Qué podemos construir?</h2>
             <div className="glowing-grid">
@@ -50,56 +59,28 @@ const SoftwareAMedida = () => {
             </div>
           </article>
 
-          {/* Beneficios */}
+          {/* Características */}
           <article className="anim-scroll">
-            <h2 className="titulo" style={{ marginBottom: '30px', textAlign: 'center' }}>Ventajas del desarrollo personalizado</h2>
+            <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center' }}>Beneficios Clave</h2>
             <div className="bento-grid">
               {[
-                'Propiedad intelectual 100% tuya',
-                'Escalabilidad sin costos ocultos por usuario',
-                'Seguridad y privacidad de datos (AWS / Google Cloud)',
-                'Interfaz adaptada a tus procesos exactos',
-                'Integración con herramientas que ya usas'
+                { text: 'Escalabilidad sin límites ni licencias por usuario', icon: <FaRocket style={{color: '#ef5350'}}/> },
+                { text: 'Propiedad total del código fuente', icon: <FaCode style={{color: '#42a5f5'}}/> },
+                { text: 'Integración con tus sistemas actuales (API)', icon: <FaCogs style={{color: '#ab47bc'}}/> },
+                { text: 'Alta seguridad y control de accesos', icon: <FaShieldAlt style={{color: '#26a69a'}}/> },
+                { text: 'Bases de datos optimizadas', icon: <FaDatabase style={{color: '#ffa726'}}/> },
+                { text: 'Métricas y reportes en tiempo real', icon: <FaChartLine style={{color: '#25D366'}}/> }
               ].map((item, index) => (
                 <div key={index} className="bento-item">
-                  <FaShieldAlt className="bento-icon" /> 
-                  <span className="bento-text">{item}</span>
+                  <div className="bento-icon">{item.icon}</div>
+                  <span className="bento-text">{item.text}</span>
                 </div>
               ))}
             </div>
           </article>
 
-          {/* Modalidad y Precio */}
-          <article className="anim-scroll">
-            <div className="seo-highlight-box">
-              <h2 className="titulo" style={{ marginBottom: '20px', color: 'var(--shade-9)' }}>Inversión y Modalidad</h2>
-              <p className="seo-text-block" style={{ marginBottom: '30px', color: 'var(--shade-8)' }}>
-                Los proyectos a medida se evalúan según su complejidad técnica, horas estimadas de desarrollo y requerimientos de infraestructura. Trabajamos bajo metodologías ágiles, entregando avances funcionales cada pocas semanas.
-              </p>
-              <div style={{ fontSize: '1.8rem', fontWeight: '800', color: 'var(--primario)', marginBottom: '10px' }}>
-                Desde $800.000 CLP / $900 USD
-              </div>
-              <p style={{ fontSize: '1rem', color: 'var(--shade-6)' }}>Pago estructurado por hitos de entrega.</p>
-            </div>
-          </article>
-
-          {/* FAQ */}
-          <article className="anim-scroll">
-            <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center' }}>Preguntas Frecuentes</h2>
-            <div className="faq-grid">
-              <div className="faq-card">
-                <h3 className="faq-title">🔒 ¿Quién es dueño del código?</h3>
-                <p className="faq-answer">Una vez finalizado el proyecto y realizado el pago total, se te entrega el repositorio completo. El código y la propiedad intelectual son 100% tuyos.</p>
-              </div>
-              <div className="faq-card">
-                <h3 className="faq-title">🛠️ ¿Ofreces mantenimiento post-lanzamiento?</h3>
-                <p className="faq-answer">Sí. Todo desarrollo incluye un periodo de garantía por bugs. Posteriormente, ofrezco planes de mantenimiento mensual para agregar nuevas funcionalidades y mantener servidores.</p>
-              </div>
-            </div>
-          </article>
-
           {/* CTA */}
-          <article className="anim-scroll" style={{ textAlign: 'center', marginTop: '40px', paddingBottom: '40px' }}>
+          <article className="anim-scroll" style={{ textAlign: 'center', marginTop: '20px', paddingBottom: '40px' }}>
             <a 
               href={wsUrl} 
               target="_blank" 
