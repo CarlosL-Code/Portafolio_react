@@ -1,5 +1,6 @@
 import './normalize.css';
 import './index.css';
+import './seo-pages.css';
 
 
 import App from './App.jsx'

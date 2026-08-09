@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { FaBoxes, FaIndustry, FaUserTie, FaFileInvoice, FaCheck, FaWhatsapp } from 'react-icons/fa';
+import { FaBoxes, FaIndustry, FaUserTie, FaFileInvoice, FaCheckCircle, FaWhatsapp } from 'react-icons/fa';
 
 const SistemasEmpresariales = () => {
   const wsMessage = "Hola Carlos, necesito digitalizar un proceso de mi empresa y quiero consultar por un sistema a medida. ¿Podemos conversar?";
@@ -15,90 +15,110 @@ const SistemasEmpresariales = () => {
       </Helmet>
 
       <section className="contenedor" style={{ paddingTop: '150px', paddingBottom: '50px' }}>
-        <div className="encabezado" style={{ marginBottom: '60px' }}>
-          <h1 className="titulo">Sistemas de gestión para digitalizar procesos empresariales</h1>
-          <p className="subtitulo">
-            Desarrollo plataformas administrativas que optimizan tu tiempo, reducen errores humanos y te dan el control total de tu negocio.
+        <div className="seo-header anim-scroll">
+          <h1 className="seo-title">Sistemas de gestión para digitalizar procesos empresariales</h1>
+          <p className="seo-subtitle">
+            Desarrollo plataformas administrativas que optimizan tu tiempo, reducen errores humanos y te dan el control total de tu negocio desde cualquier lugar.
           </p>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '60px' }}>
           {/* Soluciones Posibles */}
-          <article>
-            <h2 style={{ marginBottom: '40px', fontSize: '1.8rem', textAlign: 'center' }}>¿Qué procesos puedes digitalizar?</h2>
+          <article className="anim-scroll">
+            <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center' }}>¿Qué procesos puedes digitalizar?</h2>
             
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '40px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
+              
               {/* Inventario */}
-              <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start', background: 'var(--shade-2)', padding: '30px', borderRadius: '15px' }}>
-                <div style={{ fontSize: '40px', color: 'var(--primario)' }}><FaBoxes /></div>
-                <div>
-                  <h3 style={{ fontSize: '1.4rem', marginBottom: '15px' }}>Sistema de Inventario</h3>
-                  <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <li><FaCheck color="var(--primario)" style={{ marginRight: '10px' }} /> Control exacto de entradas y salidas de mercadería.</li>
-                    <li><FaCheck color="var(--primario)" style={{ marginRight: '10px' }} /> Alertas automáticas de stock mínimo.</li>
-                    <li><FaCheck color="var(--primario)" style={{ marginRight: '10px' }} /> Historial de movimientos y reportes de pérdidas.</li>
-                  </ul>
-                </div>
+              <div className="seo-card">
+                <div className="seo-card-icon"><FaBoxes /></div>
+                <h3 className="seo-card-title">Sistema de Inventario</h3>
+                <ul className="seo-list" style={{ gridTemplateColumns: '1fr', gap: '15px' }}>
+                  <li className="seo-list-item" style={{ padding: '15px' }}>
+                    <FaCheckCircle className="seo-list-icon" style={{ fontSize: '1.2rem' }} /> Control exacto de entradas y salidas de mercadería.
+                  </li>
+                  <li className="seo-list-item" style={{ padding: '15px' }}>
+                    <FaCheckCircle className="seo-list-icon" style={{ fontSize: '1.2rem' }} /> Alertas automáticas de stock mínimo.
+                  </li>
+                  <li className="seo-list-item" style={{ padding: '15px' }}>
+                    <FaCheckCircle className="seo-list-icon" style={{ fontSize: '1.2rem' }} /> Historial de movimientos y reportes de pérdidas.
+                  </li>
+                </ul>
               </div>
 
               {/* Producción */}
-              <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start', background: 'var(--shade-2)', padding: '30px', borderRadius: '15px' }}>
-                <div style={{ fontSize: '40px', color: 'var(--primario)' }}><FaIndustry /></div>
-                <div>
-                  <h3 style={{ fontSize: '1.4rem', marginBottom: '15px' }}>Sistema de Producción</h3>
-                  <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <li><FaCheck color="var(--primario)" style={{ marginRight: '10px' }} /> Control de materias primas y recetas.</li>
-                    <li><FaCheck color="var(--primario)" style={{ marginRight: '10px' }} /> Registro del consumo por cada lote de producción.</li>
-                    <li><FaCheck color="var(--primario)" style={{ marginRight: '10px' }} /> Medición de mermas y control de calidad.</li>
-                  </ul>
-                </div>
+              <div className="seo-card">
+                <div className="seo-card-icon"><FaIndustry /></div>
+                <h3 className="seo-card-title">Sistema de Producción</h3>
+                <ul className="seo-list" style={{ gridTemplateColumns: '1fr', gap: '15px' }}>
+                  <li className="seo-list-item" style={{ padding: '15px' }}>
+                    <FaCheckCircle className="seo-list-icon" style={{ fontSize: '1.2rem' }} /> Control de materias primas y recetas.
+                  </li>
+                  <li className="seo-list-item" style={{ padding: '15px' }}>
+                    <FaCheckCircle className="seo-list-icon" style={{ fontSize: '1.2rem' }} /> Registro del consumo por cada lote.
+                  </li>
+                  <li className="seo-list-item" style={{ padding: '15px' }}>
+                    <FaCheckCircle className="seo-list-icon" style={{ fontSize: '1.2rem' }} /> Medición de mermas y control de calidad.
+                  </li>
+                </ul>
               </div>
 
               {/* Personal */}
-              <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start', background: 'var(--shade-2)', padding: '30px', borderRadius: '15px' }}>
-                <div style={{ fontSize: '40px', color: 'var(--primario)' }}><FaUserTie /></div>
-                <div>
-                  <h3 style={{ fontSize: '1.4rem', marginBottom: '15px' }}>Gestión de Personal</h3>
-                  <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <li><FaCheck color="var(--primario)" style={{ marginRight: '10px' }} /> Base de datos de empleados y sus documentos legales.</li>
-                    <li><FaCheck color="var(--primario)" style={{ marginRight: '10px' }} /> Gestión y aprobación de vacaciones o permisos.</li>
-                    <li><FaCheck color="var(--primario)" style={{ marginRight: '10px' }} /> Panel de avisos o información interna corporativa.</li>
-                  </ul>
-                </div>
+              <div className="seo-card">
+                <div className="seo-card-icon"><FaUserTie /></div>
+                <h3 className="seo-card-title">Gestión de Personal</h3>
+                <ul className="seo-list" style={{ gridTemplateColumns: '1fr', gap: '15px' }}>
+                  <li className="seo-list-item" style={{ padding: '15px' }}>
+                    <FaCheckCircle className="seo-list-icon" style={{ fontSize: '1.2rem' }} /> Base de datos de empleados y documentos legales.
+                  </li>
+                  <li className="seo-list-item" style={{ padding: '15px' }}>
+                    <FaCheckCircle className="seo-list-icon" style={{ fontSize: '1.2rem' }} /> Gestión y aprobación de vacaciones o permisos.
+                  </li>
+                  <li className="seo-list-item" style={{ padding: '15px' }}>
+                    <FaCheckCircle className="seo-list-icon" style={{ fontSize: '1.2rem' }} /> Panel de avisos o información corporativa.
+                  </li>
+                </ul>
               </div>
 
               {/* Administrativo */}
-              <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start', background: 'var(--shade-2)', padding: '30px', borderRadius: '15px' }}>
-                <div style={{ fontSize: '40px', color: 'var(--primario)' }}><FaFileInvoice /></div>
-                <div>
-                  <h3 style={{ fontSize: '1.4rem', marginBottom: '15px' }}>Sistemas Administrativos</h3>
-                  <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <li><FaCheck color="var(--primario)" style={{ marginRight: '10px' }} /> Registro detallado de clientes y ventas.</li>
-                    <li><FaCheck color="var(--primario)" style={{ marginRight: '10px' }} /> Repositorio de documentos importantes en la nube.</li>
-                    <li><FaCheck color="var(--primario)" style={{ marginRight: '10px' }} /> Reportes financieros y operacionales a un clic.</li>
-                  </ul>
-                </div>
+              <div className="seo-card">
+                <div className="seo-card-icon"><FaFileInvoice /></div>
+                <h3 className="seo-card-title">Sistemas Administrativos</h3>
+                <ul className="seo-list" style={{ gridTemplateColumns: '1fr', gap: '15px' }}>
+                  <li className="seo-list-item" style={{ padding: '15px' }}>
+                    <FaCheckCircle className="seo-list-icon" style={{ fontSize: '1.2rem' }} /> Registro detallado de clientes y ventas.
+                  </li>
+                  <li className="seo-list-item" style={{ padding: '15px' }}>
+                    <FaCheckCircle className="seo-list-icon" style={{ fontSize: '1.2rem' }} /> Repositorio de documentos en la nube.
+                  </li>
+                  <li className="seo-list-item" style={{ padding: '15px' }}>
+                    <FaCheckCircle className="seo-list-icon" style={{ fontSize: '1.2rem' }} /> Reportes financieros y operacionales a un clic.
+                  </li>
+                </ul>
               </div>
+
             </div>
           </article>
 
           {/* Aclaración */}
-          <article style={{ background: 'var(--shade-1)', border: '1px solid var(--shade-3)', padding: '25px', borderRadius: '10px' }}>
-            <p style={{ color: 'var(--shade-7)', fontSize: '0.95rem', margin: 0 }}>
-              <em>* Nota: Estos son ejemplos de módulos que pueden desarrollarse a medida. El valor de inversión (desde $300.000 CLP) incluye una base estructural, y el costo final se evalúa según los módulos exactos que tu empresa requiera digitalizar.</em>
-            </p>
+          <article className="anim-scroll">
+            <div className="seo-highlight-box" style={{ padding: '30px' }}>
+              <p style={{ fontSize: '1.05rem', margin: 0, fontWeight: '500' }}>
+                <em>* Nota: Estos son ejemplos de módulos que pueden desarrollarse a medida. El valor de inversión (desde $300.000 CLP) incluye una base estructural, y el costo final se evalúa según los módulos exactos que tu empresa requiera digitalizar.</em>
+              </p>
+            </div>
           </article>
 
           {/* CTA */}
-          <article style={{ textAlign: 'center', marginTop: '10px' }}>
+          <article className="anim-scroll" style={{ textAlign: 'center', marginTop: '10px', paddingBottom: '40px' }}>
             <a 
               href={wsUrl} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="boton" 
-              style={{ display: 'inline-flex', fontSize: '1.2rem', padding: '15px 30px' }}
+              style={{ display: 'inline-flex', fontSize: '1.2rem', padding: '16px 36px', borderRadius: '100px' }}
             >
-              <FaWhatsapp size={24} /> Cuéntame qué proceso necesitas digitalizar
+              <FaWhatsapp size={26} style={{ marginRight: '10px' }} /> Cuéntame qué proceso necesitas digitalizar
             </a>
           </article>
 

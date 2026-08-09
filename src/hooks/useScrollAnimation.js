@@ -1,41 +1,56 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const useScrollAnimation = () => {
+  const location = useLocation();
+
   useEffect(() => {
-    const elementos = document.querySelectorAll(".anim-scroll");
+    // Wait a brief moment for the DOM to update after route change
+    const initAnimation = () => {
+      const elementos = document.querySelectorAll(".anim-scroll");
 
-    // Fallback de seguridad: si por alguna razón el observer no dispara, 
-    // forzamos la visibilidad después de 1 segundo para evitar que la página quede en blanco.
-    const fallbackTimer = setTimeout(() => {
-      elementos.forEach((el) => {
-        if (!el.classList.contains("visible")) {
-          el.classList.add("visible");
-        }
-      });
-    }, 1500);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting || entry.intersectionRatio > 0) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
+      // Fallback de seguridad
+      const fallbackTimer = setTimeout(() => {
+        elementos.forEach((el) => {
+          if (!el.classList.contains("visible")) {
+            el.classList.add("visible");
           }
         });
-      },
-      {
-        threshold: 0,
-        rootMargin: "50px",
-      }
-    );
+      }, 800); // Reducido a 800ms para que sea más responsivo si falla el observer
 
-    elementos.forEach((el) => observer.observe(el));
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting || entry.intersectionRatio > 0) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0,
+          rootMargin: "50px",
+        }
+      );
 
-    return () => {
-      clearTimeout(fallbackTimer);
-      observer.disconnect();
+      elementos.forEach((el) => observer.observe(el));
+
+      return { observer, fallbackTimer };
     };
-  }, []);
+
+    // Small delay to ensure new elements from route change are in the DOM
+    const timeoutId = setTimeout(() => {
+      const { observer, fallbackTimer } = initAnimation();
+      
+      // Cleanup on unmount or next route change
+      return () => {
+        clearTimeout(fallbackTimer);
+        if (observer) observer.disconnect();
+      };
+    }, 50);
+
+    return () => clearTimeout(timeoutId);
+  }, [location.pathname]); // Dependencia clave: vuelve a ejecutarse al cambiar de ruta
 };
 
 export default useScrollAnimation;
