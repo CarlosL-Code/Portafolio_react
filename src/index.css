@@ -36,9 +36,12 @@
 }
 
 /* BODY */
-body {
+body, html {
     font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
 
+body {
     /* Fondo base */
     background-color: var(--shade-1);
     

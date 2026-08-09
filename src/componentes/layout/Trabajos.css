@@ -300,10 +300,61 @@ body.dark .btn-load-more:hover {
 
 @media (max-width: 640px) {
   .grid-premium {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 0 10px;
   }
   
   .titulo-premium {
-    font-size: 32px;
+    font-size: 28px;
+  }
+
+  .subtitulo-premium {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .filtros-premium {
+    gap: 8px;
+  }
+  
+  .filtros-premium label {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
+
+  .imagen-proyecto {
+    height: 120px;
+  }
+
+  .info-proyecto {
+    padding: 12px;
+  }
+
+  .titulo-proyecto {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .desc-proyecto {
+    font-size: 12px;
+    min-height: auto;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .tags-proyecto {
+    margin-bottom: 12px;
+    gap: 4px;
+  }
+
+  .tag-pildora {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+
+  .btn-proyecto {
+    padding: 8px;
+    font-size: 12px;
   }
 }

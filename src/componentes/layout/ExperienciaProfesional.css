@@ -275,15 +275,39 @@
 }
 
 @media (max-width: 768px) {
+  .experiencia-profesional {
+    padding: 60px 0;
+  }
+  
   .experiencia-tarjeta {
-    padding: 30px 20px;
+    padding: 20px 15px;
   }
   
   .experiencia-header {
     flex-direction: column;
+    gap: 5px;
+  }
+  
+  .experiencia-cargo {
+    font-size: 20px;
+  }
+
+  .experiencia-empresa h4 {
+    font-size: 16px;
   }
   
   .experiencia-lista {
     grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 15px;
+    padding-bottom: 15px;
+  }
+  
+  .experiencia-lista li {
+    font-size: 13px;
+  }
+
+  .experiencia-descripcion p {
+    font-size: 14px;
   }
 }
