@@ -47,19 +47,24 @@
             gap: 20px;
 
             .pre-titulo{
-                color: var(--primario);
-                font-size: 16px;
+                color: var(--shade-1);
+                font-size: 14px;
                 font-weight: 600;
+                letter-spacing: 2px;
+                text-transform: uppercase;
                 margin-top: 50px;
+
+                .dark & {
+                    color: rgba(255, 255, 255, 0.7);
+                }
             }
 
             .titulo{
                 font-size: 30px;
-                color: var(--shade-7);
-
-                .dark &{
-                    color: var(--shade-2);
-                }
+                background: linear-gradient(90deg, var(--primario) 0%, #ff8c42 50%, #ffa500 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                line-height: 1.2;
             }
 
             .resumen{
@@ -107,7 +112,7 @@
 
             .col-1{
                 .fotos{
-                    margin-bottom: 60px;
+                    margin-bottom: 30px;
                     justify-content: center;
 
                     .foto{
@@ -116,9 +121,9 @@
                         }
 
                         &:nth-child(2){
-                            width: 40%;
+                            width: 38%;
                             left: 55%;
-                            bottom: -20%;
+                            bottom: -15%;
                         }
                     }
                 }

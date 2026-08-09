@@ -12,7 +12,7 @@ const Proyectos = () => {
       </Helmet>
 
       {/* Trabajos component already has its own padding and id="trabajos". */}
-      <div style={{ paddingTop: '80px' }}>
+      <div style={{ paddingTop: 'clamp(56px, 5vw, 80px)' }}>
         <Trabajos />
       </div>
     </>

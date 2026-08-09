@@ -11,7 +11,7 @@ const ContactoPage = () => {
         <link rel="canonical" href="https://carloslozanodev.com/contacto" />
       </Helmet>
 
-      <div style={{ paddingTop: '100px', paddingBottom: '40px' }}>
+      <div style={{ paddingTop: 'clamp(56px, 5vw, 100px)', paddingBottom: '40px' }}>
         <Contacto />
       </div>
     </>
