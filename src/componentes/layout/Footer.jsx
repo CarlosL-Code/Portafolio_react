@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaInstagram, FaLinkedin, FaGithub, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaGithub, FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -28,14 +28,13 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="footer-newsletter">
-            <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-              <input type="email" placeholder="tu@correo.com" required />
-              <button type="submit" aria-label="Suscribirse">
-                <FaArrowRight />
-              </button>
-            </form>
-          </div>
+          <Link
+            to="/contacto"
+            className="footer-cta-btn"
+            onClick={() => window.scrollTo(0, 0)}
+          >
+            Cotizar mi proyecto →
+          </Link>
 
           <div className="footer-socials">
             <a href="https://www.linkedin.com/in/carlos-jos%C3%A9-lozano-silva-a56577307/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
