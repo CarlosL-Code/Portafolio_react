@@ -24,7 +24,7 @@ const Footer = () => {
             </div>
             <div className="contact-item">
               <FaMapMarkerAlt className="contact-icon" />
-              <span style={{ lineHeight: '1.4' }}>100% Remoto · Presencial en Temuco y Padre Las Casas, Araucanía</span>
+              <span style={{ lineHeight: '1.4' }}>100% Remoto · Presencial en Temuco, Araucanía</span>
             </div>
           </div>
 

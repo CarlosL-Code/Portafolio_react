@@ -57,7 +57,7 @@
         justify-content: space-around;
         min-width: 100%;
         gap: 3rem; /* Aumentado para mayor separación */
-        animation: marqueeScroll 40s linear infinite;
+        animation: marqueeScroll 60s linear infinite;
     }
 
     .logos-wrapper:hover .logos-track {
@@ -118,7 +118,7 @@
 
         .logos-track {
             gap: 1.5rem;
-            animation: marqueeScrollMobile 25s linear infinite;
+            animation: marqueeScrollMobile 40s linear infinite;
         }
 
         .brand-item__media {
