@@ -23,76 +23,93 @@ const DesarrolloWeb = ({ currency }) => {
           </p>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '100px' }}>
           
-          {/* Introducción */}
-          <article className="anim-scroll">
-            <h2 className="titulo" style={{ marginBottom: '20px' }}>Presencia digital que vende</h2>
-            <p className="seo-text-block">
-              En la actualidad, una página web no es solo un folleto digital, es tu sucursal principal en internet. Me especializo en desarrollar sitios web corporativos y landing pages que resuelven problemas reales: generar confianza, captar leads y verse impecables en cualquier dispositivo (celulares, tablets y computadoras).
-            </p>
-            <p className="seo-text-block">
-              Todas las páginas que construyo incluyen integración directa con WhatsApp para que tus clientes puedan contactarte con un solo clic, formularios funcionales, enlaces a tus redes sociales y configuración básica de SEO on-page desde el primer día.
-            </p>
+          {/* Introducción + Imagen Hero */}
+          <article className="anim-scroll" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '50px', alignItems: 'center' }}>
+            <div>
+              <h2 className="titulo" style={{ marginBottom: '20px', textAlign: 'left' }}>Presencia digital que vende</h2>
+              <p className="seo-text-block">
+                En la actualidad, una página web no es solo un folleto digital, es tu sucursal principal en internet. Me especializo en desarrollar sitios web corporativos y landing pages que resuelven problemas reales: generar confianza, captar leads y verse impecables en cualquier dispositivo.
+              </p>
+              <p className="seo-text-block">
+                Todas las páginas que construyo incluyen integración directa con WhatsApp para que tus clientes puedan contactarte con un solo clic, formularios funcionales, enlaces a tus redes sociales y configuración básica de SEO on-page desde el primer día.
+              </p>
+            </div>
+            <div>
+              <img src="/hero_digital_presence.jpg" alt="Presencia Digital y Desarrollo Web" style={{ width: '100%', borderRadius: '24px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.05)' }} />
+            </div>
           </article>
 
           {/* Qué tipo de sitios */}
           <article className="anim-scroll">
-            <h2 className="titulo" style={{ marginBottom: '30px', textAlign: 'center' }}>¿Qué tipo de sitios desarrollo?</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px' }}>
+            <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center' }}>¿Qué tipo de sitios desarrollo?</h2>
+            <div className="glowing-grid">
               {[
-                { icon: <FaLaptopCode />, title: 'Sitios Corporativos', desc: 'Presencia formal e institucional para empresas y Pymes.' },
-                { icon: <FaRocket />, title: 'Landing Pages', desc: 'Páginas enfocadas en alta conversión y venta de un servicio.' },
-                { icon: <FaMobileAlt />, title: 'Negocios Locales', desc: 'Restaurantes, clínicas, gimnasios y comercios de todo tipo.' },
-                { icon: <FaSearchDollar />, title: 'Portafolios', desc: 'Para profesionales independientes que buscan destacar en su rubro.' }
+                { icon: <FaLaptopCode />, title: 'Sitios Corporativos', desc: 'Presencia formal e institucional para empresas y Pymes. Proyecta confianza total.' },
+                { icon: <FaRocket />, title: 'Landing Pages', desc: 'Páginas enfocadas en alta conversión y venta de un servicio específico. Ideales para Ads.' },
+                { icon: <FaMobileAlt />, title: 'Negocios Locales', desc: 'Restaurantes, clínicas, gimnasios y comercios de todo tipo con mapas e info clara.' },
+                { icon: <FaSearchDollar />, title: 'Portafolios', desc: 'Para profesionales independientes que buscan destacar en su rubro con autoridad.' }
               ].map((item, index) => (
-                <div key={index} className="seo-card">
-                  <div className="seo-card-icon">{item.icon}</div>
-                  <h3 className="seo-card-title">{item.title}</h3>
-                  <p className="seo-card-desc">{item.desc}</p>
+                <div key={index} className="glowing-card">
+                  <div className="glowing-icon">{item.icon}</div>
+                  <h3 className="glowing-title">{item.title}</h3>
+                  <p className="glowing-desc">{item.desc}</p>
                 </div>
               ))}
             </div>
           </article>
 
-          {/* Qué incluye */}
+          {/* Qué incluye (Bento Grid) */}
           <article className="anim-scroll">
-            <h2 className="titulo" style={{ marginBottom: '30px', textAlign: 'center' }}>¿Qué incluye tu página web?</h2>
-            <ul className="seo-list">
+            <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center' }}>¿Qué incluye tu página web?</h2>
+            <div className="bento-grid">
               {[
                 'Diseño Responsive (Adaptable a celulares)',
                 'Botón flotante de WhatsApp',
                 'Formulario de contacto funcional',
-                'SEO On-page básico (Estructura y Metadata)',
+                'SEO On-page básico (Estructura y Meta)',
                 'Enlaces a redes sociales',
-                'Optimización de velocidad (Performance)',
+                'Optimización de velocidad',
                 'Despliegue y publicación web'
               ].map((item, index) => (
-                <li key={index} className="seo-list-item">
-                  <FaCheckCircle className="seo-list-icon" /> 
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
-
-          {/* Proceso */}
-          <article className="anim-scroll">
-            <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center' }}>Nuestro Proceso de Trabajo</h2>
-            <div className="process-steps">
-              {['Conversación inicial', 'Propuesta de diseño', 'Desarrollo web', 'Revisión final', 'Publicación y Soporte'].map((step, index) => (
-                <React.Fragment key={index}>
-                  <div className="process-step">
-                    {index + 1}. {step}
-                  </div>
-                  {index < 4 && <FaChevronRight style={{ color: 'var(--shade-4)', alignSelf: 'center' }} className="d-none d-md-block" />}
-                </React.Fragment>
+                <div key={index} className="bento-item">
+                  <FaCheckCircle className="bento-icon" /> 
+                  <span className="bento-text">{item}</span>
+                </div>
               ))}
             </div>
           </article>
 
+          {/* Proceso */}
+          <article className="anim-scroll" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '50px', alignItems: 'center' }}>
+            <div>
+              <img src="/process_illustration.jpg" alt="Proceso de Desarrollo" style={{ width: '100%', borderRadius: '24px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.05)' }} />
+            </div>
+            <div>
+              <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'left' }}>Nuestro Proceso de Trabajo</h2>
+              <div className="timeline-container">
+                {[
+                  { title: 'Conversación inicial', desc: 'Entendemos tus objetivos, público y necesidades específicas.' },
+                  { title: 'Propuesta de diseño', desc: 'Creamos un boceto visual para asegurar que estamos alineados.' },
+                  { title: 'Desarrollo web', desc: 'Programamos el sitio con código limpio y optimizado.' },
+                  { title: 'Revisión final', desc: 'Validamos juntos que todo funcione perfectamente en celular y PC.' },
+                  { title: 'Publicación', desc: 'Lanzamos tu sitio al mundo con soporte técnico continuo.' }
+                ].map((step, index) => (
+                  <div key={index} className="timeline-item">
+                    <div className="timeline-dot"></div>
+                    <div className="timeline-content">
+                      <h3 className="timeline-title">0{index + 1}. {step.title}</h3>
+                      <p className="timeline-desc">{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </article>
+
           {/* Planes (Reutilizado) */}
-          <article className="anim-scroll" style={{ marginTop: '20px' }}>
+          <article className="anim-scroll">
             <Planes currency={currency} />
           </article>
 
@@ -101,22 +118,22 @@ const DesarrolloWeb = ({ currency }) => {
             <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center' }}>Preguntas Frecuentes</h2>
             <div className="faq-grid">
               <div className="faq-card">
-                <h3 className="faq-title">¿Cuánto demora el desarrollo?</h3>
+                <h3 className="faq-title">⏱️ ¿Cuánto demora el desarrollo?</h3>
                 <p className="faq-answer">Dependiendo de la complejidad, una página corporativa o landing page estándar suele estar lista entre 1 a 3 semanas una vez entregada y validada toda la información.</p>
               </div>
               <div className="faq-card">
-                <h3 className="faq-title">¿La página funciona en celulares?</h3>
+                <h3 className="faq-title">📱 ¿La página funciona en celulares?</h3>
                 <p className="faq-answer">Sí, absolutamente. Todas las páginas que desarrollo están optimizadas primero para dispositivos móviles (Responsive Web Design), garantizando una experiencia perfecta.</p>
               </div>
               <div className="faq-card">
-                <h3 className="faq-title">¿Puedo usar mi propio dominio?</h3>
+                <h3 className="faq-title">🌐 ¿Puedo usar mi propio dominio?</h3>
                 <p className="faq-answer">Por supuesto. Si ya tienes un dominio (.cl, .com, etc.), te ayudo a conectarlo al servidor de tu nueva página web sin ningún costo adicional de configuración.</p>
               </div>
             </div>
           </article>
 
           {/* CTA */}
-          <article className="anim-scroll" style={{ textAlign: 'center', marginTop: '40px', paddingBottom: '40px' }}>
+          <article className="anim-scroll" style={{ textAlign: 'center', marginTop: '20px', paddingBottom: '40px' }}>
             <a 
               href={wsUrl} 
               target="_blank" 
