@@ -74,7 +74,7 @@ const ExperienciaProfesional = () => {
   const exp = experiencias[currentIndex];
 
   return (
-    <section className="experiencia-profesional" id="experiencia">
+    <section className="experiencia-profesional seccion-alt" id="experiencia">
       <div className="encabezado anim-scroll">
         <h2 className="titulo">Experiencia Profesional</h2>
         <p className="subtitulo">

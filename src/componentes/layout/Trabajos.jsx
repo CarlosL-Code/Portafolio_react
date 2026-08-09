@@ -38,7 +38,7 @@ const Trabajos = () => {
 
   return (
     <>
-      <section className="trabajos" id="trabajos">
+      <section className="trabajos seccion-alt" id="trabajos">
         {/* Encabezado Premium */}
         <div className="encabezado anim-scroll">
           <h1 className="seo-title" style={{ fontSize: '3rem' }}>Proyectos Destacados</h1>
