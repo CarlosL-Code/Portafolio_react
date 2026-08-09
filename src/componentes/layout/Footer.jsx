@@ -51,7 +51,6 @@ const Footer = () => {
             <li><Link to="/desarrollo-web" onClick={() => window.scrollTo(0, 0)}>Desarrollo Web (Landing, Corporativo)</Link></li>
             <li><Link to="/software-a-medida" onClick={() => window.scrollTo(0, 0)}>Software a Medida (SaaS, ERP)</Link></li>
             <li><Link to="/sistemas-empresariales" onClick={() => window.scrollTo(0, 0)}>Sistemas Empresariales</Link></li>
-            <li><Link to="/" onClick={() => window.scrollTo(0, 0)}>Sitios E-Commerce</Link></li>
           </ul>
         </div>
 
@@ -78,7 +77,14 @@ const Footer = () => {
                 }, 100);
               }}>Planes y Precios</Link>
             </li>
-            <li><Link to="/desarrollo-web" onClick={() => window.scrollTo(0, 0)}>Preguntas Frecuentes</Link></li>
+            <li>
+              <Link to="/desarrollo-web" onClick={() => {
+                setTimeout(() => {
+                  const el = document.getElementById('faq');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}>Preguntas Frecuentes</Link>
+            </li>
             <li><a href="#">Blog (Próximamente)</a></li>
           </ul>
         </div>

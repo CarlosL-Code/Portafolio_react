@@ -122,7 +122,7 @@ const DesarrolloWeb = ({ currency }) => {
           </article>
 
           {/* FAQ */}
-          <article className="anim-scroll">
+          <article className="anim-scroll" id="faq">
             <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center' }}>Preguntas Frecuentes</h2>
             <div className="faq-grid">
               <div className="faq-card">

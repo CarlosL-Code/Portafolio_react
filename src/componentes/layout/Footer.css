@@ -87,22 +87,30 @@ body:not(.dark) .footer-premium {
 /* CTA Button */
 .footer-cta-btn {
   display: inline-block;
-  margin-top: 16px;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, var(--primario) 0%, #E35D5D 100%);
-  color: #ffffff !important;
-  font-size: 0.9rem;
-  font-weight: 700;
-  border-radius: 100px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--shade-7) !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid var(--shade-4);
   text-decoration: none !important;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(216, 58, 58, 0.3);
+}
+
+.dark .footer-cta-btn {
+  color: var(--shade-4) !important;
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .footer-cta-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(216, 58, 58, 0.5);
+  background: rgba(0, 0, 0, 0.05);
   text-decoration: none !important;
+}
+
+.dark .footer-cta-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
 }
 
 /* Redes Sociales */
