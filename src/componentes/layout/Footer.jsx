@@ -48,10 +48,10 @@ const Footer = () => {
         <div className="footer-col-links">
           <h3>SERVICIOS</h3>
           <ul>
-            <li><Link to="/desarrollo-web">Desarrollo Web (Landing, Corporativo)</Link></li>
-            <li><Link to="/software-a-medida">Software a Medida (SaaS, ERP)</Link></li>
-            <li><Link to="/sistemas-empresariales">Sistemas Empresariales</Link></li>
-            <li><Link to="/">Sitios E-Commerce</Link></li>
+            <li><Link to="/desarrollo-web" onClick={() => window.scrollTo(0, 0)}>Desarrollo Web (Landing, Corporativo)</Link></li>
+            <li><Link to="/software-a-medida" onClick={() => window.scrollTo(0, 0)}>Software a Medida (SaaS, ERP)</Link></li>
+            <li><Link to="/sistemas-empresariales" onClick={() => window.scrollTo(0, 0)}>Sistemas Empresariales</Link></li>
+            <li><Link to="/" onClick={() => window.scrollTo(0, 0)}>Sitios E-Commerce</Link></li>
           </ul>
         </div>
 
@@ -59,9 +59,9 @@ const Footer = () => {
         <div className="footer-col-links">
           <h3>NAVEGACIÓN</h3>
           <ul>
-            <li><Link to="/">Inicio / Acerca de Mí</Link></li>
-            <li><Link to="/proyectos">Portafolio y Casos de Éxito</Link></li>
-            <li><Link to="/contacto">Contacto</Link></li>
+            <li><Link to="/" onClick={() => window.scrollTo(0, 0)}>Inicio / Acerca de Mí</Link></li>
+            <li><Link to="/proyectos" onClick={() => window.scrollTo(0, 0)}>Portafolio y Casos de Éxito</Link></li>
+            <li><Link to="/contacto" onClick={() => window.scrollTo(0, 0)}>Contacto</Link></li>
             <li><a href="https://wa.me/56937540250" target="_blank" rel="noreferrer">Agendar Reunión</a></li>
           </ul>
         </div>
@@ -70,8 +70,15 @@ const Footer = () => {
         <div className="footer-col-links">
           <h3>RECURSOS</h3>
           <ul>
-            <li><Link to="/#planes">Planes y Precios</Link></li>
-            <li><Link to="/desarrollo-web">Preguntas Frecuentes</Link></li>
+            <li>
+              <Link to="/" onClick={() => {
+                setTimeout(() => {
+                  const el = document.getElementById('planes');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}>Planes y Precios</Link>
+            </li>
+            <li><Link to="/desarrollo-web" onClick={() => window.scrollTo(0, 0)}>Preguntas Frecuentes</Link></li>
             <li><a href="#">Blog (Próximamente)</a></li>
           </ul>
         </div>
