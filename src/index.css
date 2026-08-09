@@ -159,13 +159,19 @@ body.dark .boton {
 
         .titulo {
             font-family: "Inter", sans-serif;
-            color: var(--shade-9);
             font-size: 2.2rem;
-            font-weight: 800;
-            transition: color 0.3s ease;
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--primario) 0%, #ff8c42 50%, #ffa500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+            letter-spacing: -1px;
 
             body.dark & {
-                color: var(--dark-title);
+                background: linear-gradient(90deg, #ff6b6b 0%, var(--primario) 50%, #ff8c42 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
         }
 

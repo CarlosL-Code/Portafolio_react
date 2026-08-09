@@ -20,16 +20,15 @@ const Footer = () => {
           <div className="footer-contact-info">
             <div className="contact-item">
               <FaEnvelope className="contact-icon" />
-              <span>contacto@carloslozanodev.com</span>
+              <span>carlos.lozano.silva1@gmail.com</span>
             </div>
             <div className="contact-item">
               <FaMapMarkerAlt className="contact-icon" />
-              <span>100% Remoto · Presencial en Región del Bío Bío, Chile</span>
+              <span style={{ lineHeight: '1.4' }}>100% Remoto · Presencial en Temuco y Padre Las Casas, Araucanía</span>
             </div>
           </div>
 
           <div className="footer-newsletter">
-            <p>Suscríbete a mi newsletter de tecnología mensual</p>
             <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
               <input type="email" placeholder="tu@correo.com" required />
               <button type="submit" aria-label="Suscribirse">

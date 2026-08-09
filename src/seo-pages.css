@@ -283,3 +283,35 @@ body.dark .faq-answer {
   height: 4px;
   background: var(--primario);
 }
+
+/* =========================================
+   RESPONSIVE DESIGN (Móvil y Tablets)
+========================================= */
+@media (max-width: 768px) {
+  .seo-title {
+    font-size: 2.2rem;
+  }
+  
+  .seo-subtitle {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .glowing-grid, .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .glowing-card {
+    padding: 20px 15px;
+  }
+
+  .bento-item {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .seo-title {
+    font-size: 1.8rem;
+  }
+}

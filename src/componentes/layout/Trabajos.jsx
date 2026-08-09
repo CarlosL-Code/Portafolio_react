@@ -41,7 +41,7 @@ const Trabajos = () => {
       <section className="trabajos" id="trabajos">
         {/* Encabezado Premium */}
         <div className="encabezado anim-scroll">
-          <h2 className="titulo-premium">Proyectos Destacados</h2>
+          <h1 className="seo-title" style={{ fontSize: '3rem' }}>Proyectos Destacados</h1>
           <p className="subtitulo-premium">
             Cada proyecto representa una solución arquitectónica para necesidades concretas de negocio. Explorar estos casos de estudio revela el enfoque estratégico detrás del código.
           </p>
