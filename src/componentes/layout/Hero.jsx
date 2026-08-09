@@ -6,8 +6,11 @@ const Hero = () => {
       <section className="hero">
         <div className="contenedor">
           <div className="contenido">
+            <div className="badge-profesional">
+              <span className="badge-dot"></span> Portafolio Profesional
+            </div>
             <h1 className="titulo">
-              <span>Desarrollo web</span>y software a medida
+              Creamos <span className="highlight-text">Desarrollo Web</span><br/> y Software a Medida
             </h1>
             <p className="subtitulo">
               Desarrollo páginas web, sistemas empresariales y soluciones digitales personalizadas para ayudar a empresas y profesionales a mejorar su presencia y sus procesos.
