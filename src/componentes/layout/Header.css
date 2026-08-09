@@ -114,12 +114,9 @@
 
 .nav-links {
     display: flex;
-    gap: clamp(15px, 2vw, 30px);
+    gap: clamp(10px, 1.5vw, 25px);
     align-items: center;
-    /* Absolute center for perfect symmetry on desktop */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 0 auto; /* Centered in available space without overlapping */
 }
 
 .header .nav-links > a,

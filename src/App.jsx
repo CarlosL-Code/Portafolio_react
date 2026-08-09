@@ -14,12 +14,13 @@ import Clientes from "./componentes/layout/Clientes";
 import CallToAction from "./componentes/layout/CallToAction";
 import Planes from "./componentes/layout/Planes";
 
-import { FaWhatsapp, FaFileDownload } from "react-icons/fa";
+import { FaWhatsapp, FaTimes } from "react-icons/fa";
 import useScrollAnimation from "./hooks/useScrollAnimation";
 
 function App() {
   useScrollAnimation();
   const [currency, setCurrency] = useState("CLP");
+  const [showWsChat, setShowWsChat] = useState(true);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -50,16 +51,30 @@ function App() {
         <Footer />
       </main>
 
-      {/* Botón flotante CV */}
-      <a
-        href="/carlos-lozano-silva-cv.pdf"
-        className="cv-flotante"
-        download
-        aria-label="Descargar CV"
-        title="Descargar CV"
-      >
-        <FaFileDownload />
-      </a>
+      {/* Chat de WhatsApp (Flotante) */}
+      {showWsChat && (
+        <div className="whatsapp-chat-popup">
+          <button className="ws-close-btn" onClick={() => setShowWsChat(false)} aria-label="Cerrar chat">
+            <FaTimes />
+          </button>
+          <div className="ws-chat-header">
+            <FaWhatsapp size={20} />
+            <span>Chat con nosotros</span>
+          </div>
+          <div className="ws-chat-body">
+            <p>¡Hola! 👋 ¿En qué te puedo ayudar hoy con tu proyecto?</p>
+          </div>
+          <a
+            href="https://wa.me/56937540250"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ws-chat-btn"
+            onClick={() => setShowWsChat(false)}
+          >
+            Abrir chat
+          </a>
+        </div>
+      )}
 
       {/* Botón flotante WhatsApp */}
       <a
@@ -68,6 +83,7 @@ function App() {
         rel="noopener noreferrer"
         className="whatsapp-flotante"
         aria-label="WhatsApp"
+        onClick={() => setShowWsChat(false)}
       >
         <FaWhatsapp />
       </a>

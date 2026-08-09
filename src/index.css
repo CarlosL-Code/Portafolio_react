@@ -208,11 +208,107 @@ body.dark .boton {
 }
 
 /* =========================================
-   WHATSAPP & CV FLOTANTES
+   WHATSAPP CHAT POPUP & FLOTANTE
 ========================================= */
 
-.whatsapp-flotante,
-.cv-flotante {
+.whatsapp-chat-popup {
+    position: fixed;
+    bottom: 95px; /* Arribita del whatsapp */
+    right: 22px;
+    background: #fff;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 998;
+    overflow: hidden;
+    animation: popupFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+body.dark .whatsapp-chat-popup {
+    background: var(--shade-9);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes popupFadeIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.ws-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+}
+.ws-close-btn:hover {
+    opacity: 1;
+}
+
+.ws-chat-header {
+    background: #00a884; /* WhatsApp Header Green */
+    color: #fff;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.ws-chat-body {
+    padding: 20px;
+    background: #efeae2; /* Default WS Background */
+    font-size: 14px;
+    color: #111b21;
+}
+
+body.dark .ws-chat-body {
+    background: #0B141A; /* WhatsApp Dark Mode bg */
+    color: var(--dark-text);
+}
+
+.ws-chat-body p {
+    background: #fff;
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 8px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    display: inline-block;
+    line-height: 1.5;
+}
+
+body.dark .ws-chat-body p {
+    background: #202C33; /* WhatsApp Dark bubble */
+    color: #E9EDEF;
+}
+
+.ws-chat-btn {
+    display: block;
+    text-align: center;
+    background: #25D366;
+    color: #fff !important;
+    padding: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background 0.3s;
+}
+
+.ws-chat-btn:hover {
+    background: #1ebe5d;
+    text-decoration: none;
+}
+
+.whatsapp-flotante {
     position: fixed;
     right: 22px;
     display: flex;
@@ -225,27 +321,11 @@ body.dark .boton {
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     -webkit-tap-highlight-color: transparent;
-}
-
-.whatsapp-flotante {
     bottom: 22px;
     width: 58px;
     height: 58px;
     background: #25D366;
     font-size: 30px;
-}
-
-.cv-flotante {
-    bottom: 95px; /* Arribita del whatsapp */
-    width: 50px;
-    height: 50px;
-    background: var(--shade-9);
-    font-size: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.dark .cv-flotante {
-    background: var(--shade-8);
 }
 
 /* Hovers */
@@ -256,13 +336,6 @@ body.dark .boton {
     text-decoration: none;
 }
 
-.cv-flotante:hover {
-    background: var(--primario);
-    transform: translateY(-3px) scale(1.04);
-    box-shadow: 0 14px 34px rgba(216, 58, 58, 0.3);
-    text-decoration: none;
-}
-
 /* Íconos */
 .whatsapp-flotante svg {
     width: 30px;
@@ -270,25 +343,14 @@ body.dark .boton {
     transition: transform 0.2s ease;
 }
 
-.cv-flotante svg {
-    width: 22px;
-    height: 22px;
-    transition: transform 0.2s ease;
-}
-
 /* Micro interacción */
-.whatsapp-flotante:hover svg,
-.cv-flotante:hover svg {
+.whatsapp-flotante:hover svg {
     transform: translateY(-1px);
 }
 
 /* Dark mode sombras */
 body.dark .whatsapp-flotante {
     box-shadow: 0 12px 30px rgba(37, 211, 102, 0.28);
-}
-
-body.dark .cv-flotante {
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 /* =========================================
@@ -304,11 +366,10 @@ body.dark .cv-flotante {
         right: 18px;
         bottom: 18px;
     }
-    .cv-flotante {
-        width: 48px;
-        height: 48px;
-        right: 18px;
+
+    .whatsapp-chat-popup {
         bottom: 85px;
+        right: 18px;
     }
 
     .whatsapp-flotante svg {
@@ -331,11 +392,11 @@ body.dark .cv-flotante {
         right: 14px;
         bottom: 14px;
     }
-    .cv-flotante {
-        width: 44px;
-        height: 44px;
-        right: 14px;
+
+    .whatsapp-chat-popup {
         bottom: 75px;
+        right: 14px;
+        width: 280px;
     }
 
     .whatsapp-flotante svg {
