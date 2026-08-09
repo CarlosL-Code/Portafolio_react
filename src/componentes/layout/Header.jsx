@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import './Header.css';
 import DarkModeSwitch from '../DarkModeSwitch';
@@ -32,7 +33,7 @@ const Header = ({ currency, setCurrency }) => {
     <>
       <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <div className="header-top">
-          <a href="/" className="logo" onClick={(e) => { e.preventDefault(); window.location.reload(); }} style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', cursor: 'pointer' }}>
+          <Link to="/" className="logo" onClick={() => window.scrollTo(0,0)} style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', cursor: 'pointer' }}>
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="32" height="32" rx="8" fill="url(#grad_logo)"/>
               <defs>
@@ -44,7 +45,7 @@ const Header = ({ currency, setCurrency }) => {
               <text x="16" y="21" fontFamily="Inter, sans-serif" fontWeight="800" fontSize="16" fill="white" textAnchor="middle" letterSpacing="-0.5">CL</text>
             </svg>
             <h2 className="titulo" style={{ color: 'inherit' }}>Carlos Lozano</h2>
-          </a>
+          </Link>
           
           {/* Botón Hamburguesa solo visible en móvil */}
           <button className="menu-toggle" onClick={toggleMenu} aria-label="Abrir menú">
@@ -65,17 +66,17 @@ const Header = ({ currency, setCurrency }) => {
           </button>
 
           <div className="nav-links">
+            <Link to="/" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Inicio</Link>
             <div className="nav-item-dropdown">
               <span className="nav-link-dropdown">Servicios <FaChevronDown className="dropdown-icon" /></span>
               <div className="dropdown-menu">
-                <a href="#planes" onClick={closeMenu}>Desarrollo Web</a>
-                <a href="#planes" onClick={closeMenu}>Sitio Web Mensual</a>
-                <a href="#planes" onClick={closeMenu}>Sistemas a Medida</a>
+                <Link to="/desarrollo-web" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Desarrollo Web</Link>
+                <Link to="/software-a-medida" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Software a Medida</Link>
+                <Link to="/sistemas-empresariales" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Sistemas Empresariales</Link>
               </div>
             </div>
-            <a href="#trabajos" onClick={closeMenu} aria-label="Ir a sección Proyectos">Proyectos</a>
-            <a href="#experiencia" onClick={closeMenu} aria-label="Ir a sección Experiencia">Experiencia</a>
-            <a href="#contacto" onClick={closeMenu} aria-label="Ir a sección Contacto">Contacto</a>
+            <Link to="/proyectos" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Proyectos</Link>
+            <Link to="/contacto" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Contacto</Link>
           </div>
 
           {/* Acciones extra en el nav */}

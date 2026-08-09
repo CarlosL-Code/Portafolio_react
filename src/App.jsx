@@ -1,18 +1,14 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./componentes/layout/Header";
-import Hero from "./componentes/layout/Hero";
-import AcercaDe from "./componentes/layout/AcercaDe";
-import ExperienciaProfesional from "./componentes/layout/ExperienciaProfesional";
-import Trabajos from "./componentes/layout/Trabajos";
-import Habilidades from "./componentes/layout/Habilidades"; // kept for future use if needed
-import Logros from "./componentes/layout/Logros"; // kept for future use if needed
-import Contacto from "./componentes/layout/Contacto";
 import Footer from "./componentes/layout/Footer";
-import ComoTrabajo from "./componentes/layout/ComoTrabajo"; // kept for future use if needed
-import FAQ from "./componentes/layout/FAQ";
-import Clientes from "./componentes/layout/Clientes";
-import CallToAction from "./componentes/layout/CallToAction";
-import Planes from "./componentes/layout/Planes";
+import Inicio from "./pages/Inicio";
+import DesarrolloWeb from "./pages/DesarrolloWeb";
+import SoftwareAMedida from "./pages/SoftwareAMedida";
+import SistemasEmpresariales from "./pages/SistemasEmpresariales";
+import Proyectos from "./pages/Proyectos";
+import ContactoPage from "./pages/Contacto";
+import NotFound from "./pages/NotFound";
 
 import { FaWhatsapp, FaTimes } from "react-icons/fa";
 import useScrollAnimation from "./hooks/useScrollAnimation";
@@ -39,23 +35,24 @@ function App() {
   }, []);
 
   return (
-    <>
+    <Router>
       <div className="mouse-glow"></div>
       
-      <Hero />
-      
-      <main className="contenedor">
-        <Header currency={currency} setCurrency={setCurrency} />
-        <AcercaDe />
-        <ExperienciaProfesional />
-        <Clientes />
-        <Trabajos />
-        <Planes currency={currency} />
-        <FAQ />
-        <CallToAction />
-        <Contacto />
+      <Header currency={currency} setCurrency={setCurrency} />
+
+      <Routes>
+        <Route path="/" element={<Inicio currency={currency} />} />
+        <Route path="/desarrollo-web" element={<DesarrolloWeb currency={currency} />} />
+        <Route path="/software-a-medida" element={<SoftwareAMedida />} />
+        <Route path="/sistemas-empresariales" element={<SistemasEmpresariales />} />
+        <Route path="/proyectos" element={<Proyectos />} />
+        <Route path="/contacto" element={<ContactoPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
+      <div className="contenedor">
         <Footer />
-      </main>
+      </div>
 
       {/* Chat de WhatsApp (Flotante) */}
       {showWsChat && (
@@ -106,7 +103,7 @@ function App() {
           <FaWhatsapp />
         </button>
       )}
-    </>
+    </Router>
   );
 }
 
