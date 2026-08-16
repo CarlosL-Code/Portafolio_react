@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Columna Izquierda: Logo y Tagline */}
         <div className="footer-col-brand">
           <div className="footer-logo">
-            <span className="logo-icon">🔥</span>
+            <div className="logo-cl">CL</div>
             <h2>Carlos Lozano</h2>
           </div>
           <p className="footer-tagline">
