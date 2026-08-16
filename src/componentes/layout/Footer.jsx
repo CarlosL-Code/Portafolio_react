@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { FaInstagram, FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -13,14 +14,14 @@ const Footer = () => {
             <h2>Carlos Lozano</h2>
           </div>
           <p className="footer-tagline">
-            Ingeniero de Software y Desarrollador Web Full Stack. Desarrollamos tu idea y la subimos a la nube — rápido, seguro y pensado para vender.
+            Ingeniero de Software y Desarrollador Web Full Stack. Diseño y construyo soluciones digitales a medida que optimizan procesos y potencian el crecimiento de tu negocio.
           </p>
           
-          <div className="footer-socials-text">
-            <a href="https://www.instagram.com/carlithos_lozano13/" target="_blank" rel="noreferrer" aria-label="Instagram">Instagram</a>
-            <a href="https://www.linkedin.com/in/carlos-jos%C3%A9-lozano-silva-a56577307/" target="_blank" rel="noreferrer" aria-label="LinkedIn">LinkedIn</a>
-            <a href="https://github.com/CarlosL-Code" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
-            <a href="https://wa.me/56937540250" target="_blank" rel="noreferrer" aria-label="WhatsApp">WhatsApp</a>
+          <div className="footer-socials-icons">
+            <a href="https://www.instagram.com/carlithos_lozano13/" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
+            <a href="https://www.linkedin.com/in/carlos-jos%C3%A9-lozano-silva-a56577307/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+            <a href="https://github.com/CarlosL-Code" target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub /></a>
+            <a href="https://wa.me/56937540250" target="_blank" rel="noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
           </div>
         </div>
 

@@ -71,24 +71,34 @@ body:not(.dark) .footer-premium {
   margin: 0;
 }
 
-/* Social links as text */
-.footer-socials-text {
+/* Social links as icons */
+.footer-socials-icons {
   display: flex;
-  gap: 20px;
-  margin-top: 10px;
+  gap: 15px;
+  margin-top: 15px;
   flex-wrap: wrap;
 }
 
-.footer-socials-text a {
-  color: #e2e8f0;
+.footer-socials-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: #a0aec0;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: color 0.3s;
 }
 
-.footer-socials-text a:hover {
-  color: #FACC15; /* Yellow hover */
+.footer-socials-icons a:hover {
+  color: #060E18;
+  background: #FACC15;
+  border-color: #FACC15;
+  transform: translateY(-3px);
 }
 
 /* Columnas de Links (Servicios y Contacto) */
