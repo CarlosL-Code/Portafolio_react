@@ -58,13 +58,21 @@ const Industrias = () => {
         <div className="industrias-grid">
           {industrias.map(ind => (
             <div key={ind.id} className="industria-card">
-              <div className="industria-icon">
+              <div className="industria-icon-wrapper">
                 {ind.icon}
               </div>
-              <h3 className="industria-title">{ind.title}</h3>
-              <p className="industria-desc">{ind.desc}</p>
-              <button className="industria-btn">
-                Ver más <FaArrowRight className="btn-arrow" />
+              <h3>{ind.title}</h3>
+              <p>{ind.desc}</p>
+              <div className="industria-features">
+                <div className="feature-item">
+                  <span className="feature-check">✔</span> Diseño conversion-focused
+                </div>
+                <div className="feature-item">
+                  <span className="feature-check">✔</span> Carga en 1 segundo
+                </div>
+              </div>
+              <button className="boton-industria">
+                Cotizar este modelo
               </button>
             </div>
           ))}

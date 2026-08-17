@@ -4,9 +4,6 @@ import Hero from '../componentes/layout/Hero';
 import Industrias from '../componentes/layout/Industrias';
 import Proceso from '../componentes/layout/Proceso';
 import Comparativa from '../componentes/layout/Comparativa';
-import AcercaDe from '../componentes/layout/AcercaDe';
-import ExperienciaProfesional from '../componentes/layout/ExperienciaProfesional';
-import Trabajos from '../componentes/layout/Trabajos';
 import Clientes from '../componentes/layout/Clientes';
 import Planes from '../componentes/layout/Planes';
 import FAQ from '../componentes/layout/FAQ';
@@ -29,10 +26,7 @@ const Inicio = ({ currency }) => {
       <Comparativa />
 
       <div className="contenedor">
-        <AcercaDe />
-        <ExperienciaProfesional />
         <Clientes />
-        <Trabajos />
         <Planes currency={currency} />
         <FAQ />
         <CallToAction />

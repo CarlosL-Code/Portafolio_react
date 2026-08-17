@@ -1,5 +1,5 @@
 .comparativa-section {
-  padding: 80px 0;
+  padding: 100px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,32 +29,34 @@
 }
 
 .comparativa-tabla th {
-  background: #0F172A;
-  color: #FFFFFF;
-  padding: 20px 24px;
-  font-size: 15px;
+  background: var(--shade-2);
+  color: var(--shade-9);
+  padding: 24px 30px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
 
 .dark .comparativa-tabla th {
   background: #000000;
+  color: #fff;
 }
 
 .comparativa-tabla th.nuestro-lado {
-  background: #1E293B; /* Slightly lighter header for our side */
+  background: var(--shade-3);
 }
 
 .dark .comparativa-tabla th.nuestro-lado {
-  background: #0F172A;
+  background: #0a0a0a;
 }
 
 .comparativa-tabla td {
-  padding: 20px 24px;
+  padding: 24px 30px;
   border-bottom: 1px solid var(--shade-3);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--shade-8);
+  line-height: 1.5;
 }
 
 .dark .comparativa-tabla td {
@@ -68,7 +70,8 @@
 
 /* Colores de texto para la comparativa */
 .texto-verde {
-  color: #10B981 !important;
+  color: var(--primario) !important; /* Use primary color to highlight our side */
+  font-weight: 700 !important;
 }
 
 .texto-rojo {
@@ -84,7 +87,7 @@
 @media (max-width: 640px) {
   .comparativa-tabla th,
   .comparativa-tabla td {
-    padding: 16px 12px;
-    font-size: 13px;
+    padding: 16px 16px;
+    font-size: 14px;
   }
 }

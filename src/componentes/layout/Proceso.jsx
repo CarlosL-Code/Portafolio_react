@@ -36,14 +36,14 @@ const Proceso = () => {
           </p>
         </div>
 
-        <div className="proceso-lista">
+        <div className="proceso-grid">
           {steps.map(step => (
             <div key={step.id} className="proceso-paso">
-              <div className="paso-numero">{step.id}</div>
-              <div className="paso-card">
-                <div className="paso-header">
+              <div className="proceso-numero">{step.id}</div>
+              <div className="proceso-contenido">
+                <div className="proceso-contenido-header">
                   <h3>{step.title}</h3>
-                  <span className="paso-label">{step.subtitle}</span>
+                  <span className="paso-badge">{step.subtitle}</span>
                 </div>
                 <p>{step.desc}</p>
               </div>
