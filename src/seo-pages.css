@@ -310,13 +310,35 @@ body.dark .faq-answer {
    HIGHLIGHT BOX (Modalidad y Precio)
 ========================================= */
 .seo-highlight-box {
-  background: linear-gradient(135deg, rgba(216, 58, 58, 0.05) 0%, rgba(0, 0, 0, 0.2) 100%);
-  border: 1px solid rgba(216, 58, 58, 0.2);
-  padding: 40px;
-  border-radius: 20px;
-  text-align: center;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid var(--shade-3);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+}
+
+.seo-highlight-box.light-box {
+  background: var(--shade-1);
+}
+body.dark .seo-highlight-box.light-box {
+  background: #1E293B;
+  border-color: #334155;
+}
+
+.seo-highlight-box.dark-box {
+  background: linear-gradient(135deg, rgba(216, 58, 58, 0.05) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background-color: var(--shade-9);
+}
+body.dark .seo-highlight-box.dark-box {
+  background: linear-gradient(135deg, rgba(216, 58, 58, 0.1) 0%, rgba(15, 23, 42, 0.5) 100%);
+  background-color: #0F172A;
+  border-color: #334155;
+}
+
+body.dark .seo-highlight-box {
+  border-color: var(--shade-7);
 }
 
 .seo-highlight-box::before {

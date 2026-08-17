@@ -5,7 +5,7 @@
 }
 
 .diagnostico-container {
-  background: #1E293B;
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
   border: 1px solid #334155;
   border-radius: 24px;
   padding: 60px;

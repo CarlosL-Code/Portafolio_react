@@ -105,13 +105,13 @@ const DesarrolloWeb = ({ currency }) => {
             </div>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-               <div className="seo-highlight-box" style={{ background: 'var(--shade-1)' }}>
+               <div className="seo-highlight-box light-box">
                   <h3 style={{color: 'var(--primario)'}}>Transparencia total</h3>
                   <p className="seo-text-block">Sin costos ocultos ni sorpresas. Cada fase está documentada y validada por ti antes de avanzar a la siguiente.</p>
                </div>
-               <div className="seo-highlight-box">
+               <div className="seo-highlight-box dark-box">
                   <h3 style={{color: '#fff'}}>Soporte Continuo</h3>
-                  <p className="seo-text-block" style={{ color: 'var(--shade-6)' }}>Una vez publicado, ofrezco planes de mantenimiento para que tu web nunca quede obsoleta.</p>
+                  <p className="seo-text-block">Una vez publicado, ofrezco planes de mantenimiento para que tu web nunca quede obsoleta.</p>
                </div>
             </div>
           </article>

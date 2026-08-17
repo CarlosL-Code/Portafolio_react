@@ -72,10 +72,6 @@
                 line-height: 32px;
             }
 
-            body.dark .resumen {
-                color: var(--dark-text);
-            }
-
             .resumen-container {
                 .extra-text {
                     display: none;
@@ -149,4 +145,12 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Modo oscuro explícito fuera de anidación para asegurar prioridad y validez */
+body.dark .acerca-de .resumen {
+    color: var(--dark-text);
+}
+body.dark .acerca-de .pre-titulo {
+    color: rgba(255, 255, 255, 0.7);
 }
