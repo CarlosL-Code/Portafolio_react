@@ -24,6 +24,11 @@ const Inicio = ({ currency }) => {
       
       <div className="contenedor">
         <AcercaDe />
+      </div>
+
+      <Clientes />
+
+      <div className="contenedor">
         <ExperienciaProfesional />
         <Trabajos />
       </div>
@@ -32,7 +37,6 @@ const Inicio = ({ currency }) => {
       <Planes currency={currency} />
       <DiagnosticoGratuito />
 
-      <Clientes />
       <FAQ />
       <Contacto />
     </>
