@@ -1,0 +1,82 @@
+.mensaje-impacto-section {
+  padding: 80px 0;
+  position: relative;
+  background-color: var(--fondo);
+}
+
+.impacto-card {
+  position: relative;
+  background: var(--shade-9); /* Fondo oscuro por defecto */
+  border-radius: 24px;
+  padding: 60px 40px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark .impacto-card {
+  background: #000;
+  border: 1px solid var(--shade-8);
+}
+
+.impacto-decoracion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% -20%, rgba(216, 58, 58, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.impacto-contenido {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.impacto-icono {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--primario);
+  font-size: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.impacto-texto {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+.impacto-texto .highlight {
+  color: var(--primario);
+  position: relative;
+  white-space: nowrap;
+}
+
+.impacto-subtexto {
+  font-size: 18px;
+  color: var(--shade-4);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .impacto-card {
+    padding: 40px 20px;
+  }
+}

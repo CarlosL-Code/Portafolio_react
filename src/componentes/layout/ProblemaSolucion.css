@@ -1,0 +1,138 @@
+.problema-solucion {
+  padding: 100px 0;
+  position: relative;
+  background-color: var(--fondo);
+}
+
+.problema-solucion .pre-titulo {
+  color: var(--shade-5);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.ps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.ps-card {
+  background: var(--shade-1);
+  border: 1px solid var(--shade-2);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+  transition: transform 0.3s ease;
+}
+
+.dark .ps-card {
+  background: var(--shade-9);
+  border-color: var(--shade-8);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.ps-card:hover {
+  transform: translateY(-5px);
+}
+
+.problema {
+  border-top: 4px solid #EF4444; /* Rojo para problema */
+}
+
+.solucion {
+  border-top: 4px solid var(--primario); /* Primario para solución */
+  background: linear-gradient(180deg, rgba(var(--primario-rgb), 0.05) 0%, transparent 100%);
+}
+
+.dark .solucion {
+  background: linear-gradient(180deg, rgba(var(--primario-rgb), 0.1) 0%, transparent 100%);
+  background-color: var(--shade-9);
+}
+
+.ps-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.problema-icon {
+  background: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+}
+
+.solucion-icon {
+  background: rgba(var(--primario-rgb), 0.1); /* This assumes --primario-rgb exists, if not we fall back to generic */
+  background: var(--shade-2);
+  color: var(--primario);
+}
+
+.dark .solucion-icon {
+  background: rgba(255,255,255,0.05);
+}
+
+.ps-card h3 {
+  font-size: 24px;
+  color: var(--shade-9);
+  margin-bottom: 24px;
+  font-weight: 800;
+}
+
+.dark .ps-card h3 {
+  color: #fff;
+}
+
+.ps-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ps-lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--shade-6);
+  line-height: 1.5;
+}
+
+.dark .ps-lista li {
+  color: var(--dark-text);
+}
+
+.problema .ps-lista li::before {
+  content: '✕';
+  color: #EF4444;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.solucion .check-icon {
+  color: var(--primario);
+  font-size: 16px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .ps-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
