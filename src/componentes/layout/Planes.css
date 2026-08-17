@@ -32,8 +32,8 @@
 
 /* TARJETAS DE PLANES */
 .plan-tarjeta {
-  background: var(--shade-1);
-  border: 1px solid var(--shade-3);
+  background: #1E293B;
+  border: 1px solid #334155;
   border-radius: 16px;
   padding: 28px 24px;
   display: flex;
@@ -42,73 +42,14 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
-.dark .plan-tarjeta {
-  background: var(--shade-9);
-  border-color: var(--shade-8);
-}
 
-.plan-tarjeta:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-}
-
-.dark .plan-tarjeta:hover {
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
-}
-
-/* TARJETA DESTACADA */
-.plan-tarjeta.destacado {
-  border: 2px solid var(--primario);
-  transform: scale(1.03);
-  box-shadow: 0 10px 30px rgba(216, 58, 58, 0.1);
-  position: relative;
-}
-
-.dark .plan-tarjeta.destacado {
-  box-shadow: 0 10px 30px rgba(216, 58, 58, 0.2);
-}
-
-.plan-tarjeta.destacado:hover {
-  transform: scale(1.05) translateY(-5px);
-}
-
-/* HEADER PLAN */
-.plan-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 15px;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.plan-header h3 {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--shade-9);
-  font-family: "Merriweather", serif;
-}
-
-.dark .plan-header h3 {
-  color: var(--dark-title);
-}
-
-.pago-unico, .etiqueta-destacado {
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 20px;
-}
 
 .pago-unico {
-  color: var(--shade-7);
-  background: var(--shade-3);
+  color: #94A3B8;
+  background: #0F172A;
 }
 
-.dark .pago-unico {
-  color: var(--shade-3);
-  background: var(--shade-7);
-}
+
 
 .etiqueta-destacado {
   color: #fff;
@@ -131,176 +72,22 @@
 .plan-precio .monto {
   font-size: 36px;
   font-weight: 800;
-  color: var(--shade-9);
-}
-
-.dark .plan-precio .monto {
   color: var(--dark-title);
 }
+
+
 
 .plan-precio .moneda {
   font-size: 16px;
   font-weight: 600;
-  color: var(--shade-6);
-}
-
-.dark .plan-precio .moneda {
   color: var(--shade-4);
 }
 
-/* DESCRIPCIÓN */
-.plan-descripcion {
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--shade-6);
-  margin-bottom: 16px;
-  min-height: 60px; /* para alinear las cajas si varían en lineas */
-}
 
-.dark .plan-descripcion {
-  color: var(--dark-text);
-}
 
-/* CONTENIDO Y LISTAS */
-.plan-contenido {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
 
-.plan-contenido h4 {
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--shade-8);
-  margin-bottom: 12px;
-  letter-spacing: 0.5px;
-}
 
-.dark .plan-contenido h4 {
-  color: var(--dark-title);
-}
 
-.plan-lista {
-  list-style: none;
-  margin-bottom: 16px;
-}
-
-.plan-lista li {
-  font-size: 14px;
-  color: var(--shade-7);
-  margin-bottom: 10px;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  line-height: 1.5;
-}
-
-.dark .plan-lista li {
-  color: var(--shade-3);
-}
-
-.plan-lista li::before {
-  content: "✓";
-  color: var(--primario);
-  font-weight: bold;
-}
-
-/* NO INCLUYE */
-.plan-no-incluye {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.plan-no-incluye ul {
-  list-style: none;
-}
-
-.plan-no-incluye li {
-  font-size: 14px;
-  color: var(--shade-5);
-  margin-bottom: 8px;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  line-height: 1.5;
-}
-
-.plan-no-incluye li::before {
-  content: "✕";
-  color: var(--shade-5);
-  font-weight: bold;
-}
-
-/* NOTAS Y EXTRAS */
-.plan-nota-corta {
-  font-size: 13px;
-  color: var(--shade-5);
-  font-style: italic;
-  margin-bottom: 20px;
-  line-height: 1.5;
-}
-
-.plan-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.plan-tags span {
-  font-size: 12px;
-  background: var(--shade-2);
-  color: var(--shade-7);
-  padding: 4px 10px;
-  border-radius: 12px;
-}
-
-.dark .plan-tags span {
-  background: var(--shade-8);
-  color: var(--shade-3);
-}
-
-/* MANTENCIÓN SECUNDARIA */
-.plan-secundario {
-  background: var(--shade-2);
-  padding: 14px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  margin-top: auto;
-}
-
-.dark .plan-secundario {
-  background: var(--shade-8);
-}
-
-.plan-secundario h4 {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--shade-8);
-  margin-bottom: 4px;
-}
-
-.dark .plan-secundario h4 {
-  color: var(--dark-title);
-}
-
-.precio-secundario {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--primario);
-  margin-bottom: 8px;
-}
-
-.texto-secundario {
-  font-size: 13px;
-  color: var(--shade-6);
-  line-height: 1.4;
-}
-
-.dark .texto-secundario {
-  color: var(--shade-4);
-}
 
 /* BOTONES PLAN */
 .btn-plan {

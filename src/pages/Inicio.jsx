@@ -1,9 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Hero from '../componentes/layout/Hero';
-import ProblemaSolucion from '../componentes/layout/ProblemaSolucion';
+import AcercaDe from '../componentes/layout/AcercaDe';
+import ExperienciaProfesional from '../componentes/layout/ExperienciaProfesional';
+import Trabajos from '../componentes/layout/Trabajos';
 import MensajeImpacto from '../componentes/layout/MensajeImpacto';
-import Industrias from '../componentes/layout/Industrias';
 import Planes from '../componentes/layout/Planes';
 import Clientes from '../componentes/layout/Clientes';
 import DiagnosticoGratuito from '../componentes/layout/DiagnosticoGratuito';
@@ -14,16 +15,20 @@ const Inicio = ({ currency }) => {
   return (
     <>
       <Helmet>
-        <title>Carlos Lozano | Desarrollo Web y Embudos de Venta</title>
-        <meta name="description" content="No necesitas un sitio web estático, necesitas un embudo de ventas activo. Desarrollo de sitios y sistemas a medida para captar clientes." />
+        <title>Carlos Lozano | Desarrollo Web y Software a Medida</title>
+        <meta name="description" content="Desarrollo páginas web, sistemas empresariales y software a medida para negocios y empresas. Conoce proyectos, planes y solicita una cotización en Chile o remoto." />
         <link rel="canonical" href="https://carloslozanodev.com/" />
       </Helmet>
 
       <Hero />
       
-      <ProblemaSolucion />
+      <div className="contenedor">
+        <AcercaDe />
+        <ExperienciaProfesional />
+        <Trabajos />
+      </div>
+
       <MensajeImpacto />
-      <Industrias />
       <Planes currency={currency} />
       <DiagnosticoGratuito />
 

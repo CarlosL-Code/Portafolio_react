@@ -8,17 +8,11 @@
   display: flex;
   align-items: center;
   gap: 60px;
-  background: var(--shade-1);
-  border: 1px solid var(--shade-2);
+  background: #1E293B;
+  border: 1px solid #334155;
   border-radius: 24px;
   padding: 60px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-}
-
-.dark .diagnostico-container {
-  background: var(--shade-9);
-  border-color: var(--shade-8);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .diagnostico-content {
@@ -35,27 +29,24 @@
 }
 
 .diagnostico-content .titulo {
+  font-family: "Inter", sans-serif;
   font-size: clamp(32px, 4vw, 42px);
   margin-bottom: 24px;
-  color: var(--shade-9);
   text-align: left;
-}
-
-.dark .diagnostico-content .titulo {
-  color: #fff;
+  background: linear-gradient(90deg, #ff6b6b 0%, var(--primario) 50%, #ff8c42 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  letter-spacing: -1px;
 }
 
 .diagnostico-content .subtitulo {
-  color: var(--shade-6);
+  color: var(--dark-text);
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 30px;
   text-align: left;
   max-width: 100%;
-}
-
-.dark .diagnostico-content .subtitulo {
-  color: var(--dark-text);
 }
 
 .diagnostico-beneficios {
@@ -72,12 +63,8 @@
   align-items: center;
   gap: 12px;
   font-size: 16px;
-  color: var(--shade-8);
-  font-weight: 500;
-}
-
-.dark .diagnostico-beneficios li {
   color: #fff;
+  font-weight: 500;
 }
 
 .diag-check {
@@ -113,8 +100,8 @@
 }
 
 .diagnostico-placeholder {
-  background: var(--shade-2);
-  border: 1px solid var(--shade-3);
+  background: var(--shade-10);
+  border: 1px solid var(--shade-8);
   width: 100%;
   max-width: 350px;
   height: 350px;
@@ -129,25 +116,15 @@
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-.dark .diagnostico-placeholder {
-  background: var(--fondo);
-  border-color: var(--shade-8);
-}
-
 .placeholder-content {
-  background: var(--shade-1);
+  background: #1E293B;
+  border: 1px solid #334155;
   padding: 20px;
   border-radius: 12px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid var(--shade-2);
-}
-
-.dark .placeholder-content {
-  background: var(--shade-9);
-  border-color: var(--shade-8);
 }
 
 .mt-4 {
@@ -162,12 +139,8 @@
 
 .audit-text {
   font-size: 14px;
-  color: var(--shade-6);
-  font-weight: 600;
-}
-
-.dark .audit-text {
   color: var(--dark-text);
+  font-weight: 600;
 }
 
 @media (max-width: 992px) {
