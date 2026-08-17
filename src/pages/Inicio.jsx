@@ -1,6 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Hero from '../componentes/layout/Hero';
+import Industrias from '../componentes/layout/Industrias';
+import Proceso from '../componentes/layout/Proceso';
+import Comparativa from '../componentes/layout/Comparativa';
 import AcercaDe from '../componentes/layout/AcercaDe';
 import ExperienciaProfesional from '../componentes/layout/ExperienciaProfesional';
 import Trabajos from '../componentes/layout/Trabajos';
@@ -21,6 +24,10 @@ const Inicio = ({ currency }) => {
 
       <Hero />
       
+      <Industrias />
+      <Proceso />
+      <Comparativa />
+
       <div className="contenedor">
         <AcercaDe />
         <ExperienciaProfesional />

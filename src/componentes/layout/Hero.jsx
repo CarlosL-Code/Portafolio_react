@@ -1,59 +1,123 @@
+import { useState } from 'react';
+import { FaCheckCircle, FaChartLine, FaShoppingCart, FaAward, FaCogs, FaRegCompass, FaBolt, FaSearch, FaLock, FaRocket } from 'react-icons/fa';
 import "./Hero.css";
 
 const Hero = () => {
-  return (
-    <>
-      <section className="hero">
-        <div className="contenedor">
-          <div className="contenido">
-            <div className="badge-profesional">
-              <span className="badge-dot"></span> Portafolio Profesional
-            </div>
-            <h1 className="titulo">
-              Creamos <span className="highlight-text">Desarrollo Web</span><br/> y Software a Medida
-            </h1>
-            <p className="subtitulo">
-              Desarrollo páginas web, sistemas empresariales y soluciones digitales personalizadas para ayudar a empresas y profesionales a mejorar su presencia y sus procesos.
-            </p>
-            <div className="botones">
+  const [selectedOption, setSelectedOption] = useState(null);
 
-              <a href="#planes" className="boton transparente">
-                Ver Planes
+  const options = [
+    { id: 1, icon: <FaChartLine />, title: "Más clientes desde Google", desc: "Aparecer cuando mis clientes me buscan" },
+    { id: 2, icon: <FaShoppingCart />, title: "Vender productos o servicios online", desc: "Tienda, catálogo o agendamiento" },
+    { id: 3, icon: <FaAward />, title: "Profesionalizar mi negocio", desc: "Transmitir confianza y seriedad" },
+    { id: 4, icon: <FaCogs />, title: "Automatizar procesos", desc: "Sistema o plataforma SaaS a medida" },
+    { id: 5, icon: <FaRegCompass />, title: "Aún estoy explorando", desc: "Quiero asesoría sobre qué me conviene" }
+  ];
+
+  return (
+    <section className="hero-premium">
+      <div className="hero-background-overlay"></div>
+      
+      <div className="hero-container">
+        <div className="hero-grid">
+          
+          {/* Columna Izquierda: Copywriting */}
+          <div className="hero-copy">
+            <div className="badge-profesional">
+              <span className="badge-dot"></span> DESARROLLO WEB Y SOFTWARE - CHILE
+            </div>
+            
+            <h1 className="hero-titulo">
+              Más que un sitio web,<br/> un <span className="highlight-text">embudo de ventas</span>.
+            </h1>
+            
+            <p className="hero-subtitulo">
+              No te vendemos un folleto digital. Construimos un sistema activo que atrae visitas, las convierte en leads y los convierte en clientes. Eso es desarrollo de software hecho con resultados en mente.
+            </p>
+            
+            <div className="hero-botones">
+              <a href="#contacto" className="boton boton-primario">
+                Cotiza tu proyecto
                 <div className="icono">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
-                    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
-                    <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/>
-                  </svg>
+                  <FaRocket />
                 </div>
               </a>
-
-              <a href="#contacto" className="boton">
-                Hablemos de tu proyecto
-                <div className="icono">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
-                    <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2" />
-                  </svg>
-                </div>
+              <a href="#trabajos" className="boton-fantasma">
+                Ver casos de éxito
               </a>
             </div>
           </div>
+
+          {/* Columna Derecha: Wizard Interactivo */}
+          <div className="hero-wizard-wrapper">
+            <div className="hero-wizard">
+              <div className="wizard-header">
+                <div>
+                  <h3>Cotiza tu sitio</h3>
+                  <p>Propuesta cerrada en menos de 24 h.</p>
+                </div>
+                <div className="wizard-steps">
+                  <span className="step active">01</span>
+                  <span className="step-line"></span>
+                  <span className="step">02</span>
+                  <span className="step-line"></span>
+                  <span className="step">03</span>
+                </div>
+              </div>
+              
+              <div className="wizard-progress-bar">
+                <div className="progress-fill" style={{ width: '33%' }}></div>
+              </div>
+
+              <h4 className="wizard-question">¿QUÉ QUIERES LOGRAR?</h4>
+
+              <div className="wizard-options">
+                {options.map((opt) => (
+                  <div 
+                    key={opt.id} 
+                    className={`wizard-option ${selectedOption === opt.id ? 'selected' : ''}`}
+                    onClick={() => setSelectedOption(opt.id)}
+                  >
+                    <div className="option-icon">{opt.icon}</div>
+                    <div className="option-text">
+                      <h5>{opt.title}</h5>
+                      <p>{opt.desc}</p>
+                    </div>
+                    <div className="option-radio">
+                      <div className="radio-inner"></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
-      </section>
-    </>
+
+        {/* Trust Bar (Barra de Confianza) */}
+        <div className="hero-trust-bar">
+          <div className="trust-item tech-stack">
+            <div className="trust-icon"><FaRocket /></div>
+            <div>
+              <strong>React + Node.js</strong>
+              <span>Stack moderno listo para escalar</span>
+            </div>
+          </div>
+          <div className="trust-item">
+            <FaBolt className="trust-icon-simple" /> 95+ PageSpeed
+          </div>
+          <div className="trust-item">
+            <FaSearch className="trust-icon-simple" /> SEO técnico
+          </div>
+          <div className="trust-item">
+            <FaLock className="trust-icon-simple" /> Seguridad
+          </div>
+          <div className="trust-item highlight">
+            <FaChartLine className="trust-icon-simple" /> Optimizado para Conversión
+          </div>
+        </div>
+
+      </div>
+    </section>
   );
 };
 

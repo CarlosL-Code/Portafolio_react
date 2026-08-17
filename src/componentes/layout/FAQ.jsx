@@ -4,20 +4,32 @@ import { FaChevronDown } from "react-icons/fa";
 
 const faqs = [
   {
-    pregunta: "¿Cuánto tiempo toma desarrollar una página web o sistema?",
-    respuesta: "Depende de la complejidad. Una web corporativa o landing page puede estar lista en 1 a 2 semanas. Sistemas a medida o tiendas online más complejas suelen tomar entre 3 a 6 semanas."
+    pregunta: "¿Qué incluye el desarrollo web?",
+    respuesta: "Incluye todo lo necesario para vender: Diseño UX/UI orientado a conversión, desarrollo a medida en React, optimización SEO técnica, velocidad de carga extrema (PageSpeed 95+), integración con WhatsApp y formularios, y adaptación perfecta a dispositivos móviles."
   },
   {
-    pregunta: "¿Tengo que pagar una mensualidad obligatoria?",
-    respuesta: "No necesariamente. Ofrezco planes de pago único donde la web es 100% tuya, y también planes mensuales si prefieres que yo me encargue del hosting y la mantención continua."
+    pregunta: "¿Cuánto cuesta una página web profesional en Chile?",
+    respuesta: "Cada proyecto es único y depende de los requerimientos específicos (ej. una landing page es diferente a un sistema de agendamiento o un catálogo). Contáctanos para cotizar tu proyecto; te entregaremos una propuesta cerrada y transparente en menos de 24 horas."
   },
   {
-    pregunta: "¿Mi sitio web estará adaptado para celulares?",
-    respuesta: "Sí, absolutamente. Todos los proyectos que desarrollo son 'Responsive', lo que significa que se verán y funcionarán perfectamente en celulares, tablets y computadoras."
+    pregunta: "¿Trabajas con WordPress?",
+    respuesta: "No. Para garantizar velocidad extrema, máxima seguridad y el mejor posicionamiento SEO, desarrollamos tu sitio web con código a medida utilizando tecnologías modernas (React y Node.js). WordPress suele ser lento y vulnerable si no se mantiene constantemente."
   },
   {
-    pregunta: "¿Qué pasa si necesito ayuda después de entregado el proyecto?",
-    respuesta: "Todos mis proyectos incluyen un periodo de soporte técnico gratuito (generalmente de 1 a 3 meses) para resolver dudas o problemas. Luego de eso, puedes contratar un plan de mantención si lo deseas."
+    pregunta: "¿Cuánto demora un proyecto de desarrollo web?",
+    respuesta: "Nuestro compromiso es agilidad sin sacrificar calidad. Dependiendo de la complejidad, tendrás tu Producto Mínimo Viable (MVP) 100% funcional y listo para recibir clientes en un plazo de 3 a 5 semanas."
+  },
+  {
+    pregunta: "¿Puedes migrar mi sitio actual de WordPress/Wix a React?",
+    respuesta: "Sí. Evaluamos tu sitio actual, rescatamos el contenido de valor y lo reconstruimos desde cero en React para que disfrutes de tiempos de carga de menos de un segundo y mejor posicionamiento en Google."
+  },
+  {
+    pregunta: "¿Qué pasa después de entregado el sitio?",
+    respuesta: "Te entregamos el sitio funcionando y te enseñamos a usarlo. Además, incluimos un mes de soporte técnico gratuito. Si lo deseas, puedes optar por nuestros planes de mantención para despreocuparte por completo de los aspectos técnicos."
+  },
+  {
+    pregunta: "¿Cómo influye la velocidad del sitio en el SEO?",
+    respuesta: "Es vital. Google penaliza los sitios que demoran más de 3 segundos en cargar, y el 53% de los usuarios abandona una página si es lenta. Al programar a medida, logramos tiempos de carga menores a 1 segundo, dándote una ventaja injusta sobre tu competencia."
   }
 ];
 
