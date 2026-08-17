@@ -1,129 +1,107 @@
-.hero{
-    /* Esta imagen se usará de fondo. Si la imagen original no carga, caerá a negro. */
-    background-color: #050505;
-    background-image: url('/assets/header3_enhanced.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Parallax effect */
-    overflow: hidden;
-    color: #fff;
+.hero {
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
     position: relative;
     width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 150px 0 80px 0; /* Compensa el header fijo para que no lo tape */
+    justify-content: center;
+    padding: 120px 20px 80px 20px;
+    text-align: center;
+    overflow: hidden;
+}
 
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 30%, rgba(216, 58, 58, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+}
 
-    .contenido{
-        position: relative;
-        z-index: 3;
-        width: 50vw;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
+.hero-container {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
 
-    &::after{
-        content: '';
-        position: absolute;
-        inset: 0;
-        /* Degradado principal más claro para dejar ver la imagen */
-        background-image: 
-            linear-gradient(to right, rgba(8, 12, 20, 0.85) 0%, rgba(8, 12, 20, 0.2) 100%),
-            /* Glow radial primario (rojo) abajo */
-            radial-gradient(circle at 70% 80%, rgba(216, 58, 58, 0.2) 0%, transparent 40%);
-        background-size: 100% 100%, 100% 100%;
-        background-position: 0 0, 0 0;
-        z-index: 1;
-    }
+.badge-profesional {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+}
 
-    .badge-profesional {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 6px 16px;
-        border-radius: 100px;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        width: fit-content;
-        margin-bottom: 10px;
-    }
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primario);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--primario);
+}
 
-    .badge-dot {
-        width: 8px;
-        height: 8px;
-        background-color: var(--primario);
-        border-radius: 50%;
-        box-shadow: 0 0 10px var(--primario);
-    }
+.titulo {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
 
-    .titulo{
-        font-family: 'Inter', sans-serif;
-        font-size: 56px;
-        font-weight: 800;
-        color: #fff;
-        line-height: 1.1;
-        letter-spacing: -1px;
-        
-        .highlight-text {
-            background: linear-gradient(90deg, var(--primario) 0%, #ff8c42 50%, #ffa500 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    }
+.titulo .highlight-text {
+    background: linear-gradient(90deg, #ff6b6b 0%, var(--primario) 50%, #ff8c42 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-    .subtitulo{
-        line-height: 26px;
-        color: var(--shade-3);
-    }
+.subtitulo {
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.6;
+    color: var(--shade-4);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.botones {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.boton.transparente {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.boton.transparente:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+@media screen and (max-width: 576px) {
     .botones {
-        display: flex;
-        gap: 10px;
-        .boton.transparente{
-            background: rgba(255,255,255,0.1);
-            &:hover{
-                background: rgba(255,255,255,0.15);
-            }
-        }
-
-        @media screen and (max-width: 576px) {
-            &{
-                flex-direction: column;
-                align-items: center ;
-                .boton{
-                    width: 100%;
-                    justify-content: center;
-                }
-            }
-            
-        }
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
     }
-
-    @media screen and (max-width: 992px) {
-        &{
-            padding: 40px;
-
-            br{
-                display: none;
-            }
-            .contenido{
-                width: 100%;
-                text-align: center;
-            }
-            .titulo{
-                font-size: 32px;
-            }
-            .botones{
-                justify-content: center;
-            }
-        }
+    .boton {
+        width: 100%;
+        justify-content: center;
     }
 }

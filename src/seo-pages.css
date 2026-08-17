@@ -119,6 +119,10 @@ body.dark .glowing-card {
   color: var(--shade-9);
 }
 
+body.dark .glowing-title {
+  color: #FAFAFA;
+}
+
 .glowing-desc {
   font-size: 0.95rem;
   color: var(--shade-7);
