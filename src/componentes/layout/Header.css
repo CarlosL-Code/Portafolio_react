@@ -166,22 +166,25 @@
     top: 150%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--shade-1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    padding: 10px 0;
-    min-width: 200px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 12px;
+    min-width: 220px;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     z-index: 100;
-    border: 1px solid var(--shade-3);
+    border: 1px solid var(--shade-2);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
 
   body.dark .dropdown-menu {
-    background-color: var(--shade-9);
-    border-color: var(--shade-8);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background-color: #1E293B;
+    border-color: #334155;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   }
 
   .nav-item-dropdown:hover .dropdown-menu {
@@ -192,25 +195,28 @@
 
   .dropdown-menu a {
     display: block;
-    padding: 10px 20px;
-    color: var(--shade-8);
+    padding: 12px 16px;
+    color: var(--shade-7);
     font-size: 14px;
-    font-weight: 500;
-    transition: background-color 0.2s, color 0.2s;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 0.2s;
   }
 
   body.dark .dropdown-menu a {
-    color: var(--dark-text);
+    color: #E4E4E7;
   }
 
   .dropdown-menu a:hover {
-    background-color: var(--shade-2);
+    background-color: var(--shade-1);
     color: var(--primario);
     text-decoration: none;
+    transform: translateX(4px);
   }
 
   body.dark .dropdown-menu a:hover {
-    background-color: var(--shade-8);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
   }
 
   /* ACCIONES EXTRAS Y MONEDA */
