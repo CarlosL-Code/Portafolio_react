@@ -74,8 +74,11 @@ body.dark .acerca-de .grid .col-1 .fotos .foto {
     margin-top: 50px;
 }
 
-body.dark .acerca-de .pre-titulo {
-    color: rgba(255, 255, 255, 0.7);
+body.dark .acerca-de .grid .col-2 .resumen {
+    color: var(--shade-2); /* Un gris mucho más claro para máximo contraste */
+}
+body.dark .acerca-de .grid .col-2 .pre-titulo {
+    color: var(--shade-4); /* Gris intermedio para el pre-titulo */
 }
 
 .acerca-de .grid .col-2 .titulo {
@@ -89,10 +92,6 @@ body.dark .acerca-de .pre-titulo {
 .acerca-de .grid .col-2 .resumen {
     color: var(--shade-7);
     line-height: 32px;
-}
-
-body.dark .acerca-de .resumen {
-    color: var(--dark-text);
 }
 
 .acerca-de .grid .col-2 .resumen-container .extra-text {
