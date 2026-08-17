@@ -5,7 +5,7 @@ const DiagnosticoGratuito = () => {
   return (
     <section className="diagnostico-section">
       <div className="contenedor">
-        <div className="diagnostico-container">
+        <div className="diagnostico-container text-center">
           
           <div className="diagnostico-content">
             <div className="pre-titulo">SIN COMPROMISO</div>
@@ -26,21 +26,6 @@ const DiagnosticoGratuito = () => {
             <a href="#contacto" className="btn-diagnostico">
               <FaSearch /> Solicitar Diagnóstico Ahora
             </a>
-          </div>
-
-          <div className="diagnostico-imagen-wrapper">
-            <div className="diagnostico-decoracion"></div>
-            {/* Si no tienes una imagen, dejamos un placeholder profesional oscuro */}
-            <div className="diagnostico-placeholder">
-              <div className="placeholder-content">
-                <span className="audit-score">98/100</span>
-                <span className="audit-text">Rendimiento</span>
-              </div>
-              <div className="placeholder-content mt-4">
-                <span className="audit-score">100/100</span>
-                <span className="audit-text">SEO Técnico</span>
-              </div>
-            </div>
           </div>
 
         </div>

@@ -22,21 +22,17 @@ const Inicio = ({ currency }) => {
 
       <Hero />
       
-      <div className="contenedor">
-        <AcercaDe />
-        <ExperienciaProfesional />
-        <Trabajos />
-      </div>
+      <AcercaDe />
+      <ExperienciaProfesional />
+      <Trabajos />
 
       <MensajeImpacto />
       <Planes currency={currency} />
       <DiagnosticoGratuito />
 
-      <div className="contenedor">
-        <Clientes />
-        <FAQ />
-        <Contacto />
-      </div>
+      <Clientes />
+      <FAQ />
+      <Contacto />
     </>
   );
 };
