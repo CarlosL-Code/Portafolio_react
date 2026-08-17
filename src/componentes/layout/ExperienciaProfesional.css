@@ -39,7 +39,8 @@
 }
 
 .dark .experiencia-tarjeta {
-  background: var(--shade-9);
+  background: #1E293B;
+  border: 1px solid #334155;
 }
 
 .experiencia-tarjeta:hover {

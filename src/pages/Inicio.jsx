@@ -22,9 +22,11 @@ const Inicio = ({ currency }) => {
 
       <Hero />
       
-      <AcercaDe />
-      <ExperienciaProfesional />
-      <Trabajos />
+      <div className="contenedor">
+        <AcercaDe />
+        <ExperienciaProfesional />
+        <Trabajos />
+      </div>
 
       <MensajeImpacto />
       <Planes currency={currency} />
