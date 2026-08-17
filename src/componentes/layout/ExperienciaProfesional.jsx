@@ -71,7 +71,7 @@ const ExperienciaProfesional = () => {
     return () => clearInterval(timer);
   }, [isPaused]); // El efecto depende de isPaused
 
-  const exp = experiencias[currentIndex];
+
 
   return (
     <section className="experiencia-profesional seccion-alt" id="experiencia">
