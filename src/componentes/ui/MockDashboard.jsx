@@ -1,38 +1,20 @@
 import React from 'react';
 import { FaChartBar, FaUsers, FaServer, FaCogs } from 'react-icons/fa';
+import './Mocks.css';
 
 const MockDashboard = () => {
   return (
-    <div style={{
-      background: 'linear-gradient(145deg, #0f172a 0%, #1e293b 100%)',
-      borderRadius: '16px',
-      border: '1px solid rgba(255, 255, 255, 0.1)',
-      boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
-      overflow: 'hidden',
-      width: '100%',
-      maxWidth: '500px',
-      margin: '0 auto',
-      fontFamily: "'Inter', sans-serif"
-    }}>
+    <div className="mock-dashboard">
       {/* Sidebar + Main Content Layout */}
       <div style={{ display: 'flex', height: '300px' }}>
         
         {/* Sidebar */}
-        <div style={{ 
-          width: '70px', 
-          background: 'rgba(0,0,0,0.2)', 
-          borderRight: '1px solid rgba(255,255,255,0.05)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          padding: '20px 0',
-          gap: '25px'
-        }}>
+        <div className="mock-dash-sidebar">
           <div style={{ width: '30px', height: '30px', borderRadius: '8px', background: 'var(--primario)' }}></div>
-          <FaChartBar style={{ color: '#E4E4E7', fontSize: '20px', opacity: 0.8 }} />
-          <FaUsers style={{ color: '#E4E4E7', fontSize: '20px', opacity: 0.4 }} />
-          <FaServer style={{ color: '#E4E4E7', fontSize: '20px', opacity: 0.4 }} />
-          <FaCogs style={{ color: '#E4E4E7', fontSize: '20px', opacity: 0.4, marginTop: 'auto' }} />
+          <FaChartBar className="mock-dash-icon opacity-80" />
+          <FaUsers className="mock-dash-icon opacity-40" />
+          <FaServer className="mock-dash-icon opacity-40" />
+          <FaCogs className="mock-dash-icon opacity-40" style={{ marginTop: 'auto' }} />
         </div>
 
         {/* Main Content */}
@@ -40,7 +22,7 @@ const MockDashboard = () => {
           
           {/* Header */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <h4 style={{ margin: 0, color: '#F8FAFC', fontSize: '1.1rem' }}>Panel Administrativo</h4>
+            <h4 className="mock-dash-title">Panel Administrativo</h4>
             <div style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#34d399', padding: '4px 10px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 600 }}>
               SISTEMA ONLINE
             </div>
@@ -48,18 +30,18 @@ const MockDashboard = () => {
 
           {/* Stats Row */}
           <div style={{ display: 'flex', gap: '10px' }}>
-            <div style={{ flex: 1, background: 'rgba(255,255,255,0.03)', padding: '15px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.02)' }}>
-              <span style={{ color: '#94A3B8', fontSize: '0.75rem' }}>Usuarios Activos</span>
-              <div style={{ color: '#F8FAFC', fontSize: '1.4rem', fontWeight: 700, marginTop: '5px' }}>1,248</div>
+            <div className="mock-dash-stat-box">
+              <span className="mock-dash-stat-label">Usuarios Activos</span>
+              <div className="mock-dash-stat-value">1,248</div>
             </div>
-            <div style={{ flex: 1, background: 'rgba(255,255,255,0.03)', padding: '15px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.02)' }}>
-              <span style={{ color: '#94A3B8', fontSize: '0.75rem' }}>Procesos</span>
-              <div style={{ color: '#F8FAFC', fontSize: '1.4rem', fontWeight: 700, marginTop: '5px' }}>Automático</div>
+            <div className="mock-dash-stat-box">
+              <span className="mock-dash-stat-label">Procesos</span>
+              <div className="mock-dash-stat-value">Automático</div>
             </div>
           </div>
 
           {/* Chart Mock */}
-          <div style={{ flex: 1, background: 'rgba(255,255,255,0.02)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.02)', padding: '15px', display: 'flex', alignItems: 'flex-end', gap: '8px', justifyContent: 'space-between' }}>
+          <div className="mock-dash-chart">
             <div style={{ width: '15%', height: '40%', background: 'linear-gradient(to top, rgba(216,58,58,0.2), rgba(216,58,58,0.8))', borderRadius: '4px 4px 0 0' }}></div>
             <div style={{ width: '15%', height: '60%', background: 'linear-gradient(to top, rgba(216,58,58,0.2), rgba(216,58,58,0.8))', borderRadius: '4px 4px 0 0' }}></div>
             <div style={{ width: '15%', height: '30%', background: 'linear-gradient(to top, rgba(216,58,58,0.2), rgba(216,58,58,0.8))', borderRadius: '4px 4px 0 0' }}></div>
