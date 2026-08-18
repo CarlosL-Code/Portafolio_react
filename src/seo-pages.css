@@ -407,21 +407,29 @@ body.dark .seo-highlight-box.light-box {
 }
 
 .seo-highlight-box.dark-box {
-  background: linear-gradient(135deg, rgba(216, 58, 58, 0.05) 0%, rgba(0, 0, 0, 0.2) 100%);
-  background-color: #18181B; /* Siempre oscuro */
-  border-color: #27272A;
+  background: #f4f4f5;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #4a4a4a;
 }
 
-/* Asegurar que el texto en la caja oscura sea siempre blanco, incluso en modo claro */
-.seo-highlight-box.dark-box h3,
+.seo-highlight-box.dark-box h3 {
+  color: #111827 !important;
+}
+
 .seo-highlight-box.dark-box .seo-text-block {
-  color: #ffffff !important;
+  color: #4a4a4a !important;
 }
 
 body.dark .seo-highlight-box.dark-box {
   background: linear-gradient(135deg, rgba(216, 58, 58, 0.1) 0%, rgba(15, 23, 42, 0.5) 100%);
   background-color: #0F172A;
   border-color: #334155;
+  color: #ffffff;
+}
+
+body.dark .seo-highlight-box.dark-box h3,
+body.dark .seo-highlight-box.dark-box .seo-text-block {
+  color: #ffffff !important;
 }
 
 body.dark .seo-highlight-box {
