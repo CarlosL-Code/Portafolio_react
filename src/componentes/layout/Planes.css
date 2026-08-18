@@ -32,14 +32,18 @@
 
 /* TARJETAS DE PLANES */
 .plan-tarjeta {
-  background: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #ffffff 100%);
+  background-size: 250% 250%;
+  background-position: 0% 50%;
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 16px;
   padding: 28px 24px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.3s ease, background-position 0.6s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  position: relative;
+  overflow: hidden;
 }
 
 body.dark .plan-tarjeta {
@@ -51,10 +55,34 @@ body.dark .plan-tarjeta {
 .plan-tarjeta:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  background-position: 100% 50%;
 }
 
 body.dark .plan-tarjeta:hover {
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Sheen effect */
+.plan-tarjeta::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(216, 58, 58, 0.03), transparent);
+  transform: skewX(-20deg);
+  transition: all 0.7s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.plan-tarjeta:hover::after {
+  left: 150%;
+}
+
+body.dark .plan-tarjeta::after {
+  display: none;
 }
 
 /* TARJETA DESTACADA */
