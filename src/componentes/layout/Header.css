@@ -226,30 +226,7 @@
     gap: 12px;
   }
 
-  .currency-switcher {
-    appearance: none;
-    background-color: var(--shade-2);
-    border: 1px solid var(--shade-3);
-    color: var(--shade-8);
-    padding: 6px 10px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-    cursor: pointer;
-    outline: none;
-    transition: all 0.2s ease;
-  }
 
-  body.dark .currency-switcher {
-    background-color: var(--shade-8);
-    border-color: var(--shade-7);
-    color: var(--dark-text);
-  }
-
-  .currency-switcher:hover {
-    border-color: var(--primario);
-  }
 
 /* El botón de CV no necesita el subrayado */
 .header .navbar .btn-cv::after {
@@ -290,6 +267,135 @@
 .dark-mode-container {
     display: flex;
     align-items: center;
+}
+
+/* =========================
+   CURRENCY DROPDOWN CUSTOM
+========================= */
+.currency-dropdown {
+    position: relative;
+}
+
+.currency-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--shade-2);
+    border: 1px solid var(--shade-3);
+    border-radius: 10px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--shade-8);
+    transition: all 0.2s ease;
+}
+
+body.dark .currency-btn {
+    background: #1E293B;
+    border-color: #334155;
+    color: var(--dark-text);
+}
+
+.currency-btn:hover {
+    border-color: var(--primario);
+}
+
+.currency-flag {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.currency-code {
+    letter-spacing: 0.5px;
+}
+
+.currency-chevron {
+    font-size: 9px;
+    transition: transform 0.3s ease;
+    opacity: 0.6;
+}
+
+.currency-chevron.open {
+    transform: rotate(180deg);
+}
+
+.currency-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: #ffffff;
+    border: 1px solid var(--shade-2);
+    border-radius: 14px;
+    padding: 6px;
+    min-width: 200px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    animation: currencyFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.dark .currency-menu {
+    background: #1E293B;
+    border-color: #334155;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes currencyFadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.currency-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    background: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.15s ease;
+    text-align: left;
+}
+
+.currency-option:hover {
+    background: var(--shade-1);
+}
+
+body.dark .currency-option:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.currency-option.active {
+    background: rgba(216, 58, 58, 0.08);
+}
+
+body.dark .currency-option.active {
+    background: rgba(216, 58, 58, 0.15);
+}
+
+.currency-option-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.currency-option-code {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--shade-9);
+}
+
+body.dark .currency-option-code {
+    color: #fff;
+}
+
+.currency-option-name {
+    font-size: 11px;
+    color: var(--shade-5);
 }
 
 /* =========================

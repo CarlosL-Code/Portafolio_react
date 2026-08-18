@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import './Header.css';
@@ -7,6 +7,18 @@ import DarkModeSwitch from '../DarkModeSwitch';
 const Header = ({ currency, setCurrency }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isCurrencyOpen, setIsCurrencyOpen] = useState(false);
+  const currencyRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (currencyRef.current && !currencyRef.current.contains(e.target)) {
+        setIsCurrencyOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -89,19 +101,38 @@ const Header = ({ currency, setCurrency }) => {
             >
               Descargar CV
             </a>
-            <select 
-              className="currency-switcher" 
-              value={currency} 
-              onChange={(e) => {
-                if(setCurrency) setCurrency(e.target.value);
-                closeMenu();
-              }}
-              aria-label="Seleccionar Moneda"
-            >
-              <option value="CLP">CLP</option>
-              <option value="USD">USD</option>
-              <option value="ARS">ARS</option>
-            </select>
+            <div className="currency-dropdown" ref={currencyRef}>
+              <button 
+                className="currency-btn" 
+                onClick={() => setIsCurrencyOpen(!isCurrencyOpen)}
+                aria-label="Seleccionar Moneda"
+              >
+                <span className="currency-flag">{currency === 'CLP' ? '🇨🇱' : currency === 'USD' ? '🇺🇸' : '🇦🇷'}</span>
+                <span className="currency-code">{currency}</span>
+                <FaChevronDown className={`currency-chevron ${isCurrencyOpen ? 'open' : ''}`} />
+              </button>
+              {isCurrencyOpen && (
+                <div className="currency-menu">
+                  {[{code: 'CLP', flag: '🇨🇱', name: 'Peso Chileno'}, {code: 'USD', flag: '🇺🇸', name: 'Dólar US'}, {code: 'ARS', flag: '🇦🇷', name: 'Peso Argentino'}].map(opt => (
+                    <button
+                      key={opt.code}
+                      className={`currency-option ${currency === opt.code ? 'active' : ''}`}
+                      onClick={() => {
+                        if(setCurrency) setCurrency(opt.code);
+                        setIsCurrencyOpen(false);
+                        closeMenu();
+                      }}
+                    >
+                      <span className="currency-flag">{opt.flag}</span>
+                      <div className="currency-option-text">
+                        <span className="currency-option-code">{opt.code}</span>
+                        <span className="currency-option-name">{opt.name}</span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
             <div className="dark-mode-container">
               <DarkModeSwitch />
             </div>

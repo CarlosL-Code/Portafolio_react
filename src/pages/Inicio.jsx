@@ -4,7 +4,7 @@ import Hero from '../componentes/layout/Hero';
 import AcercaDe from '../componentes/layout/AcercaDe';
 import ExperienciaProfesional from '../componentes/layout/ExperienciaProfesional';
 import Trabajos from '../componentes/layout/Trabajos';
-import MensajeImpacto from '../componentes/layout/MensajeImpacto';
+import Testimonios from '../componentes/layout/Testimonios';
 import Planes from '../componentes/layout/Planes';
 import Clientes from '../componentes/layout/Clientes';
 import DiagnosticoGratuito from '../componentes/layout/DiagnosticoGratuito';
@@ -33,7 +33,7 @@ const Inicio = ({ currency }) => {
         <Trabajos />
       </div>
 
-      <MensajeImpacto />
+      <Testimonios />
       <Planes currency={currency} />
       <DiagnosticoGratuito />
 
