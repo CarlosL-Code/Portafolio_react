@@ -24,12 +24,12 @@ const DesarrolloWeb = ({ currency }) => {
           </p>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '100px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
           
           {/* Introducción + Imagen Hero */}
           <article className="anim-scroll" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '50px', alignItems: 'center' }}>
             <div>
-              <h2 className="titulo" style={{ marginBottom: '20px', textAlign: 'left' }}>Presencia digital que vende</h2>
+              <h2 className="titulo" style={{ marginBottom: '20px', textAlign: 'left', lineHeight: '1.4' }}>Presencia digital que vende</h2>
               <p className="seo-text-block">
                 En la actualidad, una página web no es solo un folleto digital, es tu sucursal principal en internet. Me especializo en desarrollar sitios web corporativos y landing pages que resuelven problemas reales: generar confianza, captar leads y verse impecables en cualquier dispositivo.
               </p>
@@ -44,7 +44,7 @@ const DesarrolloWeb = ({ currency }) => {
 
           {/* Qué tipo de sitios */}
           <article className="anim-scroll">
-            <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center' }}>¿Qué tipo de sitios desarrollo?</h2>
+            <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center', lineHeight: '1.4' }}>¿Qué tipo de sitios desarrollo?</h2>
             <div className="glowing-grid">
               {[
                 { icon: <FaLaptopCode />, title: 'Sitios Corporativos', desc: 'Presencia formal e institucional para empresas y Pymes. Proyecta confianza total.' },
@@ -63,7 +63,7 @@ const DesarrolloWeb = ({ currency }) => {
 
           {/* Qué incluye (Bento Grid Dinámico) */}
           <article className="anim-scroll">
-            <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center' }}>¿Qué incluye tu página web?</h2>
+            <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center', lineHeight: '1.4' }}>¿Qué incluye tu página web?</h2>
             <div className="bento-grid">
               {[
                 { text: 'Diseño Responsive (Adaptable a celulares)', icon: <FaMobileAlt style={{color: '#42a5f5'}}/> },
@@ -84,7 +84,7 @@ const DesarrolloWeb = ({ currency }) => {
           {/* Proceso */}
           <article className="anim-scroll" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '50px', alignItems: 'center' }}>
             <div style={{ padding: '0 20px' }}>
-              <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'left' }}>Nuestro Proceso de Trabajo</h2>
+              <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'left', lineHeight: '1.4' }}>Nuestro Proceso de Trabajo</h2>
               <div className="timeline-container">
                 {[
                   { title: 'Conversación inicial', desc: 'Entendemos tus objetivos, público y necesidades específicas.' },
@@ -123,7 +123,7 @@ const DesarrolloWeb = ({ currency }) => {
 
           {/* FAQ */}
           <article className="anim-scroll" id="faq">
-            <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center' }}>Preguntas Frecuentes</h2>
+            <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center', lineHeight: '1.4' }}>Preguntas Frecuentes</h2>
             <div className="faq-grid">
               <div className="faq-card">
                 <h3 className="faq-title">⏱️ ¿Cuánto demora el desarrollo?</h3>

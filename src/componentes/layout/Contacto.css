@@ -2,7 +2,7 @@
    SECCIÓN CONTACTO
 =========================== */
 .contacto {
-  padding: 60px 20px 80px;
+  padding: 80px 20px 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,26 +13,113 @@
   margin-bottom: 50px;
 }
 
-/* Tarjeta contenedora del formulario */
-.contacto .formulario {
+.contacto-contenedor {
   width: 100%;
-  max-width: 750px;
+  max-width: 1000px;
   background: var(--shade-2);
-  padding: 40px 50px;
   border-radius: 24px;
   border: 1px solid var(--shade-3);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr 1.5fr;
+  overflow: hidden;
 }
 
-.dark .contacto .formulario {
+.dark .contacto-contenedor {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
+
+/* Info Column */
+.contacto-info {
+  background: linear-gradient(135deg, #1E293B, #0F172A);
+  color: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.dark .contacto-info {
+  background: linear-gradient(135deg, #0F172A, #0B1121);
+}
+
+.info-header h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.info-header p {
+  color: var(--shade-4);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+a.info-item:hover {
+  transform: translateX(5px);
+}
+
+.info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--primario);
+  flex-shrink: 0;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-text span {
+  font-size: 0.85rem;
+  color: var(--shade-4);
+}
+
+.info-text strong {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Form Column */
+.contacto .formulario {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .contacto .grupo-formulario {
@@ -42,7 +129,7 @@
 }
 
 .contacto .grupo-formulario label {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--shade-8);
   margin-left: 4px;
@@ -54,12 +141,13 @@
 
 /* Inputs y textarea Premium */
 .contacto input,
+.contacto select,
 .contacto textarea {
   width: 100%;
-  padding: 16px 20px;
+  padding: 14px 16px;
   border-radius: 12px;
   border: 1px solid var(--shade-3);
-  font-size: 15px;
+  font-size: 14px;
   font-family: 'Inter', sans-serif;
   background: #ffffff;
   color: var(--shade-9);
@@ -67,7 +155,21 @@
   box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
 }
 
+.contacto select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2352525B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  cursor: pointer;
+}
+
+.dark .contacto select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E4E4E7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
 .dark .contacto input,
+.dark .contacto select,
 .dark .contacto textarea {
   background: rgba(0, 0, 0, 0.2);
   color: var(--shade-1);
@@ -75,8 +177,9 @@
   box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
 }
 
-/* Focus Rings modernos (Estilo MacOS/Tailwind) */
+/* Focus Rings modernos */
 .contacto input:focus,
+.contacto select:focus,
 .contacto textarea:focus {
   outline: none;
   border-color: var(--primario);
@@ -85,6 +188,7 @@
 }
 
 .dark .contacto input:focus,
+.dark .contacto select:focus,
 .dark .contacto textarea:focus {
   background: rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 0 4px rgba(216, 58, 58, 0.25);
@@ -100,21 +204,27 @@
   color: var(--shade-6);
 }
 
-/* Texto largo (mensaje) ocupa toda la fila */
+/* Select placeholder style */
+.contacto select:invalid {
+  color: var(--shade-5);
+}
+.dark .contacto select:invalid {
+  color: var(--shade-6);
+}
+
+/* Span columns */
 .contacto .grupo-formulario.mensaje {
   grid-column: span 2;
 }
 
 .contacto textarea {
   resize: vertical;
-  min-height: 140px;
-  max-height: 300px;
+  min-height: 120px;
   line-height: 1.6;
 }
 
 /* Mensaje de error */
 .contacto .grupo-formulario.error {
-  grid-column: span 2;
   background: rgba(216, 58, 58, 0.1);
   color: var(--primario);
   border: 1px solid rgba(216, 58, 58, 0.3);
@@ -127,7 +237,6 @@
 
 /* Botón enviar */
 .contacto .grupo-formulario.enviar {
-  grid-column: span 2;
   display: flex;
   justify-content: flex-end;
   margin-top: 10px;
@@ -147,12 +256,19 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 8px 20px rgba(216, 58, 58, 0.25);
+  min-width: 200px;
+  justify-content: center;
 }
 
-.contacto .grupo-formulario.enviar .boton:hover {
+.contacto .grupo-formulario.enviar .boton:hover:not(:disabled) {
   transform: translateY(-3px);
   box-shadow: 0 12px 25px rgba(216, 58, 58, 0.4);
   filter: brightness(1.1);
+}
+
+.contacto .grupo-formulario.enviar .boton.loading {
+  opacity: 0.8;
+  cursor: wait;
 }
 
 .contacto .grupo-formulario.enviar .icono {
@@ -161,13 +277,19 @@
   transition: transform 0.3s ease;
 }
 
-.contacto .grupo-formulario.enviar .boton:hover .icono {
+.contacto .grupo-formulario.enviar .boton:hover:not(:disabled) .icono {
   transform: translateX(4px) translateY(-4px);
 }
 
 /* ===========================
    RESPONSIVE
 =========================== */
+@media screen and (max-width: 900px) {
+  .contacto-contenedor {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .contacto {
     padding: 40px 16px 60px;
@@ -177,27 +299,24 @@
     margin-bottom: 30px;
   }
 
-  .contacto .formulario {
-    padding: 24px 16px;
-    gap: 16px;
-  }
-
-  .contacto .formulario {
+  .form-grid {
     grid-template-columns: 1fr;
   }
 
-  .contacto .grupo-formulario.mensaje,
-  .contacto .grupo-formulario.error,
-  .contacto .grupo-formulario.enviar {
+  .contacto .grupo-formulario.mensaje {
     grid-column: span 1;
   }
 
-  .contacto .grupo-formulario.enviar {
-    justify-content: stretch;
+  .contacto-info {
+    padding: 30px 20px;
+  }
+
+  .contacto .formulario {
+    padding: 30px 20px;
   }
 
   .contacto .grupo-formulario.enviar .boton {
     width: 100%;
-    justify-content: center;
   }
 }
+

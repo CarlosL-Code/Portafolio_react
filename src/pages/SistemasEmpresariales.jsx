@@ -23,12 +23,12 @@ const SistemasEmpresariales = () => {
           </p>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '100px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
           
           {/* Introducción + MockServer */}
           <article className="anim-scroll" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '50px', alignItems: 'center' }}>
             <div>
-              <h2 className="titulo" style={{ marginBottom: '20px', textAlign: 'left' }}>Infraestructura Confiable</h2>
+              <h2 className="titulo" style={{ marginBottom: '20px', textAlign: 'left', lineHeight: '1.4' }}>Infraestructura Confiable</h2>
               <p className="seo-text-block">
                 Cuando tu empresa llega a un punto donde una caída del sistema significa pérdidas económicas reales, la infraestructura tecnológica debe ser robusta, segura y escalable.
               </p>
@@ -36,8 +36,10 @@ const SistemasEmpresariales = () => {
                 Me especializo en diseñar e implementar sistemas que soportan el núcleo operativo de las empresas modernas: arquitecturas en la nube, microservicios, protección de datos y alta concurrencia.
               </p>
             </div>
-            <div>
-              <MockServer />
+            <div style={{ height: '380px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '100%' }}>
+                <MockServer />
+              </div>
             </div>
           </article>
 

@@ -14,7 +14,7 @@ const SoftwareAMedida = () => {
         <meta name="description" content="Desarrollo de software a medida para automatizar y optimizar los procesos de tu empresa." />
         <link rel="canonical" href="https://carloslozanodev.com/software-a-medida" />
       </Helmet>
-
+      
       <section className="contenedor" style={{ paddingTop: '110px', paddingBottom: '50px' }}>
         <div className="seo-header anim-scroll">
           <h1 className="seo-title">Desarrollo de Software a Medida</h1>
@@ -23,12 +23,12 @@ const SoftwareAMedida = () => {
           </p>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '100px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
           
           {/* Introducción + Imagen Hero */}
           <article className="anim-scroll" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '50px', alignItems: 'center' }}>
             <div>
-              <h2 className="titulo" style={{ marginBottom: '20px', textAlign: 'left' }}>Tecnología que se adapta a ti</h2>
+              <h2 className="titulo" style={{ marginBottom: '20px', textAlign: 'left', lineHeight: '1.4' }}>Tecnología que se adapta a ti</h2>
               <p className="seo-text-block">
                 No adaptes tu empresa a un software empaquetado. Nosotros desarrollamos plataformas que se moldean exactamente a cómo funciona tu equipo.
               </p>
@@ -43,7 +43,7 @@ const SoftwareAMedida = () => {
 
           {/* Qué podemos construir */}
           <article className="anim-scroll">
-            <h2 className="titulo" style={{ marginBottom: '30px', textAlign: 'center' }}>¿Qué podemos construir?</h2>
+            <h2 className="titulo" style={{ marginBottom: '30px', textAlign: 'center', lineHeight: '1.4' }}>¿Qué podemos construir?</h2>
             <div className="glowing-grid">
               {[
                 { icon: <FaCode />, title: 'Plataformas Web (SaaS)', desc: 'Convierte tu idea de negocio en un producto digital real y escalable.' },
@@ -59,9 +59,44 @@ const SoftwareAMedida = () => {
             </div>
           </article>
 
+          {/* Proceso (Añadido) */}
+          <article className="anim-scroll" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '50px', alignItems: 'center' }}>
+            <div style={{ padding: '0 20px' }}>
+              <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'left', lineHeight: '1.4' }}>Nuestro Proceso de Trabajo</h2>
+              <div className="timeline-container">
+                {[
+                  { title: 'Toma de Requerimientos', desc: 'Analizamos a fondo los procesos de tu negocio y definimos la arquitectura del sistema.' },
+                  { title: 'Prototipo y Diseño', desc: 'Diseñamos las interfaces para validar flujos antes de escribir código.' },
+                  { title: 'Desarrollo Ágil', desc: 'Entregamos avances funcionales periódicamente para que veas el progreso real.' },
+                  { title: 'Testing y QA', desc: 'Pruebas rigurosas de estrés y seguridad para garantizar la estabilidad.' },
+                  { title: 'Despliegue y Capacitación', desc: 'Lanzamiento a producción y entrenamiento de tu equipo para usar la herramienta.' }
+                ].map((step, index) => (
+                  <div key={index} className="timeline-item">
+                    <div className="timeline-dot"></div>
+                    <div className="timeline-content">
+                      <h3 className="timeline-title">0{index + 1}. {step.title}</h3>
+                      <p className="timeline-desc">{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+               <div className="seo-highlight-box light-box">
+                  <h3 style={{color: 'var(--primario)'}}>Código Propio</h3>
+                  <p className="seo-text-block">A diferencia de los sistemas de terceros, con un software a medida, tú eres el dueño absoluto del producto y los datos.</p>
+               </div>
+               <div className="seo-highlight-box dark-box">
+                  <h3 style={{color: '#fff'}}>Evolución Continua</h3>
+                  <p className="seo-text-block">El software crece junto con tu negocio. Podemos añadir nuevas funcionalidades a medida que surjan nuevas necesidades.</p>
+               </div>
+            </div>
+          </article>
+
           {/* Características */}
           <article className="anim-scroll">
-            <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center' }}>Beneficios Clave</h2>
+            <h2 className="titulo" style={{ marginBottom: '40px', textAlign: 'center', lineHeight: '1.4' }}>Beneficios Clave</h2>
             <div className="bento-grid">
               {[
                 { text: 'Escalabilidad sin límites ni licencias por usuario', icon: <FaRocket style={{color: '#ef5350'}}/> },
