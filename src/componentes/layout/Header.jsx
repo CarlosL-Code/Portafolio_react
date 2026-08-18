@@ -107,13 +107,21 @@ const Header = ({ currency, setCurrency }) => {
                 onClick={() => setIsCurrencyOpen(!isCurrencyOpen)}
                 aria-label="Seleccionar Moneda"
               >
-                <span className="currency-flag">{currency === 'CLP' ? '🇨🇱' : currency === 'USD' ? '🇺🇸' : '🇦🇷'}</span>
+                <span className="currency-flag" style={{ display: 'flex', alignItems: 'center' }}>
+                  <img 
+                    src={`https://flagcdn.com/w20/${currency === 'CLP' ? 'cl' : currency === 'USD' ? 'us' : 'ar'}.png`} 
+                    srcSet={`https://flagcdn.com/w40/${currency === 'CLP' ? 'cl' : currency === 'USD' ? 'us' : 'ar'}.png 2x`} 
+                    width="18" 
+                    alt={currency} 
+                    style={{ borderRadius: '2px' }}
+                  />
+                </span>
                 <span className="currency-code">{currency}</span>
                 <FaChevronDown className={`currency-chevron ${isCurrencyOpen ? 'open' : ''}`} />
               </button>
               {isCurrencyOpen && (
                 <div className="currency-menu">
-                  {[{code: 'CLP', flag: '🇨🇱', name: 'Peso Chileno'}, {code: 'USD', flag: '🇺🇸', name: 'Dólar US'}, {code: 'ARS', flag: '🇦🇷', name: 'Peso Argentino'}].map(opt => (
+                  {[{code: 'CLP', img: 'cl', name: 'Peso Chileno'}, {code: 'USD', img: 'us', name: 'Dólar US'}, {code: 'ARS', img: 'ar', name: 'Peso Argentino'}].map(opt => (
                     <button
                       key={opt.code}
                       className={`currency-option ${currency === opt.code ? 'active' : ''}`}
@@ -123,7 +131,15 @@ const Header = ({ currency, setCurrency }) => {
                         closeMenu();
                       }}
                     >
-                      <span className="currency-flag">{opt.flag}</span>
+                      <span className="currency-flag" style={{ display: 'flex', alignItems: 'center' }}>
+                        <img 
+                          src={`https://flagcdn.com/w20/${opt.img}.png`} 
+                          srcSet={`https://flagcdn.com/w40/${opt.img}.png 2x`} 
+                          width="20" 
+                          alt={opt.name} 
+                          style={{ borderRadius: '2px' }}
+                        />
+                      </span>
                       <div className="currency-option-text">
                         <span className="currency-option-code">{opt.code}</span>
                         <span className="currency-option-name">{opt.name}</span>
