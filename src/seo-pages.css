@@ -12,19 +12,13 @@
   font-size: 3rem;
   font-weight: 900;
   margin-bottom: 15px;
-  /* Degradado Naranja/Fuego al estilo WebMaker */
-  background: linear-gradient(90deg, var(--primario) 0%, #ff8c42 50%, #ffa500 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #111827; /* Negro muy oscuro y sólido */
   line-height: 1.15;
-  letter-spacing: -1.5px;
+  letter-spacing: -2px; /* Espaciado ajustado para estilo puntoAPP */
 }
 
 body.dark .seo-title {
-  /* En modo oscuro brilla un poco más claro */
-  background: linear-gradient(90deg, #ff6b6b 0%, var(--primario) 50%, #ff8c42 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff; /* Blanco puro en modo oscuro */
 }
 
 .seo-subtitle {
