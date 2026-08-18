@@ -7,7 +7,7 @@ import Trabajos from '../componentes/layout/Trabajos';
 import Testimonios from '../componentes/layout/Testimonios';
 import Planes from '../componentes/layout/Planes';
 import Clientes from '../componentes/layout/Clientes';
-import DiagnosticoGratuito from '../componentes/layout/DiagnosticoGratuito';
+import MensajeImpacto from '../componentes/layout/MensajeImpacto';
 import FAQ from '../componentes/layout/FAQ';
 import Contacto from '../componentes/layout/Contacto';
 
@@ -35,7 +35,7 @@ const Inicio = ({ currency }) => {
 
       <Testimonios />
       <Planes currency={currency} />
-      <DiagnosticoGratuito />
+      <MensajeImpacto />
 
       <FAQ />
       <Contacto />
