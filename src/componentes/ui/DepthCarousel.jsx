@@ -373,7 +373,13 @@ const DepthCarousel = ({
             key={i}
             className="depth-carousel__card"
             ref={el => (cardRefs.current[i] = el)}
-            style={{ width: cardWidth, height: cardHeight, borderRadius: radius }}
+            style={{
+              width: `${cardWidth}px`,
+              height: `${cardHeight}px`,
+              borderRadius: `${radius}px`,
+              boxShadow: typeof window !== 'undefined' && window.innerWidth <= 768 ? 'none' : '0 10px 40px -10px rgba(0,0,0,0.5)',
+              position: 'absolute'
+            }}
             aria-roledescription="slide"
             aria-label={`${i + 1} of ${count}`}
             aria-hidden={active !== i}

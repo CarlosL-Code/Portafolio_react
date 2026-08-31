@@ -111,7 +111,7 @@ const InstagramFeed = () => {
               {activePost?.caption}
             </p>
             <button 
-              className="btn-primario btn-aprendizaje"
+              className="boton btn-primario btn-aprendizaje"
               onClick={() => window.open(activePost?.link, '_blank', 'noopener,noreferrer')}
             >
               Leer publicación completa &rarr;
