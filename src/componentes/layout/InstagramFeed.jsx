@@ -60,10 +60,10 @@ const InstagramFeed = () => {
   return (
     <section className="aprendizaje-section anim-scroll" id="aprendizaje">
       <DotField 
-        gradientFrom="rgba(216, 58, 58, 0.4)" 
-        gradientTo="rgba(216, 58, 58, 0.1)"
-        glowColor="rgba(216, 58, 58, 0.15)"
-        dotRadius={1.2}
+        gradientFrom="rgba(216, 58, 58, 0.6)" 
+        gradientTo="rgba(255, 255, 255, 0.3)"
+        glowColor="rgba(216, 58, 58, 0.2)"
+        dotRadius={1.5}
       />
       <div className="aprendizaje-container" style={{ position: 'relative', zIndex: 1 }}>
         
