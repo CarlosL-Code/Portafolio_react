@@ -1,14 +1,16 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./componentes/layout/Header";
 import Footer from "./componentes/layout/Footer";
-import Inicio from "./pages/Inicio";
-import DesarrolloWeb from "./pages/DesarrolloWeb";
-import SoftwareAMedida from "./pages/SoftwareAMedida";
-import SistemasEmpresariales from "./pages/SistemasEmpresariales";
-import Proyectos from "./pages/Proyectos";
-import ContactoPage from "./pages/Contacto";
-import NotFound from "./pages/NotFound";
+import DotField from "./componentes/ui/DotField";
+
+const Inicio = lazy(() => import("./pages/Inicio"));
+const DesarrolloWeb = lazy(() => import("./pages/DesarrolloWeb"));
+const SoftwareAMedida = lazy(() => import("./pages/SoftwareAMedida"));
+const SistemasEmpresariales = lazy(() => import("./pages/SistemasEmpresariales"));
+const Proyectos = lazy(() => import("./pages/Proyectos"));
+const ContactoPage = lazy(() => import("./pages/Contacto"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 import DotField from "./componentes/ui/DotField";
 
 import { FaWhatsapp, FaTimes } from "react-icons/fa";
@@ -39,15 +41,17 @@ function App() {
       
       <Header currency={currency} setCurrency={setCurrency} />
 
-      <Routes>
-        <Route path="/" element={<Inicio currency={currency} />} />
-        <Route path="/desarrollo-web" element={<DesarrolloWeb currency={currency} />} />
-        <Route path="/software-a-medida" element={<SoftwareAMedida />} />
-        <Route path="/sistemas-empresariales" element={<SistemasEmpresariales />} />
-        <Route path="/proyectos" element={<Proyectos />} />
-        <Route path="/contacto" element={<ContactoPage />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Suspense fallback={<div style={{ minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Cargando...</div>}>
+        <Routes>
+          <Route path="/" element={<Inicio currency={currency} />} />
+          <Route path="/desarrollo-web" element={<DesarrolloWeb currency={currency} />} />
+          <Route path="/software-a-medida" element={<SoftwareAMedida />} />
+          <Route path="/sistemas-empresariales" element={<SistemasEmpresariales />} />
+          <Route path="/proyectos" element={<Proyectos />} />
+          <Route path="/contacto" element={<ContactoPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
 
       <Footer />
 
