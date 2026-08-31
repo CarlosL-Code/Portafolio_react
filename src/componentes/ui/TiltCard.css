@@ -274,9 +274,6 @@
       center;
   }
 }
-
-\n  .pc-glare, .pc-behind {\n    display: none !important;\n  }\n  .pc-shine, .pc-shine::after {\n    animation: none !important;\n    mix-blend-mode: normal !important;\n    filter: none !important;\n    opacity: 0.15 !important;\n  }\n}
-
 @media (max-width: 768px) {
   .pc-card {
     animation: none !important;
