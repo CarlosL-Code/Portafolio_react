@@ -4,6 +4,7 @@ import Hero from '../componentes/layout/Hero';
 import AcercaDe from '../componentes/layout/AcercaDe';
 import ExperienciaProfesional from '../componentes/layout/ExperienciaProfesional';
 import Trabajos from '../componentes/layout/Trabajos';
+import InstagramFeed from '../componentes/layout/InstagramFeed';
 import Testimonios from '../componentes/layout/Testimonios';
 import Planes from '../componentes/layout/Planes';
 import Clientes from '../componentes/layout/Clientes';
@@ -30,6 +31,11 @@ const Inicio = ({ currency }) => {
 
       <div className="contenedor">
         <ExperienciaProfesional />
+      </div>
+
+      <InstagramFeed />
+
+      <div className="contenedor">
         <Trabajos />
       </div>
 

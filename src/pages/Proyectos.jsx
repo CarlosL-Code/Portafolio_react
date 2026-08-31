@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Trabajos from '../componentes/layout/Trabajos';
+import InstagramFeed from '../componentes/layout/InstagramFeed';
 
 const Proyectos = () => {
   return (
@@ -12,6 +13,7 @@ const Proyectos = () => {
       </Helmet>
 
       <div style={{ paddingTop: 'clamp(56px, 5vw, 80px)' }}>
+        <InstagramFeed />
         <Trabajos />
       </div>
     </>
