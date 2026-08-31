@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./AcercaDe.css";
+import BlurText from "../ui/BlurText";
 
 
 const AcercaDe = () => {
@@ -23,9 +24,13 @@ const AcercaDe = () => {
           <div className="col-2 anim-scroll anim-right">
             <h4 className="pre-titulo">Acerca de mi</h4>
 
-            <h3 className="titulo">
-              Transformando ideas en arquitecturas escalables y rentables.
-            </h3>
+            <BlurText
+              text="Transformando ideas en arquitecturas escalables y rentables."
+              delay={50}
+              animateBy="words"
+              direction="top"
+              className="titulo blur-titulo"
+            />
 
             <div className={`resumen-container ${isExpanded ? "expanded" : ""}`}>
               <p className="resumen">
