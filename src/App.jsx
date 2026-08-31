@@ -11,7 +11,6 @@ const SistemasEmpresariales = lazy(() => import("./pages/SistemasEmpresariales")
 const Proyectos = lazy(() => import("./pages/Proyectos"));
 const ContactoPage = lazy(() => import("./pages/Contacto"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-import DotField from "./componentes/ui/DotField";
 
 import { FaWhatsapp, FaTimes } from "react-icons/fa";
 import useScrollAnimation from "./hooks/useScrollAnimation";
