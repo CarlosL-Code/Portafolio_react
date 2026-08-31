@@ -85,11 +85,14 @@ body.dark .acerca-de .grid .col-2 .pre-titulo {
     font-size: clamp(32px, 4vw, 42px);
     font-weight: 800;
     letter-spacing: -0.5px;
+    line-height: 1.25;
+    margin-bottom: 5px;
+}
+
+.acerca-de .grid .col-2 .blur-titulo span {
     background: linear-gradient(90deg, var(--primario) 0%, #ff8c42 50%, #ffa500 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    line-height: 1.25;
-    margin-bottom: 5px;
 }
 
 .acerca-de .grid .col-2 .resumen {

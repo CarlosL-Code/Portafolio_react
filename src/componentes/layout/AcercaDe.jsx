@@ -21,18 +21,19 @@ const AcercaDe = () => {
           </div>
 
           {/* Columna texto */}
-          <div className="col-2 anim-scroll anim-right">
-            <h4 className="pre-titulo">Acerca de mi</h4>
+          <div className="col-2">
+            <h4 className="pre-titulo anim-scroll anim-right">Acerca de mi</h4>
 
             <BlurText
               text="Transformando ideas en arquitecturas escalables y rentables."
-              delay={50}
+              delay={150}
               animateBy="words"
               direction="top"
               className="titulo blur-titulo"
+              threshold={0.5}
             />
 
-            <div className={`resumen-container ${isExpanded ? "expanded" : ""}`}>
+            <div className={`resumen-container anim-scroll anim-right ${isExpanded ? "expanded" : ""}`}>
               <p className="resumen">
                 Soy estudiante de Ingeniería en Informática y Software Engineer apasionado por resolver problemas complejos mediante la tecnología. 
                 Aunque sigo mi formación académica, en el mundo real ya me especializo en diseñar arquitecturas robustas, automatizar flujos de trabajo empresariales y crear experiencias digitales de alto impacto. 
@@ -46,13 +47,13 @@ const AcercaDe = () => {
             </div>
             
             <button 
-              className="btn-leer-mas" 
+              className="btn-leer-mas anim-scroll anim-right" 
               onClick={() => setIsExpanded(!isExpanded)}
             >
               {isExpanded ? "Leer menos" : "Leer más..."}
             </button>
 
-            <a href="#contacto" className="boton">
+            <a href="#contacto" className="boton anim-scroll anim-right">
               Hablemos de tu proyecto
               <span className="icono">
                 <svg
