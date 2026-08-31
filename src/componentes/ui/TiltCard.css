@@ -275,12 +275,21 @@
   }
 }
 
+\n  .pc-glare, .pc-behind {\n    display: none !important;\n  }\n  .pc-shine, .pc-shine::after {\n    animation: none !important;\n    mix-blend-mode: normal !important;\n    filter: none !important;\n    opacity: 0.15 !important;\n  }\n}
+
 @media (max-width: 768px) {
   .pc-card {
     animation: none !important;
     transform: none !important;
   }
-  .pc-shine, .pc-glare, .pc-behind {
+  .pc-glare, .pc-behind {
     display: none !important;
+  }
+  .pc-shine, .pc-shine::after {
+    display: block !important;
+    animation: none !important;
+    mix-blend-mode: normal !important;
+    filter: none !important;
+    opacity: 0.15 !important;
   }
 }
