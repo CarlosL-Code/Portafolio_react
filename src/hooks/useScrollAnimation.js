@@ -5,52 +5,66 @@ const useScrollAnimation = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Wait a brief moment for the DOM to update after route change
+    let intObserver;
+    let mutObserver;
+    let fallbackTimer;
+
     const initAnimation = () => {
-      const elementos = document.querySelectorAll(".anim-scroll");
-
-      // Fallback de seguridad
-      const fallbackTimer = setTimeout(() => {
-        elementos.forEach((el) => {
-          if (!el.classList.contains("visible")) {
-            el.classList.add("visible");
-          }
-        });
-      }, 800); // Reducido a 800ms para que sea más responsivo si falla el observer
-
-      const observer = new IntersectionObserver(
+      intObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting || entry.intersectionRatio > 0) {
               entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
+              intObserver.unobserve(entry.target);
             }
           });
         },
-        {
-          threshold: 0,
-          rootMargin: "50px",
-        }
+        { threshold: 0, rootMargin: "50px" }
       );
 
-      elementos.forEach((el) => observer.observe(el));
+      const observeExisting = () => {
+        document.querySelectorAll(".anim-scroll:not(.visible)").forEach(el => {
+          intObserver.observe(el);
+        });
+      };
+      
+      observeExisting();
 
-      return { observer, fallbackTimer };
+      // Usar MutationObserver para componentes cargados perezosamente (lazy)
+      mutObserver = new MutationObserver((mutations) => {
+        let added = false;
+        for (let m of mutations) {
+          if (m.addedNodes.length > 0) {
+            added = true;
+            break;
+          }
+        }
+        if (added) {
+          observeExisting();
+        }
+      });
+
+      mutObserver.observe(document.body, { childList: true, subtree: true });
+
+      // Fallback por seguridad
+      fallbackTimer = setTimeout(() => {
+        document.querySelectorAll(".anim-scroll:not(.visible)").forEach(el => {
+          el.classList.add("visible");
+        });
+      }, 1500);
     };
 
-    // Small delay to ensure new elements from route change are in the DOM
     const timeoutId = setTimeout(() => {
-      const { observer, fallbackTimer } = initAnimation();
-      
-      // Cleanup on unmount or next route change
-      return () => {
-        clearTimeout(fallbackTimer);
-        if (observer) observer.disconnect();
-      };
+      initAnimation();
     }, 50);
 
-    return () => clearTimeout(timeoutId);
-  }, [location.pathname]); // Dependencia clave: vuelve a ejecutarse al cambiar de ruta
+    return () => {
+      clearTimeout(timeoutId);
+      if (intObserver) intObserver.disconnect();
+      if (mutObserver) mutObserver.disconnect();
+      if (fallbackTimer) clearTimeout(fallbackTimer);
+    };
+  }, [location.pathname]);
 };
 
 export default useScrollAnimation;
