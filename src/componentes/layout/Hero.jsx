@@ -15,7 +15,7 @@ const Hero = () => {
           Creamos <span className="highlight-text-wrapper" style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 8px' }}>
             <DepthText
               text="Desarrollo Web"
-              layers={34}
+              layers={14}
               depth={2.4}
               faceColor="#ff6b6b"
               depthColor="#7c3aed"

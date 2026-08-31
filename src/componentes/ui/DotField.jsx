@@ -38,7 +38,8 @@ const DotField = memo(({
     const glowEl = glowRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d', { alpha: true });
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    // Limit dpr to 1 for massive performance boost on retina screens
+    const dpr = 1;
     let resizeTimer;
 
     function resize() {

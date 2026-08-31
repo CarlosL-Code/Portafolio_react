@@ -25,16 +25,6 @@ function App() {
     ? `https://wa.me/${wsNumber}?text=${encodeURIComponent(wsMessage)}` 
     : `https://wa.me/${wsNumber}`;
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      document.documentElement.style.setProperty('--x', `${e.clientX}px`);
-      document.documentElement.style.setProperty('--y', `${e.clientY}px`);
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   return (
     <>
       <div style={{ position: 'fixed', inset: 0, zIndex: -1, pointerEvents: 'none' }}>
@@ -43,9 +33,9 @@ function App() {
           gradientTo="rgba(168, 85, 247, 0.15)"
           glowColor="rgba(168, 85, 247, 0.2)"
           dotRadius={1.5}
+          dotSpacing={22}
         />
       </div>
-      <div className="mouse-glow"></div>
       
       <Header currency={currency} setCurrency={setCurrency} />
 
