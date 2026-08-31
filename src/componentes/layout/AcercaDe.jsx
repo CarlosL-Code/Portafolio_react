@@ -11,7 +11,6 @@ const AcercaDe = () => {
   return (
     <section className="acerca-de" id="acerca-de">
       <BorderGlow
-        className="acerca-de-card"
         edgeSensitivity={30}
         glowColor="40 80 80"
         backgroundColor="transparent"
@@ -22,7 +21,8 @@ const AcercaDe = () => {
         animated={false}
         colors={['#c084fc', '#f472b6', '#38bdf8']}
       >
-        <div className="grid">
+        <div className="acerca-de-card">
+          <div className="grid">
           
           {/* Columna imágenes */}
           <div className="col-1 anim-scroll anim-left">
@@ -81,6 +81,7 @@ const AcercaDe = () => {
               </span>
             </a>
           </div>
+        </div>
         </div>
       </BorderGlow>
     </section>
