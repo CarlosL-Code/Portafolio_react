@@ -3,18 +3,60 @@ import { useState } from "react";
 import trabajos from "../data/trabajos";
 import CircularGallery from "../ui/CircularGallery";
 
+const mockInstagram = [
+  {
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop',
+    link: 'https://www.instagram.com/carloslozano.dev/',
+    text: 'Aprende React'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800&auto=format&fit=crop',
+    link: 'https://www.instagram.com/carloslozano.dev/',
+    text: 'Tips de Desarrollo'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?q=80&w=800&auto=format&fit=crop',
+    link: 'https://www.instagram.com/carloslozano.dev/',
+    text: 'Servicios Web'
+  }
+];
+
 const Trabajos = () => {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
   const [trabajosFiltrados, setTrabajosFiltrados] = useState(trabajos);
-  
   const [visibleCount, setVisibleCount] = useState(6);
+  const [instagramPosts, setInstagramPosts] = useState([]);
+  const [isLoadingInsta, setIsLoadingInsta] = useState(false);
 
   const handleChange = (e) => {
     const categoria = e.target.id;
     setCategoriaSeleccionada(categoria);
     setVisibleCount(6); 
 
-    if (categoria === "todos") {
+    if (categoria === "instagram") {
+      setTrabajosFiltrados([]);
+      if (instagramPosts.length === 0 && !isLoadingInsta) {
+        setIsLoadingInsta(true);
+        // Intentar conectar con el backend (VPS o local)
+        fetch('http://localhost:3001/api/instagram')
+          .then(res => {
+            if (!res.ok) throw new Error('Network response was not ok');
+            return res.json();
+          })
+          .then(data => {
+            if (Array.isArray(data) && data.length > 0) {
+              setInstagramPosts(data);
+            } else {
+              setInstagramPosts(mockInstagram); // Fallback
+            }
+          })
+          .catch(err => {
+            console.error("Error al obtener Instagram, usando datos simulados:", err);
+            setInstagramPosts(mockInstagram); // Fallback si el server está apagado
+          })
+          .finally(() => setIsLoadingInsta(false));
+      }
+    } else if (categoria === "todos") {
       setTrabajosFiltrados(trabajos);
     } else {
       const nuevosTrabajos = trabajos.filter(
@@ -36,6 +78,15 @@ const Trabajos = () => {
   };
 
   const trabajosVisibles = trabajosFiltrados.slice(0, visibleCount);
+  
+  // Decidir qué mostrar en la galería 3D
+  const galleryItems = categoriaSeleccionada === "instagram" 
+    ? (instagramPosts.length > 0 ? instagramPosts : mockInstagram)
+    : trabajosFiltrados.map(t => ({ 
+        image: t.thumb.url.replace('./assets', '/assets'), 
+        text: t.info.nombre, 
+        link: t.info.link 
+      }));
 
   return (
     <>
@@ -56,23 +107,27 @@ const Trabajos = () => {
             scrollEase={0.05}
             font="bold 30px Orbitron, sans-serif"
             scrollSpeed={2}
-            items={trabajosFiltrados.map(t => ({ image: t.thumb.url.replace('./assets', '/assets'), text: t.info.nombre }))}
+            items={galleryItems}
           />
         </div>
 
         {/* Filtros tipo "Pill" */}
         <div className="filtros-premium anim-scroll">
           <label htmlFor="todos" className={categoriaSeleccionada === "todos" ? "activo" : ""}>
-            <input type="radio" name="categoria" id="todos" onChange={handleChange} checked={categoriaSeleccionada === "todos"} />
+            <input type="radio" name="filtro" id="todos" checked={categoriaSeleccionada === "todos"} onChange={handleChange} />
             Todos
           </label>
           <label htmlFor="desarrollo-software" className={categoriaSeleccionada === "desarrollo-software" ? "activo" : ""}>
-            <input type="radio" name="categoria" id="desarrollo-software" onChange={handleChange} checked={categoriaSeleccionada === "desarrollo-software"} />
+            <input type="radio" name="filtro" id="desarrollo-software" checked={categoriaSeleccionada === "desarrollo-software"} onChange={handleChange} />
             Software
           </label>
           <label htmlFor="desarrollo-web" className={categoriaSeleccionada === "desarrollo-web" ? "activo" : ""}>
-            <input type="radio" name="categoria" id="desarrollo-web" onChange={handleChange} checked={categoriaSeleccionada === "desarrollo-web"} />
-            Web Apps
+            <input type="radio" name="filtro" id="desarrollo-web" checked={categoriaSeleccionada === "desarrollo-web"} onChange={handleChange} />
+            Desarrollo Web
+          </label>
+          <label htmlFor="instagram" className={categoriaSeleccionada === "instagram" ? "activo" : ""}>
+            <input type="radio" name="filtro" id="instagram" checked={categoriaSeleccionada === "instagram"} onChange={handleChange} />
+            Instagram Feed
           </label>
           <label htmlFor="desarrollo-mobile" className={categoriaSeleccionada === "desarrollo-mobile" ? "activo" : ""}>
             <input type="radio" name="categoria" id="desarrollo-mobile" onChange={handleChange} checked={categoriaSeleccionada === "desarrollo-mobile"} />

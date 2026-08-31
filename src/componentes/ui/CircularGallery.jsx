@@ -1,4 +1,4 @@
-import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'ogl';
+import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform, Raycast, Vec2 } from 'ogl';
 import { useEffect, useRef } from 'react';
 
 import './CircularGallery.css';
@@ -208,12 +208,14 @@ class Media {
     bend,
     textColor,
     borderRadius = 0,
-    font
+    font,
+    link
   }) {
     this.extra = 0;
     this.geometry = geometry;
     this.gl = gl;
     this.image = image;
+    this.link = link;
     this.index = index;
     this.length = length;
     this.renderer = renderer;
@@ -464,7 +466,8 @@ class App {
         bend,
         textColor,
         borderRadius,
-        font
+        font,
+        link: data.link
       });
     });
   }
@@ -479,8 +482,46 @@ class App {
     const distance = (this.start - x) * (this.scrollSpeed * 0.025);
     this.scroll.target = this.scroll.position + distance;
   }
-  onTouchUp() {
+  onTouchUp(e) {
     this.isDown = false;
+    
+    const endX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
+    const endY = e.changedTouches ? e.changedTouches[0].clientY : e.clientY;
+    
+    if (Math.abs(this.start - endX) < 10) {
+      if (!this.raycast) {
+        this.raycast = new Raycast(this.gl);
+        this.mouse = new Vec2();
+      }
+      
+      const bounds = this.container.getBoundingClientRect();
+      const x = endX - bounds.left;
+      const y = endY - bounds.top;
+      
+      this.mouse.set(
+        (x / this.screen.width) * 2 - 1,
+        -(y / this.screen.height) * 2 + 1
+      );
+      
+      this.raycast.castMouse(this.camera, this.mouse);
+      const meshes = this.medias.map(m => m.plane);
+      const hits = this.raycast.intersectBounds(meshes);
+      
+      if (hits && hits.length > 0) {
+        const hitMesh = hits[0][0] || hits[0].mesh || hits[0].transform || hits[0]; // ogl intersectBounds returns Array of hit objects, wait... 
+        // ogl intersectBounds returns an Array of objects {distance, point, transform}
+        // where transform is the Mesh.
+        // Let's just find by finding which media.plane has the same ID or reference.
+        let hitTransform = hits[0].transform || hits[0].mesh;
+        if (!hitTransform && hits[0].length) hitTransform = hits[0][0].transform; // just in case
+        
+        const hitMedia = this.medias.find(m => m.plane === hitTransform || m.plane === hits[0]);
+        if (hitMedia && hitMedia.link) {
+          window.open(hitMedia.link, '_blank');
+        }
+      }
+    }
+    
     this.onCheck();
   }
   onWheel(e) {
