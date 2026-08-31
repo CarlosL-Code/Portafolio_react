@@ -37,15 +37,22 @@ const Trabajos = () => {
       setTrabajosFiltrados([]);
       if (instagramPosts.length === 0 && !isLoadingInsta) {
         setIsLoadingInsta(true);
-        // Intentar conectar con la API Serverless en Vercel
-        fetch('/api/instagram')
+        // Conectamos directo al Feed de Behold con tus posts de Instagram
+        fetch('https://feeds.behold.so/PRgVp5gmR44u9PcPQA87')
           .then(res => {
             if (!res.ok) throw new Error('Network response was not ok');
             return res.json();
           })
           .then(data => {
-            if (Array.isArray(data) && data.length > 0) {
-              setInstagramPosts(data);
+            // Behold devuelve un objeto con un arreglo "posts"
+            if (data && data.posts && Array.isArray(data.posts)) {
+              const formatted = data.posts.map(post => ({
+                // Usamos la imagen procesada por Behold para evitar errores de CORS
+                image: post.sizes?.large?.mediaUrl || post.mediaUrl,
+                link: post.permalink,
+                text: post.prunedCaption ? post.prunedCaption.substring(0, 30) + '...' : 'Instagram Post'
+              }));
+              setInstagramPosts(formatted);
             } else {
               setInstagramPosts(mockInstagram); // Fallback
             }
