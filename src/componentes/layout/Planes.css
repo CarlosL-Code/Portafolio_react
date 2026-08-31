@@ -385,6 +385,10 @@ body.dark .planes-nota p {
   .planes-grid {
     grid-template-columns: 1fr;
   }
+  .pc-card-wrapper { min-height: 100%; }
+  .plan-tarjeta-inner { padding: 18px 14px; }
+  .plan-header h3 { font-size: 20px; }
+  .plan-precio .monto { font-size: 28px; }
   .planes .encabezado .titulo {
     font-size: 32px;
   }
