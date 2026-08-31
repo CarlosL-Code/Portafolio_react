@@ -1,4 +1,5 @@
 import "./Planes.css";
+import TiltCard from "../ui/TiltCard";
 
 const Planes = ({ currency = 'CLP' }) => {
   const whatsappNumber = "56937540250";
@@ -29,7 +30,9 @@ const Planes = ({ currency = 'CLP' }) => {
 
       <div className="planes-grid">
         {/* PLAN 1 */}
-        <div className="plan-tarjeta anim-scroll">
+        <TiltCard className="anim-scroll" innerGradient="linear-gradient(145deg, rgba(168, 85, 247, 0.05) 0%, rgba(15,23,42,0.2) 100%)" behindGlowColor="rgba(168, 85, 247, 0.2)">
+
+          <div className="plan-tarjeta-inner">
           <div className="plan-header">
             <h3>Desarrollo Web</h3>
             <span className="pago-unico">Pago único</span>
@@ -76,9 +79,12 @@ const Planes = ({ currency = 'CLP' }) => {
             Cotizar mi sitio web
           </a>
         </div>
+</TiltCard>
 
         {/* PLAN 2 */}
-        <div className="plan-tarjeta destacado anim-scroll">
+        <TiltCard className="anim-scroll" innerGradient="linear-gradient(145deg, rgba(168, 85, 247, 0.15) 0%, rgba(15,23,42,0.4) 100%)" behindGlowColor="rgba(168, 85, 247, 0.4)">
+
+          <div className="plan-tarjeta-inner destacado">
           <div className="plan-header">
             <h3>Sitio Web Mensual</h3>
             <span className="etiqueta-destacado">Alternativa flexible</span>
@@ -116,9 +122,12 @@ const Planes = ({ currency = 'CLP' }) => {
             Consultar plan mensual
           </a>
         </div>
+</TiltCard>
 
         {/* PLAN 3 */}
-        <div className="plan-tarjeta anim-scroll">
+        <TiltCard className="anim-scroll" innerGradient="linear-gradient(145deg, rgba(168, 85, 247, 0.05) 0%, rgba(15,23,42,0.2) 100%)" behindGlowColor="rgba(168, 85, 247, 0.2)">
+
+          <div className="plan-tarjeta-inner">
           <div className="plan-header">
             <h3>Sistemas a Medida</h3>
           </div>
@@ -166,6 +175,7 @@ const Planes = ({ currency = 'CLP' }) => {
             Cotizar sistema
           </a>
         </div>
+</TiltCard>
       </div>
 
       <div className="planes-nota anim-scroll">
