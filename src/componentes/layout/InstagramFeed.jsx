@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
-import CircularGallery from "../ui/CircularGallery";
+import DepthCarousel from "../ui/DepthCarousel";
 
 const mockInstagram = [
   {
     image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop',
     link: 'https://www.instagram.com/carloslozano.dev/',
-    text: 'Aprende React'
+    alt: 'Aprende React'
   },
   {
     image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800&auto=format&fit=crop',
     link: 'https://www.instagram.com/carloslozano.dev/',
-    text: 'Tips de Desarrollo'
+    alt: 'Tips de Desarrollo'
   },
   {
     image: 'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?q=80&w=800&auto=format&fit=crop',
     link: 'https://www.instagram.com/carloslozano.dev/',
-    text: 'Servicios Web'
+    alt: 'Servicios Web'
   }
 ];
 
@@ -33,7 +33,7 @@ const InstagramFeed = () => {
           const formatted = data.posts.map(post => ({
             image: post.sizes?.large?.mediaUrl || post.mediaUrl,
             link: post.permalink,
-            text: post.prunedCaption ? post.prunedCaption.substring(0, 30) + '...' : 'Instagram Post'
+            alt: post.prunedCaption ? post.prunedCaption.substring(0, 30) + '...' : 'Instagram Post'
           }));
           setInstagramPosts(formatted);
         } else {
@@ -55,15 +55,33 @@ const InstagramFeed = () => {
         Sígueme para contenido educativo, tips de desarrollo y novedades de servicios.
       </p>
       
-      <div style={{ height: '500px', position: 'relative', width: '100%', maxWidth: '100vw', left: '50%', transform: 'translateX(-50%)' }}>
-        <CircularGallery
-          bend={1}
-          textColor="#ffffff"
-          borderRadius={0.05}
-          scrollEase={0.05}
-          font="bold 30px Orbitron, sans-serif"
-          scrollSpeed={2}
+      <div style={{ height: '500px', position: 'relative', width: '100%', maxWidth: '100vw' }}>
+        <DepthCarousel
           items={galleryItems}
+          depth={220}
+          spread={90}
+          tilt={22}
+          tiltDirection="right"
+          perspective={1400}
+          visibleCards={4}
+          falloff={0.2}
+          blur={6}
+          autoplay={false}
+          loop
+          cardWidth={300}
+          cardHeight={380}
+          radius={18}
+          tint="#05060a"
+          duration={700}
+          ease="power3.out"
+          autoplayDelay={3200}
+          showControls
+          showIndicators
+          onItemClick={(item) => {
+            if (item && item.link) {
+              window.open(item.link, '_blank', 'noopener,noreferrer');
+            }
+          }}
         />
       </div>
     </section>
