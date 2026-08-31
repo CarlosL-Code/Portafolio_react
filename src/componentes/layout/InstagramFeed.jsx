@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DepthCarousel from "../ui/DepthCarousel";
+import StrokeText from "../ui/StrokeText";
 import "./InstagramFeed.css";
 
 const mockInstagram = [
@@ -93,7 +94,16 @@ const InstagramFeed = () => {
 
         {/* Lado Derecho: Información Dinámica */}
         <div className="aprendizaje-info">
-          <h2 className="seo-title">Aprendizaje Constante</h2>
+          <div style={{ width: '100%', maxWidth: '400px', marginBottom: '10px' }}>
+            <StrokeText
+              text="Aprendizaje"
+              fontSize={72}
+              strokeWidth={1.5}
+              strokeColor="var(--primario)"
+              fillColor="var(--texto)"
+              trigger="scroll"
+            />
+          </div>
           <h3 className="subtitulo-premium">Valor que transforma tu negocio</h3>
           
           <div className="aprendizaje-dinamico">
