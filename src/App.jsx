@@ -2,7 +2,6 @@ import React, { useState, useEffect, Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./componentes/layout/Header";
 import Footer from "./componentes/layout/Footer";
-import DotField from "./componentes/ui/DotField";
 
 const Inicio = lazy(() => import("./pages/Inicio"));
 const DesarrolloWeb = lazy(() => import("./pages/DesarrolloWeb"));
