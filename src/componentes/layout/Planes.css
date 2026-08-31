@@ -335,6 +335,7 @@ body.dark .texto-secundario {
 
 /* BOTONES PLAN */
 .btn-plan {
+  pointer-events: none;
   width: 100%;
   justify-content: center;
   margin-top: auto;
@@ -407,3 +408,8 @@ body.dark .planes-nota p {
   height: auto;
   min-height: 100%;
 }
+
+.btn-plan { position: relative; z-index: 50 !important; transform: translateZ(20px); }
+.plan-tarjeta-inner { transform-style: preserve-3d; }
+
+.pc-card-wrapper:hover .btn-plan { background: linear-gradient(135deg, var(--primario-hover) 0%, var(--primario) 100%); box-shadow: 0 8px 25px var(--dark-button-shadow); transform: translateY(-2px) scale(1.02); }

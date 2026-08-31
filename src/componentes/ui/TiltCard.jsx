@@ -25,6 +25,7 @@ const TiltCard = ({
   enableTilt = true,
   enableMobileTilt = false,
   mobileTiltSensitivity = 5,
+  onClick
 }) => {
   const wrapRef = useRef(null);
   const shellRef = useRef(null);
@@ -289,7 +290,15 @@ const TiltCard = ({
   );
 
   return (
-    <div ref={wrapRef} className={`pc-card-wrapper ${className}`.trim()} style={cardStyle}>
+    <div
+      className={`pc-card-wrapper ${className}`}
+      ref={wrapRef}
+      onClick={onClick}
+      style={{
+        ...cardStyle,
+        cursor: onClick ? 'pointer' : 'default'
+      }}
+    >
       {behindGlowEnabled && <div className="pc-behind" />}
       <div ref={shellRef} className="pc-card-shell" style={{ height: '100%' }}>
         <section className="pc-card" style={{ height: '100%', maxHeight: 'none', aspectRatio: 'auto' }}>

@@ -30,7 +30,7 @@ const Planes = ({ currency = 'CLP' }) => {
 
       <div className="planes-grid">
         {/* PLAN 1 */}
-        <TiltCard className="anim-scroll" innerGradient="linear-gradient(145deg, rgba(168, 85, 247, 0.05) 0%, rgba(15,23,42,0.2) 100%)" behindGlowColor="rgba(168, 85, 247, 0.2)">
+        <TiltCard className="anim-scroll" innerGradient="linear-gradient(145deg, rgba(168, 85, 247, 0.05) 0%, rgba(15,23,42,0.2) 100%)" behindGlowColor="rgba(168, 85, 247, 0.2)" onClick={() => window.open(generarLinkWhatsApp(`Hola Carlos, vi tu portafolio y me interesa cotizar el plan de desarrollo web desde ${precios.web[currency]} ${currency}. Me gustaría contarte sobre mi proyecto.`), '_blank')}>
 
           <div className="plan-tarjeta-inner">
           <div className="plan-header">
@@ -82,7 +82,7 @@ const Planes = ({ currency = 'CLP' }) => {
 </TiltCard>
 
         {/* PLAN 2 */}
-        <TiltCard className="anim-scroll" innerGradient="linear-gradient(145deg, rgba(168, 85, 247, 0.15) 0%, rgba(15,23,42,0.4) 100%)" behindGlowColor="rgba(168, 85, 247, 0.4)">
+        <TiltCard className="anim-scroll" innerGradient="linear-gradient(145deg, rgba(168, 85, 247, 0.15) 0%, rgba(15,23,42,0.4) 100%)" behindGlowColor="rgba(168, 85, 247, 0.4)" onClick={() => window.open(generarLinkWhatsApp(`Hola Carlos, vi tu portafolio y me interesa conocer más sobre el plan web mensual desde ${precios.mensual[currency]} ${currency}. ¿Podemos conversar?`), '_blank')}>
 
           <div className="plan-tarjeta-inner destacado">
           <div className="plan-header">
@@ -125,7 +125,7 @@ const Planes = ({ currency = 'CLP' }) => {
 </TiltCard>
 
         {/* PLAN 3 */}
-        <TiltCard className="anim-scroll" innerGradient="linear-gradient(145deg, rgba(168, 85, 247, 0.05) 0%, rgba(15,23,42,0.2) 100%)" behindGlowColor="rgba(168, 85, 247, 0.2)">
+        <TiltCard className="anim-scroll" innerGradient="linear-gradient(145deg, rgba(168, 85, 247, 0.05) 0%, rgba(15,23,42,0.2) 100%)" behindGlowColor="rgba(168, 85, 247, 0.2)" onClick={() => window.open(generarLinkWhatsApp(`Hola Carlos, vi tu portafolio y me interesa cotizar el plan de desarrollo web desde ${precios.web[currency]} ${currency}. Me gustaría contarte sobre mi proyecto.`), '_blank')}>
 
           <div className="plan-tarjeta-inner">
           <div className="plan-header">
