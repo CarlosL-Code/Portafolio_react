@@ -1,4 +1,5 @@
 import "./Hero.css";
+import DepthText from '../ui/DepthText';
 
 const Hero = () => {
   return (
@@ -10,7 +11,24 @@ const Hero = () => {
         </div>
         
         <h1 className="titulo">
-          Creamos <span className="highlight-text">Desarrollo Web</span><br/> y Software a Medida
+          Creamos <span className="highlight-text-wrapper" style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 8px' }}>
+            <DepthText
+              text="Desarrollo Web"
+              layers={34}
+              depth={2.4}
+              faceColor="#ff6b6b"
+              depthColor="#7c3aed"
+              tilt={7.5}
+              pointerTracking
+              smoothing={0.14}
+              perspective={900}
+              autoOrbit
+              orbitSpeed={0.35}
+              fontSize="inherit"
+              fontWeight={800}
+              shadow
+            />
+          </span><br/> y Software a Medida
         </h1>
         
         <p className="subtitulo">
