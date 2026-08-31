@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Hero from '../componentes/layout/Hero';
-import AcercaDe from '../componentes/layout/AcercaDe';
-import ExperienciaProfesional from '../componentes/layout/ExperienciaProfesional';
-import Trabajos from '../componentes/layout/Trabajos';
-import InstagramFeed from '../componentes/layout/InstagramFeed';
-import Testimonios from '../componentes/layout/Testimonios';
-import Planes from '../componentes/layout/Planes';
-import Clientes from '../componentes/layout/Clientes';
-import MensajeImpacto from '../componentes/layout/MensajeImpacto';
-import FAQ from '../componentes/layout/FAQ';
-import Contacto from '../componentes/layout/Contacto';
+
+const AcercaDe = lazy(() => import('../componentes/layout/AcercaDe'));
+const ExperienciaProfesional = lazy(() => import('../componentes/layout/ExperienciaProfesional'));
+const Trabajos = lazy(() => import('../componentes/layout/Trabajos'));
+const InstagramFeed = lazy(() => import('../componentes/layout/InstagramFeed'));
+const Testimonios = lazy(() => import('../componentes/layout/Testimonios'));
+const Planes = lazy(() => import('../componentes/layout/Planes'));
+const Clientes = lazy(() => import('../componentes/layout/Clientes'));
+const MensajeImpacto = lazy(() => import('../componentes/layout/MensajeImpacto'));
+const FAQ = lazy(() => import('../componentes/layout/FAQ'));
+const Contacto = lazy(() => import('../componentes/layout/Contacto'));
 
 const Inicio = ({ currency }) => {
   return (
@@ -23,28 +24,30 @@ const Inicio = ({ currency }) => {
 
       <Hero />
       
-      <div className="contenedor">
-        <AcercaDe />
-      </div>
+      <Suspense fallback={<div style={{ minHeight: '50vh' }}></div>}>
+        <div className="contenedor">
+          <AcercaDe />
+        </div>
 
-      <Clientes />
+        <Clientes />
 
-      <div className="contenedor">
-        <ExperienciaProfesional />
-      </div>
+        <div className="contenedor">
+          <ExperienciaProfesional />
+        </div>
 
-      <InstagramFeed />
+        <InstagramFeed />
 
-      <div className="contenedor">
-        <Trabajos />
-      </div>
+        <div className="contenedor">
+          <Trabajos />
+        </div>
 
-      <Testimonios />
-      <Planes currency={currency} />
-      <MensajeImpacto />
+        <Testimonios />
+        <Planes currency={currency} />
+        <MensajeImpacto />
 
-      <FAQ />
-      <Contacto />
+        <FAQ />
+        <Contacto />
+      </Suspense>
     </>
   );
 };
