@@ -94,7 +94,7 @@
 .pc-inside {
   position: relative;
   background-image: var(--inner-gradient);
-  background-color: var(--shade-1);
+  background-color: transparent;
   transform: none;
   border-radius: inherit;
   width: 100%;
@@ -276,12 +276,11 @@
 }
 
 @media (max-width: 768px) {
-  .pc-card, .pc-shine, .pc-glare, .pc-behind {
+  .pc-card {
     animation: none !important;
-    filter: none !important;
-    background-blend-mode: normal !important;
+    transform: none !important;
   }
-  .pc-behind {
+  .pc-shine, .pc-glare, .pc-behind {
     display: none !important;
   }
 }
