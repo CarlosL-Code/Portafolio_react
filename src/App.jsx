@@ -11,6 +11,7 @@ const SistemasEmpresariales = lazy(() => import("./pages/SistemasEmpresariales")
 const Proyectos = lazy(() => import("./pages/Proyectos"));
 const ContactoPage = lazy(() => import("./pages/Contacto"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const DotField = lazy(() => import("./componentes/ui/DotField"));
 
 import { FaWhatsapp, FaTimes } from "react-icons/fa";
 import useScrollAnimation from "./hooks/useScrollAnimation";
@@ -29,13 +30,15 @@ function App() {
   return (
     <>
       <div style={{ position: 'fixed', inset: 0, zIndex: -1, pointerEvents: 'none' }}>
-        <DotField 
-          gradientFrom="rgba(168, 85, 247, 0.6)" 
-          gradientTo="rgba(168, 85, 247, 0.15)"
-          glowColor="rgba(168, 85, 247, 0.2)"
-          dotRadius={1.5}
-          dotSpacing={22}
-        />
+        <Suspense fallback={null}>
+          <DotField 
+            gradientFrom="rgba(168, 85, 247, 0.6)" 
+            gradientTo="rgba(168, 85, 247, 0.15)"
+            glowColor="rgba(168, 85, 247, 0.2)"
+            dotRadius={1.5}
+            dotSpacing={22}
+          />
+        </Suspense>
       </div>
       
       <Header currency={currency} setCurrency={setCurrency} />
