@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./AcercaDe.css";
 import BlurText from "../ui/BlurText";
+import BorderGlow from "../ui/BorderGlow";
 
 
 const AcercaDe = () => {
@@ -9,7 +10,18 @@ const AcercaDe = () => {
 
   return (
     <section className="acerca-de" id="acerca-de">
-      <div className="acerca-de-card">
+      <BorderGlow
+        className="acerca-de-card"
+        edgeSensitivity={30}
+        glowColor="0 70 54"
+        backgroundColor="transparent"
+        borderRadius={24}
+        glowRadius={40}
+        glowIntensity={1}
+        coneSpread={25}
+        animated={false}
+        colors={['#ff6b6b', '#ff8c42', '#ffa500']}
+      >
         <div className="grid">
           
           {/* Columna imágenes */}
@@ -70,7 +82,7 @@ const AcercaDe = () => {
             </a>
           </div>
         </div>
-      </div>
+      </BorderGlow>
     </section>
   );
 };
