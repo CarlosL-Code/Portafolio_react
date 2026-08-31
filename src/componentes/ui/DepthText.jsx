@@ -137,7 +137,6 @@ const DepthText = ({
     ...style,
     perspective: `${safePerspective}px`,
     perspectiveOrigin: '50% 48%',
-    contain: 'layout paint',
     isolation: 'isolate'
   };
 
