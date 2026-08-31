@@ -9,6 +9,7 @@ import SistemasEmpresariales from "./pages/SistemasEmpresariales";
 import Proyectos from "./pages/Proyectos";
 import ContactoPage from "./pages/Contacto";
 import NotFound from "./pages/NotFound";
+import DotField from "./componentes/ui/DotField";
 
 import { FaWhatsapp, FaTimes } from "react-icons/fa";
 import useScrollAnimation from "./hooks/useScrollAnimation";
@@ -36,6 +37,14 @@ function App() {
 
   return (
     <>
+      <div style={{ position: 'fixed', inset: 0, zIndex: -1, pointerEvents: 'none' }}>
+        <DotField 
+          gradientFrom="rgba(216, 58, 58, 0.6)" 
+          gradientTo="rgba(255, 255, 255, 0.3)"
+          glowColor="rgba(216, 58, 58, 0.2)"
+          dotRadius={1.5}
+        />
+      </div>
       <div className="mouse-glow"></div>
       
       <Header currency={currency} setCurrency={setCurrency} />
