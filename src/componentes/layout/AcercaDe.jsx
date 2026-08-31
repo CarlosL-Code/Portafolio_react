@@ -13,14 +13,14 @@ const AcercaDe = () => {
       <BorderGlow
         className="acerca-de-card"
         edgeSensitivity={30}
-        glowColor="0 70 54"
+        glowColor="40 80 80"
         backgroundColor="transparent"
         borderRadius={24}
         glowRadius={40}
         glowIntensity={1}
         coneSpread={25}
         animated={false}
-        colors={['#ff6b6b', '#ff8c42', '#ffa500']}
+        colors={['#c084fc', '#f472b6', '#38bdf8']}
       >
         <div className="grid">
           
