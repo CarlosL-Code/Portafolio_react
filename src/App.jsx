@@ -39,9 +39,9 @@ function App() {
     <>
       <div style={{ position: 'fixed', inset: 0, zIndex: -1, pointerEvents: 'none' }}>
         <DotField 
-          gradientFrom="rgba(216, 58, 58, 0.6)" 
-          gradientTo="rgba(255, 255, 255, 0.3)"
-          glowColor="rgba(216, 58, 58, 0.2)"
+          gradientFrom="rgba(168, 85, 247, 0.6)" 
+          gradientTo="rgba(168, 85, 247, 0.15)"
+          glowColor="rgba(168, 85, 247, 0.2)"
           dotRadius={1.5}
         />
       </div>
