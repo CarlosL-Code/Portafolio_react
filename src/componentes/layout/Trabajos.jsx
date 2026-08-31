@@ -37,8 +37,8 @@ const Trabajos = () => {
       setTrabajosFiltrados([]);
       if (instagramPosts.length === 0 && !isLoadingInsta) {
         setIsLoadingInsta(true);
-        // Intentar conectar con el backend (VPS o local)
-        fetch('http://localhost:3001/api/instagram')
+        // Intentar conectar con la API Serverless en Vercel
+        fetch('/api/instagram')
           .then(res => {
             if (!res.ok) throw new Error('Network response was not ok');
             return res.json();
