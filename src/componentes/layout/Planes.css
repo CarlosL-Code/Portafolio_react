@@ -82,7 +82,7 @@ body.dark .plan-tarjeta-inner.destacado {
 }
 
 .plan-tarjeta-inner.destacado:hover {
-  transform: scale(1.05) translateY(-5px);
+  /* transform: scale(1.05) translateY(-5px); */
 }
 
 /* HEADER PLAN */
@@ -377,7 +377,7 @@ body.dark .planes-nota p {
   /* Add anything specific to destacado inside here, like border or something */
 }
   .plan-tarjeta-inner.destacado:hover {
-    transform: translateY(-8px);
+    /* transform: translateY(-8px); */
   }
 }
 
