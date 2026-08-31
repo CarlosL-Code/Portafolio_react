@@ -1,6 +1,7 @@
 import "./Trabajos.css";
 import { useState } from "react";
 import trabajos from "../data/trabajos";
+import CircularGallery from "../ui/CircularGallery";
 
 const Trabajos = () => {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
@@ -45,6 +46,18 @@ const Trabajos = () => {
           <p className="subtitulo-premium">
             Cada proyecto representa una solución arquitectónica para necesidades concretas de negocio. Explorar estos casos de estudio revela el enfoque estratégico detrás del código.
           </p>
+        </div>
+
+        <div style={{ height: '500px', position: 'relative', width: '100%', marginBottom: '40px' }} className="anim-scroll">
+          <CircularGallery
+            bend={1}
+            textColor="#ffffff"
+            borderRadius={0.05}
+            scrollEase={0.05}
+            font="bold 30px Orbitron, sans-serif"
+            scrollSpeed={2}
+            items={trabajosFiltrados.map(t => ({ image: t.thumb.url.replace('./assets', '/assets'), text: t.info.nombre }))}
+          />
         </div>
 
         {/* Filtros tipo "Pill" */}
