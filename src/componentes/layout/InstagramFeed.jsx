@@ -29,28 +29,38 @@ const InstagramFeed = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    fetch('https://feeds.behold.so/PRgVp5gmR44u9PcPQA87')
-      .then(res => {
-        if (!res.ok) throw new Error('Network response was not ok');
-        return res.json();
-      })
-      .then(data => {
-        if (data && data.posts && Array.isArray(data.posts)) {
-          const formatted = data.posts.map(post => ({
-            image: post.sizes?.large?.mediaUrl || post.mediaUrl,
-            link: post.permalink,
-            alt: post.prunedCaption ? post.prunedCaption.substring(0, 30) + '...' : 'Instagram Post',
-            caption: post.prunedCaption || 'Visita mi perfil para leer más.'
-          }));
-          setInstagramPosts(formatted);
-        } else {
-          setInstagramPosts(mockInstagram);
-        }
-      })
-      .catch(err => {
-        console.error("Error al obtener Instagram, usando datos simulados:", err);
-        setInstagramPosts(mockInstagram);
-      });
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        fetch('https://feeds.behold.so/PRgVp5gmR44u9PcPQA87')
+          .then(res => {
+            if (!res.ok) throw new Error('Network response was not ok');
+            return res.json();
+          })
+          .then(data => {
+            if (data && data.posts && Array.isArray(data.posts)) {
+              const formatted = data.posts.map(post => ({
+                image: post.sizes?.large?.mediaUrl || post.mediaUrl,
+                link: post.permalink,
+                alt: post.prunedCaption ? post.prunedCaption.substring(0, 30) + '...' : 'Instagram Post',
+                caption: post.prunedCaption || 'Visita mi perfil para leer más.'
+              }));
+              setInstagramPosts(formatted);
+            } else {
+              setInstagramPosts(mockInstagram);
+            }
+          })
+          .catch(err => {
+            console.error("Error al obtener Instagram, usando datos simulados:", err);
+            setInstagramPosts(mockInstagram);
+          });
+        observer.disconnect();
+      }
+    }, { rootMargin: '200px' });
+    
+    const sec = document.getElementById('aprendizaje');
+    if (sec) observer.observe(sec);
+    
+    return () => observer.disconnect();
   }, []);
 
   const galleryItems = instagramPosts.length > 0 ? instagramPosts : mockInstagram;

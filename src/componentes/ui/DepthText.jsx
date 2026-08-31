@@ -34,7 +34,8 @@ const DepthText = ({
   const rootRef = useRef(null);
   const stageRef = useRef(null);
 
-  const safeLayers = clamp(Math.round(Number(layers) || 1), 2, MAX_LAYERS);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+  const safeLayers = isMobile ? 1 : clamp(Math.round(Number(layers) || 1), 2, MAX_LAYERS);
   const safeDepth = clamp(Number(depth) || 0, 0, 12);
   const safeTilt = clamp(Number(tilt) || 0, 0, 12);
   const safeSmoothing = clamp(Number(smoothing) || 0.14, 0.02, 0.35);
@@ -64,6 +65,7 @@ const DepthText = ({
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     const canTrackPointer = pointerTracking && finePointer && !reducedMotion;
+    const shouldAutoOrbit = autoOrbit && !isMobile;
 
     let frameId = 0;
     let activePointer = false;
