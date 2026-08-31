@@ -1,6 +1,7 @@
 import "./Contacto.css";
 import { useState } from "react";
 import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import SpecularButton from '../ui/SpecularButton';
 
 const Contacto = () => {
   const [nombre, setNombre] = useState("");

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import './Header.css';
 import DarkModeSwitch from '../DarkModeSwitch';
+import SpecularButton from '../ui/SpecularButton';
 
 const Header = ({ currency, setCurrency }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -93,14 +94,7 @@ const Header = ({ currency, setCurrency }) => {
 
           {/* Acciones extra en el nav */}
           <div className="header-actions-container">
-            <a
-              href="/carlos-lozano-silva-cv.pdf"
-              className="btn-cv"
-              download
-              onClick={closeMenu}
-            >
-              Descargar CV
-            </a>
+            <SpecularButton href="/carlos-lozano-silva-cv.pdf" target="_blank" size="md" onClick={closeMenu} className="btn-cv">Descargar CV</SpecularButton>
             <div className="currency-dropdown" ref={currencyRef}>
               <button 
                 className="currency-btn" 
