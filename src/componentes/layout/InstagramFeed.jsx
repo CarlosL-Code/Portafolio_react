@@ -100,7 +100,7 @@ const InstagramFeed = () => {
               fontSize={72}
               strokeWidth={1.5}
               strokeColor="var(--primario)"
-              fillColor="var(--texto)"
+              fillColor="currentColor"
               trigger="scroll"
             />
           </div>
