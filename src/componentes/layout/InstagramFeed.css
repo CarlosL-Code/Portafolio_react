@@ -1,0 +1,133 @@
+.aprendizaje-section {
+  padding: 100px 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-body);
+}
+
+.aprendizaje-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.aprendizaje-galeria {
+  position: relative;
+  height: 550px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Hacemos un poco de magia para que el 3D no se corte */
+  perspective: 1200px;
+}
+
+.aprendizaje-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 40px;
+}
+
+.aprendizaje-info .seo-title {
+  font-size: 3rem;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.aprendizaje-info .subtitulo-premium {
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  color: var(--primario);
+}
+
+.aprendizaje-dinamico {
+  background: var(--shade-2);
+  border: 1px solid var(--shade-3);
+  border-radius: 20px;
+  padding: 30px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.aprendizaje-texto {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--shade-8);
+  white-space: pre-wrap; /* Respeta los saltos de línea de Instagram */
+  display: -webkit-box;
+  -webkit-line-clamp: 7; /* Limita a 7 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.btn-aprendizaje {
+  margin-top: 20px;
+  align-self: flex-start;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+}
+
+.aprendizaje-nota {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: var(--shade-6);
+  font-style: italic;
+}
+
+body.dark .aprendizaje-dinamico {
+  background: #111827;
+  border-color: #374151;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+body.dark .aprendizaje-texto {
+  color: #D1D5DB;
+}
+
+/* Responsividad */
+@media (max-width: 992px) {
+  .aprendizaje-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .aprendizaje-info {
+    padding-right: 0;
+    text-align: center;
+  }
+  
+  .aprendizaje-info .seo-title,
+  .aprendizaje-info .subtitulo-premium {
+    text-align: center;
+  }
+  
+  .btn-aprendizaje {
+    align-self: center;
+  }
+  
+  .aprendizaje-galeria {
+    height: 450px;
+    order: -1; /* Pone la galería arriba en móviles */
+  }
+}
+
+@media (max-width: 768px) {
+  .aprendizaje-galeria {
+    height: 400px;
+  }
+  
+  .aprendizaje-info .seo-title {
+    font-size: 2.2rem;
+  }
+}

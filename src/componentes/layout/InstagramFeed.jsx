@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from "react";
 import DepthCarousel from "../ui/DepthCarousel";
+import "./InstagramFeed.css";
 
 const mockInstagram = [
   {
     image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop',
     link: 'https://www.instagram.com/carloslozano.dev/',
-    alt: 'Aprende React'
+    alt: 'Aprende React',
+    caption: 'Descubre los mejores tips para dominar React y llevar tus habilidades al siguiente nivel.'
   },
   {
     image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800&auto=format&fit=crop',
     link: 'https://www.instagram.com/carloslozano.dev/',
-    alt: 'Tips de Desarrollo'
+    alt: 'Tips de Desarrollo',
+    caption: 'Estructura tus proyectos como un profesional. Evita estos errores comunes al empezar.'
   },
   {
     image: 'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?q=80&w=800&auto=format&fit=crop',
     link: 'https://www.instagram.com/carloslozano.dev/',
-    alt: 'Servicios Web'
+    alt: 'Servicios Web',
+    caption: 'Una página web rápida y optimizada puede duplicar tus ventas en un mes. Contáctame.'
   }
 ];
 
 const InstagramFeed = () => {
   const [instagramPosts, setInstagramPosts] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     fetch('https://feeds.behold.so/PRgVp5gmR44u9PcPQA87')
@@ -33,7 +38,8 @@ const InstagramFeed = () => {
           const formatted = data.posts.map(post => ({
             image: post.sizes?.large?.mediaUrl || post.mediaUrl,
             link: post.permalink,
-            alt: post.prunedCaption ? post.prunedCaption.substring(0, 30) + '...' : 'Instagram Post'
+            alt: post.prunedCaption ? post.prunedCaption.substring(0, 30) + '...' : 'Instagram Post',
+            caption: post.prunedCaption || 'Visita mi perfil para leer más.'
           }));
           setInstagramPosts(formatted);
         } else {
@@ -47,42 +53,67 @@ const InstagramFeed = () => {
   }, []);
 
   const galleryItems = instagramPosts.length > 0 ? instagramPosts : mockInstagram;
+  const activePost = galleryItems[activeIndex] || galleryItems[0];
 
   return (
-    <section className="instagram-section anim-scroll" style={{ padding: '80px 0', textAlign: 'center', overflow: 'hidden' }}>
-      <h2 className="seo-title" style={{ fontSize: '3rem', marginBottom: '10px' }}>Mi Instagram</h2>
-      <p className="subtitulo-premium" style={{ marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px auto' }}>
-        Sígueme para contenido educativo, tips de desarrollo y novedades de servicios.
-      </p>
-      
-      <div style={{ height: '500px', position: 'relative', width: '100%', maxWidth: '100vw' }}>
-        <DepthCarousel
-          items={galleryItems}
-          depth={220}
-          spread={90}
-          tilt={22}
-          tiltDirection="right"
-          perspective={1400}
-          visibleCards={4}
-          falloff={0.2}
-          blur={6}
-          autoplay={false}
-          loop
-          cardWidth={300}
-          cardHeight={380}
-          radius={18}
-          tint="#05060a"
-          duration={700}
-          ease="power3.out"
-          autoplayDelay={3200}
-          showControls
-          showIndicators
-          onItemClick={(item) => {
-            if (item && item.link) {
-              window.open(item.link, '_blank', 'noopener,noreferrer');
-            }
-          }}
-        />
+    <section className="aprendizaje-section anim-scroll" id="aprendizaje">
+      <div className="aprendizaje-container">
+        
+        {/* Lado Izquierdo: Galería */}
+        <div className="aprendizaje-galeria">
+          <DepthCarousel
+            items={galleryItems}
+            depth={180}
+            spread={70}
+            tilt={20}
+            tiltDirection="left"
+            perspective={1200}
+            visibleCards={4}
+            falloff={0.15}
+            blur={4}
+            autoplay={false}
+            loop
+            cardWidth={280}
+            cardHeight={360}
+            radius={18}
+            tint="#05060a"
+            duration={700}
+            ease="power3.out"
+            autoplayDelay={3200}
+            showControls
+            showIndicators={false}
+            onChange={(idx) => setActiveIndex(idx)}
+            onItemClick={(item) => {
+              if (item && item.link) {
+                window.open(item.link, '_blank', 'noopener,noreferrer');
+              }
+            }}
+          />
+        </div>
+
+        {/* Lado Derecho: Información Dinámica */}
+        <div className="aprendizaje-info">
+          <h2 className="seo-title">Aprendizaje Constante</h2>
+          <h3 className="subtitulo-premium">Valor que transforma tu negocio</h3>
+          
+          <div className="aprendizaje-dinamico">
+            <p className="aprendizaje-texto">
+              {activePost?.caption}
+            </p>
+            <button 
+              className="btn-primario btn-aprendizaje"
+              onClick={() => window.open(activePost?.link, '_blank', 'noopener,noreferrer')}
+            >
+              Leer publicación completa &rarr;
+            </button>
+          </div>
+          
+          <p className="aprendizaje-nota">
+            * Desliza el carrusel para descubrir más contenido. <br/>
+            Si estás en PC, puedes hacer scroll libremente en esta zona derecha.
+          </p>
+        </div>
+
       </div>
     </section>
   );
