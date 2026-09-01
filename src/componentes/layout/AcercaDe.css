@@ -41,6 +41,8 @@ body.dark .acerca-de-card {
     padding: 6px;
     border-radius: 10px;
     border: 1px solid var(--shade-2);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
 }
 
 .acerca-de .grid .col-1 .fotos .foto:nth-child(1) {

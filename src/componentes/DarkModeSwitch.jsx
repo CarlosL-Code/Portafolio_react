@@ -23,7 +23,14 @@ const DarkModeSwitch = () => {
   return (
     <>
       <label className="dark-mode">
-        <input type="checkbox" name="dark-mode" id="dark-mode" onChange={toggleDarkMode} />
+        <input
+          type="checkbox"
+          name="dark-mode"
+          id="dark-mode"
+          checked={darkMode}
+          onChange={toggleDarkMode}
+          aria-label={darkMode ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+        />
         <span className={`icono sol ${!darkMode ? 'active': ''}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -15,6 +15,16 @@
     overflow: hidden;
 }
 
+/* background-attachment: fixed obliga a repintar el fondo en cada frame de
+   scroll en Android/Chrome (Safari directamente lo ignora), un causante
+   clásico de jank en móvil sin aportar el efecto parallax que sí se ve en
+   desktop. Se desactiva solo ahí. */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+    }
+}
+
 .hero::after {
     content: '';
     position: absolute;

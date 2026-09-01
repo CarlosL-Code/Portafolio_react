@@ -38,11 +38,18 @@
 }
 
 .faq-pregunta {
+  width: 100%;
   padding: 20px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  background: none;
+  border: none;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
 }
 
 .faq-pregunta h3 {

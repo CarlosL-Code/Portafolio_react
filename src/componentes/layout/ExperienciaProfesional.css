@@ -21,7 +21,6 @@
   max-width: 520px;
   margin: 0 auto;
   font-size: 16px;
-  color: var(--shade-5);
   line-height: 1.7;
 }
 
@@ -100,7 +99,7 @@
 
 .experiencia-tipo {
   font-size: 12px;
-  color: var(--shade-5);
+  color: var(--shade-6);
   border: 1px solid var(--shade-3);
   padding: 4px 10px;
   border-radius: 999px;

@@ -52,20 +52,26 @@ const FAQ = () => {
 
         <div className="faq-lista anim-scroll">
           {faqs.map((faq, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`faq-item ${activeIndex === index ? "activo" : ""}`}
-              onClick={() => toggleFAQ(index)}
             >
-              <div className="faq-pregunta">
+              <button
+                type="button"
+                className="faq-pregunta"
+                onClick={() => toggleFAQ(index)}
+                aria-expanded={activeIndex === index}
+                aria-controls={`faq-respuesta-${index}`}
+              >
                 <h3>{faq.pregunta}</h3>
-                <span className="faq-icono">
+                <span className="faq-icono" aria-hidden="true">
                   <FaChevronDown />
                 </span>
-              </div>
-              <div 
-                className="faq-respuesta" 
-                style={{ 
+              </button>
+              <div
+                id={`faq-respuesta-${index}`}
+                className="faq-respuesta"
+                style={{
                   maxHeight: activeIndex === index ? "200px" : "0",
                   opacity: activeIndex === index ? "1" : "0"
                 }}

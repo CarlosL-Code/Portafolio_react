@@ -75,10 +75,15 @@
   ]
   </script>
 
+  <!-- La imagen del Hero (fondo, LCP) se descubre tarde si se deja solo en
+       el CSS: el navegador debe parsear el CSS antes de pedirla. Precargarla
+       la pide en paralelo con el resto de recursos críticos. -->
+  <link rel="preload" as="image" href="/assets/header3_enhanced.jpg" fetchpriority="high" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:wght@700&display=swap"
     rel="stylesheet" />
 </head>
 

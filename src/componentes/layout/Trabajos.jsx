@@ -61,7 +61,7 @@ const Trabajos = () => {
             Desarrollo Web
           </label>
           <label htmlFor="desarrollo-mobile" className={categoriaSeleccionada === "desarrollo-mobile" ? "activo" : ""}>
-            <input type="radio" name="categoria" id="desarrollo-mobile" onChange={handleChange} checked={categoriaSeleccionada === "desarrollo-mobile"} />
+            <input type="radio" name="filtro" id="desarrollo-mobile" onChange={handleChange} checked={categoriaSeleccionada === "desarrollo-mobile"} />
             Mobile Apps
           </label>
         </div>

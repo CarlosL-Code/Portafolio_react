@@ -397,6 +397,10 @@ body.dark .currency-option-code {
 
 .currency-option-name {
     font-size: 11px;
+    color: var(--shade-6);
+}
+
+body.dark .currency-option-name {
     color: var(--shade-5);
 }
 

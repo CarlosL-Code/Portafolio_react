@@ -109,6 +109,7 @@ const Contacto = () => {
                 type="text"
                 name="nombre"
                 id="nombre"
+                autoComplete="name"
                 placeholder="Ej. John Doe"
                 value={nombre}
                 onChange={(e) => handleInput(e, "nombre")}
@@ -121,6 +122,7 @@ const Contacto = () => {
                 type="email"
                 name="correo"
                 id="correo"
+                autoComplete="email"
                 placeholder="correo@ejemplo.com"
                 value={correo}
                 onChange={(e) => handleInput(e, "correo")}
@@ -173,7 +175,7 @@ const Contacto = () => {
           </div>
 
           {error && (
-            <div className="grupo-formulario error">
+            <div className="grupo-formulario error" role="alert">
               <p>{error}</p>
             </div>
           )}

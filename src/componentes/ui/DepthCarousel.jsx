@@ -385,7 +385,7 @@ const DepthCarousel = ({
             aria-hidden={active !== i}
             onClick={() => onCardClick(i)}
           >
-            <img className="depth-carousel__img" src={item.image} alt={item.alt || ''} draggable={false} />
+            <img className="depth-carousel__img" src={item.image} alt={item.alt || ''} draggable={false} loading="lazy" decoding="async" />
             <span
               className="depth-carousel__tint"
               ref={el => (overlayRefs.current[i] = el)}
