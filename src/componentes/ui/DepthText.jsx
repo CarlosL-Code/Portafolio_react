@@ -68,6 +68,7 @@ const DepthText = ({
     const shouldAutoOrbit = autoOrbit && !isMobile;
 
     let frameId = 0;
+    let isVisible = true;
     let activePointer = false;
     let startTime = performance.now();
     const current = { ...baseRotation };
@@ -77,7 +78,7 @@ const DepthText = ({
       stage.style.transform = getTransform(current.x, current.y);
     };
 
-    if (reducedMotion) {
+    if (reducedMotion || (!canTrackPointer && !shouldAutoOrbit)) {
       stage.style.transform = getTransform(baseRotation.x, baseRotation.y);
       return undefined;
     }
@@ -107,6 +108,11 @@ const DepthText = ({
     }
 
     const tick = now => {
+      if (!isVisible) {
+        frameId = 0;
+        return;
+      }
+
       if ((!canTrackPointer || !activePointer) && autoOrbit) {
         const elapsed = (now - startTime) / 1000;
         const orbit = elapsed * safeOrbitSpeed * Math.PI * 2;
@@ -121,6 +127,18 @@ const DepthText = ({
       frameId = requestAnimationFrame(tick);
     };
 
+    // Pausa la animación cuando el texto sale del viewport para no gastar CPU/GPU en segundo plano.
+    const visibilityObserver = new IntersectionObserver(
+      entries => {
+        isVisible = entries[0]?.isIntersecting ?? true;
+        if (isVisible && !frameId) {
+          frameId = requestAnimationFrame(tick);
+        }
+      },
+      { threshold: 0 }
+    );
+    visibilityObserver.observe(root);
+
     applyTransform();
     frameId = requestAnimationFrame(tick);
 
@@ -130,6 +148,7 @@ const DepthText = ({
         window.removeEventListener('pointerleave', handlePointerLeave);
         window.removeEventListener('blur', handlePointerLeave);
       }
+      visibilityObserver.disconnect();
       cancelAnimationFrame(frameId);
       startTime = 0;
     };

@@ -111,14 +111,7 @@ const DotField = memo(({
     let frameCount = 0;
 
     function tick() {
-      if (window.innerWidth <= 768) {
-        // setTimeout(tick, 1000); // Check again eventually?
-        // Or just stop loop if resize will handle it. Wait, if we return, the loop breaks.
-        // We should just check screen width.
-        rafRef.current = requestAnimationFrame(tick);
-        return;
-      }
-      if (window.innerWidth <= 768) {
+      if (document.hidden || window.innerWidth <= 768) {
         rafRef.current = requestAnimationFrame(tick);
         return;
       }
