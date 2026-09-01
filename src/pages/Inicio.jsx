@@ -23,29 +23,57 @@ const Inicio = ({ currency }) => {
       </Helmet>
 
       <Hero />
-      
-      <Suspense fallback={<div style={{ minHeight: '50vh' }}></div>}>
+
+      {/*
+        Cada sección tiene su propio Suspense a propósito: si compartieran uno
+        solo, React descubriría (y por lo tanto empezaría a descargar) cada
+        chunk lazy recién cuando el anterior termina de resolver, convirtiendo
+        10 descargas paralelas en una fila secuencial. Con límites separados,
+        todas se piden a la vez y cada sección aparece apenas la suya llega.
+      */}
+      <Suspense fallback={<div style={{ minHeight: '30vh' }}></div>}>
         <div className="contenedor">
           <AcercaDe />
         </div>
+      </Suspense>
 
+      <Suspense fallback={<div style={{ minHeight: '20vh' }}></div>}>
         <Clientes />
+      </Suspense>
 
+      <Suspense fallback={<div style={{ minHeight: '30vh' }}></div>}>
         <div className="contenedor">
           <ExperienciaProfesional />
         </div>
+      </Suspense>
 
+      <Suspense fallback={<div style={{ minHeight: '30vh' }}></div>}>
         <InstagramFeed />
+      </Suspense>
 
+      <Suspense fallback={<div style={{ minHeight: '30vh' }}></div>}>
         <div className="contenedor">
           <Trabajos />
         </div>
+      </Suspense>
 
+      <Suspense fallback={<div style={{ minHeight: '20vh' }}></div>}>
         <Testimonios />
-        <Planes currency={currency} />
-        <MensajeImpacto />
+      </Suspense>
 
+      <Suspense fallback={<div style={{ minHeight: '30vh' }}></div>}>
+        <Planes currency={currency} />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <MensajeImpacto />
+      </Suspense>
+
+      <Suspense fallback={<div style={{ minHeight: '20vh' }}></div>}>
         <FAQ />
+      </Suspense>
+
+      <Suspense fallback={<div style={{ minHeight: '20vh' }}></div>}>
         <Contacto />
       </Suspense>
     </>
