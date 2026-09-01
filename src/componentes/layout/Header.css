@@ -17,10 +17,10 @@
     
     /* Glassmorphism Refinado */
     background-color: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     border-radius: 100px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.8);
     
     /* Transición suave para expandirse/contraerse */
@@ -120,8 +120,7 @@
     margin: 0 auto; /* Centered in available space without overlapping */
 }
 
-.header .nav-links > a,
-.nav-link-dropdown {
+.header .nav-links > a {
     font-size: 13px; /* Más pequeño para verse premium */
     font-weight: 600;
     color: var(--shade-7);
@@ -132,101 +131,39 @@
     display: flex;
     align-items: center;
     white-space: nowrap;
+    position: relative;
 }
 
-  body.dark .nav-links > a,
-  body.dark .nav-link-dropdown {
+  body.dark .nav-links > a {
     color: var(--dark-subtitle);
   }
 
-  .nav-links > a:hover,
-  .nav-link-dropdown:hover {
-    color: var(--primario);
-    text-decoration: none;
-  }
-
-  /* DROPDOWN ESTILOS */
-  .nav-item-dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-icon {
-    font-size: 10px;
-    margin-left: 4px;
-    transition: transform 0.3s ease;
-  }
-
-  .nav-item-dropdown:hover .dropdown-icon {
-    transform: rotate(180deg);
-  }
-
-  .dropdown-menu {
+  .nav-links > a::after {
+    content: '';
     position: absolute;
-    top: 150%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ffffff;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    border-radius: 16px;
-    padding: 12px;
-    min-width: 220px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    z-index: 100;
-    border: 1px solid var(--shade-2);
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1.5px;
+    background: var(--primario);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  body.dark .dropdown-menu {
-    background-color: #1E293B;
-    border-color: #334155;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-  }
-
-  .nav-item-dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    top: 100%;
-  }
-
-  .dropdown-menu a {
-    display: block;
-    padding: 12px 16px;
-    color: var(--shade-7);
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 10px;
-    transition: all 0.2s;
-  }
-
-  body.dark .dropdown-menu a {
-    color: #E4E4E7;
-  }
-
-  .dropdown-menu a:hover {
-    background-color: var(--shade-1);
+  .nav-links > a:hover {
     color: var(--primario);
     text-decoration: none;
-    transform: translateX(4px);
   }
 
-  body.dark .dropdown-menu a:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #ffffff;
+  .nav-links > a:hover::after {
+    width: 100%;
   }
 
   /* ACCIONES EXTRAS Y MONEDA */
   .header-actions-container {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
   }
-
-
 
 /* El botón de CV no necesita el subrayado */
 .header .navbar .btn-cv::after {
@@ -267,6 +204,13 @@
 .dark-mode-container {
     display: flex;
     align-items: center;
+    margin-left: 4px;
+    padding-left: 14px;
+    border-left: 1px solid var(--shade-3);
+}
+
+body.dark .dark-mode-container {
+    border-left-color: #334155;
 }
 
 /* =========================
@@ -280,10 +224,10 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    background: var(--shade-2);
-    border: 1px solid var(--shade-3);
-    border-radius: 10px;
-    padding: 6px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 100px;
+    padding: 6px 10px;
     cursor: pointer;
     font-family: 'Inter', sans-serif;
     font-size: 13px;
@@ -293,13 +237,16 @@
 }
 
 body.dark .currency-btn {
-    background: #1E293B;
-    border-color: #334155;
     color: var(--dark-text);
 }
 
 .currency-btn:hover {
-    border-color: var(--primario);
+    background: var(--shade-2);
+    color: var(--primario);
+}
+
+body.dark .currency-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .currency-flag {
@@ -573,63 +520,6 @@ body.dark .currency-option-code {
         color: var(--primario) !important;
     }
 
-    /* Dropdown dentro del offcanvas */
-    .nav-item-dropdown {
-        width: 100%;
-        text-align: left;
-        opacity: 1;
-        transform: none;
-        border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
-
-    .dark .nav-item-dropdown {
-        border-bottom-color: rgba(255,255,255,0.06);
-    }
-
-    .nav-link-dropdown {
-        font-size: 16px;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        padding: 14px 0;
-        display: flex;
-        color: var(--shade-9) !important;
-        text-transform: none;
-        cursor: default;
-    }
-
-    .dark .nav-link-dropdown {
-        color: #f0f0f0 !important;
-    }
-
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        background: transparent;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        border: none;
-        padding: 0 0 12px 16px;
-        margin-top: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .dropdown-menu a {
-        padding: 0;
-        font-size: 14px !important;
-        color: var(--shade-6) !important;
-        transform: none !important;
-        opacity: 1 !important;
-        font-weight: 500;
-        text-transform: none;
-    }
-
-    .dark .dropdown-menu a {
-        color: rgba(255,255,255,0.6) !important;
-    }
-
     /* Acciones (CV, Moneda, Dark mode) */
     .header-actions-container {
         display: flex;
@@ -644,6 +534,20 @@ body.dark .currency-option-code {
 
     .dark .header-actions-container {
         border-top-color: rgba(255,255,255,0.06);
+    }
+
+    /* En móvil las acciones se apilan, así que el divisor va arriba, no al lado */
+    .dark-mode-container {
+        margin-left: 0;
+        padding-left: 0;
+        padding-top: 16px;
+        border-left: none;
+        border-top: 1px solid var(--shade-3);
+        width: 100%;
+    }
+
+    .dark .dark-mode-container {
+        border-top-color: #334155;
     }
 
     .dark-mode-container {
