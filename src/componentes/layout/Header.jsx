@@ -4,12 +4,14 @@ import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import './Header.css';
 import DarkModeSwitch from '../DarkModeSwitch';
 import SpecularButton from '../ui/SpecularButton';
+import useOverHero from '../../hooks/useOverHero';
 
 const Header = ({ currency, setCurrency }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isCurrencyOpen, setIsCurrencyOpen] = useState(false);
   const currencyRef = useRef(null);
+  const overHero = useOverHero();
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -44,7 +46,7 @@ const Header = ({ currency, setCurrency }) => {
 
   return (
     <>
-      <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+      <header className={`header ${scrolled ? 'scrolled' : ''} ${overHero ? 'on-dark' : ''}`}>
         <div className="header-top">
           <Link to="/" className="logo" onClick={() => window.scrollTo(0,0)} style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', cursor: 'pointer' }}>
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +59,7 @@ const Header = ({ currency, setCurrency }) => {
               </defs>
               <text x="16" y="21" fontFamily="Inter, sans-serif" fontWeight="800" fontSize="16" fill="white" textAnchor="middle" letterSpacing="-0.5">CL</text>
             </svg>
-            <h2 className="titulo" style={{ color: 'inherit' }}>Carlos Lozano</h2>
+            <h2 className="titulo">Carlos Lozano</h2>
           </Link>
           
           {/* Botón Hamburguesa solo visible en móvil */}

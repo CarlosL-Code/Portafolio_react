@@ -54,6 +54,61 @@
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
 }
 
+/* =========================
+   HEADER SOBRE EL HERO
+   El Hero tiene una foto de fondo siempre oscura, sin importar el tema
+   claro/oscuro elegido. Mientras el header esté superpuesto a esa zona,
+   se fuerza el mismo estilo oscuro para no chocar visualmente con ella.
+========================= */
+.header.on-dark {
+    background-color: rgba(11, 17, 33, 0.6);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.header.on-dark.scrolled {
+    background-color: rgba(11, 17, 33, 0.95);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
+}
+
+.header.on-dark .logo .titulo {
+    color: #fff;
+}
+
+.header.on-dark .menu-toggle {
+    color: #fff;
+}
+
+.header.on-dark .nav-links > a {
+    color: var(--dark-subtitle);
+}
+
+.header.on-dark .btn-cv {
+    background: var(--primario);
+    color: #fff;
+}
+
+.header.on-dark .btn-cv:hover {
+    background: #ff4747;
+}
+
+.header.on-dark .currency-btn {
+    color: var(--dark-text);
+}
+
+.header.on-dark .currency-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.header.on-dark .dark-mode-container {
+    border-left-color: #334155;
+}
+
+.header.on-dark .dark-mode {
+    background: #1E293B;
+    border-color: #334155;
+}
+
 .header-top {
     display: flex;
     justify-content: space-between;
@@ -386,6 +441,10 @@ body.dark .currency-option-code {
     }
 
     .dark .header {
+        background-color: rgba(11, 17, 33, 0.97) !important;
+    }
+
+    .header.on-dark {
         background-color: rgba(11, 17, 33, 0.97) !important;
     }
 
