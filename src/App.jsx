@@ -14,9 +14,11 @@ const DotField = lazy(() => import("./componentes/ui/DotField"));
 
 import { FaWhatsapp, FaTimes } from "react-icons/fa";
 import useScrollAnimation from "./hooks/useScrollAnimation";
+import useHashScroll from "./hooks/useHashScroll";
 
 function App() {
   useScrollAnimation();
+  useHashScroll();
   const [currency, setCurrency] = useState("CLP");
   const [showWsChat, setShowWsChat] = useState(false);
   const [wsMessage, setWsMessage] = useState("");

@@ -80,14 +80,7 @@ const Header = ({ currency, setCurrency }) => {
 
           <div className="nav-links">
             <Link to="/" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Inicio</Link>
-            <div className="nav-item-dropdown">
-              <span className="nav-link-dropdown">Servicios <FaChevronDown className="dropdown-icon" /></span>
-              <div className="dropdown-menu">
-                <Link to="/desarrollo-web" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Desarrollo Web</Link>
-                <Link to="/software-a-medida" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Software a Medida</Link>
-                <Link to="/sistemas-empresariales" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Sistemas Empresariales</Link>
-              </div>
-            </div>
+            <Link to="/#planes" onClick={closeMenu}>Servicios</Link>
             <Link to="/proyectos" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Proyectos</Link>
             <Link to="/contacto" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Contacto</Link>
           </div>
