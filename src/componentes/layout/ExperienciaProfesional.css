@@ -199,20 +199,9 @@
   color: #fff;
 }
 
-/* ANIMACIONES */
-.anim-scroll {
-  opacity: 0;
-  transform: translateY(12px) scale(0.985);
-  transition:
-    opacity 1.2s ease-out,
-    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
-}
-
-.anim-scroll.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
+/* La animación de aparición (.anim-scroll) vive en index.css como
+   definición única y global; no se duplica aquí para no pisar su
+   resguardo de accesibilidad en móvil. */
 
 /* =========================================
    EFECTO CROSSFADE (CARRUSEL)

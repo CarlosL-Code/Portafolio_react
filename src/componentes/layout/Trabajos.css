@@ -278,19 +278,9 @@ body.dark .btn-load-more:hover {
   color: #ffffff;
 }
 
-/* ===========================
-   ANIMACIONES SCROLL
-=========================== */
-.anim-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.anim-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* La animación de aparición (.anim-scroll) vive en index.css como
+   definición única y global; no se duplica aquí para no pisar su
+   resguardo de accesibilidad en móvil. */
 
 /* ===========================
    RESPONSIVE

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import "./ExperienciaProfesional.css";
 
@@ -53,28 +53,44 @@ const ExperienciaProfesional = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    // Si el usuario tiene el mouse o dedo encima, no creamos el intervalo
-    if (isPaused) return;
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.15 }
+    );
+    observer.observe(el);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    // No avanzamos si el usuario tiene el mouse/dedo encima o si la sección
+    // no está visible (evita que siga "saltando" mientras está fuera de pantalla).
+    if (isPaused || !isVisible) return;
 
     const timer = setInterval(() => {
       setIsFading(true);
-      
+
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % experiencias.length);
         setIsFading(false);
-      }, 500); 
-      
-    }, 7000); 
+      }, 500);
+
+    }, 7000);
 
     return () => clearInterval(timer);
-  }, [isPaused]); // El efecto depende de isPaused
+  }, [isPaused, isVisible]);
 
 
 
   return (
-    <section className="experiencia-profesional seccion-alt" id="experiencia">
+    <section className="experiencia-profesional seccion-alt" id="experiencia" ref={sectionRef}>
       <div className="encabezado anim-scroll">
         <h2 className="titulo">Experiencia Profesional</h2>
         <p className="subtitulo">
