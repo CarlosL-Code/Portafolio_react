@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./AcercaDe.css";
-import BlurText from "../ui/BlurText";
+
 import BorderGlow from "../ui/BorderGlow";
 
 
@@ -26,14 +26,7 @@ const AcercaDe = () => {
           <div className="col-2">
             <h4 className="pre-titulo anim-scroll anim-right">Acerca de mi</h4>
 
-            <BlurText
-              text="Transformando ideas en arquitecturas escalables y rentables."
-              delay={150}
-              animateBy="words"
-              direction="top"
-              className="titulo blur-titulo"
-              threshold={0.5}
-            />
+            <h2 className="titulo blur-titulo anim-scroll anim-right" style={{ fontSize: "2.5rem", fontWeight: 800, marginBottom: "20px" }}><span>Transformando ideas en arquitecturas escalables y rentables.</span></h2>
 
             <div className={`resumen-container anim-scroll anim-right ${isExpanded ? "expanded" : ""}`}>
               <p className="resumen">
