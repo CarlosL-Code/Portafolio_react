@@ -35,7 +35,7 @@
 
 /* Info Column */
 .contacto-info {
-  background: linear-gradient(135deg, #1E293B, #0F172A);
+  background: var(--shade-9);
   color: #fff;
   padding: 40px;
   display: flex;
@@ -44,7 +44,7 @@
 }
 
 .dark .contacto-info {
-  background: linear-gradient(135deg, #0F172A, #0B1121);
+  background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px);
 }
 
 .info-header h4 {
