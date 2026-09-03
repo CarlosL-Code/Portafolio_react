@@ -570,146 +570,92 @@ body.dark .mouse-glow {
     }
 }
 
-/* GHOST BUTTON OVERRIDE */
-.boton, .btn-enviar {
-    position: relative !important;
-    overflow: hidden !important;
-    background: transparent !important;
+/* ======================================
+   GHOST BUTTONS - Definitive Clean Version
+   Aplica a: .boton, .btn-enviar, .btn-proyecto, .btn-plan
+   NO aplica a: .btn-leer-mas (es un botón de texto simple)
+====================================== */
+.boton, .btn-enviar, .btn-proyecto, .btn-plan {
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    color: var(--primario);
+    border: 2px solid var(--primario);
+    cursor: pointer;
+    border-radius: 14px;
+    font-weight: 700;
+    padding: 13px 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    z-index: 1;
+    box-shadow: none;
+}
+.boton::before, .btn-enviar::before, .btn-proyecto::before, .btn-plan::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--primario);
+    transform: translateX(-101%);
+    transition: transform 0.3s ease-out;
+    z-index: -1;
+}
+.boton:hover, .btn-enviar:hover, .btn-proyecto:hover, .btn-plan:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.boton:hover::before, .btn-enviar:hover::before, .btn-proyecto:hover::before, .btn-plan:hover::before {
+    transform: translateX(0);
+}
+
+/* Dark mode: bordes y texto en cyan brillante */
+body.dark .boton, body.dark .btn-enviar, body.dark .btn-proyecto, body.dark .btn-plan {
+    color: #38BDF8;
+    border-color: #38BDF8;
+}
+body.dark .boton::before, body.dark .btn-enviar::before, body.dark .btn-proyecto::before, body.dark .btn-plan::before {
+    background: #38BDF8;
+}
+body.dark .boton:hover, body.dark .btn-enviar:hover, body.dark .btn-proyecto:hover, body.dark .btn-plan:hover {
+    color: #0B1121;
+}
+
+/* ======================================
+   BTN-LEER-MAS - Botón de texto simple, nunca ghost
+====================================== */
+.btn-leer-mas {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
     color: var(--primario) !important;
-    border: 2px solid var(--primario) !important;
     cursor: pointer !important;
-    border-radius: 16px !important;
-    font-weight: 800 !important;
-    padding: 14px 28px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 10px !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    transition: all 0.3s ease !important;
-    text-decoration: none !important;
-    z-index: 1 !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    text-decoration: underline !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
     box-shadow: none !important;
+    position: static !important;
+    overflow: visible !important;
+    display: inline !important;
+    opacity: 1 !important;
+    transform: none !important;
 }
-.boton::before, .btn-enviar::before {
-    content: '' !important;
-    position: absolute !important;
-    inset: 0 !important;
-    background: var(--primario) !important;
-    transform: translateX(-101%) !important;
-    transition: transform 0.3s ease-out !important;
-    z-index: -1 !important;
+.btn-leer-mas::before {
+    display: none !important;
 }
-.boton:hover, .btn-enviar:hover {
-    color: #fff !important;
-    text-decoration: none !important;
-}
-.boton:hover::before, .btn-enviar:hover::before {
-    transform: translateX(0) !important;
-}
-body.dark .boton, body.dark .btn-enviar {
-    color: var(--primario) !important;
-}
-body.dark .boton:hover, body.dark .btn-enviar:hover {
-    color: #fff !important;
-}
-
-/* DARK MODE CONTRAST FIX */
-body.dark .boton, body.dark .btn-enviar {
+body.dark .btn-leer-mas {
     color: #38BDF8 !important;
-    border-color: #38BDF8 !important;
 }
-body.dark .boton::before, body.dark .btn-enviar::before {
-    background: #38BDF8 !important;
-}
-body.dark .boton:hover, body.dark .btn-enviar:hover {
-    color: #0B1121 !important; 
-}
-
-/* ADDITIONAL GHOST BUTTONS FIX FOR DARK MODE */
-body.dark .boton, 
-body.dark .btn-enviar, 
-body.dark .btn-proyecto, 
-body.dark .btn-plan, 
-body.dark .NO-USAR-LEER-MAS, 
-body.dark .btn-primario, 
-body.dark .btn-secundario {
-    color: #38BDF8 !important;
-    border-color: #38BDF8 !important;
-}
-
-body.dark .boton::before, 
-body.dark .btn-enviar::before,
-body.dark .btn-proyecto::before,
-body.dark .btn-plan::before,
-body.dark .NO-USAR-LEER-MAS::before,
-body.dark .btn-primario::before,
-body.dark .btn-secundario::before {
-    background: #38BDF8 !important;
-}
-
-body.dark .boton:hover, 
-body.dark .btn-enviar:hover,
-body.dark .btn-proyecto:hover,
-body.dark .btn-plan:hover,
-body.dark .NO-USAR-LEER-MAS:hover,
-body.dark .btn-primario:hover,
-body.dark .btn-secundario:hover {
-    color: #0B1121 !important; 
-}
-
-/* MAKE ALL THESE CLASSES USE THE GHOST BUTTON STYLE FULLY */
-.boton, 
-.btn-enviar, 
-.btn-proyecto, 
-.btn-plan, 
-.NO-USAR-LEER-MAS {
-    position: relative !important;
-    overflow: hidden !important;
-    background: transparent !important;
-    color: var(--primario) !important;
-    border: 2px solid var(--primario) !important;
-    cursor: pointer !important;
-    border-radius: 16px !important;
-    font-weight: 800 !important;
-    padding: 14px 28px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 10px !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    transition: all 0.3s ease !important;
-    text-decoration: none !important;
-    z-index: 1 !important;
-    box-shadow: none !important;
-}
-.boton::before, 
-.btn-enviar::before, 
-.btn-proyecto::before, 
-.btn-plan::before, 
-.NO-USAR-LEER-MAS::before {
-    content: '' !important;
-    position: absolute !important;
-    inset: 0 !important;
-    background: var(--primario) !important;
-    transform: translateX(-101%) !important;
-    transition: transform 0.3s ease-out !important;
-    z-index: -1 !important;
-}
-.boton:hover, 
-.btn-enviar:hover, 
-.btn-proyecto:hover, 
-.btn-plan:hover, 
-.NO-USAR-LEER-MAS:hover {
-    color: #fff !important;
-    text-decoration: none !important;
-}
-.boton:hover::before, 
-.btn-enviar:hover::before, 
-.btn-proyecto:hover::before, 
-.btn-plan:hover::before, 
-.NO-USAR-LEER-MAS:hover::before {
-    transform: translateX(0) !important;
+.btn-leer-mas:hover {
+    opacity: 0.75 !important;
+    text-decoration: underline !important;
+    color: var(--primario-hover) !important;
 }
