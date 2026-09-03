@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 const useScrollAnimation = () => {
@@ -8,6 +8,7 @@ const useScrollAnimation = () => {
     let intObserver;
     let mutObserver;
     let fallbackTimer;
+    let debounceTimer;
 
     const initAnimation = () => {
       intObserver = new IntersectionObserver(
@@ -19,7 +20,7 @@ const useScrollAnimation = () => {
             }
           });
         },
-        { threshold: 0, rootMargin: "50px" }
+        { threshold: 0, rootMargin: "100px" }
       );
 
       const observeExisting = () => {
@@ -30,7 +31,6 @@ const useScrollAnimation = () => {
       
       observeExisting();
 
-      // Usar MutationObserver para componentes cargados perezosamente (lazy)
       mutObserver = new MutationObserver((mutations) => {
         let added = false;
         for (let m of mutations) {
@@ -40,13 +40,15 @@ const useScrollAnimation = () => {
           }
         }
         if (added) {
-          observeExisting();
+          clearTimeout(debounceTimer);
+          debounceTimer = setTimeout(() => {
+             observeExisting();
+          }, 300);
         }
       });
 
       mutObserver.observe(document.body, { childList: true, subtree: true });
 
-      // Fallback por seguridad
       fallbackTimer = setTimeout(() => {
         document.querySelectorAll(".anim-scroll:not(.visible)").forEach(el => {
           el.classList.add("visible");
@@ -60,6 +62,7 @@ const useScrollAnimation = () => {
 
     return () => {
       clearTimeout(timeoutId);
+      clearTimeout(debounceTimer);
       if (intObserver) intObserver.disconnect();
       if (mutObserver) mutObserver.disconnect();
       if (fallbackTimer) clearTimeout(fallbackTimer);

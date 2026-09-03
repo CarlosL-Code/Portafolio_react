@@ -172,3 +172,9 @@ body.dark .acerca-de .grid .col-2 .pre-titulo {
         transform: translateY(0);
     }
 }
+
+body.dark .acerca-de .grid .col-2 .blur-titulo span {
+    background: linear-gradient(90deg, #F8FAFC 0%, #94A3B8 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}

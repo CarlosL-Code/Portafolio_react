@@ -10,17 +10,7 @@ const AcercaDe = () => {
 
   return (
     <section className="acerca-de" id="acerca-de">
-      <BorderGlow
-        edgeSensitivity={30}
-        glowColor="40 80 80"
-        backgroundColor="transparent"
-        borderRadius={24}
-        glowRadius={40}
-        glowIntensity={1}
-        coneSpread={25}
-        animated={false}
-        colors={['#c084fc', '#f472b6', '#38bdf8']}
-      >
+      
         <div className="acerca-de-card">
           <div className="grid">
           
@@ -83,7 +73,7 @@ const AcercaDe = () => {
           </div>
         </div>
         </div>
-      </BorderGlow>
+      
     </section>
   );
 };

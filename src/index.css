@@ -620,3 +620,15 @@ body.dark .boton, body.dark .btn-enviar {
 body.dark .boton:hover, body.dark .btn-enviar:hover {
     color: #fff !important;
 }
+
+/* DARK MODE CONTRAST FIX */
+body.dark .boton, body.dark .btn-enviar {
+    color: #38BDF8 !important;
+    border-color: #38BDF8 !important;
+}
+body.dark .boton::before, body.dark .btn-enviar::before {
+    background: #38BDF8 !important;
+}
+body.dark .boton:hover, body.dark .btn-enviar:hover {
+    color: #0B1121 !important; 
+}
