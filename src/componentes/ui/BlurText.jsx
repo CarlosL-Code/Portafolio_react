@@ -3,7 +3,6 @@ import { useEffect, useRef, useState, useMemo } from 'react';
 
 const buildKeyframes = (from, steps) => {
   const keys = new Set([...Object.keys(from), ...steps.flatMap(s => Object.keys(s))]);
-
   const keyframes = {};
   keys.forEach(k => {
     keyframes[k] = [from[k], ...steps.map(s => s[k])];
@@ -13,7 +12,7 @@ const buildKeyframes = (from, steps) => {
 
 const BlurText = ({
   text = '',
-  delay = 200,
+  delay = 50, /* Reduced delay to be faster */
   className = '',
   animateBy = 'words',
   direction = 'top',
@@ -21,9 +20,9 @@ const BlurText = ({
   rootMargin = '0px',
   animationFrom,
   animationTo,
-  easing = t => t,
+  easing = "easeOut",
   onAnimationComplete,
-  stepDuration = 0.35
+  stepDuration = 0.4
 }) => {
   const elements = animateBy === 'words' ? text.split(' ') : text.split('');
   const [inView, setInView] = useState(false);
@@ -44,22 +43,17 @@ const BlurText = ({
     return () => observer.disconnect();
   }, [threshold, rootMargin]);
 
+  // Removed blur for extreme performance on mobile
   const defaultFrom = useMemo(
-    () =>
-      direction === 'top' ? { filter: 'blur(10px)', opacity: 0, y: -50 } : { filter: 'blur(10px)', opacity: 0, y: 50 },
+    () => ({ opacity: 0, y: direction === 'top' ? -20 : 20 }),
     [direction]
   );
 
   const defaultTo = useMemo(
     () => [
-      {
-        filter: 'blur(5px)',
-        opacity: 0.5,
-        y: direction === 'top' ? 5 : -5
-      },
-      { filter: 'blur(0px)', opacity: 1, y: 0 }
+      { opacity: 1, y: 0 }
     ],
-    [direction]
+    []
   );
 
   const fromSnapshot = animationFrom ?? defaultFrom;
@@ -70,7 +64,7 @@ const BlurText = ({
   const times = Array.from({ length: stepCount }, (_, i) => (stepCount === 1 ? 0 : i / (stepCount - 1)));
 
   return (
-    <p ref={ref} className={className} style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <h2 ref={ref} className={className} style={{ display: 'flex', flexWrap: 'wrap' }}>
       {elements.map((segment, index) => {
         const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots);
 
@@ -83,7 +77,7 @@ const BlurText = ({
 
         return (
           <motion.span
-            style={{ display: 'inline-block', willChange: 'transform, filter, opacity' }}
+            style={{ display: 'inline-block', willChange: 'transform, opacity' }}
             key={index}
             initial={fromSnapshot}
             animate={inView ? animateKeyframes : fromSnapshot}
@@ -95,7 +89,7 @@ const BlurText = ({
           </motion.span>
         );
       })}
-    </p>
+    </h2>
   );
 };
 

@@ -1,20 +1,16 @@
 import { useState } from "react";
 import "./AcercaDe.css";
-
-import BorderGlow from "../ui/BorderGlow";
-
+import BlurText from "../ui/BlurText";
 
 const AcercaDe = () => {
-  
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <section className="acerca-de" id="acerca-de">
-      
         <div className="acerca-de-card">
           <div className="grid">
           
-          {/* Columna imágenes */}
+          {/* Columna imǭgenes */}
           <div className="col-1">
             <div className="fotos">
               <img src="/assets/acerca-de-1.jpg" className="foto" alt="Carlos trabajando" loading="lazy" decoding="async" />
@@ -26,47 +22,43 @@ const AcercaDe = () => {
           <div className="col-2">
             <h4 className="pre-titulo anim-scroll anim-right">Acerca de mi</h4>
 
-            <h2 className="titulo blur-titulo anim-scroll anim-right" style={{ fontSize: "2.5rem", fontWeight: 800, marginBottom: "20px" }}><span>Transformando ideas en arquitecturas escalables y rentables.</span></h2>
+            <BlurText
+              text="Transformando ideas en arquitecturas escalables y rentables."
+              delay={50}
+              animateBy="words"
+              direction="bottom"
+              className="titulo blur-titulo"
+              threshold={0.1}
+            />
 
             <div className={`resumen-container anim-scroll anim-right ${isExpanded ? "expanded" : ""}`}>
               <p className="resumen">
-                Soy estudiante de Ingeniería en Informática y Software Engineer apasionado por resolver problemas complejos mediante la tecnología. 
-                Aunque sigo mi formación académica, en el mundo real ya me especializo en diseñar arquitecturas robustas, automatizar flujos de trabajo empresariales y crear experiencias digitales de alto impacto. 
+                Soy estudiante de Ingeniera en Informǭtica y Software Engineer apasionado por resolver problemas complejos mediante la tecnologa. 
+                Aunque sigo mi formacin acadǸmica, en el mundo real ya me especializo en disear arquitecturas robustas, automatizar flujos de trabajo empresariales y crear experiencias digitales de alto impacto. 
               </p>
               <p className="resumen extra-text">
                 <br />
-                Mi trayectoria temprana incluye asumir la transformación digital end-to-end para empresas (desarrollo de e-commerce, integraciones de IA y automatización de sistemas ERP) 
-                y gestionar el despliegue técnico de infraestructuras a nivel internacional. Mi enfoque no es solo escribir código limpio, 
-                sino alinear cada decisión técnica con los objetivos comerciales para garantizar soluciones mantenibles, seguras y orientadas al ROI.
+                Mi trayectoria temprana incluye asumir la transformacin digital end-to-end para empresas (desarrollo de e-commerce, integraciones de IA y automatizacin de sistemas ERP) 
+                y gestionar el despliegue tǸcnico de infraestructuras a nivel internacional. Mi enfoque no es solo escribir cdigo limpio, 
+                sino alinear cada decisin tǸcnica con los objetivos comerciales para garantizar soluciones mantenibles, seguras y orientadas al ROI.
               </p>
             </div>
             
             <button 
-              className="btn-leer-mas anim-scroll anim-right" 
+              className="anim-scroll anim-right btn-texto" 
               onClick={() => setIsExpanded(!isExpanded)}
+              style={{
+                background: 'none', border: 'none', padding: 0, margin: 0,
+                color: 'var(--primario)', cursor: 'pointer', fontWeight: 600,
+                textDecoration: 'underline', fontSize: '16px'
+              }}
             >
-              {isExpanded ? "Leer menos" : "Leer más..."}
+              {isExpanded ? "Leer menos" : "Leer mǭs..."}
             </button>
 
-            <a href="#contacto" className="boton anim-scroll anim-right">
-              Hablemos de tu proyecto
-              <span className="icono">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
-                  <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2" />
-                </svg>
-              </span>
-            </a>
           </div>
         </div>
-        </div>
-      
+      </div>
     </section>
   );
 };

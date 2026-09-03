@@ -257,13 +257,7 @@ body.dark .seccion-alt::before {
 }
 
 /* DESACTIVAR ANIMACIONES EN MOBILE POR SEGURIDAD DE VISIBILIDAD */
-@media (max-width: 768px) {
-    .anim-scroll {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-}
+
 
 /* =========================================
    WHATSAPP CHAT POPUP & FLOTANTE
