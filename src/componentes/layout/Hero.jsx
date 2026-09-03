@@ -17,8 +17,8 @@ const Hero = () => {
               text="Desarrollo Web"
               layers={14}
               depth={2.4}
-              faceColor="#ff6b6b"
-              depthColor="#7c3aed"
+              faceColor="#38BDF8"
+              depthColor="#1E3A8A"
               tilt={7.5}
               pointerTracking
               smoothing={0.14}

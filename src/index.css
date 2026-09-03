@@ -22,9 +22,9 @@
     --shade-9: #18181B; /* Títulos y texto principal casi negro */
     --shade-10: #0B1121; /* Fondo principal azul profundo moderno (Slate 950) */
 
-    /* Colores primarios */
-    --primario: #D83A3A;
-    --primario-hover: #bf3030;
+    /* Colores primarios (TEMA TECH BLUE) */
+    --primario: #2563EB;
+    --primario-hover: #1D4ED8;
 
     /* Modo oscuro */
     --dark-bg: var(--shade-10);
@@ -32,7 +32,7 @@
     --dark-subtitle: #A1A1AA;
     --dark-title: #FAFAFA;
 
-    --dark-button-shadow: rgba(216, 58, 58, 0.6);
+    --dark-button-shadow: rgba(37, 99, 235, 0.4);
 }
 
 /* BODY */
@@ -102,7 +102,7 @@ a {
 
 /* BOTONES (Diseño Premium) */
 .boton {
-    background: linear-gradient(135deg, var(--primario) 0%, #E35D5D 100%);
+    background: linear-gradient(135deg, var(--primario) 0%, #06B6D4 100%);
     color: #fff;
     border: none;
     cursor: pointer;
@@ -235,7 +235,7 @@ body.dark .seccion-alt::before {
 }
 
 .seccion-tech .encabezado .titulo {
-    background: linear-gradient(90deg, #ff6b6b 0%, var(--primario) 50%, #ff8c42 100%) !important;
+    background: linear-gradient(90deg, #38BDF8 0%, var(--primario) 50%, #06B6D4 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
 }
@@ -560,4 +560,18 @@ body.dark .mouse-glow {
   .mouse-glow {
     display: none !important;
   }
+}
+
+/* GRADIENTES MOVILES (Tech Blue) */
+@media (max-width: 768px) {
+    section.acerca-de, section.planes, section.trabajos, section.clientes {
+        background: linear-gradient(180deg, var(--shade-2) 0%, #FFFFFF 50%, var(--shade-2) 100%);
+        border-radius: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin-bottom: 20px;
+    }
+    body.dark section.acerca-de, body.dark section.planes, body.dark section.trabajos, body.dark section.clientes {
+        background: linear-gradient(180deg, var(--dark-bg) 0%, #0F172A 50%, var(--dark-bg) 100%);
+    }
 }

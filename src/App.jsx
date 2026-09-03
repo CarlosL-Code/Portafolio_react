@@ -33,9 +33,9 @@ function App() {
       <div style={{ position: 'fixed', inset: 0, zIndex: -1, pointerEvents: 'none' }}>
         <Suspense fallback={null}>
           <DotField 
-            gradientFrom="rgba(168, 85, 247, 0.6)" 
-            gradientTo="rgba(168, 85, 247, 0.15)"
-            glowColor="rgba(168, 85, 247, 0.2)"
+            gradientFrom="rgba(56, 189, 248, 0.4)" 
+            gradientTo="rgba(37, 99, 235, 0.15)"
+            glowColor="rgba(56, 189, 248, 0.2)"
             dotRadius={1.5}
             dotSpacing={22}
           />
