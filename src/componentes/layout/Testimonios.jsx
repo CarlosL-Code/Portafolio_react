@@ -33,11 +33,11 @@ const testimonios = [
   },
   {
     id: 4,
-    nombre: "Carser",
-    cargo: "Taller Mecánico — Soporte Paveleads",
-    logo: "/assets/logos/carserv.png",
+    nombre: "Paveleads",
+    cargo: "Agencia de Marketing",
+    logo: "/assets/logos/paveleads.png",
     servicio: "Soporte y Estabilidad Web",
-    texto: "Carlos se hizo cargo del soporte técnico y la estabilización de nuestro sitio web en producción para la agencia Paveleads. Resolvió problemas de DNS, SSL y hosting que nos tenían fuera de línea. Ahora nuestro sitio funciona de manera estable y nuestros clientes pueden encontrarnos sin problemas.",
+    texto: "Carlos se hizo cargo del soporte técnico y la estabilización de sitios web en producción. Resolvió problemas complejos de DNS, SSL y hosting que tenían fuera de línea los sitios de nuestros clientes. Ahora funcionan de manera estable y nuestros clientes pueden encontrarnos sin problemas.",
     estrellas: 5
   }
 ];
