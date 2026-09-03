@@ -3,12 +3,12 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./componentes/layout/Header";
 import Footer from "./componentes/layout/Footer";
 
-const Inicio = lazy(() => import("./pages/Inicio"));
-const DesarrolloWeb = lazy(() => import("./pages/DesarrolloWeb"));
-const SoftwareAMedida = lazy(() => import("./pages/SoftwareAMedida"));
-const SistemasEmpresariales = lazy(() => import("./pages/SistemasEmpresariales"));
-const Proyectos = lazy(() => import("./pages/Proyectos"));
-const ContactoPage = lazy(() => import("./pages/Contacto"));
+import Inicio from "./pages/Inicio";
+import DesarrolloWeb from "./pages/DesarrolloWeb";
+import SoftwareAMedida from "./pages/SoftwareAMedida";
+import SistemasEmpresariales from "./pages/SistemasEmpresariales";
+import Proyectos from "./pages/Proyectos";
+import ContactoPage from "./pages/Contacto";
 const NotFound = lazy(() => import("./pages/NotFound"));
 const DotField = lazy(() => import("./componentes/ui/DotField"));
 

@@ -638,7 +638,7 @@ body.dark .boton,
 body.dark .btn-enviar, 
 body.dark .btn-proyecto, 
 body.dark .btn-plan, 
-body.dark .btn-leer-mas, 
+body.dark .NO-USAR-LEER-MAS, 
 body.dark .btn-primario, 
 body.dark .btn-secundario {
     color: #38BDF8 !important;
@@ -649,7 +649,7 @@ body.dark .boton::before,
 body.dark .btn-enviar::before,
 body.dark .btn-proyecto::before,
 body.dark .btn-plan::before,
-body.dark .btn-leer-mas::before,
+body.dark .NO-USAR-LEER-MAS::before,
 body.dark .btn-primario::before,
 body.dark .btn-secundario::before {
     background: #38BDF8 !important;
@@ -659,7 +659,7 @@ body.dark .boton:hover,
 body.dark .btn-enviar:hover,
 body.dark .btn-proyecto:hover,
 body.dark .btn-plan:hover,
-body.dark .btn-leer-mas:hover,
+body.dark .NO-USAR-LEER-MAS:hover,
 body.dark .btn-primario:hover,
 body.dark .btn-secundario:hover {
     color: #0B1121 !important; 
@@ -670,7 +670,7 @@ body.dark .btn-secundario:hover {
 .btn-enviar, 
 .btn-proyecto, 
 .btn-plan, 
-.btn-leer-mas {
+.NO-USAR-LEER-MAS {
     position: relative !important;
     overflow: hidden !important;
     background: transparent !important;
@@ -695,7 +695,7 @@ body.dark .btn-secundario:hover {
 .btn-enviar::before, 
 .btn-proyecto::before, 
 .btn-plan::before, 
-.btn-leer-mas::before {
+.NO-USAR-LEER-MAS::before {
     content: '' !important;
     position: absolute !important;
     inset: 0 !important;
@@ -708,7 +708,7 @@ body.dark .btn-secundario:hover {
 .btn-enviar:hover, 
 .btn-proyecto:hover, 
 .btn-plan:hover, 
-.btn-leer-mas:hover {
+.NO-USAR-LEER-MAS:hover {
     color: #fff !important;
     text-decoration: none !important;
 }
@@ -716,6 +716,6 @@ body.dark .btn-secundario:hover {
 .btn-enviar:hover::before, 
 .btn-proyecto:hover::before, 
 .btn-plan:hover::before, 
-.btn-leer-mas:hover::before {
+.NO-USAR-LEER-MAS:hover::before {
     transform: translateX(0) !important;
 }

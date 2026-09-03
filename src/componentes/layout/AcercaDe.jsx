@@ -15,7 +15,7 @@ const AcercaDe = () => {
           <div className="grid">
           
           {/* Columna imágenes */}
-          <div className="col-1 anim-scroll anim-left">
+          <div className="col-1">
             <div className="fotos">
               <img src="/assets/acerca-de-1.jpg" className="foto" alt="Carlos trabajando" loading="lazy" decoding="async" />
               <img src="/assets/acerca-de-2.png" className="foto" alt="Setup de trabajo" loading="lazy" decoding="async" />
