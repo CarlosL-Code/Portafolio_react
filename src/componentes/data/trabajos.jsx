@@ -328,7 +328,7 @@ const trabajos = [
     categoria: "desarrollo-web",
     thumb: {
       url: "./assets/trabajos/trabajo-5.png",
-      alt: "Landing Page Pizzera ?" Proyecto Conceptual",
+      alt: "Landing Page Pizzeria Proyecto Conceptual",
     },
     info: {
       nombre: "Landing page Pizzera",
