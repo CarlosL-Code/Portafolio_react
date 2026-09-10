@@ -1,10 +1,11 @@
 import { Icon } from '@iconify/react';
+import Folder from '../ui/Folder';
 import './TechStack.css';
 
 const stackCategorias = [
   {
     titulo: "Frontend",
-    className: "bento-frontend",
+    color: "#3b82f6",
     tecnologias: [
       { nombre: "React", icono: "skill-icons:react-dark" },
       { nombre: "Next.js", icono: "skill-icons:nextjs-dark" },
@@ -16,8 +17,8 @@ const stackCategorias = [
     ]
   },
   {
-    titulo: "Backend & Bases de Datos",
-    className: "bento-backend",
+    titulo: "Backend & BD",
+    color: "#10b981",
     tecnologias: [
       { nombre: "Java", icono: "skill-icons:java-dark" },
       { nombre: "Spring Boot", icono: "skill-icons:spring-dark" },
@@ -29,7 +30,7 @@ const stackCategorias = [
   },
   {
     titulo: "IoT & Data",
-    className: "bento-iot",
+    color: "#f59e0b",
     tecnologias: [
       { nombre: "Node-RED", icono: "logos:nodered" },
       { nombre: "MQTT", icono: "logos:mqtt" },
@@ -39,7 +40,7 @@ const stackCategorias = [
   },
   {
     titulo: "DevOps",
-    className: "bento-devops",
+    color: "#8b5cf6",
     tecnologias: [
       { nombre: "Git", icono: "skill-icons:git" },
       { nombre: "GitHub", icono: "skill-icons:github-dark" },
@@ -47,8 +48,8 @@ const stackCategorias = [
     ]
   },
   {
-    titulo: "Diseño & Herramientas",
-    className: "bento-tools",
+    titulo: "Herramientas",
+    color: "#ec4899",
     tecnologias: [
       { nombre: "Figma", icono: "skill-icons:figma-dark" },
       { nombre: "Claude AI", icono: "logos:anthropic-icon" },
@@ -58,6 +59,27 @@ const stackCategorias = [
   }
 ];
 
+const renderTechPaper = (techList) => {
+  return (
+    <div className="tech-paper-content">
+      {techList.map((tech, idx) => (
+        <div key={idx} className="tech-paper-item" title={tech.nombre}>
+          <Icon icon={tech.icono} width="24" height="24" />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+// Divide las tecnologías en 3 grupos (papers) para el Folder
+const chunkArray = (arr, numChunks) => {
+  const result = Array.from({ length: numChunks }, () => []);
+  arr.forEach((item, index) => {
+    result[index % numChunks].push(item);
+  });
+  return result;
+};
+
 const TechStack = () => {
   return (
     <section className="tech-stack" id="tech-stack">
@@ -66,26 +88,22 @@ const TechStack = () => {
         <div className="encabezado anim-scroll">
           <h2 className="titulo">Stack Tecnológico</h2>
           <p className="subtitulo">
-            Mi ecosistema de desarrollo: las herramientas y tecnologías que utilizo para construir soluciones robustas end-to-end.
+            Haz clic en las carpetas para descubrir las tecnologías que utilizo en cada área de desarrollo.
           </p>
         </div>
 
-        <div className="bento-grid">
-          {stackCategorias.map((cat, i) => (
-            <div key={i} className={`bento-card anim-scroll ${cat.className}`}>
-              <h3 className="bento-title">{cat.titulo}</h3>
-              <div className="bento-items">
-                {cat.tecnologias.map((tech, j) => (
-                  <div key={j} className="bento-tech-item">
-                    <div className="icon-wrapper">
-                      <Icon icon={tech.icono} className="tech-icon" />
-                    </div>
-                    <span className="tech-name">{tech.nombre}</span>
-                  </div>
-                ))}
+        <div className="folders-grid">
+          {stackCategorias.map((cat, i) => {
+            const chunks = chunkArray(cat.tecnologias, 3);
+            const paperItems = chunks.map(chunk => renderTechPaper(chunk));
+            
+            return (
+              <div key={i} className="folder-wrapper anim-scroll">
+                <Folder color={cat.color} size={1.2} items={paperItems} />
+                <h3 className="folder-title">{cat.titulo}</h3>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>
