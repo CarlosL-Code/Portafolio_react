@@ -76,6 +76,14 @@ const Trabajos = () => {
             >
               <div className="imagen-proyecto" onClick={(e) => openProjectLink(e, trabajo.info.link)}>
                 <img loading="lazy" decoding="async" src={trabajo.thumb.url} alt={trabajo.thumb.alt} />
+                
+                {/* Badge de tipo de proyecto */}
+                {trabajo.tipo && (
+                  <div className={`badge-tipo ${trabajo.tipo}`}>
+                    {trabajo.tipo === 'demo' ? 'Demo' : 
+                     trabajo.tipo === 'sitio-web' ? 'Sitio Web' : 'Proyecto'}
+                  </div>
+                )}
               </div>
 
               <div className="info-proyecto">
@@ -89,7 +97,7 @@ const Trabajos = () => {
                 </div>
 
                 <button className="btn-proyecto" onClick={(e) => openProjectLink(e, trabajo.info.link)}>
-                  Ver Proyecto &rarr;
+                  {trabajo.info.textoBoton || "Ver Proyecto"} &rarr;
                 </button>
               </div>
             </div>

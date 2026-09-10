@@ -1,5 +1,5 @@
 import './MensajeImpacto.css';
-import { FaRocket } from 'react-icons/fa';
+import { FaCodeBranch } from 'react-icons/fa';
 
 const MensajeImpacto = () => {
   return (
@@ -10,16 +10,20 @@ const MensajeImpacto = () => {
           
           <div className="impacto-contenido">
             <div className="impacto-icono">
-              <FaRocket />
+              <FaCodeBranch />
             </div>
             
             <h2 className="impacto-texto">
-              "No vendemos folletos digitales. Construimos sistemas activos que atraen visitas, las convierten en prospectos y <span className="highlight">los transforman en clientes</span>."
+              "Busco equipos donde pueda aportar <span className="highlight">creando soluciones técnicas de alto nivel</span>, desde la arquitectura hasta el despliegue."
             </h2>
             
-            <p className="impacto-subtexto">
-              Esa es la diferencia entre un gasto y una inversión con retorno real.
+            <p className="impacto-subtexto" style={{ marginBottom: '30px' }}>
+              Si buscas un desarrollador comprometido con entregar resultados que impacten.
             </p>
+            
+            <a href="#contacto" className="boton btn-primario">
+              Hablemos
+            </a>
           </div>
         </div>
       </div>

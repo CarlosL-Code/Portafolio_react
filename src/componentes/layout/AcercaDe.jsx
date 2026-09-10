@@ -34,19 +34,15 @@ const AcercaDe = () => {
             {/* SIN anim-scroll para que el texto SIEMPRE sea visible */}
             <div className={`resumen-container ${isExpanded ? "expanded" : ""}`}>
               <p className="resumen">
-                Soy estudiante de Ingeniería en Informática y Software Engineer apasionado por
-                resolver problemas complejos mediante la tecnología. Aunque sigo mi formación
-                académica, en el mundo real ya me especializo en diseñar arquitecturas robustas,
-                automatizar flujos de trabajo empresariales y crear experiencias digitales de alto impacto.
+                Soy Ingeniero en Informática en formación, con experiencia práctica en proyectos reales.
+                Me especializo en construir desde cero: frontends modernos, APIs, sistemas empresariales y automatizaciones.
               </p>
               <p className="resumen extra-text">
                 <br />
-                Mi trayectoria temprana incluye asumir la transformación digital end-to-end para
-                empresas (desarrollo de e-commerce, integraciones de IA y automatización de sistemas ERP)
-                y gestionar el despliegue técnico de infraestructuras a nivel internacional.
-                Mi enfoque no es solo escribir código limpio, sino alinear cada decisión técnica
-                con los objetivos comerciales para garantizar soluciones mantenibles, seguras y
-                orientadas al ROI.
+                Cada proyecto que tomo lo llevo de la idea hasta producción. He asumido el desarrollo 
+                end-to-end de sitios corporativos, e-commerce, integraciones de IA, despliegues IoT
+                y automatizaciones de procesos internos (ERP). Mi enfoque no es solo escribir código limpio, 
+                sino alinear cada decisión técnica con los objetivos del negocio y crear arquitecturas escalables.
               </p>
             </div>
 

@@ -312,3 +312,9 @@ body.dark .btn-load-more:hover {
     font-size: 0.9rem;
   }
 }
+
+/* BADGE DE TIPO DE PROYECTO */
+.badge-tipo { position: absolute; top: 15px; right: 15px; padding: 6px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; z-index: 10; box-shadow: 0 4px 10px rgba(0,0,0,0.15); backdrop-filter: blur(5px); }
+.badge-tipo.demo { background: rgba(56, 189, 248, 0.9); color: #0F172A; }
+.badge-tipo.sitio-web { background: rgba(16, 185, 129, 0.9); color: #fff; }
+.badge-tipo.proyecto { background: rgba(139, 92, 246, 0.9); color: #fff; }
