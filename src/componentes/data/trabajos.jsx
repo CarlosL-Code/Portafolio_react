@@ -90,7 +90,7 @@ const trabajos = [
     categoria: "desarrollo-mobile",
     thumb: {
       url: "./assets/trabajos/trabajo-1.png",
-      alt: "No Touch ?" Aplicacin Mvil con Control por Voz",
+      alt: "No Touch Aplicacion Movil con Control por Voz",
     },
     info: {
       nombre: "App Android con control por voz",
