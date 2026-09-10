@@ -1,6 +1,14 @@
 .tech-stack {
   padding: 100px 0;
   overflow: hidden;
+  background: var(--bg-color); /* asume un fondo que coincida con la seccion */
+}
+
+.tech-stack .contenedor-full {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .tech-stack .encabezado {
@@ -26,7 +34,7 @@ body.dark .tech-stack .titulo {
 .tech-stack .subtitulo {
   color: var(--shade-6);
   font-size: 18px;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -35,122 +43,141 @@ body.dark .tech-stack .subtitulo {
 }
 
 /* ================================= */
-/* HEXAGONAL HIVE LAYOUT             */
+/* CATEGORIAS (FILAS)                */
 /* ================================= */
-.hive-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.hive-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  padding: 20px;
-}
-
-/* 
-  Calculos para un hexágono perfecto apuntando hacia arriba/abajo:
-  Proporción ancho/alto: width = height * 0.866 (o alto = ancho * 1.1547)
-*/
-.hex-wrapper {
-  position: relative;
-  width: 100px;
-  height: 115px; 
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background: rgba(255, 255, 255, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: -10px 2px; /* Margen negativo superior/inferior para emular el empaquetado del panal */
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05); /* Borde interno sutil */
-}
-
-body.dark .hex-wrapper {
-  background: rgba(30, 41, 59, 0.7);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
-}
-
-.hex-content {
+.herramientas-container {
   display: flex;
   flex-direction: column;
+  gap: 30px;
+}
+
+.categoria-fila {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 20px 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark .categoria-fila {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.categoria-fila:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+body.dark .categoria-fila:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.categoria-info {
+  flex: 0 0 250px; /* Ancho fijo para la columna de títulos */
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
-  z-index: 2;
 }
 
-.hex-icon {
-  font-size: 36px;
-  transition: transform 0.3s ease;
-  filter: grayscale(80%) opacity(0.8);
-}
-
-body.dark .hex-icon {
-  filter: grayscale(60%) opacity(0.7);
-}
-
-.hex-name {
-  font-size: 10px;
+.categoria-titulo {
+  font-size: 18px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--shade-6);
-  opacity: 0;
-  transform: translateY(10px);
+  color: var(--shade-8);
+  margin: 0;
+}
+
+body.dark .categoria-titulo {
+  color: var(--shade-2);
+}
+
+.categoria-linea {
+  height: 3px;
+  width: 40px;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.categoria-items {
+  flex: 1; /* Ocupa el resto del espacio */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ================================= */
+/* PÍLDORAS (PILLS)                  */
+/* ================================= */
+.pill-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 8px 16px;
+  border-radius: 50px;
   transition: all 0.3s ease;
+  cursor: default;
 }
 
-body.dark .hex-name {
-  color: var(--shade-4);
+body.dark .pill-item {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Efectos Hover */
-.hex-wrapper:hover {
-  transform: scale(1.15);
+.pill-item:hover {
+  transform: translateY(-3px);
   background: #ffffff;
-  z-index: 10;
-  /* Simular brillo radial con el color de la tecnología */
-  box-shadow: inset 0 0 20px var(--hover-color, rgba(0,0,0,0.1));
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  border-color: rgba(0,0,0,0.05);
 }
 
-body.dark .hex-wrapper:hover {
-  background: #0f172a;
-  box-shadow: inset 0 0 20px var(--hover-color, rgba(255,255,255,0.1));
+body.dark .pill-item:hover {
+  background: #1E293B;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  border-color: rgba(255,255,255,0.1);
 }
 
-.hex-wrapper:hover .hex-icon {
-  transform: scale(1.1);
-  filter: grayscale(0%) opacity(1);
+.pill-icon {
+  font-size: 22px;
 }
 
-.hex-wrapper:hover .hex-name {
-  opacity: 1;
-  transform: translateY(0);
-  /* Colorear el texto con el color oficial de la tech en hover */
-  color: var(--hover-color);
+.pill-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--shade-7);
 }
 
-/* 
-  Responsive
-  Al reducir pantalla, flex-wrap se encarga de reordenarlos automáticamente.
-  El margen negativo vertical ayuda a que se empaqueten mejor en modo enjambre.
-*/
-@media screen and (max-width: 600px) {
-  .hex-wrapper {
-    width: 85px;
-    height: 98px;
-    margin: -8px 2px;
+body.dark .pill-name {
+  color: var(--shade-3);
+}
+
+/* ================================= */
+/* RESPONSIVE                        */
+/* ================================= */
+@media screen and (max-width: 768px) {
+  .categoria-fila {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
   }
-  .hex-icon {
-    font-size: 28px;
+  
+  .categoria-info {
+    flex: auto;
+    width: 100%;
+    padding-right: 0;
   }
-  .hex-name {
-    font-size: 9px;
+  
+  .categoria-linea {
+    width: 60px;
+  }
+  
+  .categoria-items {
+    width: 100%;
   }
 }
