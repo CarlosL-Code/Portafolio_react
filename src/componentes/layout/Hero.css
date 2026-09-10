@@ -9,17 +9,31 @@
     text-align: center;
     overflow: hidden;
     background-color: #0B1121;
+    background-image: url('/assets/header5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-/* Fondo sólido oscuro + brillo sutil en vez de la foto de stock: más
-   consistente con el resto del sitio y sin la sombra pesada que hacía
-   falta para leer el texto sobre una imagen. */
+/* background-attachment: fixed obliga a repintar el fondo en cada frame de
+   scroll en Android/Chrome (Safari directamente lo ignora), un causante
+   clásico de jank en móvil sin aportar el efecto parallax que sí se ve en
+   desktop. Se desactiva solo ahí. */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+    }
+}
+
+/* Oscurece la foto para que el texto blanco siga siendo legible, con un
+   brillo azul sutil encima para mantener la identidad del sitio. */
 .hero-glow {
     position: absolute;
     inset: 0;
     z-index: 0;
     pointer-events: none;
     background:
+        linear-gradient(to bottom, rgba(11, 17, 33, 0.82) 0%, rgba(11, 17, 33, 0.92) 100%),
         radial-gradient(circle at 20% 10%, rgba(var(--primario-rgb), 0.28) 0%, transparent 45%),
         radial-gradient(circle at 85% 90%, rgba(56, 189, 248, 0.16) 0%, transparent 50%);
 }
