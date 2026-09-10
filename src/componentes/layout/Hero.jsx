@@ -10,11 +10,11 @@ const Hero = () => {
           <span className="badge-dot"></span> Portafolio Profesional
         </div>
         
-        <h1 className="titulo">
-          Diseño y construyo software <br />
-          <span className="highlight-text-wrapper" style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 8px' }}>
+        <h1 className="titulo" style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'center' }}>
+          <span style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 700, color: '#f1f5f9' }}>Software Engineer</span>
+          <span className="highlight-text-wrapper" style={{ display: 'inline-block', margin: '5px 0' }}>
             <DepthText
-              text="que funciona"
+              text="FULL STACK"
               layers={14}
               depth={2.4}
               faceColor="#F8FAFC"
@@ -26,15 +26,14 @@ const Hero = () => {
               autoOrbit
               orbitSpeed={0.35}
               fontSize="inherit"
-              fontWeight={800}
+              fontWeight={900}
               shadow
             />
           </span>
+          <span style={{ fontSize: 'clamp(18px, 2.5vw, 24px)', fontWeight: 500, color: '#cbd5e1', letterSpacing: '0.5px' }}>Diseño, desarrollo y despliegue.</span>
         </h1>
         
-        <p className="subtitulo">
-          Software Engineer & Desarrollador Full Stack. Construyo soluciones desde el diseño hasta producción — web, sistemas empresariales y automatizaciones.
-        </p>
+        {/* Subtítulo eliminado ya que su contenido ahora está integrado en el título principal */}
         
         <div className="botones">
           <a href="#proyectos" className="boton btn-primario">

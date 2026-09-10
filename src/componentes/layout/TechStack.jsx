@@ -4,18 +4,20 @@ import './TechStack.css';
 const stackCategorias = [
   {
     titulo: "Frontend",
+    className: "bento-frontend",
     tecnologias: [
       { nombre: "React", icono: "skill-icons:react-dark" },
       { nombre: "Next.js", icono: "skill-icons:nextjs-dark" },
-      { nombre: "JavaScript", icono: "skill-icons:javascript" },
       { nombre: "TypeScript", icono: "skill-icons:typescript" },
+      { nombre: "JavaScript", icono: "skill-icons:javascript" },
+      { nombre: "Tailwind CSS", icono: "skill-icons:tailwindcss-dark" },
       { nombre: "HTML5", icono: "skill-icons:html" },
-      { nombre: "CSS3", icono: "skill-icons:css" },
-      { nombre: "Tailwind CSS", icono: "skill-icons:tailwindcss-dark" }
+      { nombre: "CSS3", icono: "skill-icons:css" }
     ]
   },
   {
     titulo: "Backend & Bases de Datos",
+    className: "bento-backend",
     tecnologias: [
       { nombre: "Java", icono: "skill-icons:java-dark" },
       { nombre: "Spring Boot", icono: "skill-icons:spring-dark" },
@@ -26,30 +28,32 @@ const stackCategorias = [
     ]
   },
   {
-    titulo: "Herramientas & DevOps",
-    tecnologias: [
-      { nombre: "Git", icono: "skill-icons:git" },
-      { nombre: "GitHub", icono: "skill-icons:github-dark" },
-      { nombre: "Docker", icono: "skill-icons:docker" },
-      { nombre: "WordPress", icono: "skill-icons:wordpress" }
-    ]
-  },
-  {
     titulo: "IoT & Data",
+    className: "bento-iot",
     tecnologias: [
+      { nombre: "Node-RED", icono: "logos:nodered" },
       { nombre: "MQTT", icono: "logos:mqtt" },
       { nombre: "Arduino", icono: "skill-icons:arduino" },
-      { nombre: "Node-RED", icono: "logos:nodered" },
       { nombre: "Orange", icono: "logos:orange" }
     ]
   },
   {
-    titulo: "Otras Herramientas",
+    titulo: "DevOps",
+    className: "bento-devops",
     tecnologias: [
-      { nombre: "Claude AI", icono: "logos:anthropic-icon" },
+      { nombre: "Git", icono: "skill-icons:git" },
+      { nombre: "GitHub", icono: "skill-icons:github-dark" },
+      { nombre: "Docker", icono: "skill-icons:docker" }
+    ]
+  },
+  {
+    titulo: "Diseño & Herramientas",
+    className: "bento-tools",
+    tecnologias: [
       { nombre: "Figma", icono: "skill-icons:figma-dark" },
-      { nombre: "Canva", icono: "logos:canva" },
-      { nombre: "DaVinci Resolve", icono: "logos:davinci-resolve" }
+      { nombre: "Claude AI", icono: "logos:anthropic-icon" },
+      { nombre: "DaVinci Resolve", icono: "logos:davinci-resolve" },
+      { nombre: "WordPress", icono: "skill-icons:wordpress" }
     ]
   }
 ];
@@ -62,18 +66,20 @@ const TechStack = () => {
         <div className="encabezado anim-scroll">
           <h2 className="titulo">Stack Tecnológico</h2>
           <p className="subtitulo">
-            Tecnologías y herramientas que utilizo en el desarrollo de mis proyectos, abarcando desde el diseño hasta el despliegue.
+            Mi ecosistema de desarrollo: las herramientas y tecnologías que utilizo para construir soluciones robustas end-to-end.
           </p>
         </div>
 
-        <div className="tech-stack-grid">
+        <div className="bento-grid">
           {stackCategorias.map((cat, i) => (
-            <div key={i} className="tech-category anim-scroll">
-              <h3 className="category-title">{cat.titulo}</h3>
-              <div className="tech-items">
+            <div key={i} className={`bento-card anim-scroll ${cat.className}`}>
+              <h3 className="bento-title">{cat.titulo}</h3>
+              <div className="bento-items">
                 {cat.tecnologias.map((tech, j) => (
-                  <div key={j} className="tech-item">
-                    <Icon icon={tech.icono} className="tech-icon" width="48" height="48" />
+                  <div key={j} className="bento-tech-item">
+                    <div className="icon-wrapper">
+                      <Icon icon={tech.icono} className="tech-icon" />
+                    </div>
                     <span className="tech-name">{tech.nombre}</span>
                   </div>
                 ))}
