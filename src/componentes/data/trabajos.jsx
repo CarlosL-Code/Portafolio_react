@@ -130,7 +130,7 @@ const trabajos = [
       nombre: "Automatizacin facturas ERP",
       categoria: "Automatizacin  Flujos de trabajo",
       descripcion_corta: "Automatizacin inteligente para procesar e imprimir facturas automǭticamente directamente desde correos del ERP.",
-      tags: ["AUTOMATIZACI"N", "WORKFLOWS"],
+      tags: ["AUTOMATIZACION", "WORKFLOWS"],
       link: "https://github.com/CarlosL-Code", 
       textoBoton: "Ver Proyecto",
     },
