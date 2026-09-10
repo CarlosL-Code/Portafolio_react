@@ -87,10 +87,10 @@ body.dark .filtros-premium label:hover {
   background: var(--primario);
   color: white;
   border-color: var(--primario);
-  box-shadow: 0 4px 15px rgba(216, 58, 58, 0.3);
+  box-shadow: 0 4px 15px rgba(var(--primario-rgb), 0.3);
 }
 body.dark .filtros-premium label.activo {
-  box-shadow: 0 4px 20px rgba(216, 58, 58, 0.4);
+  box-shadow: 0 4px 20px rgba(var(--primario-rgb), 0.4);
 }
 
 /* ===========================
@@ -239,7 +239,7 @@ body.dark .tag-pildora {
 .btn-proyecto:hover {
   background: var(--primario);
   color: white;
-  box-shadow: 0 4px 15px rgba(216, 58, 58, 0.3);
+  box-shadow: 0 4px 15px rgba(var(--primario-rgb), 0.3);
 }
 
 /* ===========================

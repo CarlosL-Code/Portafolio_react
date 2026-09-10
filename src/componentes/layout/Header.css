@@ -248,7 +248,7 @@
 .header .btn-cv:hover {
     background: var(--primario);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(216, 58, 58, 0.4);
+    box-shadow: 0 4px 15px rgba(var(--primario-rgb), 0.4);
     color: #fff;
 }
 
@@ -372,11 +372,11 @@ body.dark .currency-option:hover {
 }
 
 .currency-option.active {
-    background: rgba(216, 58, 58, 0.08);
+    background: rgba(var(--primario-rgb), 0.08);
 }
 
 body.dark .currency-option.active {
-    background: rgba(216, 58, 58, 0.15);
+    background: rgba(var(--primario-rgb), 0.15);
 }
 
 .currency-option-text {

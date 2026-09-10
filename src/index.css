@@ -24,6 +24,7 @@
 
     /* Colores primarios (TEMA TECH BLUE) */
     --primario: #2563EB;
+    --primario-rgb: 37, 99, 235; /* Mismo tono que --primario, en canales RGB para usar con rgba() */
     --primario-hover: #1D4ED8;
 
     /* Modo oscuro */
@@ -33,6 +34,11 @@
     --dark-title: #FAFAFA;
 
     --dark-button-shadow: rgba(37, 99, 235, 0.4);
+
+    /* Rojo semántico reservado para estados de error/peligro, separado del
+       acento de marca (que ahora es azul). Es el rojo original de marca. */
+    --danger: #D83A3A;
+    --danger-rgb: 216, 58, 58;
 }
 
 /* BODY */
@@ -47,8 +53,8 @@ body {
     
     /* Mesh Gradient Premium (Más vibrante, sin líneas de cuadrícula) */
     background-image: 
-        radial-gradient(circle at 0% 0%, rgba(216, 58, 58, 0.12) 0px, transparent 45%),
-        radial-gradient(circle at 100% 100%, rgba(216, 58, 58, 0.12) 0px, transparent 45%);
+        radial-gradient(circle at 0% 0%, rgba(var(--primario-rgb), 0.12) 0px, transparent 45%),
+        radial-gradient(circle at 100% 100%, rgba(var(--primario-rgb), 0.12) 0px, transparent 45%);
     background-attachment: fixed;
     background-position: center center;
 
@@ -64,8 +70,8 @@ body.dark {
     
     /* Mesh Gradient para modo oscuro (Rojo primario + Verde esmeralda sutil, sin líneas) */
     background-image: 
-        radial-gradient(at 15% 0%, rgba(216, 58, 58, 0.12) 0px, transparent 55%),
-        radial-gradient(at 85% 100%, rgba(216, 58, 58, 0.1) 0px, transparent 55%),
+        radial-gradient(at 15% 0%, rgba(var(--primario-rgb), 0.12) 0px, transparent 55%),
+        radial-gradient(at 85% 100%, rgba(var(--primario-rgb), 0.1) 0px, transparent 55%),
         radial-gradient(at 80% 30%, rgba(16, 185, 129, 0.08) 0px, transparent 40%),
         radial-gradient(at 20% 80%, rgba(16, 185, 129, 0.06) 0px, transparent 40%);
     background-attachment: fixed;
@@ -189,7 +195,7 @@ body.dark .seccion-alt::before {
 .seccion-tech::before {
     background-color: #050505; /* Oscuro forzado siempre para proyectos */
     background-image: 
-        radial-gradient(circle at 50% 0%, rgba(216, 58, 58, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 0%, rgba(var(--primario-rgb), 0.15) 0%, transparent 50%),
         url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
 }
 

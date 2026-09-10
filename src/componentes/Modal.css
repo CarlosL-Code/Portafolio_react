@@ -196,7 +196,7 @@ body.dark .modal-footer {
 .btn-modal:hover {
   background: var(--primario-hover);
   text-decoration: none !important;
-  box-shadow: 0 4px 15px rgba(216, 58, 58, 0.4);
+  box-shadow: 0 4px 15px rgba(var(--primario-rgb), 0.4);
 }
 
 /* =========================

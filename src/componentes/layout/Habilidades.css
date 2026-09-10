@@ -9,7 +9,7 @@
 }
 
 body.dark .habilidades {
-  background: radial-gradient(circle at top right, rgba(216, 58, 58, 0.03), var(--dark-bg) 60%);
+  background: radial-gradient(circle at top right, rgba(var(--primario-rgb), 0.03), var(--dark-bg) 60%);
 }
 
 .habilidades .contenedor {
@@ -51,14 +51,14 @@ body.dark .habilidad-minimal-card {
 
 .habilidad-minimal-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(216, 58, 58, 0.3);
-  box-shadow: 0 15px 40px rgba(216, 58, 58, 0.08);
+  border-color: rgba(var(--primario-rgb), 0.3);
+  box-shadow: 0 15px 40px rgba(var(--primario-rgb), 0.08);
 }
 
 body.dark .habilidad-minimal-card:hover {
   background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(216, 58, 58, 0.4);
-  box-shadow: 0 20px 50px rgba(216, 58, 58, 0.15);
+  border-color: rgba(var(--primario-rgb), 0.4);
+  box-shadow: 0 20px 50px rgba(var(--primario-rgb), 0.15);
 }
 
 /* Header de Categoría */
@@ -90,7 +90,7 @@ body.dark .cat-icon {
   background: linear-gradient(135deg, var(--primario), #ff6b6b);
   color: #fff;
   transform: scale(1.05) rotate(5deg);
-  box-shadow: 0 8px 20px rgba(216, 58, 58, 0.3);
+  box-shadow: 0 8px 20px rgba(var(--primario-rgb), 0.3);
 }
 
 .cat-header h3 {
