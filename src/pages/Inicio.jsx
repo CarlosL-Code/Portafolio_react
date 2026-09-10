@@ -17,7 +17,7 @@ const Inicio = ({ currency }) => {
     <>
       <Helmet>
         <title>Carlos Lozano | Software Engineer & Desarrollador Full Stack</title>
-        <meta name="description" content="Portfolio de Carlos Lozano, ingeniero en informática con proyectos en React, Spring Boot, IoT, e-commerce y automatizaciones. Disponible para proyectos y oportunidades laborales." />
+        <meta name="description" content="Portfolio de Carlos Lozano, ingeniero en informática enfocado en Frontend con React y Next.js, con bases sólidas en Backend (Laravel, Node.js, Prisma). Disponible para proyectos y oportunidades laborales." />
         <link rel="canonical" href="https://carloslozanodev.com/" />
       </Helmet>
 

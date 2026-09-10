@@ -34,15 +34,17 @@ const AcercaDe = () => {
             {/* SIN anim-scroll para que el texto SIEMPRE sea visible */}
             <div className={`resumen-container ${isExpanded ? "expanded" : ""}`}>
               <p className="resumen">
-                Soy Ingeniero en Informática en formación, con experiencia práctica en proyectos reales.
-                Me especializo en construir desde cero: frontends modernos, APIs, sistemas empresariales y automatizaciones.
+                Soy Ingeniero en Informática en formación, enfocado en Frontend con React y Next.js:
+                interfaces rápidas y mantenibles, con atención real al rendimiento medible (Core Web Vitals).
+                Complemento ese trabajo con bases sólidas en Backend: Node.js, Laravel, Prisma y bases de
+                datos relacionales (MySQL, PostgreSQL).
               </p>
               <p className="resumen extra-text">
                 <br />
-                Cada proyecto que tomo lo llevo de la idea hasta producción. He asumido el desarrollo 
-                end-to-end de sitios corporativos, e-commerce, integraciones de IA, despliegues IoT
-                y automatizaciones de procesos internos (ERP). Mi enfoque no es solo escribir código limpio, 
-                sino alinear cada decisión técnica con los objetivos del negocio y crear arquitecturas escalables.
+                Llevo cada proyecto de la idea a producción. He desarrollado tiendas online completas en
+                Shopify, un sitio corporativo con Next.js, un sistema de gestión de inventario (MRP) en
+                Laravel y automatización de procesos de facturación con Python. Mi enfoque no es solo
+                escribir código limpio, sino alinear cada decisión técnica con los objetivos del negocio.
               </p>
             </div>
 
