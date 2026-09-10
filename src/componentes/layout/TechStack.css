@@ -1,7 +1,6 @@
 .tech-stack {
   padding: 100px 0;
   overflow: hidden;
-  background: var(--bg-color); /* asume un fondo que coincida con la seccion */
 }
 
 .tech-stack .contenedor-full {
@@ -43,141 +42,200 @@ body.dark .tech-stack .subtitulo {
 }
 
 /* ================================= */
-/* CATEGORIAS (FILAS)                */
+/* ESPECIALIDAD PRINCIPAL (CORE)     */
 /* ================================= */
-.herramientas-container {
-  display: flex;
-  flex-direction: column;
+.especialidad-container {
+  background: rgba(37, 99, 235, 0.05); /* Fondo sutil azulado */
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  border-radius: 24px;
+  padding: 40px;
+  margin-bottom: 50px;
+}
+
+body.dark .especialidad-container {
+  background: rgba(56, 189, 248, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.1);
+}
+
+.especialidad-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.especialidad-titulo {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--primario);
+  margin-bottom: 10px;
+}
+
+.especialidad-desc {
+  font-size: 16px;
+  color: var(--shade-6);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+body.dark .especialidad-desc {
+  color: var(--shade-3);
+}
+
+.especialidad-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
 
-.categoria-fila {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+.especialidad-bloque {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 25px;
   border-radius: 16px;
-  padding: 20px 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
 }
 
-body.dark .categoria-fila {
-  background: rgba(15, 23, 42, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+body.dark .especialidad-bloque {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
-.categoria-fila:hover {
-  transform: translateX(5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-body.dark .categoria-fila:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.categoria-info {
-  flex: 0 0 250px; /* Ancho fijo para la columna de títulos */
-  padding-right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.categoria-titulo {
-  font-size: 18px;
+.bloque-titulo {
+  font-size: 16px;
   font-weight: 700;
   color: var(--shade-8);
-  margin: 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(0,0,0,0.05);
+  padding-bottom: 10px;
 }
 
-body.dark .categoria-titulo {
+body.dark .bloque-titulo {
   color: var(--shade-2);
+  border-bottom: 2px solid rgba(255,255,255,0.05);
 }
 
-.categoria-linea {
-  height: 3px;
-  width: 40px;
-  border-radius: 2px;
-  opacity: 0.8;
-}
-
-.categoria-items {
-  flex: 1; /* Ocupa el resto del espacio */
+.bloque-items {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
 /* ================================= */
-/* PÍLDORAS (PILLS)                  */
+/* COMPLEMENTOS                      */
 /* ================================= */
-.pill-item {
+.complementos-container {
+  padding: 20px 0;
+}
+
+.complementos-titulo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--shade-7);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+body.dark .complementos-titulo {
+  color: var(--shade-4);
+}
+
+.complementos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.complemento-bloque {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.bloque-titulo-mini {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--shade-5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+body.dark .bloque-titulo-mini {
+  color: var(--shade-5);
+}
+
+.bloque-items-mini {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ================================= */
+/* PÍLDORAS (PILLS) GLOBALES         */
+/* ================================= */
+.pill-item, .pill-item-mini {
   display: flex;
   align-items: center;
   gap: 10px;
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 8px 16px;
-  border-radius: 50px;
   transition: all 0.3s ease;
   cursor: default;
 }
 
-body.dark .pill-item {
+body.dark .pill-item, body.dark .pill-item-mini {
   background: rgba(30, 41, 59, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.pill-item:hover {
+.pill-item:hover, .pill-item-mini:hover {
   transform: translateY(-3px);
   background: #ffffff;
   box-shadow: 0 6px 12px rgba(0,0,0,0.08);
   border-color: rgba(0,0,0,0.05);
 }
 
-body.dark .pill-item:hover {
+body.dark .pill-item:hover, body.dark .pill-item-mini:hover {
   background: #1E293B;
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
   border-color: rgba(255,255,255,0.1);
 }
 
-.pill-icon {
-  font-size: 22px;
+/* Estilo para pills Core (más grandes) */
+.core-pill {
+  padding: 10px 18px;
+  border-radius: 50px;
 }
+.core-pill .pill-icon { font-size: 24px; }
+.core-pill .pill-name { font-size: 14px; font-weight: 600; color: var(--shade-7); }
+body.dark .core-pill .pill-name { color: var(--shade-2); }
 
-.pill-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--shade-7);
+/* Estilo para pills Mini (Complementos) */
+.pill-item-mini {
+  padding: 6px 12px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.4);
 }
-
-body.dark .pill-name {
-  color: var(--shade-3);
+body.dark .pill-item-mini {
+  background: rgba(15, 23, 42, 0.3);
 }
+.pill-icon-mini { font-size: 18px; }
+.pill-name-mini { font-size: 12px; font-weight: 500; color: var(--shade-6); }
+body.dark .pill-name-mini { color: var(--shade-4); }
 
 /* ================================= */
 /* RESPONSIVE                        */
 /* ================================= */
 @media screen and (max-width: 768px) {
-  .categoria-fila {
+  .especialidad-container {
+    padding: 25px 15px;
+  }
+  .especialidad-grid {
+    grid-template-columns: 1fr;
+  }
+  .complementos-grid {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .categoria-info {
-    flex: auto;
-    width: 100%;
-    padding-right: 0;
-  }
-  
-  .categoria-linea {
-    width: 60px;
-  }
-  
-  .categoria-items {
-    width: 100%;
+    gap: 30px;
   }
 }

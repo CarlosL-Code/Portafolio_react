@@ -1,55 +1,60 @@
 import { Icon } from '@iconify/react';
 import './TechStack.css';
 
-const categoriasHerramientas = [
+const especialidad = {
+  titulo: "Especialidad: Full Stack Empresarial & IoT",
+  descripcion: "Mi núcleo tecnológico principal. Una combinación robusta para construir sistemas transaccionales escalables (ERP/CMMS) y conectar infraestructuras de hardware (IoT) con interfaces modernas.",
+  categorias: [
+    {
+      nombre: "Backend & Arquitectura",
+      tecnologias: [
+        { nombre: "Java", icono: "skill-icons:java-dark", iconColor: "" },
+        { nombre: "Spring Boot", icono: "skill-icons:spring-dark", iconColor: "" },
+        { nombre: "PostgreSQL", icono: "skill-icons:postgresql-dark", iconColor: "" },
+        { nombre: "MySQL", icono: "skill-icons:mysql-dark", iconColor: "" }
+      ]
+    },
+    {
+      nombre: "Frontend & Clientes",
+      tecnologias: [
+        { nombre: "React", icono: "skill-icons:react-dark", iconColor: "" },
+        { nombre: "Next.js", icono: "skill-icons:nextjs-dark", iconColor: "" },
+        { nombre: "TypeScript", icono: "skill-icons:typescript", iconColor: "" },
+        { nombre: "JavaScript", icono: "skill-icons:javascript", iconColor: "" }
+      ]
+    },
+    {
+      nombre: "Ecosistema IoT",
+      tecnologias: [
+        { nombre: "Node-RED", icono: "simple-icons:nodered", iconColor: "#8f0000" },
+        { nombre: "MQTT", icono: "carbon:iot-connect", iconColor: "#660066" },
+        { nombre: "Arduino", icono: "skill-icons:arduino", iconColor: "" }
+      ]
+    }
+  ]
+};
+
+const complementos = [
   {
-    titulo: "Lenguajes de Programación",
-    color: "#3b82f6",
+    titulo: "Otros Lenguajes & Scripting",
     tecnologias: [
-      { nombre: "JavaScript", icono: "skill-icons:javascript", iconColor: "" },
-      { nombre: "TypeScript", icono: "skill-icons:typescript", iconColor: "" },
-      { nombre: "Java", icono: "skill-icons:java-dark", iconColor: "" },
       { nombre: "Python", icono: "skill-icons:python-dark", iconColor: "" },
       { nombre: "PHP", icono: "skill-icons:php-dark", iconColor: "" }
     ]
   },
   {
-    titulo: "Frameworks & Librerías",
-    color: "#10b981",
+    titulo: "Infraestructura & DevOps",
     tecnologias: [
-      { nombre: "React", icono: "skill-icons:react-dark", iconColor: "" },
-      { nombre: "Next.js", icono: "skill-icons:nextjs-dark", iconColor: "" },
-      { nombre: "Spring Boot", icono: "skill-icons:spring-dark", iconColor: "" },
-      { nombre: "Tailwind CSS", icono: "skill-icons:tailwindcss-dark", iconColor: "" }
-    ]
-  },
-  {
-    titulo: "Bases de Datos & Infraestructura",
-    color: "#f59e0b",
-    tecnologias: [
-      { nombre: "MySQL", icono: "skill-icons:mysql-dark", iconColor: "" },
-      { nombre: "PostgreSQL", icono: "skill-icons:postgresql-dark", iconColor: "" },
       { nombre: "Docker", icono: "skill-icons:docker", iconColor: "" },
       { nombre: "Git", icono: "skill-icons:git", iconColor: "" }
     ]
   },
   {
-    titulo: "IoT & Data",
-    color: "#8b5cf6",
+    titulo: "Diseño & Web",
     tecnologias: [
-      { nombre: "Arduino", icono: "skill-icons:arduino", iconColor: "" },
-      { nombre: "Node-RED", icono: "simple-icons:nodered", iconColor: "#8f0000" },
-      { nombre: "MQTT", icono: "carbon:iot-connect", iconColor: "#660066" },
-      { nombre: "Orange (Data)", icono: "mdi:chart-scatter-plot-hexbin", iconColor: "#f16e00" }
-    ]
-  },
-  {
-    titulo: "CMS & Diseño",
-    color: "#ec4899",
-    tecnologias: [
-      { nombre: "WordPress", icono: "skill-icons:wordpress", iconColor: "" },
+      { nombre: "Tailwind CSS", icono: "skill-icons:tailwindcss-dark", iconColor: "" },
       { nombre: "Figma", icono: "skill-icons:figma-dark", iconColor: "" },
-      { nombre: "Claude AI", icono: "logos:anthropic-icon", iconColor: "" }
+      { nombre: "WordPress", icono: "skill-icons:wordpress", iconColor: "" }
     ]
   }
 ];
@@ -60,38 +65,63 @@ const TechStack = () => {
       <div className="contenedor-full">
         
         <div className="encabezado anim-scroll">
-          <h2 className="titulo">Herramientas y Tecnologías</h2>
+          <h2 className="titulo">Arsenal Tecnológico</h2>
           <p className="subtitulo">
-            Mi ecosistema de desarrollo, categorizado para abarcar soluciones completas desde la base de datos hasta la experiencia de usuario.
+            Enfocado en resolver problemáticas reales mediante herramientas conectadas y de nivel empresarial.
           </p>
         </div>
 
-        <div className="herramientas-container">
-          {categoriasHerramientas.map((cat, i) => (
-            <div key={i} className="categoria-fila anim-scroll">
-              
-              <div className="categoria-info">
-                <h3 className="categoria-titulo" style={{ '--cat-color': cat.color }}>
-                  {cat.titulo}
-                </h3>
-                <div className="categoria-linea" style={{ background: cat.color }}></div>
+        {/* ESPECIALIDAD PRINCIPAL */}
+        <div className="especialidad-container anim-scroll">
+          <div className="especialidad-header">
+            <h3 className="especialidad-titulo">{especialidad.titulo}</h3>
+            <p className="especialidad-desc">{especialidad.descripcion}</p>
+          </div>
+          
+          <div className="especialidad-grid">
+            {especialidad.categorias.map((cat, i) => (
+              <div key={i} className="especialidad-bloque">
+                <h4 className="bloque-titulo">{cat.nombre}</h4>
+                <div className="bloque-items">
+                  {cat.tecnologias.map((tech, j) => (
+                    <div key={j} className="pill-item core-pill">
+                      <Icon 
+                        icon={tech.icono} 
+                        className="pill-icon" 
+                        style={tech.iconColor ? { color: tech.iconColor } : {}}
+                      />
+                      <span className="pill-name">{tech.nombre}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              
-              <div className="categoria-items">
-                {cat.tecnologias.map((tech, j) => (
-                  <div key={j} className="pill-item">
-                    <Icon 
-                      icon={tech.icono} 
-                      className="pill-icon" 
-                      style={tech.iconColor ? { color: tech.iconColor } : {}}
-                    />
-                    <span className="pill-name">{tech.nombre}</span>
-                  </div>
-                ))}
-              </div>
+            ))}
+          </div>
+        </div>
 
-            </div>
-          ))}
+        {/* HERRAMIENTAS COMPLEMENTARIAS */}
+        <div className="complementos-container anim-scroll">
+          <h3 className="complementos-titulo">Herramientas Complementarias</h3>
+          
+          <div className="complementos-grid">
+            {complementos.map((cat, i) => (
+              <div key={i} className="complemento-bloque">
+                <h4 className="bloque-titulo-mini">{cat.titulo}</h4>
+                <div className="bloque-items-mini">
+                  {cat.tecnologias.map((tech, j) => (
+                    <div key={j} className="pill-item-mini" title={tech.nombre}>
+                      <Icon 
+                        icon={tech.icono} 
+                        className="pill-icon-mini" 
+                        style={tech.iconColor ? { color: tech.iconColor } : {}}
+                      />
+                      <span className="pill-name-mini">{tech.nombre}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>
