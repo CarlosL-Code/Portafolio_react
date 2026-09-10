@@ -100,39 +100,6 @@ a {
     margin: auto;
 }
 
-/* BOTONES (Diseño Premium) */
-.boton {
-    background: linear-gradient(135deg, var(--primario) 0%, #06B6D4 100%);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 100px;
-    font-weight: 600; /* Un poco más grueso */
-    padding: 14px 24px; /* Un poco más anchos */
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    text-decoration: none;
-    box-shadow: 0 4px 15px rgba(216, 58, 58, 0.2); /* Sombra base sutil */
-}
-
-.boton:hover {
-    background: linear-gradient(135deg, var(--primario-hover) 0%, var(--primario) 100%);
-    box-shadow: 0 8px 25px var(--dark-button-shadow); /* Sombra más fuerte al hacer hover */
-    text-decoration: none;
-    transform: translateY(-2px) scale(1.02); /* Animación de escala sutil */
-}
-
-.boton:active {
-    transform: translateY(1px) scale(0.98); /* Feedback táctil al clickear */
-}
-
-body.dark .boton {
-    color: #fff;
-    box-shadow: 0 4px 15px var(--dark-button-shadow);
-}
-
 /* SECCIONES */
 .clientes,
 .trabajos,
@@ -623,6 +590,36 @@ body.dark .boton::before, body.dark .btn-enviar::before, body.dark .btn-proyecto
     background: #38BDF8;
 }
 body.dark .boton:hover, body.dark .btn-enviar:hover, body.dark .btn-proyecto:hover, body.dark .btn-plan:hover {
+    color: #0B1121;
+}
+
+/* ======================================
+   BTN-PRIMARIO / BTN-SECUNDARIO
+   .btn-secundario hereda el estilo ghost de .boton tal cual.
+   .btn-primario se distingue quedando relleno desde el inicio,
+   para que haya una jerarquía clara entre la acción principal y la
+   secundaria (antes ambas se veían idénticas).
+====================================== */
+.btn-primario {
+    background: var(--primario);
+    color: #fff;
+}
+.btn-primario::before {
+    content: none;
+}
+.btn-primario:hover {
+    background: var(--primario-hover);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+body.dark .btn-primario {
+    background: #38BDF8;
+    border-color: #38BDF8;
+    color: #0B1121;
+}
+body.dark .btn-primario:hover {
+    background: #0ea5e9;
     color: #0B1121;
 }
 

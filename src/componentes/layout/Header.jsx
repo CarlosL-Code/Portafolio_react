@@ -82,7 +82,7 @@ const Header = ({ currency, setCurrency }) => {
 
           <div className="nav-links">
             <Link to="/" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Inicio</Link>
-            <Link to="/#planes" onClick={closeMenu}>Servicios</Link>
+            <Link to="/desarrollo-web" onClick={() => { closeMenu(); window.scrollTo(0, 0); }}>Servicios</Link>
             <Link to="/proyectos" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Proyectos</Link>
             <Link to="/contacto" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Contacto</Link>
           </div>
