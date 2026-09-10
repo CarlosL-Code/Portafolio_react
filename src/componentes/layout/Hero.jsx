@@ -1,42 +1,27 @@
 import "./Hero.css";
-import DepthText from '../ui/DepthText';
 
 const Hero = () => {
   return (
     <section className="hero">
+      <div className="hero-glow" aria-hidden="true"></div>
+
       <div className="hero-container">
-        
+
         <div className="badge-profesional">
           <span className="badge-dot"></span> Portafolio Profesional
         </div>
-        
-        <h1 className="titulo" style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'center' }}>
-          <span style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 700, color: '#f1f5f9' }}>Software Engineer</span>
-          <span className="highlight-text-wrapper" style={{ display: 'inline-block', margin: '5px 0' }}>
-            <DepthText
-              text="FULL STACK"
-              layers={14}
-              depth={2.4}
-              faceColor="#F8FAFC"
-              depthColor="#334155"
-              tilt={7.5}
-              pointerTracking
-              smoothing={0.14}
-              perspective={900}
-              autoOrbit
-              orbitSpeed={0.35}
-              fontSize="inherit"
-              fontWeight={900}
-              shadow
-            />
-          </span>
-          <span style={{ fontSize: 'clamp(18px, 2.5vw, 24px)', fontWeight: 500, color: '#cbd5e1', letterSpacing: '0.5px' }}>Diseño, desarrollo y despliegue.</span>
+
+        <h1 className="hero-titulo">
+          Software Engineer
+          <span className="hero-highlight">Full Stack</span>
         </h1>
-        
-        {/* Subtítulo eliminado ya que su contenido ahora está integrado en el título principal */}
-        
+
+        <p className="hero-subtitulo">
+          Diseño, desarrollo y despliegue de principio a fin.
+        </p>
+
         <div className="botones">
-          <a href="#proyectos" className="boton btn-primario">
+          <a href="#trabajos" className="boton btn-primario">
             Ver mis proyectos
             <div className="icono">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -55,7 +40,7 @@ const Hero = () => {
             </div>
           </a>
         </div>
-        
+
       </div>
     </section>
   );

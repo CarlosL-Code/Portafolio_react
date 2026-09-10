@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import { Icon } from '@iconify/react';
 import './TechStack.css';
 
 const categorias = [
   {
+    id: "frontend",
     nombre: "Frontend",
     tecnologias: [
       { nombre: "HTML", icono: "logos:html-5" },
@@ -15,6 +17,7 @@ const categorias = [
     ]
   },
   {
+    id: "backend",
     nombre: "Backend",
     tecnologias: [
       { nombre: "PHP", icono: "logos:php" },
@@ -26,6 +29,7 @@ const categorias = [
     ]
   },
   {
+    id: "herramientas",
     nombre: "Herramientas",
     tecnologias: [
       { nombre: "Git", icono: "logos:git-icon" },
@@ -38,6 +42,9 @@ const categorias = [
 ];
 
 const TechStack = () => {
+  const [activa, setActiva] = useState(categorias[0].id);
+  const categoriaActiva = categorias.find((cat) => cat.id === activa);
+
   return (
     <section className="tech-stack" id="tech-stack">
       <div className="contenedor-full">
@@ -49,20 +56,36 @@ const TechStack = () => {
           </p>
         </div>
 
-        <div className="tech-categorias">
-          {categorias.map((cat, i) => (
-            <div key={i} className="tech-categoria anim-scroll">
-              <h3 className="tech-categoria-titulo">{cat.nombre}</h3>
-              <div className="tech-grid">
-                {cat.tecnologias.map((tech, j) => (
-                  <div key={j} className="tech-card">
-                    <div className="tech-card-icon-wrap">
-                      <Icon icon={tech.icono} className="tech-card-icon" />
-                    </div>
-                    <span className="tech-card-nombre">{tech.nombre}</span>
-                  </div>
-                ))}
+        <div className="tech-tabs anim-scroll" role="tablist" aria-label="Categorías de tecnologías">
+          {categorias.map((cat) => (
+            <button
+              key={cat.id}
+              type="button"
+              id={`tech-tab-${cat.id}`}
+              role="tab"
+              aria-selected={activa === cat.id}
+              aria-controls="tech-panel"
+              className={`tech-tab ${activa === cat.id ? "activo" : ""}`}
+              onClick={() => setActiva(cat.id)}
+            >
+              {cat.nombre}
+            </button>
+          ))}
+        </div>
+
+        <div
+          className="tech-lista anim-scroll"
+          id="tech-panel"
+          role="tabpanel"
+          aria-labelledby={`tech-tab-${activa}`}
+          key={activa}
+        >
+          {categoriaActiva.tecnologias.map((tech, i) => (
+            <div key={i} className="tech-pill">
+              <div className="tech-pill-icon-wrap">
+                <Icon icon={tech.icono} className="tech-pill-icon" />
               </div>
+              <span className="tech-pill-nombre">{tech.nombre}</span>
             </div>
           ))}
         </div>

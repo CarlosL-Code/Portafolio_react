@@ -1,51 +1,38 @@
 .hero {
-    background-color: #050505;
-    background-image: url('/assets/header3_enhanced.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     position: relative;
     width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 120px 20px 80px 20px;
+    padding: 140px 20px 100px 20px;
     text-align: center;
     overflow: hidden;
+    background-color: #0B1121;
 }
 
-/* background-attachment: fixed obliga a repintar el fondo en cada frame de
-   scroll en Android/Chrome (Safari directamente lo ignora), un causante
-   clásico de jank en móvil sin aportar el efecto parallax que sí se ve en
-   desktop. Se desactiva solo ahí. */
-@media (max-width: 768px) {
-    .hero {
-        background-attachment: scroll;
-    }
-}
-
-.hero::after {
-    content: '';
+/* Fondo sólido oscuro + brillo sutil en vez de la foto de stock: más
+   consistente con el resto del sitio y sin la sombra pesada que hacía
+   falta para leer el texto sobre una imagen. */
+.hero-glow {
     position: absolute;
     inset: 0;
-    /* Reducimos la opacidad negra y agregamos un azul pizarra sutil */
-    background: 
-        linear-gradient(to bottom, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.90) 100%),
-        radial-gradient(circle at 50% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 60%);
+    z-index: 0;
     pointer-events: none;
-    z-index: 1;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(var(--primario-rgb), 0.28) 0%, transparent 45%),
+        radial-gradient(circle at 85% 90%, rgba(56, 189, 248, 0.16) 0%, transparent 50%);
 }
 
 .hero-container {
     position: relative;
-    z-index: 3;
-    max-width: 900px;
+    z-index: 1;
+    max-width: 760px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 28px;
 }
 
 .hero .badge-profesional {
@@ -56,11 +43,11 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 8px 20px;
     border-radius: 100px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
 }
 
@@ -72,26 +59,29 @@
     box-shadow: 0 0 10px var(--primario);
 }
 
-.hero .titulo {
+/* Título: una sola jerarquía tipográfica, sin efectos 3D ni tamaños
+   compitiendo entre sí. */
+.hero-titulo {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(40px, 6vw, 72px);
-    font-weight: 900;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
     color: #ffffff;
-    line-height: 1.1;
-    letter-spacing: -2px;
+    line-height: 1.25;
+    letter-spacing: -1px;
 }
 
-.hero .titulo .highlight-text {
-    background: linear-gradient(90deg, #ff6b6b 0%, var(--primario) 50%, #ff8c42 100%);
+.hero-highlight {
+    display: block;
+    background: linear-gradient(90deg, #38BDF8 0%, var(--primario) 50%, #06B6D4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.hero .subtitulo {
-    font-size: clamp(16px, 2vw, 20px);
+.hero-subtitulo {
+    font-size: clamp(16px, 2vw, 19px);
     line-height: 1.6;
     color: var(--shade-4);
-    max-width: 700px;
+    max-width: 540px;
     margin: 0 auto;
 }
 
@@ -99,19 +89,13 @@
     display: flex;
     gap: 20px;
     justify-content: center;
-    margin-top: 10px;
-}
-
-.hero .boton.transparente {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.hero .boton.transparente:hover {
-    background: rgba(255, 255, 255, 0.1);
+    margin-top: 12px;
 }
 
 @media screen and (max-width: 576px) {
+    .hero {
+        padding: 120px 20px 80px 20px;
+    }
     .hero .botones {
         flex-direction: column;
         width: 100%;

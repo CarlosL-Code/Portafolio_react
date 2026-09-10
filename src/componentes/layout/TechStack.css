@@ -5,14 +5,14 @@
 
 .tech-stack .contenedor-full {
   width: 100%;
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .tech-stack .encabezado {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 44px;
 }
 
 .tech-stack .titulo {
@@ -38,112 +38,152 @@ body.dark .tech-stack .subtitulo {
 }
 
 /* ================================= */
-/* CATEGORÍAS                        */
+/* TABS DE CATEGORÍA                 */
 /* ================================= */
-.tech-categorias {
+.tech-tabs {
   display: flex;
-  flex-direction: column;
-  gap: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 36px;
 }
 
-.tech-categoria-titulo {
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--shade-6);
-  margin-bottom: 20px;
+.tech-tab {
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid var(--shade-3);
+  color: var(--shade-7);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
-body.dark .tech-categoria-titulo {
+body.dark .tech-tab {
+  border-color: #334155;
   color: var(--shade-4);
 }
 
-/* ================================= */
-/* GRID DE TARJETAS                  */
-/* ================================= */
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  gap: 16px;
+.tech-tab:hover {
+  border-color: var(--primario);
+  color: var(--primario);
 }
 
-.tech-card {
+body.dark .tech-tab:hover {
+  color: #fff;
+}
+
+.tech-tab.activo {
+  background: var(--primario);
+  border-color: var(--primario);
+  color: #fff;
+}
+
+/* ================================= */
+/* LISTA DE TECNOLOGÍAS (PÍLDORAS)   */
+/* ================================= */
+.tech-lista {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  padding: 20px 10px;
-  background: var(--shade-1);
-  border: 1px solid var(--shade-3);
-  border-radius: 16px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  animation: techFadeIn 0.35s ease;
 }
 
-body.dark .tech-card {
+@keyframes techFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tech-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px 8px 8px;
+  background: var(--shade-1);
+  border: 1px solid var(--shade-3);
+  border-radius: 100px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+body.dark .tech-pill {
   background: #0F172A;
   border-color: #334155;
 }
 
-.tech-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+.tech-pill:hover {
+  transform: translateY(-2px);
   border-color: var(--primario);
+  box-shadow: 0 8px 20px rgba(var(--primario-rgb), 0.12);
 }
 
-body.dark .tech-card:hover {
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+body.dark .tech-pill:hover {
+  box-shadow: 0 8px 20px rgba(var(--primario-rgb), 0.25);
 }
 
-/* Chip claro fijo detrás del ícono: algunos logos (GitHub, Prisma) son
-   monocromáticos y perderían contraste sobre una tarjeta oscura. */
-.tech-card-icon-wrap {
-  width: 52px;
-  height: 52px;
+/* Chip claro fijo detrás del ícono: GitHub y Prisma son monocromáticos y
+   perderían contraste sobre una píldora oscura. */
+.tech-pill-icon-wrap {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #F8FAFC;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 14px;
+  border-radius: 50%;
 }
 
-.tech-card-icon {
-  font-size: 28px;
+.tech-pill-icon {
+  font-size: 17px;
   color: #111827;
 }
 
-.tech-card-nombre {
-  font-size: 12px;
+.tech-pill-nombre {
+  font-size: 14px;
   font-weight: 600;
   color: var(--shade-7);
-  text-align: center;
 }
 
-body.dark .tech-card-nombre {
+body.dark .tech-pill-nombre {
   color: var(--shade-3);
 }
 
 /* ================================= */
 /* RESPONSIVE                        */
 /* ================================= */
-@media screen and (max-width: 768px) {
-  .tech-grid {
-    grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
-    gap: 12px;
+@media screen and (max-width: 576px) {
+  .tech-tabs {
+    gap: 8px;
   }
 
-  .tech-card {
-    padding: 16px 8px;
+  .tech-tab {
+    padding: 8px 18px;
+    font-size: 13px;
   }
 
-  .tech-card-icon-wrap {
-    width: 44px;
-    height: 44px;
+  .tech-pill {
+    padding: 6px 14px 6px 6px;
   }
 
-  .tech-card-icon {
-    font-size: 24px;
+  .tech-pill-icon-wrap {
+    width: 26px;
+    height: 26px;
+  }
+
+  .tech-pill-icon {
+    font-size: 15px;
+  }
+
+  .tech-pill-nombre {
+    font-size: 13px;
   }
 }
