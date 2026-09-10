@@ -1,84 +1,37 @@
 import { Icon } from '@iconify/react';
-import Folder from '../ui/Folder';
 import './TechStack.css';
 
-const stackCategorias = [
-  {
-    titulo: "Frontend",
-    color: "#3b82f6",
-    tecnologias: [
-      { nombre: "React", icono: "skill-icons:react-dark" },
-      { nombre: "Next.js", icono: "skill-icons:nextjs-dark" },
-      { nombre: "TypeScript", icono: "skill-icons:typescript" },
-      { nombre: "JavaScript", icono: "skill-icons:javascript" },
-      { nombre: "Tailwind CSS", icono: "skill-icons:tailwindcss-dark" },
-      { nombre: "HTML5", icono: "skill-icons:html" },
-      { nombre: "CSS3", icono: "skill-icons:css" }
-    ]
-  },
-  {
-    titulo: "Backend & BD",
-    color: "#10b981",
-    tecnologias: [
-      { nombre: "Java", icono: "skill-icons:java-dark" },
-      { nombre: "Spring Boot", icono: "skill-icons:spring-dark" },
-      { nombre: "Python", icono: "skill-icons:python-dark" },
-      { nombre: "PHP", icono: "skill-icons:php-dark" },
-      { nombre: "MySQL", icono: "skill-icons:mysql-dark" },
-      { nombre: "PostgreSQL", icono: "skill-icons:postgresql-dark" }
-    ]
-  },
-  {
-    titulo: "IoT & Data",
-    color: "#f59e0b",
-    tecnologias: [
-      { nombre: "Node-RED", icono: "logos:nodered" },
-      { nombre: "MQTT", icono: "logos:mqtt" },
-      { nombre: "Arduino", icono: "skill-icons:arduino" },
-      { nombre: "Orange", icono: "logos:orange" }
-    ]
-  },
-  {
-    titulo: "DevOps",
-    color: "#8b5cf6",
-    tecnologias: [
-      { nombre: "Git", icono: "skill-icons:git" },
-      { nombre: "GitHub", icono: "skill-icons:github-dark" },
-      { nombre: "Docker", icono: "skill-icons:docker" }
-    ]
-  },
-  {
-    titulo: "Herramientas",
-    color: "#ec4899",
-    tecnologias: [
-      { nombre: "Figma", icono: "skill-icons:figma-dark" },
-      { nombre: "Claude AI", icono: "logos:anthropic-icon" },
-      { nombre: "DaVinci Resolve", icono: "logos:davinci-resolve" },
-      { nombre: "WordPress", icono: "skill-icons:wordpress" }
-    ]
-  }
+// Agrupamos todas las tecnologías en un solo arreglo para el panal
+const todasLasTecnologias = [
+  // Frontend
+  { nombre: "React", icono: "skill-icons:react-dark", color: "#61dafb" },
+  { nombre: "Next.js", icono: "skill-icons:nextjs-dark", color: "#ffffff" },
+  { nombre: "TypeScript", icono: "skill-icons:typescript", color: "#3178c6" },
+  { nombre: "JavaScript", icono: "skill-icons:javascript", color: "#f7df1e" },
+  { nombre: "Tailwind", icono: "skill-icons:tailwindcss-dark", color: "#38bdf8" },
+  { nombre: "HTML5", icono: "skill-icons:html", color: "#e34f26" },
+  { nombre: "CSS3", icono: "skill-icons:css", color: "#1572b6" },
+  
+  // Backend & BD
+  { nombre: "Java", icono: "skill-icons:java-dark", color: "#007396" },
+  { nombre: "Spring", icono: "skill-icons:spring-dark", color: "#6db33f" },
+  { nombre: "Python", icono: "skill-icons:python-dark", color: "#3776ab" },
+  { nombre: "PHP", icono: "skill-icons:php-dark", color: "#777bb4" },
+  { nombre: "MySQL", icono: "skill-icons:mysql-dark", color: "#4479a1" },
+  { nombre: "PostgreSQL", icono: "skill-icons:postgresql-dark", color: "#336791" },
+
+  // IoT & Data
+  { nombre: "Node-RED", icono: "logos:nodered", color: "#8f0000" },
+  { nombre: "MQTT", icono: "logos:mqtt", color: "#660066" },
+  { nombre: "Arduino", icono: "skill-icons:arduino", color: "#00979d" },
+  { nombre: "Orange", icono: "logos:orange", color: "#f16e00" },
+
+  // DevOps & Herramientas
+  { nombre: "Git", icono: "skill-icons:git", color: "#f05032" },
+  { nombre: "Docker", icono: "skill-icons:docker", color: "#2496ed" },
+  { nombre: "Figma", icono: "skill-icons:figma-dark", color: "#f24e1e" },
+  { nombre: "Claude AI", icono: "logos:anthropic-icon", color: "#cc9b7a" }
 ];
-
-const renderTechPaper = (techList) => {
-  return (
-    <div className="tech-paper-content">
-      {techList.map((tech, idx) => (
-        <div key={idx} className="tech-paper-item" title={tech.nombre}>
-          <Icon icon={tech.icono} width="24" height="24" />
-        </div>
-      ))}
-    </div>
-  );
-};
-
-// Divide las tecnologías en 3 grupos (papers) para el Folder
-const chunkArray = (arr, numChunks) => {
-  const result = Array.from({ length: numChunks }, () => []);
-  arr.forEach((item, index) => {
-    result[index % numChunks].push(item);
-  });
-  return result;
-};
 
 const TechStack = () => {
   return (
@@ -88,22 +41,25 @@ const TechStack = () => {
         <div className="encabezado anim-scroll">
           <h2 className="titulo">Stack Tecnológico</h2>
           <p className="subtitulo">
-            Haz clic en las carpetas para descubrir las tecnologías que utilizo en cada área de desarrollo.
+            Ecosistema de tecnologías que domino para diseñar, desarrollar y desplegar soluciones completas.
           </p>
         </div>
 
-        <div className="folders-grid">
-          {stackCategorias.map((cat, i) => {
-            const chunks = chunkArray(cat.tecnologias, 3);
-            const paperItems = chunks.map(chunk => renderTechPaper(chunk));
-            
-            return (
-              <div key={i} className="folder-wrapper anim-scroll">
-                <Folder color={cat.color} size={1.2} items={paperItems} />
-                <h3 className="folder-title">{cat.titulo}</h3>
+        <div className="hive-container anim-scroll">
+          <div className="hive-grid">
+            {todasLasTecnologias.map((tech, i) => (
+              <div 
+                key={i} 
+                className="hex-wrapper"
+                style={{ '--hover-color': tech.color }}
+              >
+                <div className="hex-content">
+                  <Icon icon={tech.icono} className="hex-icon" />
+                  <span className="hex-name">{tech.nombre}</span>
+                </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
 
       </div>

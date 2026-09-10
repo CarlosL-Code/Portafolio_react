@@ -5,7 +5,7 @@
 
 .tech-stack .encabezado {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .tech-stack .titulo {
@@ -35,69 +35,122 @@ body.dark .tech-stack .subtitulo {
 }
 
 /* ================================= */
-/* FOLDERS GRID LAYOUT               */
+/* HEXAGONAL HIVE LAYOUT             */
 /* ================================= */
-.folders-grid {
+.hive-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 60px;
-  max-width: 1000px;
-  margin: 0 auto;
   justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.folder-wrapper {
+.hive-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+/* 
+  Calculos para un hexágono perfecto apuntando hacia arriba/abajo:
+  Proporción ancho/alto: width = height * 0.866 (o alto = ancho * 1.1547)
+*/
+.hex-wrapper {
+  position: relative;
+  width: 100px;
+  height: 115px; 
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -10px 2px; /* Margen negativo superior/inferior para emular el empaquetado del panal */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05); /* Borde interno sutil */
+}
+
+body.dark .hex-wrapper {
+  background: rgba(30, 41, 59, 0.7);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+.hex-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px; /* Espacio para que las hojas salgan hacia arriba */
-  padding-top: 50px;
-}
-
-.folder-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--shade-8);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 10px;
-}
-
-body.dark .folder-title {
-  color: var(--shade-2);
-}
-
-/* Contenido de cada papel (iconos de tecnología) */
-.tech-paper-content {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   gap: 8px;
-  width: 100%;
-  height: 100%;
-  padding: 8px;
+  z-index: 2;
 }
 
-.tech-paper-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease;
+.hex-icon {
+  font-size: 36px;
+  transition: transform 0.3s ease;
+  filter: grayscale(80%) opacity(0.8);
 }
 
-.tech-paper-item:hover {
-  transform: scale(1.2);
-  z-index: 20;
+body.dark .hex-icon {
+  filter: grayscale(60%) opacity(0.7);
 }
 
-@media screen and (max-width: 768px) {
-  .folders-grid {
-    gap: 40px;
+.hex-name {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--shade-6);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+body.dark .hex-name {
+  color: var(--shade-4);
+}
+
+/* Efectos Hover */
+.hex-wrapper:hover {
+  transform: scale(1.15);
+  background: #ffffff;
+  z-index: 10;
+  /* Simular brillo radial con el color de la tecnología */
+  box-shadow: inset 0 0 20px var(--hover-color, rgba(0,0,0,0.1));
+}
+
+body.dark .hex-wrapper:hover {
+  background: #0f172a;
+  box-shadow: inset 0 0 20px var(--hover-color, rgba(255,255,255,0.1));
+}
+
+.hex-wrapper:hover .hex-icon {
+  transform: scale(1.1);
+  filter: grayscale(0%) opacity(1);
+}
+
+.hex-wrapper:hover .hex-name {
+  opacity: 1;
+  transform: translateY(0);
+  /* Colorear el texto con el color oficial de la tech en hover */
+  color: var(--hover-color);
+}
+
+/* 
+  Responsive
+  Al reducir pantalla, flex-wrap se encarga de reordenarlos automáticamente.
+  El margen negativo vertical ayuda a que se empaqueten mejor en modo enjambre.
+*/
+@media screen and (max-width: 600px) {
+  .hex-wrapper {
+    width: 85px;
+    height: 98px;
+    margin: -8px 2px;
+  }
+  .hex-icon {
+    font-size: 28px;
+  }
+  .hex-name {
+    font-size: 9px;
   }
 }
