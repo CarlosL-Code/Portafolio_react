@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Icon } from '@iconify/react';
 import './TechStack.css';
 
@@ -6,6 +5,8 @@ const categorias = [
   {
     id: "frontend",
     nombre: "Frontend",
+    simbolo: "01",
+    descripcion: "Interfaces claras, dinámicas y adaptables a cualquier pantalla.",
     tecnologias: [
       { nombre: "HTML", icono: "logos:html-5" },
       { nombre: "CSS", icono: "logos:css-3" },
@@ -19,6 +20,8 @@ const categorias = [
   {
     id: "backend",
     nombre: "Backend",
+    simbolo: "02",
+    descripcion: "La lógica, los datos y las conexiones que hacen funcionar cada proyecto.",
     tecnologias: [
       { nombre: "PHP", icono: "logos:php" },
       { nombre: "Laravel", icono: "logos:laravel" },
@@ -31,6 +34,8 @@ const categorias = [
   {
     id: "herramientas",
     nombre: "Herramientas",
+    simbolo: "03",
+    descripcion: "Del diseño al despliegue, un flujo de trabajo organizado y colaborativo.",
     tecnologias: [
       { nombre: "Git", icono: "logos:git-icon" },
       { nombre: "GitHub", icono: "logos:github-icon" },
@@ -41,58 +46,51 @@ const categorias = [
   }
 ];
 
-const TechStack = () => {
-  const [activa, setActiva] = useState(categorias[0].id);
-  const categoriaActiva = categorias.find((cat) => cat.id === activa);
-
-  return (
-    <section className="tech-stack" id="tech-stack">
-      <div className="contenedor-full">
-
-        <div className="encabezado anim-scroll">
-          <h2 className="titulo">Tecnologías y Herramientas</h2>
-          <p className="subtitulo">
-            El stack que uso día a día para construir y mantener aplicaciones reales.
-          </p>
-        </div>
-
-        <div className="tech-tabs anim-scroll" role="tablist" aria-label="Categorías de tecnologías">
-          {categorias.map((cat) => (
-            <button
-              key={cat.id}
-              type="button"
-              id={`tech-tab-${cat.id}`}
-              role="tab"
-              aria-selected={activa === cat.id}
-              aria-controls="tech-panel"
-              className={`tech-tab ${activa === cat.id ? "activo" : ""}`}
-              onClick={() => setActiva(cat.id)}
-            >
-              {cat.nombre}
-            </button>
-          ))}
-        </div>
-
-        <div
-          className="tech-lista anim-scroll"
-          id="tech-panel"
-          role="tabpanel"
-          aria-labelledby={`tech-tab-${activa}`}
-          key={activa}
-        >
-          {categoriaActiva.tecnologias.map((tech, i) => (
-            <div key={i} className="tech-pill">
-              <div className="tech-pill-icon-wrap">
-                <Icon icon={tech.icono} className="tech-pill-icon" />
-              </div>
-              <span className="tech-pill-nombre">{tech.nombre}</span>
-            </div>
-          ))}
-        </div>
-
+const TechStack = () => (
+  <section className="tech-stack" id="tech-stack" aria-labelledby="tech-stack-title">
+    <div className="contenedor-full">
+      <div className="encabezado anim-scroll">
+        <span className="tech-eyebrow">MI STACK DE DESARROLLO</span>
+        <h2 className="titulo" id="tech-stack-title">Tecnologías y herramientas</h2>
+        <p className="subtitulo">
+          De la interfaz a los datos. El stack que uso para construir y mantener aplicaciones reales.
+        </p>
       </div>
-    </section>
-  );
-};
+
+      <div className="tech-categorias">
+        {categorias.map((categoria) => (
+          <article
+            className={`tech-categoria tech-categoria--${categoria.id} anim-scroll`}
+            key={categoria.id}
+            aria-labelledby={`tech-heading-${categoria.id}`}
+          >
+            <div className="tech-categoria-top">
+              <span className="tech-category-symbol" aria-hidden="true">
+                {categoria.id === 'frontend' ? '</>' : categoria.id === 'backend' ? '{ }' : '+ /'}
+              </span>
+              <span className="tech-category-number" aria-hidden="true">{categoria.simbolo}</span>
+            </div>
+            <h3 id={`tech-heading-${categoria.id}`}>{categoria.nombre}</h3>
+            <p className="tech-descripcion">{categoria.descripcion}</p>
+            <ul className="tech-lista" aria-label={`Tecnologías de ${categoria.nombre}`}>
+              {categoria.tecnologias.map((tech) => (
+                <li key={tech.nombre} className="tech-item">
+                  <span className="tech-icon-wrap" aria-hidden="true">
+                    <Icon icon={tech.icono} className="tech-icon" />
+                  </span>
+                  <span>{tech.nombre}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="tech-categoria-footer">
+              <span className="tech-footer-dot" aria-hidden="true" />
+              {categoria.tecnologias.length} tecnologías
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default TechStack;

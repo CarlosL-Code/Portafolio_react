@@ -1,189 +1,215 @@
 .tech-stack {
-  padding: 100px 0;
-  overflow: hidden;
+  padding: 88px 0;
+  scroll-margin-top: 100px;
 }
 
 .tech-stack .contenedor-full {
   width: 100%;
-  max-width: 900px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 .tech-stack .encabezado {
   text-align: center;
-  margin-bottom: 44px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.tech-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--primario);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
 }
 
 .tech-stack .titulo {
-  font-size: clamp(28px, 4vw, 38px);
-  font-weight: 800;
+  margin: 0 0 16px;
   color: var(--shade-9);
-  margin-bottom: 12px;
-}
-
-body.dark .tech-stack .titulo {
-  color: #fff;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
 }
 
 .tech-stack .subtitulo {
+  max-width: 580px;
+  margin: 0 auto;
   color: var(--shade-6);
   font-size: 16px;
-  max-width: 560px;
-  margin: 0 auto;
+  line-height: 1.7;
 }
 
-body.dark .tech-stack .subtitulo {
-  color: var(--shade-4);
+.tech-categorias {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
 
-/* ================================= */
-/* TABS DE CATEGORÍA                 */
-/* ================================= */
-.tech-tabs {
+.tech-categoria {
+  --tech-accent: #2563eb;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 36px;
-}
-
-.tech-tab {
-  padding: 10px 24px;
-  border-radius: 100px;
-  font-size: 14px;
-  font-weight: 600;
-  background: transparent;
+  flex-direction: column;
+  min-width: 0;
+  padding: 26px;
   border: 1px solid var(--shade-3);
-  color: var(--shade-7);
-  cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  border-top: 2px solid var(--tech-accent);
+  border-radius: 20px;
+  background: var(--shade-1);
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.035);
 }
 
-body.dark .tech-tab {
-  border-color: #334155;
-  color: var(--shade-4);
-}
+.tech-categoria--backend { --tech-accent: #087f8c; }
+.tech-categoria--herramientas { --tech-accent: #7c3aed; }
 
-.tech-tab:hover {
-  border-color: var(--primario);
-  color: var(--primario);
-}
-
-body.dark .tech-tab:hover {
-  color: #fff;
-}
-
-.tech-tab.activo {
-  background: var(--primario);
-  border-color: var(--primario);
-  color: #fff;
-}
-
-/* ================================= */
-/* LISTA DE TECNOLOGÍAS (PÍLDORAS)   */
-/* ================================= */
-.tech-lista {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  animation: techFadeIn 0.35s ease;
-}
-
-@keyframes techFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.tech-pill {
+.tech-categoria-top {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 18px 8px 8px;
-  background: var(--shade-1);
-  border: 1px solid var(--shade-3);
-  border-radius: 100px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-body.dark .tech-pill {
-  background: #0F172A;
-  border-color: #334155;
+.tech-category-symbol {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid color-mix(in srgb, var(--tech-accent) 22%, transparent);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--tech-accent) 8%, transparent);
+  color: var(--tech-accent);
+  font: 700 19px monospace;
 }
 
-.tech-pill:hover {
-  transform: translateY(-2px);
-  border-color: var(--primario);
-  box-shadow: 0 8px 20px rgba(var(--primario-rgb), 0.12);
+.tech-category-number {
+  color: var(--shade-6);
+  font: 12px monospace;
+  letter-spacing: 1px;
 }
 
-body.dark .tech-pill:hover {
-  box-shadow: 0 8px 20px rgba(var(--primario-rgb), 0.25);
+.tech-categoria h3 {
+  margin: 0 0 10px;
+  color: var(--shade-9);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
-/* Chip claro fijo detrás del ícono: GitHub y Prisma son monocromáticos y
-   perderían contraste sobre una píldora oscura. */
-.tech-pill-icon-wrap {
+.tech-descripcion {
+  min-height: 66px;
+  margin: 0 0 22px;
+  color: var(--shade-6);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.tech-lista {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--shade-7);
+  background: var(--shade-2);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.tech-item:hover {
+  border-color: color-mix(in srgb, var(--tech-accent) 35%, transparent);
+  background: color-mix(in srgb, var(--tech-accent) 7%, var(--shade-1));
+}
+
+/* A light backing keeps monochrome brand marks readable in both themes. */
+.tech-icon-wrap {
+  display: grid;
+  place-items: center;
   width: 30px;
   height: 30px;
   flex-shrink: 0;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.tech-icon { width: 20px; height: 20px; }
+
+.tech-categoria-footer {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: #F8FAFC;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--shade-3);
+  color: var(--shade-6);
+  font-size: 11px;
+  letter-spacing: 0.3px;
+}
+
+.tech-footer-dot {
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
+  background: var(--tech-accent);
 }
 
-.tech-pill-icon {
-  font-size: 17px;
-  color: #111827;
+body.dark .tech-stack .titulo,
+body.dark .tech-categoria h3 { color: #f8fafc; }
+body.dark .tech-eyebrow { color: #8bb4ff; }
+body.dark .tech-stack .subtitulo,
+body.dark .tech-descripcion,
+body.dark .tech-category-number,
+body.dark .tech-categoria-footer { color: #a8b5c9; }
+
+body.dark .tech-categoria {
+  --tech-accent: #78a7ff;
+  background: linear-gradient(145deg, #142138, #0f192c 65%);
+  border-color: #29364c;
+  border-top-color: var(--tech-accent);
+  box-shadow: 0 12px 36px #02061726;
+}
+body.dark .tech-categoria--backend { --tech-accent: #5dd6ce; }
+body.dark .tech-categoria--herramientas { --tech-accent: #b59aff; }
+body.dark .tech-item { color: #e2e8f0; background: #ffffff04; }
+body.dark .tech-item:hover { background: #ffffff09; }
+body.dark .tech-categoria-footer { border-color: #29364c; }
+
+@media (max-width: 900px) {
+  .tech-categorias { gap: 14px; }
+  .tech-categoria { padding: 20px; }
+  .tech-descripcion { min-height: 88px; }
 }
 
-.tech-pill-nombre {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--shade-7);
+@media (max-width: 700px) {
+  .tech-stack { padding: 64px 0; }
+  .tech-stack .contenedor-full { padding: 0 20px; }
+  .tech-stack .encabezado { margin-bottom: 28px; }
+  .tech-stack .titulo { letter-spacing: -0.8px; }
+  .tech-stack .subtitulo { font-size: 14px; }
+  .tech-categorias { grid-template-columns: 1fr; gap: 18px; }
+  .tech-categoria { padding: 24px; }
+  .tech-descripcion { min-height: 0; margin-bottom: 20px; }
+  .tech-lista { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .tech-item { gap: 8px; padding: 5px 6px; font-size: 13px; }
 }
 
-body.dark .tech-pill-nombre {
-  color: var(--shade-3);
+@media (max-width: 360px) {
+  .tech-categoria { padding: 18px; }
+  .tech-lista { grid-template-columns: 1fr; }
 }
 
-/* ================================= */
-/* RESPONSIVE                        */
-/* ================================= */
-@media screen and (max-width: 576px) {
-  .tech-tabs {
-    gap: 8px;
-  }
-
-  .tech-tab {
-    padding: 8px 18px;
-    font-size: 13px;
-  }
-
-  .tech-pill {
-    padding: 6px 14px 6px 6px;
-  }
-
-  .tech-pill-icon-wrap {
-    width: 26px;
-    height: 26px;
-  }
-
-  .tech-pill-icon {
-    font-size: 15px;
-  }
-
-  .tech-pill-nombre {
-    font-size: 13px;
-  }
+@media (prefers-reduced-motion: reduce) {
+  .tech-stack .tech-item { transition: none; }
 }
