@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
+import ProtectedEmail from '../ui/ProtectedEmail';
 import './Footer.css';
 
 const Footer = () => {
@@ -42,7 +43,7 @@ const Footer = () => {
           <h3>Contacto</h3>
           <ul>
             <li><a href="https://wa.me/56937540250" target="_blank" rel="noreferrer">+56 9 3754 0250</a></li>
-            <li><a href="mailto:carlos.lozano.silva1@gmail.com">carlos.lozano.silva1@gmail.com</a></li>
+            <li><ProtectedEmail /></li>
             <li><Link to="/contacto" onClick={() => window.scrollTo(0, 0)}>Formulario</Link></li>
             <li><a href="https://wa.me/56937540250" target="_blank" rel="noreferrer">Agendar reunión</a></li>
           </ul>

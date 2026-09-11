@@ -1,0 +1,30 @@
+.protected-email-hidden {
+  cursor: pointer;
+  color: var(--shade-6);
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+body.dark .protected-email-hidden {
+  color: var(--shade-4);
+}
+
+.protected-email-hidden:hover {
+  color: var(--primario);
+}
+
+.protected-email-hidden strong {
+  font-size: 0.9em;
+  opacity: 0.8;
+  color: var(--primario);
+}
+
+.protected-email-revealed {
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.protected-email-revealed:hover {
+  text-decoration: underline;
+}

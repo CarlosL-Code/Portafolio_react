@@ -1,7 +1,7 @@
 import "./Contacto.css";
 import { useState } from "react";
 import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
-import SpecularButton from '../ui/SpecularButton';
+import ProtectedEmail from '../ui/ProtectedEmail';
 
 const Contacto = () => {
   const [nombre, setNombre] = useState("");
@@ -74,13 +74,13 @@ const Contacto = () => {
           </div>
           
           <div className="info-items">
-            <a href="mailto:carlos.lozano.silva1@gmail.com" className="info-item">
+            <div className="info-item">
               <div className="info-icon"><FaEnvelope /></div>
               <div className="info-text">
                 <span>Email</span>
-                <strong>carlos.lozano.silva1@gmail.com</strong>
+                <strong><ProtectedEmail /></strong>
               </div>
-            </a>
+            </div>
             
             <a href="https://wa.me/56937540250" target="_blank" rel="noopener noreferrer" className="info-item">
               <div className="info-icon"><FaWhatsapp /></div>
@@ -123,7 +123,7 @@ const Contacto = () => {
                 name="correo"
                 id="correo"
                 autoComplete="email"
-                placeholder="correo@ejemplo.com"
+                placeholder="Ingresa tu correo electrónico..."
                 value={correo}
                 onChange={(e) => handleInput(e, "correo")}
               />
