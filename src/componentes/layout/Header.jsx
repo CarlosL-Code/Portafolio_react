@@ -81,10 +81,27 @@ const Header = ({ currency, setCurrency }) => {
           </button>
 
           <div className="nav-links">
-            <Link to="/" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Inicio</Link>
-            <Link to="/desarrollo-web" onClick={() => { closeMenu(); window.scrollTo(0, 0); }}>Servicios</Link>
-            <Link to="/proyectos" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Proyectos</Link>
-            <Link to="/contacto" onClick={() => { closeMenu(); window.scrollTo(0,0); }}>Contacto</Link>
+            <Link to="/" onClick={() => { closeMenu(); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Inicio</Link>
+            <a href="/#trabajos" onClick={(e) => {
+              e.preventDefault();
+              closeMenu();
+              if (window.location.pathname !== '/') {
+                window.location.href = '/#trabajos';
+              } else {
+                const el = document.getElementById('trabajos');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>Proyectos</a>
+            <a href="/#contacto" onClick={(e) => {
+              e.preventDefault();
+              closeMenu();
+              if (window.location.pathname !== '/') {
+                window.location.href = '/#contacto';
+              } else {
+                const el = document.getElementById('contacto');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>Contacto</a>
           </div>
 
           {/* Acciones extra en el nav */}

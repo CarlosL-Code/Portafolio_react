@@ -33,7 +33,15 @@ const Footer = () => {
             <li><Link to="/desarrollo-web" onClick={() => window.scrollTo(0, 0)}>Desarrollo web</Link></li>
             <li><Link to="/software-a-medida" onClick={() => window.scrollTo(0, 0)}>Software a medida</Link></li>
             <li><Link to="/sistemas-empresariales" onClick={() => window.scrollTo(0, 0)}>Sistemas empresariales</Link></li>
-            <li><Link to="/proyectos" onClick={() => window.scrollTo(0, 0)}>Portafolio</Link></li>
+            <li><a href="/#trabajos" onClick={(e) => {
+              e.preventDefault();
+              if (window.location.pathname !== '/') {
+                window.location.href = '/#trabajos';
+              } else {
+                const el = document.getElementById('trabajos');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>Portafolio</a></li>
             <li><a href="#">Blog</a></li>
           </ul>
         </div>
@@ -44,7 +52,15 @@ const Footer = () => {
           <ul>
             <li><a href="https://wa.me/56937540250" target="_blank" rel="noreferrer">+56 9 3754 0250</a></li>
             <li><ProtectedEmail /></li>
-            <li><Link to="/contacto" onClick={() => window.scrollTo(0, 0)}>Formulario</Link></li>
+            <li><a href="/#contacto" onClick={(e) => {
+              e.preventDefault();
+              if (window.location.pathname !== '/') {
+                window.location.href = '/#contacto';
+              } else {
+                const el = document.getElementById('contacto');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>Formulario</a></li>
             <li><a href="https://wa.me/56937540250" target="_blank" rel="noreferrer">Agendar reunión</a></li>
           </ul>
         </div>
