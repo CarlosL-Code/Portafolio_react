@@ -82,6 +82,26 @@ const Header = ({ currency, setCurrency }) => {
 
           <div className="nav-links">
             <Link to="/" onClick={() => { closeMenu(); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Inicio</Link>
+            <a href="/#acerca-de" onClick={(e) => {
+              e.preventDefault();
+              closeMenu();
+              if (window.location.pathname !== '/') {
+                window.location.href = '/#acerca-de';
+              } else {
+                const el = document.getElementById('acerca-de');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>Acerca de mí</a>
+            <a href="/#experiencia" onClick={(e) => {
+              e.preventDefault();
+              closeMenu();
+              if (window.location.pathname !== '/') {
+                window.location.href = '/#experiencia';
+              } else {
+                const el = document.getElementById('experiencia');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>Experiencia</a>
             <a href="/#trabajos" onClick={(e) => {
               e.preventDefault();
               closeMenu();
