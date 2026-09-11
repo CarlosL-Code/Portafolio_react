@@ -1,62 +1,50 @@
 import "./Clientes.css";
 
+const clientes = [
+  { id: "paveleads", nombre: "Paveleads", src: "/assets/logos/paveleads.png", href: "https://paveleads.com/", escala: 1.45 },
+  { id: "carserv", nombre: "Carserv", src: "/assets/logos/carserv.png", href: "https://carserv.cl", escala: 2 },
+  { id: "hmc", nombre: "HMC Motors", src: "/assets/logos/hmc_motors.png", href: "https://hmcautomotora.cl", escala: 1.35 },
+  { id: "primeros-resultados", nombre: "Primeros Resultados", src: "/assets/logos/primeros_resultados.png", escala: 1.35 },
+  { id: "san-julian", nombre: "San Julián", src: "/assets/logos/logo-SanJulian.png", href: "https://confitessanjulian.cl", escala: 0.85 },
+  { id: "elixir", nombre: "Elixir Gym", src: "/assets/logos/logo-elixir.png", href: "https://web-gym-elixir.vercel.app/", escala: 1 }
+];
 
-const Clientes = () => {
-
-  
-
-  // Puedes cambiar el '#' por la URL real del sitio web de tu cliente
-  const clientes = [
-    { src: "/assets/logos/paveleads.png", alt: "Logo de Paveleads", href: "https://paveleads.com/", needsGlow: true },
-    { src: "/assets/logos/carserv.png", alt: "Logo de Carserv", href: "https://carserv.cl" },
-    { src: "/assets/logos/hmc_motors.png", alt: "Logo de HMC Motors", href: "https://hmcautomotora.cl" },
-    { src: "/assets/logos/primeros_resultados.png", alt: "Logo de Primeros Resultados", href: "#", needsGlow: true },
-    { src: "/assets/logos/logo-SanJulian.png", alt: "Logo de San Julián", href: "https://confitessanjulian.cl", customStyle: { transform: 'scale(0.6)' } },
-    { src: "/assets/logos/logo-elixir.png", alt: "Logo de Elixir Gym", href: "https://web-gym-elixir.vercel.app/", customStyle: { transform: 'scale(0.8)' } }
-  ];
-
-  // Triplicamos la lista internamente para asegurar que la pista exceda el ancho de la pantalla 
-  // y así evitar que flexbox los separe demasiado (space-around) en monitores grandes.
-  const logosPorTrack = [...clientes, ...clientes, ...clientes];
-
-  return (
-    <section className="clientes" id="clientes">
-
-      {/* Encabezado */}
-      <div className="encabezado anim-scroll">
-        <h3 className="titulo">Mis clientes</h3>
-
-        <p className="subtitulos">
-          Estas marcas han confiado en mis servicios.
-        </p>
+const Clientes = () => (
+  <section className="clientes" id="clientes" aria-labelledby="clientes-title">
+    <div className="clientes-contenido">
+      <div className="clientes-encabezado anim-scroll">
+        <span className="clientes-eyebrow">CONFIANZA QUE SE CONSTRUYE</span>
+        <h2 id="clientes-title">Marcas que confían en mi trabajo</h2>
+        <p>Proyectos reales, colaboración cercana y soluciones a medida.</p>
       </div>
-
-      {/* Carrusel de Logos (Estilo Premium Marquesina) */}
-      <div className="logos-wrapper anim-scroll">
-        {/* Track 1 */}
-        <div className="logos-track">
-          {logosPorTrack.map((cliente, index) => (
-            <a key={`track1-${index}`} href={cliente.href} target="_blank" rel="noopener noreferrer" className="brand-item">
-              <div className={`brand-item__media ${cliente.needsGlow ? 'needs-glow' : ''}`}>
-                <img src={cliente.src} alt={cliente.alt} style={cliente.customStyle ? cliente.customStyle : {}} loading="lazy" decoding="async" />
-              </div>
-            </a>
-          ))}
-        </div>
-        {/* Track 2 (Clon para el loop infinito) */}
-        <div className="logos-track" aria-hidden="true">
-          {logosPorTrack.map((cliente, index) => (
-            <a key={`track2-${index}`} href={cliente.href} target="_blank" rel="noopener noreferrer" className="brand-item">
-              <div className={`brand-item__media ${cliente.needsGlow ? 'needs-glow' : ''}`}>
-                <img src={cliente.src} alt={cliente.alt} style={cliente.customStyle ? cliente.customStyle : {}} loading="lazy" decoding="async" />
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-
-    </section>
-  );
-};
+      <ul className="clientes-grid anim-scroll" aria-label="Clientes">
+        {clientes.map((cliente) => {
+          const Elemento = cliente.href ? 'a' : 'div';
+          return (
+            <li key={cliente.id}>
+              <Elemento
+                className="cliente-marca"
+                {...(cliente.href ? {
+                  href: cliente.href,
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  'aria-label': `Visitar el sitio de ${cliente.nombre} (abre en una pestaña nueva)`
+                } : {})}
+              >
+                <div className={`cliente-logo cliente-logo--${cliente.id}`}>
+                  <img src={cliente.src} alt="" loading="lazy" decoding="async" style={{ '--logo-scale': cliente.escala }} />
+                </div>
+                <span className="cliente-nombre">
+                  {cliente.nombre}
+                  {cliente.href && <span className="cliente-flecha" aria-hidden="true">↗</span>}
+                </span>
+              </Elemento>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  </section>
+);
 
 export default Clientes;
