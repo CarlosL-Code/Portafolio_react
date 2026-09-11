@@ -92,16 +92,6 @@ const Header = ({ currency, setCurrency }) => {
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }
             }}>Acerca de mí</a>
-            <a href="/#experiencia" onClick={(e) => {
-              e.preventDefault();
-              closeMenu();
-              if (window.location.pathname !== '/') {
-                window.location.href = '/#experiencia';
-              } else {
-                const el = document.getElementById('experiencia');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}>Experiencia</a>
             <a href="/#trabajos" onClick={(e) => {
               e.preventDefault();
               closeMenu();
