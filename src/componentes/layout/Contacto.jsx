@@ -1,5 +1,7 @@
 import "./Contacto.css";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import { servicios } from "../../data/servicios";
 import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 import ProtectedEmail from '../ui/ProtectedEmail';
 
@@ -7,7 +9,14 @@ const Contacto = () => {
   const [nombre, setNombre] = useState("");
   const [correo, setCorreo] = useState("");
   const [mensaje, setMensaje] = useState("");
-  const [tipoProyecto, setTipoProyecto] = useState("");
+  const location = useLocation();
+  const servicio = servicios.find((item) => item.id === new URLSearchParams(location.search).get('servicio'));
+  // A new service link applies its selection without clearing the rest of the draft.
+  // Manual changes take precedence until the next navigation.
+  const [seleccionProyecto, setSeleccionProyecto] = useState({ key: null, value: "" });
+  const tipoProyecto = seleccionProyecto.key === location.key
+    ? seleccionProyecto.value
+    : servicio?.tipoProyecto ?? seleccionProyecto.value;
   const [presupuesto, setPresupuesto] = useState("");
   const [error, setError] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,7 +31,7 @@ const Contacto = () => {
     if (input === "nombre") setNombre(e.target.value);
     if (input === "correo") setCorreo(e.target.value);
     if (input === "mensaje") setMensaje(e.target.value);
-    if (input === "tipoProyecto") setTipoProyecto(e.target.value);
+    if (input === "tipoProyecto") setSeleccionProyecto({ key: location.key, value: e.target.value });
     if (input === "presupuesto") setPresupuesto(e.target.value);
   };
 
@@ -142,6 +151,7 @@ const Contacto = () => {
                 <option value="Software a Medida">Software a Medida</option>
                 <option value="Sistema Empresarial">Sistema Empresarial (ERP/CRM)</option>
                 <option value="E-commerce">Tienda Online / E-commerce</option>
+                <option value="Mantenimiento y Mejoras">Mantenimiento y mejoras</option>
                 <option value="Otro">Otro servicio</option>
               </select>
             </div>
