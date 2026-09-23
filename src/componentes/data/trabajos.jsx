@@ -8,9 +8,9 @@ const trabajos = [
       alt: "Sistema CMMS",
     },
     info: {
-      nombre: "Sistema de Gestin (CMMS)",
-      categoria: "Software  Mantenimiento  Gestin",
-      descripcion_corta: "Sistema de gestin de mantenimiento computarizado para optimizar la planificacin de rdenes de trabajo.",
+      nombre: "Sistema de Mantenimiento (CMMS)",
+      categoria: "Software  Mantenimiento",
+      descripcion_corta: "Sistema de mantenimiento computarizado para optimizar la planificacin de rdenes de trabajo.",
       tags: ["SOFTWARE", "MANTENIMIENTO"],
       link: "https://youtu.be/MaIk5ZEa8oQ",
       textoBoton: "Ver Proyecto",
@@ -21,11 +21,11 @@ const trabajos = [
     tipo: "proyecto",
     categoria: "desarrollo-software",
     thumb: {
-      url: "./assets/trabajos/inventario.png", 
+      url: "./assets/trabajos/inventario.png",
       alt: "Gestor de Inventario de Existencias",
     },
     info: {
-      nombre: "Gestor de Inventario de Existencias",
+      nombre: "Gestor de Inventario de Existencias (MRP)",
       categoria: "Software  Inventario  Produccin",
       descripcion_corta: "Sistema avanzado de gestin de inventario para el control de materia prima, recetas y alertas automatizadas.",
       tags: ["SOFTWARE", "INVENTARIO"],
@@ -42,7 +42,7 @@ const trabajos = [
       alt: "E-commerce Confites San Juliǭn",
     },
     info: {
-      nombre: "E-commerce Confites San Juliǭn",
+      nombre: "E-commerce Confites San Julian",
       categoria: "E-commerce  Shopify  SEO",
       descripcion_corta: "Desarrollo de tienda online completa utilizando Shopify, con funcionalidades personalizadas y estrategias de SEO.",
       tags: ["E-COMMERCE", "SHOPIFY", "SEO"],
@@ -77,7 +77,7 @@ const trabajos = [
     },
     info: {
       nombre: "Sitio Web Elixir Gym",
-      categoria: "Web  Creacin de Contenido",
+      categoria: "Web  Creacion de Contenido",
       descripcion_corta: "Sitio web para gimnasio con muestra de instalaciones y planes. Incluye servicio integral de creacin de contenido audiovisual.",
       tags: ["DESARROLLO WEB", "CONTENIDO AUDIOVISUAL"],
       link: "https://web-gym-elixir.vercel.app/",
@@ -89,7 +89,7 @@ const trabajos = [
     tipo: "proyecto",
     categoria: "desarrollo-mobile",
     thumb: {
-      url: "./assets/trabajos/trabajo-1.png",
+      url: "./assets/trabajos/trabajo-1.jpg",
       alt: "No Touch Aplicacion Movil con Control por Voz",
     },
     info: {
@@ -124,14 +124,14 @@ const trabajos = [
     categoria: "desarrollo-software",
     thumb: {
       url: "./assets/trabajos/automatizacion.png",
-      alt: "Automatizacin Kame ERP",
+      alt: "Automatizacion Kame ERP",
     },
     info: {
-      nombre: "Automatizacin facturas ERP",
-      categoria: "Automatizacin  Flujos de trabajo",
-      descripcion_corta: "Automatizacin inteligente para procesar e imprimir facturas automǭticamente directamente desde correos del ERP.",
+      nombre: "Automatizacion facturas ERP",
+      categoria: "Automatizacion  Flujos de trabajo",
+      descripcion_corta: "Automatizacion inteligente para procesar e imprimir facturas automaticamente directamente desde correos del ERP.",
       tags: ["AUTOMATIZACION", "WORKFLOWS"],
-      link: "https://github.com/CarlosL-Code", 
+      link: "https://github.com/CarlosL-Code",
       textoBoton: "Ver Proyecto",
     },
   },
@@ -144,7 +144,7 @@ const trabajos = [
       alt: "PAVELEADS Agency",
     },
     info: {
-      nombre: "Soporte y estabilizacin web",
+      nombre: "Soporte y estabilizacion web",
       categoria: "WordPress  DNS  SSL  Hosting",
       descripcion_corta: "Soporte tǸcnico y estabilizacin de sitio corporativo en produccin para la agencia internacional PAVELEADS.",
       tags: ["WORDPRESS", "SOPORTE"],
@@ -191,7 +191,7 @@ const trabajos = [
     tipo: "demo",
     categoria: "desarrollo-software",
     thumb: {
-      url: "https://via.placeholder.com/600x400/0B1121/38BDF8?text=CRM+Personal+Trainer", /* Placeholder */
+      url: "./assets/trabajos/crm-trainer.png", /* Placeholder */
       alt: "CRM Personal Trainer Demo",
     },
     info: {
@@ -208,7 +208,7 @@ const trabajos = [
     tipo: "demo",
     categoria: "desarrollo-software",
     thumb: {
-      url: "https://via.placeholder.com/600x400/0B1121/38BDF8?text=Sistema+Tickets", /* Placeholder */
+      url: "./assets/trabajos/ticket.png", /* Placeholder */
       alt: "Levanta tu Ticket Demo",
     },
     info: {
@@ -220,12 +220,13 @@ const trabajos = [
       textoBoton: "Ver Demo",
     },
   },
+  /* 
   {
     id: 17,
     tipo: "demo",
     categoria: "desarrollo-web",
     thumb: {
-      url: "https://via.placeholder.com/600x400/0B1121/38BDF8?text=Barberia+Barcelona", /* Placeholder */
+      url: "https://via.placeholder.com/600x400/0B1121/38BDF8?text=Barberia+Barcelona",
       alt: "Barbera Barcelona Demo",
     },
     info: {
@@ -242,7 +243,7 @@ const trabajos = [
     tipo: "demo",
     categoria: "desarrollo-web",
     thumb: {
-      url: "https://via.placeholder.com/600x400/0B1121/38BDF8?text=Dr+Saravia", /* Placeholder */
+      url: "https://via.placeholder.com/600x400/0B1121/38BDF8?text=Dr+Saravia",
       alt: "Dr. Saravia Oftalmlogo Demo",
     },
     info: {
@@ -259,7 +260,7 @@ const trabajos = [
     tipo: "demo",
     categoria: "desarrollo-web",
     thumb: {
-      url: "https://via.placeholder.com/600x400/0B1121/38BDF8?text=Web+Floreria", /* Placeholder */
+      url: "https://via.placeholder.com/600x400/0B1121/38BDF8?text=Web+Floreria",
       alt: "Web Florera Demo",
     },
     info: {
@@ -276,7 +277,7 @@ const trabajos = [
     tipo: "demo",
     categoria: "desarrollo-web",
     thumb: {
-      url: "https://via.placeholder.com/600x400/0B1121/38BDF8?text=Carlos+Barber", /* Placeholder */
+      url: "https://via.placeholder.com/600x400/0B1121/38BDF8?text=Carlos+Barber",
       alt: "Carlos Barber Demo",
     },
     info: {
@@ -293,7 +294,7 @@ const trabajos = [
     tipo: "demo",
     categoria: "desarrollo-web",
     thumb: {
-      url: "https://via.placeholder.com/600x400/0B1121/38BDF8?text=Holland", /* Placeholder */
+      url: "https://via.placeholder.com/600x400/0B1121/38BDF8?text=Holland",
       alt: "Holland Demo",
     },
     info: {
@@ -304,7 +305,8 @@ const trabajos = [
       link: "https://holland-three.vercel.app/",
       textoBoton: "Ver Demo",
     },
-  },
+  } 
+  */
   {
     id: 6,
     tipo: "demo",
