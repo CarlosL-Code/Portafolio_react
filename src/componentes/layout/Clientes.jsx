@@ -36,12 +36,8 @@ const Clientes = () => (
                   } : {})}
                 >
                   <div className={`cliente-logo cliente-logo--${cliente.id}`}>
-                    <img src={cliente.src} alt="" loading="lazy" decoding="async" style={{ '--logo-scale': cliente.escala }} />
+                    <img src={cliente.src} alt={cliente.nombre} loading="lazy" decoding="async" style={{ '--logo-scale': cliente.escala }} />
                   </div>
-                  <span className="cliente-nombre">
-                    {cliente.nombre}
-                    {cliente.href && <span className="cliente-flecha" aria-hidden="true">↗</span>}
-                  </span>
                 </Elemento>
               </div>
             );

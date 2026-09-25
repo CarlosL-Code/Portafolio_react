@@ -121,20 +121,6 @@ body.dark .clientes-marquee-container::after {
   transform: scale(var(--logo-scale, 1));
 }
 
-.cliente-nombre {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4px;
-  min-height: 36px;
-  padding: 10px 3px 2px;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-.cliente-flecha { color: var(--shade-6); font-size: 15px; }
-
 .clientes a.cliente-marca:hover {
   transform: translateY(-3px);
   border-color: var(--primario);
@@ -154,9 +140,9 @@ body.dark .clientes .cliente-marca { color: #dbe4f0; }
 /* Dark lettering needs a light variant over the transparent dark surface. */
 body.dark .cliente-logo--paveleads img { filter: brightness(0) invert(1); }
 body.dark .cliente-logo--primeros-resultados img { filter: invert(1) hue-rotate(180deg); }
+body.dark .cliente-logo--rolando-sepulveda img { filter: invert(1) brightness(1.5); }
 .cliente-logo--elixir img { filter: drop-shadow(0 1px 1px #11182780); }
 
-body.dark .cliente-flecha { color: #a8b5c9; }
 body.dark .clientes a.cliente-marca:hover { border-color: #78a7ff; }
 
 @media (max-width: 1000px) {
