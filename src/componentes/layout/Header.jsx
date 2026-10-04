@@ -92,6 +92,7 @@ const Header = ({ currency, setCurrency }) => {
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }
             }}>Acerca de mí</a>
+            <Link to="/certificaciones" onClick={() => { closeMenu(); window.scrollTo(0, 0); }}>Certificaciones</Link>
             <a href="/#trabajos" onClick={(e) => {
               e.preventDefault();
               closeMenu();

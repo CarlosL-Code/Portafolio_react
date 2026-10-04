@@ -11,6 +11,8 @@ const Proyectos = lazy(() => import("./pages/Proyectos"));
 const ContactoPage = lazy(() => import("./pages/Contacto"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const DotField = lazy(() => import("./componentes/ui/DotField"));
+const CertificacionesList = lazy(() => import("./pages/CertificacionesList"));
+const CertificadoDetalle = lazy(() => import("./pages/CertificadoDetalle"));
 
 import { FaWhatsapp, FaTimes } from "react-icons/fa";
 import useScrollAnimation from "./hooks/useScrollAnimation";
@@ -51,6 +53,8 @@ function App() {
           <Route path="/software-a-medida" element={<SoftwareAMedida />} />
           <Route path="/sistemas-empresariales" element={<SistemasEmpresariales />} />
           <Route path="/proyectos" element={<Proyectos />} />
+          <Route path="/certificaciones" element={<CertificacionesList />} />
+          <Route path="/certificaciones/:id" element={<CertificadoDetalle />} />
           <Route path="/contacto" element={<ContactoPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
