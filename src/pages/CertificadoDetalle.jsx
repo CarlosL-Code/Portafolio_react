@@ -13,7 +13,7 @@ const CertificadoDetalle = () => {
     return <Navigate to="/certificaciones" replace />;
   }
 
-  const pdfUrl = `/CERTIFICACIONES/${certificado.archivo}`;
+  const imageUrl = `/CERTIFICACIONES/${certificado.archivo}`;
 
   return (
     <>
@@ -32,18 +32,10 @@ const CertificadoDetalle = () => {
             <h1>{certificado.titulo}</h1>
             <p>Categoría: {certificado.categoria}</p>
           </div>
-          <div className="certificado-actions">
-            <a href={pdfUrl} download className="btn-descargar">
-              <FaDownload /> Descargar PDF
-            </a>
-          </div>
         </div>
 
         <div className="certificado-viewer">
-          {/* Usamos un iframe o object para incrustar el PDF */}
-          <object data={pdfUrl} type="application/pdf" width="100%" height="100%">
-            <p>Tu navegador no soporta visualizar PDFs directamente. <a href={pdfUrl}>Descarga el PDF aquí</a>.</p>
-          </object>
+          <img src={imageUrl} alt={`Certificado de ${certificado.titulo}`} className="certificado-imagen" />
         </div>
       </main>
     </>
